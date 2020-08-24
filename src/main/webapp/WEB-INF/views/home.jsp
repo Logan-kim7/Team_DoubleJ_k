@@ -10,5 +10,6 @@
 </h1>
 
 <P> ${TEST} </P>
+<img src="${IMG}" width="50%" height="50%"/>
 </body>
 </html>
