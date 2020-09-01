@@ -1,272 +1,81 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>팀프로젝트 제일 처음 메인화면 디자인</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/main_layout.css">
+    <title>드립백 메인화면</title>
+  </head>
 
-<style>
-body {font-family: "Lato", sans-serif;}
+  <body>
 
-/* 여기는
-네비바를 위한 CSS 공간
-*/
-header {
-  position: relative;
-  z-index: 100;
-}
-
-.navbutton {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 20px;
-  font: bold;
-  width: 25%;
-}
-
-.tablink:hover {
-  background-color: #777;
-}
-
-
-.navinfo {
-  color: white;
-  display: none;
-  padding: 50px;
-  text-align: center;
-}
-
-#DripBag {background-color:rgb(1,1,22);}
-#Bestcm {background-color: gray;}
-#Notice {background-color:rgb(1,1,22);}
-#issue {background-color:gray;}
-
-/* 여기는
-네비바를
-위한 CSS 공간
-*/
-
-/*여기는
-큰 컨텐츠 공간를 위한
-CSS 공간
-*/
-#contents {
-        background-color: white;
-        height: 1000px;
-        width: 100%;
-        text-align: center;
-      }
-
-/*여기는
-큰 컨텐츠 공간를 위한
-CSS 공간
-*/
-
-
-
-      /* 여기는
-       레프트 콘텐츠를
-        위한 CSS 공간*/
-      .leftcontents {
-        position: relative;
-        display: inline-block;
-        margin-top: 5%;
-        width: 40%;
-        height: 100%;
-        text-align: center;
-        z-index: 0;
-      }
-
-      .newsimage {
-        display: inline-block;
-        height: auto;
-        width: auto;
-      }
-
-      .newsimage img {
-        height: 300px;
-        width: 500px;
-      }
-
-      .newstitle {
-        display: inline-block;
-        width: 500px;
-        height: auto;
-        margin-top: 50px;
-        border-radius: 8px;
-        padding: 10px;
-      }
-
-      .newstitle legend {
-        color: black;
-      }
-
-      .newstitle fieldset {
-        border: 3px solid navy;
-        border-radius: 5px;
-        color: black;
-      }
-
-      .newsstory {
-        display: inline-block;
-        width: 500px;
-        height: auto;
-        margin-top: 8px;
-      }
-
- 
-
-       /* 여기는
-       레프트 콘텐츠를
-        위한 CSS 공간*/
-
-        /*여기는
-        센터 콘텐츠를
-        위한 CSS공간*/
-
-      .centercontents {
-        position: relative;
-        display: inline-block;
-        margin-top: 5%;
-        width: 20%;
-        height: 100%;
-        text-align: center;
-        font-size: 40px;
-        z-index: 0;
-      }
-
-
-        /*여기는
-        센터 콘텐츠를
-        위한 CSS공간*/
-
-
-
-      /* 여기는
-       right 콘텐츠를
-        위한 CSS 공간*/
-      .rightcontents {
-        position: relative;
-        display: inline-block;
-        margin-top: 5%;
-        width: 30%;
-        height: 100%;
-        text-align: center;
-        z-index: 0;
-      }
-
-      .googletrand legend {
-        color: black;
-        text-align: left;
-        font-size: 25px;
-      }
-
-      .googletrand fieldset {
-        border: 2px solid black;
-        border-radius: 5px;
-        height: 100%;
-        text-align: center;
-      }
-      a {
-        text-decoration: none;
-      }
-
-      ol {
-        font-size: 30px;
-      }
-
-      /* 여기는
-       right 콘텐츠를
-        위한 CSS 공간*/
-
-      /*FOOTER*/
-      footer {
-        background-color: black;
-        height: 100px;
-        text-align: center;
-        color: white;
-      }
-      /*FOOTER*/
-
-</style>
-</head>
-
-<body>
-  <header>
-    <div id="DripBag" class="navinfo">
-      <h1>메인 컨텐츠, 설명</h1>
-      <p>여기는 제공할 컨텐츠를 노출시킬 맨 처음의 메인화면</p>
-    </header>
-    
-    <div id="Bestcm" class="navinfo">
-      <h1>명예의전당</h1>
-      <p>여기는 명예의 전당 네비버튼</p>
-    </div>
-    
-    <div id="Notice" class="navinfo">
-      <h1>공지사항</h1>
-      <p>여기는 공지사항 네비버튼</p>
-    </div>
-    
-    <div id="issue" class="navinfo">
-      <h1>주간 베스트</h1>
-      <p>이번주 핫이슈 현황</p>
-    </div>
-
-    <button class="navbutton" onclick="openNav('DripBag', this, 'gray')" id="defaultOpen">메인화면</button>
-    <button class="navbutton" onclick="openNav('Bestcm', this, 'rgb(1,1,22)')">명예의전당</button>
-    <button class="navbutton" onclick="openNav('Notice', this, 'gray')">공지사항</button>
-    <button class="navbutton" onclick="openNav('issue', this, 'rgb(1,1,22)')">주간베스트</button>
-
-  </div>
-
-  </section>
-    
-    <div id="contents">
-      <section id="bodysection">
-      <div class="leftcontents">
-        <div class="newsimage">
-          <img src="..\images\news.jpg" alt="대충 여기에 사진을 넣읍시다" />
+    <header>
+        <div id="DripBag" class="navinfo">
+          <h1>메인 컨텐츠, 설명</h1>
+          <p>여기는 제공할 컨텐츠를 노출시킬 맨 처음의 메인화면</p>
         </div>
-        <br />
-
-        <form>
-          <div class="newstitle">
-            <fieldset>
-              <legend>뉴스제목</legend>
-              <span><h2>여기는 제목</h2></span>
-            </fieldset>
-          </div>
-        </form>
-
-        <div class="newsstory">
-          <h3>
-            내에에에에에에용 내용용 <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-            fuga qui. Atque beatae est ex expedita, repellendus autem, illum
-            similique cum quibusdam fuck, veritatis nam voluptates modi
-            inventore tempore molestiae id!
-          </h3>
+        
+        <div id="Bestcm" class="navinfo">
+          <h1>명예의전당</h1>
+          <p>여기는 명예의 전당 네비버튼</p>
         </div>
-      </div>
+        
+        <div id="Notice" class="navinfo">
+          <h1>공지사항</h1>
+          <p>여기는 공지사항 네비버튼</p>
+        </div>
+        
+        <div id="issue" class="navinfo">
+          <h1>주간 베스트</h1>
+          <p>이번주 핫이슈 현황</p>
+        </div>
+      </header>
+        
+    <nav>
+        <button class="navbutton" onclick="openNav('DripBag', this, 'gray')" id="defaultOpen">메인화면</button>
+        <button class="navbutton" onclick="openNav('Bestcm', this, 'rgb(1,1,22)')">명예의전당</button>
+        <button class="navbutton" onclick="openNav('Notice', this, 'gray')">공지사항</button>
+        <button class="navbutton" onclick="openNav('issue', this, 'rgb(1,1,22)')">주간베스트</button>
+    </nav>
 
-      <div class="centercontents"><h1>OR</h1></div>
+    <section id="main_content">
+      <aside id="left_content">
+        <fieldset>
+          <legend><h2>핫! 늬우스</h2></legend>
+            <div class="newsimage">
+              <img src="..\images\gojanews.jpg" alt="대충 여기에 사진을 넣읍시다" />
+            </div>
+            <br />
+    
+              <div class="newstitle">
+                  <span><h2>여기는 제목</h2></span>
+                </div>
+                
+                <div class="newsstory">
+                  <p>
+                    내에에에에에에용 내용용 <br/>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+                    fuga qui. Atque beatae est ex expedita, repellendus autem, illum
+                    similique cum quibusdam fuck, veritatis nam voluptates modi
+                    inventore tempore molestiae id!
+                  </p>
+                </div>
+              </fieldset>
+      </aside>
 
-      <div class="rightcontents">
+      <section id="center_content">
+        <div class="big_or"><p>OR</p></div>
+      </section>
+
+      <aside id="right_content">
         <div class="googletrand">
             <fieldset>
           <legend><h2>Google Trand</h2></legend>
           <ol>
-              <li><a href="#">순서 있는 목록의 아이템 1</a></li>
-              <li><a href="#">순서 있는 목록의 아이템 2</a></li>
-              <li><a href="#">순서 있는 목록의 아이템 3</a></li>
-              <li><a href="#">순서 있는 목록의 아이템 4</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">아이템 2</a></li>
+              <li><a href="#">목록의 아이템 3</a></li>
+              <li><a href="#">있는 목록의 아이템 4</a></li>
               <li><a href="#">순서 있는 목록의 아이템 5</a></li>
               <li><a href="#">순서 있는 목록의 아이템 6</a></li>
               <li><a href="#">순서 있는 목록의 아이템 7</a></li>
@@ -276,32 +85,28 @@ CSS 공간
           </ol>
         </fieldset>
         </div>
-      </div>
+      </aside>
     </section>
-    </div>
+    <footer>
+      <h1>여기는 footer</h1>
+    </footer>
+  </body>
 
-    
-
-  <footer><h1>footer</h1></footer>
-
-       
-    </body>
-
-    <script>
-      function openNav(NavName,elmnt,color) {
-        var i, navinfo, tablinks;
-        navinfo = document.getElementsByClassName("navinfo");
-        for (i = 0; i < navinfo.length; i++) {
-          navinfo[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("navbutton");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].style.backgroundColor = "";
-        }
-        document.getElementById(NavName).style.display = "block";
-        elmnt.style.backgroundColor = color;
+  <script>
+    function openNav(NavName,elmnt,color) {
+      var i, navinfo, tablinks;
+      navinfo = document.getElementsByClassName("navinfo");
+      for (i = 0; i < navinfo.length; i++) {
+        navinfo[i].style.display = "none";
       }
-      
-      document.getElementById("defaultOpen").click();
-      </script>
+      tablinks = document.getElementsByClassName("navbutton");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(NavName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+    
+    document.getElementById("defaultOpen").click();
+    </script>
 </html>
