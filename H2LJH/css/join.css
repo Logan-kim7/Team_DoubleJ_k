@@ -1,0 +1,32 @@
+#login_body
+{
+    margin: 0;
+    padding : 0;
+}
+
+#login_body form
+{   
+    background-color: rgba(14, 13, 13, 0.8);
+    border: 1px solid white;
+    border-radius: 35px;
+
+    height: 75vh;
+    width: 350px;
+    padding: 40px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 999;
+}
+
+form input, form button
+{
+        border-radius: 15px;
+        display: block;
+        margin: auto;
+        width: 80%;   
+        margin: 50px auto;
+}
