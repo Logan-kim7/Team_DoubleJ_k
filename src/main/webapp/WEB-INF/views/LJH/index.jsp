@@ -10,6 +10,7 @@
 <script src="https://kit.fontawesome.com/c1d8b25418.js"
 	crossorigin="anonymous"></script>
 <style>
+
 body, html {
 	background: url("${rootPath}/static/imgs/LJH/Background.gif") no-repeat
 		center center fixed;

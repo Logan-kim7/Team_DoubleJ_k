@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+<style>
+h1 {
+    height: 100px;
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+</style>
+
+
+      <h1>여기는 footer</h1>
+
