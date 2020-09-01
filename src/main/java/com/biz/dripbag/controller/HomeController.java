@@ -15,14 +15,11 @@ import com.biz.dripbag.crawling.CrwalingGooGle;
 @Controller
 public class HomeController 
 {
-	@Autowired
-	private CrwalingGooGle crawl;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) throws IOException 
 	{
-		model.addAttribute("IMG", crawl.imgTest());
-		model.addAttribute("TEST", crawl.test());
+
 		return "home";
 	}
 	

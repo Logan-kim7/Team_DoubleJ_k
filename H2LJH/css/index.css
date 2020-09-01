@@ -1,85 +1,54 @@
 
-body{
-    background: url(../imgs/SpicyGrandIntermediateegret-size_restricted.gif) no-repeat center center fixed;
-    background-position: center;
+body, html{
+    background: url(../imgs/Background_index.gif) no-repeat center center fixed;
     background-size: contain;
     background-color: black;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
     margin:  0;
     padding: 0;
 }
 
-#title{
-    margin : 0px 0px 20px 0px;
-    color: rgb(245, 237, 226);
-
-    font-size: 150px;
-    font-family: edo;
+#MainLogo{
+    width: 70vw;
+    height: 50vh;
+    
+    position: absolute;
+    left : 50%;
+    top  : -10%;
+    transform: translate(-50%);
 }
 
- section
- {
-    height: 65vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
+form input, #singin, #singup{
+    width: 20vw;
+    height: 2.5vh;
+    font-size: 2vh;
+
+    border: 0.1vh solid white;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border-radius: 5vh;
+
+    position: absolute;
+    left : 51%;
+    transform: translate(-50%, -50%);
+
+    padding: 0.5vh 0.5vw;
     text-align: center;
-    border: ivory solid 2px;
-    color: ivory;
-    border-radius: 10px;
-    background-color: rgba(14, 13, 13, 0.6);
-    font-family: Anton;
 }
 
-.text{
-    margin: 0px 0px 0px 5px;
-    font-size: 15px;
-}
+#id_input  { top: 45%; }
+#pwd_input { top: 50%; }
+#singin    { top  : 75%; padding: 0;}
+#singup    { top  : 79%; padding: 0;}
 
-.divLogin{
-    text-align: left;
-    width: 90%;
-    height: 10%;
-    margin: 10px;
-}
-
-.divLogin input, button{
-    width: inherit;
-    border: ivory solid 3px;
-    color :ivory;
-    border-radius: 5px;
-}
-
-.divLogin input{
-    color: black;
-}
-
-.divLogin button{
-    font-family: Anton;
-    margin-top: 15px;
-    padding: auto;
-    width: 94%;
-    font-size: 15px;
-}
-
-#singin{
-    border: rgb(49, 196, 49) solid 3px;
-    background-color: rgba(49, 196, 49);
-}
-
-#singup{
-    border: rgb(173, 30, 73) solid 3px;
-    background-color: rgb(173, 30, 73);
-}
-
-.divLogin button:hover{
+#singin:hover, #singup:hover{
     cursor: pointer;
     color: rgb(247, 174, 39);
+    border-color: rgb(247, 174, 39);
+}
+
+form input:focus, form button:focus{
+    outline: none;
+    border-color: rgb(247, 174, 39);
 }
