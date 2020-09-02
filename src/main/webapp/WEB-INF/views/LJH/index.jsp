@@ -29,7 +29,7 @@ body, html {
 	transform: translate(-50%);
 }
 
-form input, #singin, #singup {
+form input, #singin, #singup{
 	width: 20vw;
 	height: 2.5vh;
 	font-size: 2vh;
@@ -62,16 +62,18 @@ form input, #singin, #singup {
 	padding: 0;
 }
 
-#singin:hover, #singup:hover {
+#singin:hover, #singup:hover, a:visited{
 	cursor: pointer;
 	color: rgb(247, 174, 39);
 	border-color: rgb(247, 174, 39);
+	text-decoration: none
 }
 
-form input:focus, form button:focus {
+form input:focus, form button:focus{
 	outline: none;
 	border-color: rgb(247, 174, 39);
 }
+
 </style>
 <title>DripBag</title>
 <link >
@@ -81,7 +83,7 @@ form input:focus, form button:focus {
         <form>
             <input type="email" id="id_input">
             <input type="password" id="pwd_input">
-           <button id = "singin">Sing In</button>
+           <button id = "singin" type="button"><a href="${rootPath}/main/">Sing In</a></button>
            <button id = "singup" type="button">Sing Up</button>
         </form>
 </body>
