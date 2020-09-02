@@ -21,7 +21,7 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/nav.jspf"%>
-<%@ include file="/WEB-INF/views/include/main.jspf"%>
+<%@ include file="/WEB-INF/views/KJM/main.jspf"%>
 
 
 <footer>
