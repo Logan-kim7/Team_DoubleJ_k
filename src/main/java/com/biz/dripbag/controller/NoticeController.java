@@ -5,16 +5,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
-
+@RequestMapping(value="/notice")
 @Controller
-public class IndexController 
+public class NoticeController
 {
-	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home() 
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	public String home(Model model)
 	{
-		return "LJH/index";
+		model.addAttribute("BODY", "NOTICE_HOME");
+		return "LJH/notice";
 	}
-
+	
 }
