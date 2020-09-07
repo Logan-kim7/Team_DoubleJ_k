@@ -5,18 +5,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@RequestMapping(value = "/main")
+@RequestMapping(value = "/info")
 @Controller
-public class MainController {
+public class InfoController {
 	
-	@RequestMapping(value = "/", method =  RequestMethod.GET)
-	public String home(Model model) {
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String info(Model model) {
 		
-		model.addAttribute("BODY","MAIN_HOME");
-		return"home";
+		model.addAttribute("BODY","INFO_HOME");
+		return "home";
 	}
-		
-		
-	
 
 }
