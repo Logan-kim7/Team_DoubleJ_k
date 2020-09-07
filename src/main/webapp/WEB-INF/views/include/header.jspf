@@ -9,7 +9,11 @@
 */
 header {
 position: relative;
-z-index: 100;
+height: 30%;
+}
+
+nav {
+	height: 10%;
 }
 
 .navbutton {

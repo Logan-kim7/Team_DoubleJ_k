@@ -18,7 +18,7 @@
 
 </head>
 <body>
- <%@ include file="/WEB-INF/views/include/nav.jspf"%> 
+ <%@ include file="/WEB-INF/views/MKW/nav.jspf"%> 
 
 
 <c:choose>
