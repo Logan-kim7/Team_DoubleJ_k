@@ -63,7 +63,7 @@ body, html {
 /* ========================= join CSS =================================== */
 #join_body
 {
-	display:none;
+/* 	display:none; */
     margin: 0;
     padding : 0;
     z-index: 999;

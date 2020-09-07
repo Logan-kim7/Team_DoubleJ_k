@@ -30,7 +30,7 @@
            <button id = "singup" type="button" onclick="join()">Sing Up</button>
         </form>
 
-       <section id="join_body">
+       <section id="join_body" style="display: none;">
            <form id="join_form">
                <input placeholder="아이디">
                <input placeholder="비밀번호">
