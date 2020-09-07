@@ -59,3 +59,40 @@ body, html {
 	border-color: rgb(247, 174, 39);
 	text-decoration: none;
 }
+
+/* ========================= join CSS =================================== */
+#join_body
+{
+	display:none;
+    margin: 0;
+    padding : 0;
+    z-index: 999;
+}
+
+#join_body form
+{   
+    background-color: rgba(14, 13, 13, 1);
+    border: 1px solid white;
+    border-radius: 35px;
+
+    height: 75vh;
+    width: 350px;
+    padding: 40px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#join_form input, #join_form button
+{
+   border-radius: 15px;
+   display: block;
+   margin: auto;
+   width: 80%;   
+   margin: 50px auto;
+   background-color: rgba(255, 255, 255, 1);
+}
+

@@ -22,13 +22,23 @@
 </head>
 <body>
         <img src="${rootPath}/static/imgs/LJH/logo.png" alt="MainLogo" id="MainLogo">
+        
         <form id="login_form" autocomplete="off">
            <input type="email" id="id_input">
            <input type="password" id="pwd_input">
            <button id = "singin" type="button" onclick="move()">Sing In</button>
+           <button id = "singup" type="button" onclick="join()">Sing Up</button>
         </form>
-        <button id = "singup" type="button" onclick="join()">Sing Up</button>
 
-       <%@ include file="/WEB-INF/views/LJH/join.jspf" %>
+       <section id="join_body">
+           <form id="join_form">
+               <input placeholder="아이디">
+               <input placeholder="비밀번호">
+               <input placeholder="비밀번호 확인">
+               <button type="submit">회원가입</button>
+               <button type="button" onclick="join()">취소</button>
+           </form>
+		</section>
+		
 </body>
 </html>
