@@ -10,6 +10,6 @@
                 <input placeholder="비밀번호">
                 <input placeholder="비밀번호 확인">
                 <button type="submit">회원가입</button>
-                <button type="button" onclick="none()">취소</button>
+                <button type="button" onclick="join()">취소</button>
             </form>
 </section>
