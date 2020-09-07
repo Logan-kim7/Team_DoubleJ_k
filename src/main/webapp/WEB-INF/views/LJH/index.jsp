@@ -11,8 +11,10 @@
 <link rel="stylesheet" href="${rootPath}/static/css/LJH/index.css?ver=002"/>
 <script>
 	function move()  { document.location.href="${rootPath}/main/" }
-	function join()  { document.getElementById("join_body").style.display="block"; }
-	function none() { document.getElementById("join_body").style.display="none"; }
+	function join()  
+	{ 		
+		document.getElementById("join_body").style.display == "none" ? document.getElementById("join_body").style.display="block" : document.getElementById("join_body").style.display="none";
+	}
 </script>
 
 
