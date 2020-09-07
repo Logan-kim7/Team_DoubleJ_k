@@ -3,90 +3,217 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>트랜드 작성공간</title>
-    <link rel="stylesheet" type="text/css" href="../css/Gdriper.css">
+    <title>명예의 전당</title>
+    <style>
+      * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 여기는
+  네비바를
+  위한 CSS 공간 시작
+  */
+
+  nav {
+    display: block;
+  }
+
+  header {
+  position: relative;
+  z-index: 100;
+  }
+
+  .navbutton {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 20px;
+  font: bold;
+  width: 25%;
+  }
+
+  .tablink:hover {
+  background-color: #777;
+  }
+
+
+  .navinfo {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+  }
+
+  #DripBag {background-color:rgb(1,1,22);}
+  #Bestcm {background-color: gray;}
+  #Notice {background-color:rgb(1,1,22);}
+  #issue {background-color:gray;}
+
+  /* 여기는
+  네비바를
+  위한 CSS 공간
+  */
+
+
+  /*여기는
+  명예의전당 테이블을
+  위한 CSS공간 시작*/
+
+  #listcustomers {
+       font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+       border-collapse: collapse;
+       width: 100%;
+}
+
+    #listcustomers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+}
+
+    #listcustomers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #listcustomers tr:hover {background-color: #ddd;}
+
+    #listcustomers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: gray ;
+        color: white;
+      }
+
+      .pagination {
+          display: inline-block;
+          margin-top: 10px;
+      }
+
+      .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+
+      .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .pagination a:hover:not(.active) {
+        background-color: #ddd;
+        border-radius: 5px;
+      }   
+      input {
+        width: 100%;
+      }   
+
+      #user_write {
+        display: block;
+        text-align: center;
+        height: 100% auto;
+      }
+
+      .cmlist {
+        display: inline-block;
+        text-align: center;
+        width: 70%;
+        height: 100% auto;
+        padding: 3% 0 10% 0;
+
+      }
+
+      .cmlist h2 {
+        font-size: 30px;
+        padding: 20px 0px;
+      }
+
+      .cmlist tr {
+        height: 40px;
+      }
+
+      #serch {
+        display: inline-block;
+        position: absolute;
+        width: 100px;
+        height: 40px;
+        margin-left: 405px;
+        background-color: blue;
+      }
+
+      
+      /*여기는
+      명예의전당 테이블을
+      위한 CSS공간 끝*/
+
+
+  /*여기는 footer*/
+  footer {
+    height: 100px;
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+  /*여기는 footer*/
+    </style>
   </head>
   <body>
     <header>
         <div id="DripBag" class="navinfo">
-          <h1>메인화면</h1>
+          <h1>메인 컨텐츠, 설명</h1>
           <p>여기는 제공할 컨텐츠를 노출시킬 맨 처음의 메인화면</p>
         </div>
         </header>
         
         <div id="Bestcm" class="navinfo">
           <h1>명예의전당</h1>
-          <p>여기는 명예의 전당</p>
+          <p>여기는 명예의 전당 네비버튼</p>
         </div>
         
         <div id="Notice" class="navinfo">
           <h1>공지사항</h1>
-          <p>여기는 공지사항</p>
+          <p>여기는 공지사항 네비버튼</p>
         </div>
         
         <div id="issue" class="navinfo">
-          <h1>주간 베스트</h1>
-          <p>이번주 핫이슈 현황</p>
+          <h1>사이트 소개</h1>
+          <p>사이트를 소개해주마</p>
         </div>
-        
+
+    <nav>
         <button class="navbutton" onclick="openNav('DripBag', this, 'gray')" id="defaultOpen">메인화면</button>
         <button class="navbutton" onclick="openNav('Bestcm', this, 'rgb(1,1,22)')">명예의전당</button>
         <button class="navbutton" onclick="openNav('Notice', this, 'gray')">공지사항</button>
         <button class="navbutton" onclick="openNav('issue', this, 'rgb(1,1,22)')">주간베스트</button>
-
-      <div id="headline">
-        <span>
-        <fieldset id="headset">
-          <legend id="headlegend">선택한 주제</legend>
-          <span><p id="googletrand">호옹이!!</p></span>
-        </fieldset>
-      </span>
-      </div>
-
-      <div id="user_write">
-        <fieldset id="writeset">
-          <legend id="writelegend">내가 작성하기</legend>
-            <form class="inputbox">
-                <label for="fname">4자성어를 입력하세요</label>
-                <input type="text" id="fname" name="fname" placeholder="4글자만 입력가능!!!">
-            </form>
-            <form class="inputbox">
-                <label for="fname">내용을 입력하세요</label>
-                <input type="text" id="fname" name="fname" placeholder="12글자까지만 입력가능!!">
-            </form>
-        </fieldset>
-      </div>
-
-  <div id="writebutton">
-    <button id="throwit" type="button"><p>영 아니다</p></button>
-    <button id="addit" type="button"><p>잘만든것 같다</p></button>
-  </div>
+    </nav>
 
 
-      <div id="user_bord">
+      <section id="user_write">
 
         <div class="cmlist">
-            
-          <h2>4자성어 Drip Bag </h2>
+          <h2>Hall of Best Dripper</h2>
        
         <table id="listcustomers">
           <tr>
+            <th>랭킹</th>
             <th>작성자</th>
-            <th>내용</th>
-            <th>좋아요</th>
-            <th>싫어요</th>
+            <th>사자성어</th>
+            <th>점수</th>
             <th>작성일</th>
           </tr>
           <tr>
-            <div>
-            <td></td>
-            </div>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
             <td></td>
             <td></td>
             <td></td>
@@ -101,6 +228,15 @@
             <td></td>
           </tr>
           <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -160,10 +296,13 @@
           <a href="#">5</a>
           <a href="#">6</a>
           <a href="#">&raquo;</a>
-        </div>
-      </div>
-    </div>
 
+          <div id="serch"></div>
+        </div>
+
+        
+      </div>
+      </section>
 
     <footer>
       <h1>여기는 footer</h1>
