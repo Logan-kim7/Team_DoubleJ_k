@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+/* 여기는
+네비바를
+위한 CSS 공간 시작
+*/
+header {
+position: relative;
+z-index: 100;
+}
+
+.navbutton {
+background-color: #555;
+color: white;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 14px 16px;
+font-size: 20px;
+font: bold;
+width: 25%;
+}
+
+.tablink:hover {
+background-color: #777;
+}
+
+
+.navinfo {
+color: white;
+display: none;
+padding: 50px;
+text-align: center;
+}
+
+#DripBag {background-color:rgb(1,1,22);}
+#Bestcm {background-color: gray;}
+#Notice {background-color:rgb(1,1,22);}
+#issue {background-color:gray;}
+
+/* 여기는
+네비바를
+위한 CSS 공간
+*/
+
+
+
+  /*여기는 
+  선정한 주제를
+  위한 CSS공간*/
+
+  #headline {
+    text-align: center;
+  }
+  
+  fieldset {
+    display: inline-block;
+    width: 80%;
+    height: auto;
+    margin: 1%;
+    border: 3px solid black;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  legend {
+    font-size: 20px;
+    padding: 0px 30px;
+  }
+
+  #googletrand {
+    font-size: 40px;
+  }
+
+  /*여기는
+  선정한 주제를
+  위한 CSS공간*/
+
+  #listcustomers {
+       font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+       border-collapse: collapse;
+       width: 100%;
+}
+
+    #listcustomers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+}
+
+    #listcustomers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #listcustomers tr:hover {background-color: #ddd;}
+
+    #listcustomers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: gray ;
+        color: white;
+      }
+
+      .pagination {
+           display: inline-block;
+           padding-top: 10px;
+      }
+
+      .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+
+      .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .pagination a:hover:not(.active) {
+        background-color: #ddd;
+        border-radius: 5px;
+      }   
+        input {
+         width: 100%;
+      }   
+
+  /*여기는
+  순위표와 입력창을
+  위한 CSS공간*/
+    
+  #user_write {
+    text-align: center;
+  }
+
+  .cmlist {
+    display: inline-block;
+    text-align: center;
+    width: 70%;
+    height: 100%;
+  }
+
+  .cmlist h2 {
+    font-size: 30px;
+    padding: 20px 0px;
+  }
+
+  .inputbox {
+    padding: 15px 0px;
+  }
+
+  #writebutton {
+    text-align: right;
+    padding: 50px 0px;
+  }
+
+  #throwit {
+    background-color: gray;
+    color: black;
+    height: 50px;
+    width: 160px;
+    margin: 5px 20px 5px 0px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 3px solid black;
+    transition: all 0.5s;
+    outline: none;
+  }
+  
+  #addit {
+    background-color: black;
+    color: gray;
+    height: 50px;
+    width: 160px;
+    margin: 5px 15% 5px 0px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 3px solid gray;
+    transition: all 0.5s;
+    outline: none;
+  }
+  
+  #throwit:hover {
+    background-color: black;
+    color: gray;
+    border: 3px solid gray;
+    width:  180px;
+    height: 60px;
+    margin: 0px 20px 0px 0px;
+    transition: all 0.5s;
+  }
+  
+  #addit:hover {
+    background-color: gray;
+    color: black;
+    border: 3px solid black;
+    width:  180px;
+    height: 60px;
+    margin: 0px 15% 0px 0px;
+    transition: all 0.5s;
+  }
+  
+  /*여기는
+  순위표와 입력창을
+  위한 CSS공간*/
+
+  /*여기는 footer*/
+  footer {
+    height: 100px;
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+  /*여기는 footer*/

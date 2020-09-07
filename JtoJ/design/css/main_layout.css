@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-flow: column;
+  }
+
+/* 여기는
+네비바를
+위한 CSS 공간 시작
+*/
+header {
+position: relative;
+z-index: 100;
+}
+
+.navbutton {
+background-color: #555;
+color: white;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 14px 16px;
+font-size: 20px;
+font: bold;
+width: 25%;
+}
+
+.tablink:hover {
+background-color: #777;
+}
+
+
+.navinfo {
+color: white;
+display: none;
+padding: 50px;
+text-align: center;
+}
+
+#DripBag {background-color:rgb(1,1,22);}
+#Bestcm {background-color: gray;}
+#Notice {background-color:rgb(1,1,22);}
+#issue {background-color:gray;}
+
+/* 여기는
+네비바를
+위한 CSS 공간
+*/
+
+
+  section#main_content {
+    flex: 100%;
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+  }
+
+  #main_content aside {
+    flex: 4;
+    margin: 10px 3px;
+    text-align: center;
+  }
+
+  #main_content section {
+    flex: 3px;
+    margin: 10px 3px;
+    overflow: auto;
+  }
+
+  footer {
+    height: 100px;
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+
+    /* 여기는
+   레프트 콘텐츠를
+    위한 CSS 공간*/
+
+    #left_content {
+    position: relative;
+    display: inline-block;
+    margin-top: 5%;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .newsimage {
+    margin-top: 40px;
+    display: inline-block;
+    height: auto;
+    width: auto;
+  }
+
+  .newsimage img {
+    height: 300px;
+    width: 80%;
+  }
+
+  .newstitle {
+    display: inline-block;
+    width: 80%;
+    height: auto;
+    margin: 10px 0px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  
+  fieldset {
+    display: inline-block;
+    border: 3px solid black;
+    border-radius: 8px;
+    width: 80%;
+    height: auto;
+    color: black;
+  }
+
+  legend {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0px 50px;
+  }
+
+  .newsstory {
+    display: inline-block;
+    width: 80%;
+    height: auto;
+    margin: 10px 0px;
+    font-size: 20px;
+  }
+
+
+   /* 여기는
+   레프트 콘텐츠를
+    위한 CSS 공간*/
+
+
+    /*여기는
+    센터 콘텐츠를
+    위한 CSS공간*/
+
+  #center_content {
+    position: relative;
+    display: inline-block;
+    margin-top: 5%;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .big_or {
+      margin-top: 100%;
+  }
+
+  .big_or p {
+    font-size: 80px;
+  }
+
+    /*여기는
+    센터 콘텐츠를
+    위한 CSS공간*/
+
+  /* 여기는
+   right 콘텐츠를
+    위한 CSS 공간*/
+  #right_content {
+    position: relative;
+    display: inline-block;
+    margin-top: 5%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .googletrand {
+    text-align: center;
+  }
+
+  .googletrand fieldset {
+    margin-top: 40px;
+  }
+
+
+  a {
+    text-decoration: none;
+  }
+
+  ol {
+    font-size: 30px;
+    margin: 20px 0px;
+    list-style:none;
+  }
+
+  /* 여기는
+   right 콘텐츠를
+    위한 CSS 공간*/
