@@ -7,16 +7,6 @@
 /* 여기는
    text 콘텐츠를
     위한 CSS 공간*/
-.text_title {
-	text-align: center;
-	font-size: 70px;
-	font: bolder;
-	
-}
-
-body {
-	margin: 0px;
-}
 
 #legend {
 	color: black;

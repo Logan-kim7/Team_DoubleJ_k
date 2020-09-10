@@ -11,14 +11,26 @@
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://kit.fontawesome.com/cc60939e22.js" crossorigin="anonymous"></script>    
 <style>
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
 
-
-
+  body {
+    display: flex;
+    flex-flow: column;
+  }
 </style>
 
 </head>
 <body>
- <%@ include file="/WEB-INF/views/MKW/nav.jspf"%> 
+ <%@ include file="/WEB-INF/views/include/nav.jspf"%> 
 
 
 <c:choose>
@@ -29,8 +41,12 @@
     <c:when test="${BODY == 'INFO_HOME'}">
     <%@ include file="/WEB-INF/views/KJM/infomain.jspf"%>
     </c:when>
+    
+    <c:when test="${BODY == 'NEWS_HOME'}">
+    <%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
+    </c:when>
 <c:otherwise>
-
+	
 </c:otherwise>
 </c:choose>
 
