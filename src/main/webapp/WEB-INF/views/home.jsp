@@ -52,6 +52,10 @@ body {
 			<%@ include file="/WEB-INF/views/MKW/googletrand.jsp"%>
 		</c:when>
 
+		<c:when test="${BODY == 'HALL_OF_FAME'}">
+			<%@ include file="/WEB-INF/views/MKW/halloffame.jsp"%>
+		</c:when>
+
 		<c:otherwise>
 
 		</c:otherwise>
