@@ -12,9 +12,7 @@ position: relative;
 height: 30%;
 }
 
-nav {
-	height: 10%;
-}
+
 
 .navbutton {
 background-color: #555;

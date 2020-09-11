@@ -23,7 +23,7 @@
     display: inline-block;
     width: 80%;
     height: auto;
-    margin: 1%;
+    margin-top: 40px;
     border: 3px solid black;
     border-radius: 8px;
     text-align: center;
@@ -79,15 +79,15 @@
       }
 
       .pagination a.active {
-        background-color: #4CAF50;
+        background-color: gray;
         color: white;
         border-radius: 5px;
       }
 
       .pagination a:hover:not(.active) {
-        background-color: #ddd;
+        background-color: darkgray;
         border-radius: 5px;
-      }   
+      }
 
       input {
         width: 100%;
@@ -118,11 +118,11 @@
   }
 
   #writeset {
-    margin-top: 100px;
+    margin-top: 70px;
     display: inline-block;
     height: auto;
     width: 40%;
-    border: 3px dotted black;
+    border: 5px dotted black;
     border-radius: 8px;
     text-align: center;
   }
@@ -137,11 +137,11 @@
   .inputbox {
     display: inline-block;
     width: 70%;
-    padding: 15px 0px;
+   	margin: 30px 0px;
   }
 
   .inputbox:nth-child(3) {
-    padding-bottom: 30px;
+    margin-bottom: 60px;
   }
 
   #writebutton {
@@ -231,7 +231,7 @@
             
             <form class="inputbox">
                 <label for="fname">4자성어 설명을 입력하세요</label>
-                <input type="text" id="fname" name="fname" placeholder="12글자까지만 입력가능!!">
+                <input type="text" id="fname" name="fname" placeholder="12글자까지만 입력가능!!!">
             </form>
             
         </fieldset>
