@@ -4,6 +4,18 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 <style>
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
 section#main_content {
 	flex: 100%;
 	width: 100%;
@@ -25,7 +37,6 @@ section#main_content {
 }
 
 
-
 /* 여기는
    레프트 콘텐츠를
     위한 CSS 공간*/
@@ -36,7 +47,6 @@ section#main_content {
 	width: 80%;
 	height: 100%;
 	text-align: center;
-	z-index: 0;
 }
 
 #left_legend {
@@ -104,7 +114,6 @@ fieldset {
 	height: 100%;
 	text-align: center;
 	font-size: 40px;
-	z-index: 0;
 }
 
 .big_or {
@@ -133,28 +142,12 @@ fieldset {
 	margin-top: 5%;
 	height: 100%;
 	text-align: center;
-	z-index: 0;
 }
 
 .googletrand {
 	text-align: center;
 }
 
-/* .googletrand fieldset {
-    display: inline-flex;
-    margin-top: 40px;
-    border: 2px solid black;
-    border-radius: 5px;
-    width: 80% ;
-    height: 100%;
-    text-align: center;
-  } */
-
-/* .googletrand legend {
-    color: black;
-    text-align: center;
-    font-size: 25px;
-  } */
 a {
 	text-decoration: none;
 }

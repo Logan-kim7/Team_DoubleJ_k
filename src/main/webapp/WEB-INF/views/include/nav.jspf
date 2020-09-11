@@ -4,23 +4,13 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
 <style>
-* {
-	font-style: Edo;
-}
-
 header {
 	position: relative;
-	z-index: 100;
-}
-html, body {
-	width: 100%;
-	height: 100%;
 }
 
-body {
-    display: flex;
-    flex-flow: column;
-  }
+nav {
+	display: flex;
+}
 
 .navbutton {
 	background-color: #555;
@@ -29,10 +19,10 @@ body {
 	border: none;
 	outline: none;
 	cursor: pointer;
-	padding: 14px 16px;
+	height: 65px;
+	flex: 1;
 	font-size: 20px;
 	font: bold;
-	width: 25%;
 }
 
 .tablink:hover {
@@ -90,10 +80,13 @@ body {
 	</div>
 </header>
 <nav>
-	<button class="navbutton" onclick="openNav('DripBag', this, 'gray')" id="defaultOpen">메인화면</button>
-	<button class="navbutton" onclick="openNav('Bestcm', this, 'rgb(1,1,22)')">명예의전당</button>
-	<button class="navbutton" onclick="openNav('Notice', this, 'gray')">공지사항</button>
-	<button class="navbutton" onclick="openNav('issue', this, 'rgb(1,1,22)')">주간베스트</button>
+	<button class="navbutton" onclick="openNav('DripBag', this, 'gray')"
+		id="defaultOpen" type="button">메인화면</button>
+	<button class="navbutton"
+		onclick="openNav('Bestcm', this, 'rgb(1,1,22)')">명예의전당</button>
+	<button class="navbutton" onclick="openNav('Notice', this, 'gray')" type="button">공지사항</button>
+	<button class="navbutton"
+		onclick="openNav('issue', this, 'rgb(1,1,22)')" type="button">주간베스트</button>
 </nav>
 
 <script>
@@ -105,7 +98,7 @@ body {
 		}
 		tablinks = document.getElementsByClassName("navbutton");
 		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].style.backgroundColor = " ";
+			tablinks[i].style.backgroundColor = "";
 		}
 		document.getElementById(NavName).style.display = "block";
 		elmnt.style.backgroundColor = color;
