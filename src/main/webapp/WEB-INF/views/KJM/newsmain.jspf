@@ -17,7 +17,6 @@
     flex: 100%;
     width: 100%;
     margin: 10px auto;
-
     display: flex;
   }
 
@@ -69,9 +68,17 @@
   } */
 fieldset {
 	border: 5px solid black;
-	border-radius: 5px;
+	border-radius: 8px;
 	text-align: center;
 	color: black;
+}
+
+#write{
+	border: 5px dotted black;
+	border-radius: 8px;
+	text-align: center;
+	color: black;
+	margin-bottom: 50px;
 }
 
 .newsimage {
@@ -181,18 +188,19 @@ ol {
 }
 
 .pagination a.active {
-	background-color: #4CAF50;
+	background-color: gray;
 	color: white;
 	border-radius: 5px;
 }
 
 .pagination a:hover:not(.active) {
-	background-color: #ddd;
+	background-color: darkgray;
 	border-radius: 5px;
 }
 
 input {
-	width: 100%;
+	width: 70%;
+	margin: 20px 0px;
 }
 /* 여기는
        table 콘텐츠를
@@ -244,7 +252,7 @@ input {
 	<section>
 		<div class="newstable">
 
-			<fieldset>
+			<fieldset id="write">
 				<legend>
 					<h2>4자성어 Drip Bag 입력공간</h2>
 				</legend>
