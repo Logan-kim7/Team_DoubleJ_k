@@ -49,11 +49,11 @@ body {
 		</c:when>
 
 		<c:when test="${BODY == 'GOOGLE_HOME'}">
-			<%@ include file="/WEB-INF/views/MKW/googletrand.jsp"%>
+			<%@ include file="/WEB-INF/views/MKW/googletrand.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'HALL_OF_FAME'}">
-			<%@ include file="/WEB-INF/views/MKW/halloffame.jsp"%>
+			<%@ include file="/WEB-INF/views/MKW/halloffame.jspf"%>
 		</c:when>
 
 		<c:otherwise>

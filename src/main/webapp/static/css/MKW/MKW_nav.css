@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+header {
+	position: relative;
+}
+
+nav {
+	display: flex;
+}
+
+.navbutton {
+	background-color: #555;
+	color: white;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	height: 65px;
+	flex: 1;
+	font-size: 20px;
+	font: bold;
+}
+
+.tablink:hover {
+	background-color: #777;
+}
+
+.navinfo {
+	color: white;
+	display: none;
+	padding: 50px;
+	text-align: center;
+}
+
+#DripBag {
+	background-color: black;
+}
+
+#Bestcm {
+	background-color: gray;
+}
+
+#Notice {
+	background-color: black;
+}
+
+#issue {
+	background-color: gray;
+}
+
+/* 여기는
+네비바를
+위한 CSS 공간
+*/
