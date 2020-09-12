@@ -38,7 +38,7 @@ nav {
 }
 
 #DripBag {
-	background-color: rgb(1, 1, 22);
+	background-color: black;
 }
 
 #Bestcm {
@@ -46,7 +46,7 @@ nav {
 }
 
 #Notice {
-	background-color: rgb(1, 1, 22);
+	background-color: black;
 }
 
 #issue {
@@ -84,10 +84,10 @@ nav {
 	<button class="navbutton" onclick="openNav('DripBag', this, 'gray')"
 		id="defaultOpen" type="button">메인화면</button>
 	<button class="navbutton"
-		onclick="openNav('Bestcm', this, 'rgb(1,1,22)')">명예의전당</button>
+		onclick="openNav('Bestcm', this, 'black')">명예의전당</button>
 	<button class="navbutton" onclick="openNav('Notice', this, 'gray')" type="button">공지사항</button>
 	<button class="navbutton"
-		onclick="openNav('issue', this, 'rgb(1,1,22)')" type="button">주간베스트</button>
+		onclick="openNav('issue', this, 'black')" type="button">주간베스트</button>
 </nav>
 
 <script>
