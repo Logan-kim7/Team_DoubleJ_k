@@ -14,7 +14,7 @@ public class NewsController {
 		model.addAttribute("BODY","NEWS_HOME");
 		
 		return "home";
-		
+//수정본입니다.
 		
 	}
 
