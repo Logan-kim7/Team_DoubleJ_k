@@ -62,4 +62,14 @@
       </aside>
     </section>
 </body>
+<script>
+	$(document).ready(function() {
+		$("#headh1").html("메인화면")
+		$("#headp").html("여기는 메인화면 이지롱 ><")
+		$("#btn-main").css("background-color","cornflowerblue")
+		$("#btn-hall").css("border-bottom-left-radius","10px")
+		$("#btn-main").css("border-bottom-right-radius","10px")
+		$("#navinfo").css("background-color", "black")
+	})
+</script>
 </html>

@@ -1,0 +1,65 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value='${pageContext.request.contextPath}' />
+<style>
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+#notice_input{
+	text-align: right;
+	margin:10px 10px;
+}
+
+#notice_body{
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#notice_body li{
+	margin: 5px 5px;
+	border-bottom: 1px solid rgba(88, 88, 88, 0.3);
+	width: inherit;
+}
+
+#notice_body div{
+	display: inline-block;
+	text-align: center;
+}
+#notice_body div:nth-child(1) {
+	width: 60%;
+}
+#notice_body div:nth-child(2),#notice_body div:nth-child(3),#notice_body div:nth-child(4) {
+	width: 10%;
+}
+
+#notice_body a{
+	text-decoration: none;
+}
+
+</style>
+
+<section id = "notice_section">
+	<div id="notice_input">
+		<input placeholder="검색어 입력">
+	</div>
+	<ul id="notice_body">
+		<li>
+			<div>
+				<a href=#>제목</a>
+			</div>
+			
+			<div>작성자</div>
+			<div>작성일자</div>
+			<div>조회수</div>
+		</li>
+	</ul>
+	
+</section>
+

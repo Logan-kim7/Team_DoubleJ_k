@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${rootPath}/static/css/MKW/halloffame.css?ver=1"/>
-    <script src="https://code.jquery.com/jquery-latest.min.js%22%3E"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/c1d8b25418.js" crossorigin="anonymous"></script>
 <title>Insert title here</title>
 
@@ -118,4 +118,17 @@
       </section>
 
 </body>
+
+<script>
+	$(document).ready(function() {
+		$("#headh1").html("명예의전당")
+		$("#headp").html("아 씨발 바닐라로 해보려고 했는데 지식이 부족해서 ㅈ같다")
+		$("#btn-hall").css("background-color","cornflowerblue")
+		$("#btn-hall").css("border-bottom-left-radius","10px")
+		$("#btn-hall").css("border-bottom-right-radius","10px")
+		$("#btn-main").css("border-bottom-right-radius","10px")
+		$("#btn-info").css("border-bottom-left-radius","10px")
+		$("#navinfo").css("background-color", "gray")
+	})
+</script>
 </html>

@@ -146,4 +146,15 @@
     </div>
 
 </body>
+
+<script>
+	$(document).ready(function() {
+		$("#headh1").html("원래는 공지사항 근데 손대기 싫어서 구글트랜드 작성화면")
+		$("#headp").html("가족과 선생님과 동기 형누나들이 건강하고 내 머리가 좀 덜 멍청해지기를 기원")
+		$("#btn-notice").css("background-color","cornflowerblue")
+		$("#btn-notice").css("border-bottom-left-radius","10px")
+		$("#btn-info").css("border-bottom-right-radius","10px")
+		$("#navinfo").css("background-color", "gray")
+	})
+</script>
 </html>
