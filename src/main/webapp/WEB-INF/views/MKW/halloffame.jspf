@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 
 </head>
-<body>
+
 
 	      <section id="fame_interface" style="background-image: url('../static/imgs/MKW/grayfade.jpg')">
 
@@ -117,7 +117,7 @@
       </div>
       </section>
 
-</body>
+
 
 <script>
 	$(document).ready(function() {
