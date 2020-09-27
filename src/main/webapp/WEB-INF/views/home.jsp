@@ -36,15 +36,15 @@ body {
 
 	<c:choose>
 		<c:when test="${BODY == 'MAIN_HOME'}">
-			<%@ include file="/WEB-INF/views/MKW/MKW_main.jspf"%>
+			<%@ include file="/WEB-INF/views/KJM/main.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'HALL_OF_FAME'}">
-			<%@ include file="/WEB-INF/views/MKW/halloffame.jspf"%>
+			<%@ include file="/WEB-INF/views/KJM/halloffame.jspf"%>
 		</c:when>
 		
 		<c:when test="${BODY == 'INFO_HOME'}">
-			<%@ include file="/WEB-INF/views/MKW/MKW_infomain.jspf"%>
+			<%@ include file="/WEB-INF/views/KJM/infomain.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'NEWS_HOME'}">
@@ -52,7 +52,7 @@ body {
 		</c:when>
 
 		<c:when test="${BODY == 'GOOGLE_HOME'}">
-			<%@ include file="/WEB-INF/views/MKW/googletrand.jspf"%>
+			<%@ include file="/WEB-INF/views/KJM/googletrand.jspf"%>
 		</c:when>
 
 
