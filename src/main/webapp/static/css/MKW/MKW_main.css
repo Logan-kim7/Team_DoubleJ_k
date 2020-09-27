@@ -3,8 +3,10 @@
 section#main_content {
 	flex: 100%;
 	width: 100%;
-	margin: 10px auto;
 	display: flex;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
 }
 
 #main_content aside {
@@ -35,7 +37,7 @@ section#main_content {
 	margin-top: 40px;
 	display: inline-block;
 	height: auto;
-	width: auto;
+	width: 100%;
 }
 
 .newsimage img {
