@@ -6,6 +6,8 @@
 #fame_interface {
 	text-align: center;
 	height: 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
 }
 
 #fametable {
@@ -20,7 +22,7 @@
 }
 
 #fametable tr:nth-child(even) {
-	background-color: #f2f2f2;
+	
 }
 
 #fametable tr:hover {
