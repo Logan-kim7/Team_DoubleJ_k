@@ -9,7 +9,7 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>Drip Bag Main page</title>
 
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/cc60939e22.js"
 	crossorigin="anonymous"></script>
 <style>
@@ -36,7 +36,7 @@ body {
 
 	<c:choose>
 		<c:when test="${BODY == 'MAIN_HOME'}">
-			<%@ include file="/WEB-INF/views/KJM/main.jspf"%>
+			<%@ include file="/WEB-INF/views/MKW/MKW_main.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'HALL_OF_FAME'}">
@@ -44,7 +44,7 @@ body {
 		</c:when>
 		
 		<c:when test="${BODY == 'INFO_HOME'}">
-			<%@ include file="/WEB-INF/views/KJM/infomain.jspf"%>
+			<%@ include file="/WEB-INF/views/MKW/MKW_infomain.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'NEWS_HOME'}">
