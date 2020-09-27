@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
 <!DOCTYPE html>
-<html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +14,9 @@
 
 </style>
 </head>
-<body>
 
+	<section id="trand-bg"  
+	style="background-image: url('../static/imgs/KJM/생각.jpg')">
       <div id="headline">
         <fieldset id="headset">
           <legend id="headlegend">선택한 주제</legend>
@@ -144,8 +145,8 @@
         </div>
       </div>
     </div>
+</section>
 
-</body>
 
 <script>
 	$(document).ready(function() {
@@ -161,4 +162,3 @@
 		$("#navinfo").css("background-color", "gray")
 	})
 </script>
-</html>
