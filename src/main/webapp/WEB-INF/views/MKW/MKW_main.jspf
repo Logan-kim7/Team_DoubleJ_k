@@ -6,8 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="${rootPath}/static/css/MKW/MKW_main.css?ver=111"/>
-    <script src="https://code.jquery.com/jquery-latest.min.js%22%3E"></script>
+    <link rel="stylesheet" href="${rootPath}/static/css/MKW/MKW_main.css?ver=0"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/c1d8b25418.js" crossorigin="anonymous"></script>
 <title>Insert title here</title>
 </head>
@@ -16,8 +16,7 @@
       <aside id="left_content">
         <fieldset>
           <legend><h2>핫! 늬우스</h2></legend>
-            <div class="newsimage">
-              <img src="../static/imgs/MKW/nicheSim.jpg" alt="대충 여기에 사진을 넣읍시다" />
+            <div class="newsimage" style="background-image:url('../static/imgs/MKW/nicheSim.jpg');">
             </div>
             <br />
     
