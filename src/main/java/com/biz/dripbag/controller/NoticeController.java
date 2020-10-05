@@ -13,7 +13,7 @@ public class NoticeController
 	public String home(Model model)
 	{
 		model.addAttribute("BODY", "NOTICE_HOME");
-		return "LJH/notice";
+		return "home";
 	}
 	
 }

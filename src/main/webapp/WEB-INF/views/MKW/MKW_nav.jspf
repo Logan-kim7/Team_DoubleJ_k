@@ -67,7 +67,7 @@ nav button:hover {
 	<button type="button" onclick="navOpen('main')" id="btn-main">메인화면</button>
 	<button type="button" onclick="navOpen('halloffame')" id="btn-hall">명예의전당</button>
 	<button type="button" onclick="navOpen('info')" id="btn-info">사이트 소개</button>
-	<button type="button" onclick="navOpen('issue')" id="btn-notice">공지사항</button>
+	<button type="button" onclick="navOpen('notice')" id="btn-notice">공지사항</button>
 </nav>
 
 <script>
@@ -78,8 +78,8 @@ nav button:hover {
 			 location.href="/dripbag/halloffame/"
 		} else if(NavSignal == "info"){
 			 location.href="/dripbag/info/"
-		} else if(NavSignal == "issue"){
-			 location.href="/dripbag/gtrand/"
+		} else if(NavSignal == "notice"){
+			 location.href="/dripbag/notice/"
 		}
 	}
 </script>
