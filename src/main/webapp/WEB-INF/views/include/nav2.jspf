@@ -1,0 +1,78 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value='${pageContext.request.contextPath}' />
+
+<style>
+nav {
+	display: flex;
+	height: 10%;
+}
+
+nav button {
+	background-color: #555;
+	color: white;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	height: 65px;
+	flex: 1;
+	font-size: 20px;
+	font: bold;
+}
+
+.tablink:hover {
+	background-color: #777;
+}
+
+.navinfo {
+	color: white;
+	display: none;
+	padding: 50px;
+	text-align: center;
+}
+
+#DripBag {
+	background-color: black;
+}
+
+#Bestcm {
+	background-color: gray;
+}
+
+#Notice {
+	background-color: black;
+}
+
+#issue {
+	background-color: gray;
+}
+
+/* 여기는
+네비바를
+위한 CSS 공간
+*/
+</style>
+
+<nav>
+	<button id ="main_view" type="button" onclick="openNav()">메인화면</button>
+	<button id ="rankings"  type="button" onclick="openNav()">명예의전당</button>
+	<button id ="notice"    type="button" onclick="openNav()">공지사항</button>
+	<button id ="best"      type="button" onclick="openNav()">주간베스트</button>
+</nav>
+<script>
+	var text = document.getElementById(this).value;
+	function openNav() 
+	{
+		if(text == "메인화면")
+			document.location.href = "${rootPath}"
+			
+		else if(text == "rankings")
+			document.location.href = "${rootPath}/main/"
+	}
+	
+</script>
+</html>
+
+

@@ -54,6 +54,10 @@ body {
 		<c:when test="${BODY == 'GOOGLE_HOME'}">
 			<%@ include file="/WEB-INF/views/KJM/googletrand.jspf"%>
 		</c:when>
+		
+		<c:when test="${BODY == 'NOTICE_HOME'}">
+			<%@ include file ="/WEB-INF/views/LJH/notice.jspf" %>
+		</c:when>
 
 
 		<c:otherwise>
