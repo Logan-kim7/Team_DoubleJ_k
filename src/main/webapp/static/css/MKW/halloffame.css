@@ -25,6 +25,10 @@
 	
 }
 
+#fametable tr {
+	transition:all 0.7s;
+}
+
 #fametable tr:hover {
 	background-color: #ddd;
 }
