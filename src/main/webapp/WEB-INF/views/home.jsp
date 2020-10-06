@@ -8,11 +8,12 @@
 <meta charset="UTF-8">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>Drip Bag Main page</title>
-  
-<scriptsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/cc60939e22.js"
 	crossorigin="anonymous"></script>
-  
+
 <style>
 * {
 	box-sizing: border-box;
@@ -32,8 +33,7 @@ body {
 	flex-flow: column;
 }
 
-footer{
-	position: static;
+footer {
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -48,9 +48,9 @@ footer{
 
 	<c:choose>
 		<c:when test="${BODY == 'INDEX_HOME'}">
-			<%@ include file="/WEB-INF/views/LJH/index.jspf" %>
+			<%@ include file="/WEB-INF/views/LJH/index.jspf"%>
 		</c:when>
-	
+
 		<c:when test="${BODY == 'MAIN_HOME'}">
 			<%@ include file="/WEB-INF/views/MKW/MKW_main.jspf"%>
 		</c:when>
