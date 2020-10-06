@@ -13,8 +13,9 @@ import lombok.ToString;
 @ToString
 public class GoogleVO {
 
-	String title;
-	String approxTraffic;
-	String googleDate;
-	String imgPath; 
+	private long Seq;
+	private String title;
+	private String approxTraffic;
+	private String googleDate;
+	private String imgPath; 
 }
