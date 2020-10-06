@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>Drip Bag Main page</title>
+<title>DripBag</title>
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -15,11 +15,6 @@
 	crossorigin="anonymous"></script>
 
 <style>
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
 
 html, body {
 	width: 100%;
@@ -33,11 +28,8 @@ body {
 	flex-flow: column;
 }
 
-footer {
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
+
+
 </style>
 
 </head>
@@ -73,6 +65,10 @@ footer {
 
 		<c:when test="${BODY == 'NOTICE_HOME'}">
 			<%@ include file="/WEB-INF/views/LJH/notice.jspf"%>
+		</c:when>
+		
+		<c:when test="${BODY == 'NOTICE_WRITE'}">
+			<%@ include file="/WEB-INF/views/LJH/notice_write.jspf"%>
 		</c:when>
 
 

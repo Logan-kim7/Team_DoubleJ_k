@@ -17,5 +17,6 @@ public class NoticeVO
 	private long seq;
 	private String date;
 	private String title;
+	private String writer;
 	private String content;
 }

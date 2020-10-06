@@ -4,5 +4,4 @@ import com.biz.dripbag.model.NoticeVO;
 
 public interface NoticeService extends GenericService<NoticeVO, Long>
 {
-
 }
