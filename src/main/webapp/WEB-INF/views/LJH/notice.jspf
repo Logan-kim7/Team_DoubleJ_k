@@ -10,9 +10,9 @@
 	{
 		$("#headh1").html("공지사항")
 		$("#headp").html("공지사항 관련 페이지")
-		$("#btn-main").css("background-color", "cornflowerblue")
-		$("#btn-hall").css("border-bottom-left-radius", "10px")
-		$("#btn-main").css("border-bottom-right-radius", "10px")
+		$("#btn-notice").css("background-color", "cornflowerblue")
+		$("#btn-notice").css("border-bottom-left-radius", "10px")
+		$("#btn-info").css("border-bottom-right-radius", "10px")
 		$("#navinfo").css("background-color", "black")
 
 		$(".notice_title").click(function() {
@@ -85,4 +85,12 @@
 		</div>
 	</section>
 </div>
+
+<script>
+$(document).ready(function() {
+	$("footer").css("position", "absolute")
+
+})
+</script>
+
 

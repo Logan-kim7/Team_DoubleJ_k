@@ -10,7 +10,7 @@ header {
 
 nav {
 	display: flex;
-	height: 10%;
+	height: 10% auto;
 }
 
 nav button {
