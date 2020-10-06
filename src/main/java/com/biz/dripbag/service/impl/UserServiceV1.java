@@ -17,7 +17,40 @@ import lombok.RequiredArgsConstructor;
 public class UserServiceV1 implements UserService 
 {
 
+	private final List<UserVO> userList;
 	private final UserDAO userDAO;
+	
+	@Autowired
+	public void temp()
+	{
+		UserVO userVO = new UserVO();
+		userVO.setUserId("1");
+		userVO.setUserPassword("1");
+		userList.add(userVO);
+	}
+	
+	@Override
+	public boolean check(UserVO userVO) 
+	{
+		for(UserVO vo : userList)
+		{
+			if(vo.getUserId().equals(userVO.getUserId()) &&  vo.getUserPassword().equals(userVO.getUserPassword()))
+				return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean joincheck(UserVO userVO) 
+	{
+		for(UserVO vo : userList)
+		{
+			if(vo.getUserId().equals(userVO.getUserId()))
+				return false;
+		}
+		userList.add(userVO);
+		return true;		
+	}
 	
 	@Override
 	public List<UserVO> selectAll() 

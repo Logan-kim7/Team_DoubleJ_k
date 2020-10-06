@@ -12,12 +12,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.biz.dripbag.crawling.CrwalingGooGle;
 import com.biz.dripbag.model.GoogleVO;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @RequestMapping(value = "/main")
 @Controller
 public class MainController {
 	
-	@Autowired
-	CrwalingGooGle googleService;
+
+	private static final CrwalingGooGle googleService = new CrwalingGooGle();
 	
 	
 	@RequestMapping(value = "/", method =  RequestMethod.GET)
@@ -26,10 +29,7 @@ public class MainController {
 		List<GoogleVO> googleList = googleService.googleTrend();
 		
 		for(GoogleVO one : googleList)
-		{
-			System.out.println(one.getTitle());
-			System.out.println(one.getSeq());
-		}
+			System.out.print(one.getTitle() + one.getSeq() + "\n");
 		
 		
 		model.addAttribute("GOOGLE", googleList);
