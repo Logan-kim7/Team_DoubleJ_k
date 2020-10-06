@@ -14,6 +14,7 @@
 		$("#btn-notice").css("border-bottom-left-radius", "10px")
 		$("#btn-info").css("border-bottom-right-radius", "10px")
 		$("#navinfo").css("background-color", "black")
+		$("footer").css("position", "absolute")
 
 		$(".notice_title").click(function() {
 			var seq = $(this).data("seq");
@@ -85,12 +86,3 @@
 		</div>
 	</section>
 </div>
-
-<script>
-$(document).ready(function() {
-	$("footer").css("position", "absolute")
-
-})
-</script>
-
-

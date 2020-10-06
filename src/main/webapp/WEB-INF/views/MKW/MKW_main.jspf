@@ -45,16 +45,9 @@
             <fieldset>
           <legend><h2>Google Trand</h2></legend>
           <ol>
-              <li><a href="#">1</a></li>
-              <li><a href="#">아이템 2</a></li>
-              <li><a href="#">목록의 아이템 3</a></li>
-              <li><a href="#">있는 목록의 아이템 4</a></li>
-              <li><a href="#">순서 있는 목록의 아이템 5</a></li>
-              <li><a href="#">순서 있는 목록의 아이템 6</a></li>
-              <li><a href="#">순서 있는 목록의 아이템 7</a></li>
-              <li><a href="#">순서 있는 목록의 아이템 8</a></li>
-              <li><a href="#">순서 있는 목록의 아이템 9</a></li>
-              <li><a href="#">순서 있는 목록의 아이템 10</a></li>
+          	<c:forEach items="${GOOGLE}" var="google">
+              		<li><a href="#">${google.title}</a></li>
+             </c:forEach>
           </ol>
         </fieldset>
         </div>
