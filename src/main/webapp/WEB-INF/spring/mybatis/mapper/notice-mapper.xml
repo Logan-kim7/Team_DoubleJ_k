@@ -3,13 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
- <mapper namespace = "com.biz.dripbag.mapper.UserDAO">
-	<select id="selectAll" resultType="userVO">
-		select * from tbl_users
+ <mapper namespace = "com.biz.dripbag.mapper.NoticeDAO">
+	<select id="selectAll" resultType="noticeVO">
 	</select>
 	
-	<select id="findById">
-		select * from tbl_users where = #{useremail}
+	<select id="findById" resultType="noticeVO">
 	</select>
 	
 	<insert id="insert">
