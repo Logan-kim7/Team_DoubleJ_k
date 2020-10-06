@@ -3,28 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 <style>
-
-/* 여기는
-   text 콘텐츠를
-    위한 CSS 공간*/
-#legend {
-	color: black;
-	text-align: center;
-	font-size: 25px;
-	font: bolder;
-	text-align: center;
-}
-
-fieldset {
-	border: 5px solid black;
-	border-radius: 5px;
-	text-align: center;
-	color: black;
-}
-
-/* 여기는
-   text 콘텐츠를
-    위한 CSS 공간*/
 #main_img {
 	background-size: cover;
 }
@@ -98,12 +76,15 @@ fieldset {
 
 .legend {
 	color: white;
-	font-size: 20px;
+	font-size: 30px;
 	font-weight: bolder;
+	padding: 0px 40px;
 }
 
 fieldset {
-	border: 3px solid #ddd;
+	margin: 30px 0px;
+	border: 8px solid #ddd;
+	border-radius: 3px;
 	padding: 70px;
 	display: inline-block;
 	width: 70%;
@@ -120,7 +101,7 @@ fieldset {
 #how_list li {
 	padding: 10px;
 	font-size: 25px;
-	border-bottom: 3px dashed rgba(255,255,255,0.7);
+	border-bottom: 3px dashed rgba(255, 255, 255, 0.7);
 	font-weight: bolder;
 }
 </style>
@@ -181,11 +162,14 @@ fieldset {
 		$("#navinfo").css("background-color", "black")
 		$("#headh1").html("사이트 소개")
 		$("#headp").html("도데체 왜? 만들어졌을까?")
-		$("#btn-hall").css("border-bottom-right-radius","10px")
-		$("#btn-info").css("background-color","cornflowerblue")
-		$("#btn-info").css("border-bottom-left-radius","10px")
-		$("#btn-info").css("border-bottom-right-radius","10px")
-		$("#btn-notice").css("border-bottom-left-radius","10px")
+		
+		$("nav").css("background-color","black")
+		
+		$("#btn-hall").css("border-bottom-right-radius", "10px")
+		$("#btn-info").css("background-color", "cornflowerblue")
+		$("#btn-info").css("border-bottom-left-radius", "10px")
+		$("#btn-info").css("border-bottom-right-radius", "10px")
+		$("#btn-notice").css("border-bottom-left-radius", "10px")
 	})
 </script>
 

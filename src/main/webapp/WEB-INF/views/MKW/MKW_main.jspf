@@ -45,8 +45,8 @@
             <fieldset>
           <legend><h2>Google Trand</h2></legend>
           <ol>
-          	<c:forEach items="${GOOGLE}" var="google">
-              		<li><a href="#">${google.title}</a></li>
+          	<c:forEach items="${GOOGLE}" var="google" begin="0" end="9">
+              		<li><a href="${rootPath}/gtrand/">${google.seq + 1}위 ${google.title}</a></li>
              </c:forEach>
           </ol>
         </fieldset>
@@ -58,6 +58,9 @@
 	$(document).ready(function() {
 		$("#headh1").html("메인화면")
 		$("#headp").html("여기는 메인화면 이지롱 ><")
+		
+		$("nav").css("background-color","pink")
+		
 		$("#btn-main").css("background-color","cornflowerblue")
 		$("#btn-hall").css("border-bottom-left-radius","10px")
 		$("#btn-main").css("border-bottom-right-radius","10px")
