@@ -16,26 +16,25 @@
 		<property name="username" value="${oracle.username}"/>
 		<property name="password" value="${oracle.password}"/>
 	</bean>
-	<!-- sqlSessionFactory -->
-	<bean id="sqlFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="ds"/>
-		<property name="mapperLocations" value="/WEB-INF/spring/mybatis/mapper/*-mapper.xml"/>
-		<property name="typeAliasesPackage" value="com.biz.book.model"/>
-	</bean>
 	
-	 
-	<!-- sqlSessionTemplate -->
-	<!--
+ 
+	<!-- sqlSessionTemplate 
 	<bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlFactory" index="0"/>
 	</bean>
-	 -->
+	-->	
+	
+	<bean id="sqlFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"/>
+		<property name="mapperLocations" value="/WEB-INF/spring/mybatis/mapper/*-mapper.xml"/>
+		<property name="typeAliasesPackage" value="com.biz.dripbag.model"/>
+	</bean>
+	
 	 <tx:annotation-driven/>
 	 <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 	 	<property name="dataSource" ref="ds"/>
 	 </bean>
 
-	
 	<!-- mybatis-scan -->
 	<!-- <mybatis-spring:scan base-package="com.biz.shop.persistence"/> -->
 	<mybatis-spring:scan base-package="com.biz.dripbag.mapper"/>

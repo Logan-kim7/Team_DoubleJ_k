@@ -2,9 +2,14 @@ package com.biz.dripbag.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
 import com.biz.dripbag.model.NoticeVO;
 import com.biz.dripbag.service.NoticeService;
 
+@Qualifier("NoticeServiceV1")
+@Service
 public class NoticeServiceV1 implements NoticeService 
 {
 	

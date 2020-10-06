@@ -15,7 +15,6 @@ import lombok.ToString;
 public class NoticeVO 
 {
 	private long seq;
-	private String writer;
 	private String date;
 	private String title;
 	private String content;
