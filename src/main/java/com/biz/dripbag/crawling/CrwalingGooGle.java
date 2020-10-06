@@ -30,14 +30,14 @@ public class CrwalingGooGle
 			Document doc = Jsoup.connect(url).get();
 			Elements trendList = doc.select("item");
 		
-			long seq = 1;
+			long seq = 0;
 			GoogleVO googleVO;
 			List<GoogleVO> googleList = new ArrayList<GoogleVO>();
 			
 			for(Element one : trendList)
 			{
 				googleVO = new GoogleVO();
-				googleVO.setSeq(seq);  
+				googleVO.setSeq(seq);
 				googleVO.setTitle(one.select("title").text());
 				googleVO.setApproxTraffic(one.getElementsByTag("ht:approx_traffic").text());
 				googleVO.setGoogleDate(one.getElementsByTag("pubDate").text());

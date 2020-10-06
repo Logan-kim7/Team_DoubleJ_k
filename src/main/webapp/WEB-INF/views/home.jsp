@@ -68,7 +68,7 @@ footer {
 		</c:when>
 
 		<c:when test="${BODY == 'GOOGLE_HOME'}">
-			<%@ include file="/WEB-INF/views/KJM/googletrand.jspf"%>
+			<%@ include file="/WEB-INF/views/MKW/googletrand.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'NOTICE_HOME'}">

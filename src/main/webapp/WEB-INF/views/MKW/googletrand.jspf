@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
 <!DOCTYPE html>
-<html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +14,13 @@
 
 </style>
 </head>
-<body>
 
+	<section id="trand-bg"  
+	style="background-image: url('../static/imgs/KJM/생각.jpg')">
       <div id="headline">
         <fieldset id="headset">
           <legend id="headlegend">선택한 주제</legend>
-          	<p id="googletrand">호옹이!!</p>
+          	<p id="googletrand" items="${TITLE}" var="title">${title.title}</p>
         </fieldset>
       </div>
 
@@ -144,17 +145,31 @@
         </div>
       </div>
     </div>
+</section>
 
-</body>
 
 <script>
 	$(document).ready(function() {
-		$("#headh1").html("원래는 공지사항 근데 손대기 싫어서 구글트랜드 작성화면")
-		$("#headp").html("가족과 선생님과 동기 형누나들이 건강하고 내 머리가 좀 덜 멍청해지기를 기원")
-		$("#btn-notice").css("background-color","cornflowerblue")
-		$("#btn-notice").css("border-bottom-left-radius","10px")
-		$("#btn-info").css("border-bottom-right-radius","10px")
+		$("#headh1").html("구글 트랜드 검색어")
+		$("#headh1").css("style=background-image: url('../static/imgs/KJM/구글이미지.jpg')")
+		$("#headp").html("구글트랜드 검색어를 활용하여 댓글을 작성해보자")
+		
+		
+		
+		$("#btn-main").css("background-color","#555")
+		$("#btn-hall").css("background-color","#555")
+		$("#btn-info").css("background-color","#555")
+		$("#btn-notice").css("background-color","#555")
 		$("#navinfo").css("background-color", "gray")
 	})
+	
+	$("#throwit").click(function() {
+		alert("작성을 그만둘까요? ><");
+		document.location.href = "/dripbag/main/"
+	})
+	
+	$("#addit").click(function() {
+		alert("서버에 추가됩니다 √");
+		document.location.href = "/dripbag/main/"
+	})
 </script>
-</html>

@@ -28,7 +28,7 @@ public class MainController {
 		for(GoogleVO one : googleList)
 		{
 			System.out.println(one.getTitle());
-			System.out.println(one.getSeq());
+			System.out.print(one.getSeq() + "\n");
 		}
 		
 		
