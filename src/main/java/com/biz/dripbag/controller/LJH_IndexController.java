@@ -6,15 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-
 @Controller
-public class IndexController 
-{
-	
+public class LJH_IndexController 
+{	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home() 
+	public String home(Model model) 
 	{
-		return "LJH/index";
+		model.addAttribute("BODY","INDEX_HOME");		
+		return "home";
 	}
 
 }

@@ -5,11 +5,11 @@
   
  <mapper namespace = "com.biz.dripbag.mapper.UserDAO">
 	<select id="selectAll" resultType="userVO">
-		select * from tbl_users
+		select * from tbl_notice
 	</select>
 	
-	<select id="findById">
-		select * from tbl_users where = #{useremail}
+	<select id="findById" resultType="userVO">
+		select * from tbl_notice where = #{useremail}
 	</select>
 	
 	<insert id="insert">

@@ -9,28 +9,34 @@
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
-	<!--  dataSource -->
-	<bean id = "oracle_ds" class = "org.apache.commons.dbcp2.BasicDataSource"> <!--  bean : Spring Framework를 사용하는 프로젝트에서 클래스를 객체로 생성하는 코드 -->
-		<property name="driverClassName" value = "oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value = "jdbc:oracle:thin:@localhost:1521:xe"/>
-		<property name="username" value = "user1"/>
-		<property name="password" value = "user1"/>	
+	<!-- dataSource -->
+	<bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="username" value="${oracle.username}"/>
+		<property name="password" value="${oracle.password}"/>
 	</bean>
-
 	<!-- sqlSessionFactory -->
-	<bean id ="sqlFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="oracle_ds"/>
+	<bean id="sqlFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"/>
 		<property name="mapperLocations" value="/WEB-INF/spring/mybatis/mapper/*-mapper.xml"/>
-		<property name="configLocation" value="/WEB-INF/spring/mybatis/mybatis-config.xml"/>
+		<property name="typeAliasesPackage" value="com.biz.book.model"/>
 	</bean>
 	
-	
-	<!-- sqlSessionTemplate -->	
+	 
+	<!-- sqlSessionTemplate -->
+	<!--
 	<bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlFactory" index="0"/>
 	</bean>
+	 -->
+	 <tx:annotation-driven/>
+	 <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	 	<property name="dataSource" ref="ds"/>
+	 </bean>
+
 	
 	<!-- mybatis-scan -->
 	<!-- <mybatis-spring:scan base-package="com.biz.shop.persistence"/> -->
-	<mybatis-spring:scan base-package="com.biz.dripbag.model.DAO"/>
+	<mybatis-spring:scan base-package="com.biz.dripbag.mapper"/>
 </beans>
