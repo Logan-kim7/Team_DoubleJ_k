@@ -23,13 +23,19 @@
 
 .notice_ul li div{
 	float: left;
-	width: 25%;
 	height: 100%;
+	width: 25%;
 	
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
+.notice_ul li div
+{
+	text-overflow: ellipsis;
+}
+
 
 .notice_ul li:hover {
 		cursor: pointer;

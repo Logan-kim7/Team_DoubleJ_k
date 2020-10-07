@@ -22,24 +22,34 @@ public class NoticeServiceV1 implements NoticeService
 	public List<NoticeVO> selectAll() 
 	{
 		List<NoticeVO> tempList = new ArrayList<NoticeVO>();
-		for(int j = noticeList.size()-1; j >= 0; --j)
+		for(int j = noticeList.size()-1; j > 0; --j)
 			tempList.add(noticeList.get(j));
 	
 		return tempList;
 	}
 
 	@Override
-	public NoticeVO findById(Long id) {
-		// TODO Auto-generated method stub
+	public NoticeVO findById(Long id) 
+	{		
+		NoticeVO noticeVO = new NoticeVO();		
+		for(int i=0; i < noticeList.size(); ++i)
+		{
+			if(noticeList.get(i).getSeq() == id)
+			{
+				noticeVO = noticeList.get(i);
+				return noticeVO;
+			}
+			++i;
+		}
 		return null;
 	}
 
 	@Override
 	public int insert(NoticeVO vo) 
 	{	
-		NoticeVO noticevo = vo;
-		noticevo.setSeq(noticeList.size() + 1);
-		noticeList.add(noticevo);
+		NoticeVO noticeVO = vo;
+		noticeVO.setSeq(noticeList.size() + 1);
+		noticeList.add(noticeVO);
 		return 0;
 	}
 

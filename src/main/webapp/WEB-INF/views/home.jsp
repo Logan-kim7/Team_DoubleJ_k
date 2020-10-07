@@ -21,15 +21,10 @@ html, body {
 	height: 100%;
 	display: flex;
 	flex-flow: column;
+	
+	margin: 0;
+	padding: 0;
 }
-
-body {
-	display: flex;
-	flex-flow: column;
-}
-
-
-
 </style>
 
 </head>
@@ -71,6 +66,9 @@ body {
 			<%@ include file="/WEB-INF/views/LJH/notice_write.jspf"%>
 		</c:when>
 
+		<c:when test="${BODY == 'NOTICE_DETAIL'}">
+			<%@ include file="/WEB-INF/views/LJH/notice_detail.jspf"%>
+		</c:when>
 
 		<c:otherwise>
 

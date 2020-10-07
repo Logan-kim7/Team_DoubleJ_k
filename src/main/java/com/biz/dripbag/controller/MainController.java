@@ -30,10 +30,7 @@ public class MainController {
 		
 		for(GoogleVO one : googleList)
 			System.out.print(one.getTitle() + one.getSeq() + "\n");
-		{
-			System.out.println(one.getTitle());
-			System.out.print(one.getSeq() + "\n");
-		}
+
 		
 		
 		model.addAttribute("GOOGLE", googleList);
