@@ -1,9 +1,14 @@
 @charset "UTF-8";
 
-#notice_write_body{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+body{
+	min-height: 100%;
+}
+
+footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 #notice_write_body form{

@@ -5,13 +5,10 @@
 
 <link rel="stylesheet" href="${rootPath}/static/css/LJH/notice_write.css?ver=002">
 <script type="text/javascript">
-$("footer").css("position", "static");
 $(function()
 {
-	$("#notice_write_clear").click(function()
-	{
-		document.location.href = "${rootPath}/notice/";
-	})
+	$("#notice_write_clear").click(function() 
+		{ document.location.href = "${rootPath}/notice/"; })
 })
 </script>
 
