@@ -18,11 +18,12 @@ public class NoticeServiceV1 implements NoticeService
 {	
 	private final List<NoticeVO> noticeList;
 	
+	
 	@Override
 	public List<NoticeVO> selectAll() 
 	{
 		List<NoticeVO> tempList = new ArrayList<NoticeVO>();
-		for(int j = noticeList.size()-1; j > 0; --j)
+		for(int j = noticeList.size()-1; j >= 0; --j)
 			tempList.add(noticeList.get(j));
 	
 		return tempList;
@@ -39,7 +40,6 @@ public class NoticeServiceV1 implements NoticeService
 				noticeVO = noticeList.get(i);
 				return noticeVO;
 			}
-			++i;
 		}
 		return null;
 	}
