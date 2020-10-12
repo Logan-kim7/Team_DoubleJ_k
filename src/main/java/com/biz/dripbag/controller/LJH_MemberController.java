@@ -38,7 +38,7 @@ public class LJH_MemberController
 		
 		out.println("<script language='javascript'>");
 		out.println("alert('로그인 해주세요')");
-		out.println("document.location.href='/oneday/user/login'");
+		out.println("document.location.href='/dripbag/'");
 		out.println("</script>");
 		out.flush();
 		out.close();
