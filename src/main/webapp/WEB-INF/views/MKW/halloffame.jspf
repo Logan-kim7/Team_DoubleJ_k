@@ -1,176 +1,165 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
+<c:set var="rootPath" value='${pageContext.request.contextPath}' />
 <!DOCTYPE html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="${rootPath}/static/css/MKW/halloffame.css?ver=1"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/c1d8b25418.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="${rootPath}/static/css/MKW/halloffame.css?ver=4" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/c1d8b25418.js"
+	crossorigin="anonymous"></script>
 <title>Insert title here</title>
 <style>
-	#fame_interface{
+#fame_interface {
 	text-align: center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	width: 100%;
 	height: 80%%;
 	/*opacity: 1;  배경 흐리게하는 css */
-	 
-	}
-	
-	.famelist p{
-	 color: white;
-	 font-size: 50px;
-	 font-weight: bold;
-	 margin-bottom: 15px;
-	 
-	
-	}
-
-
-.pagination{
-	font-weight:bolder;
-	font-size: 20px;  
-
 }
 
+.famelist p {
+	color: white;
+	font-size: 50px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
 
+.pagination {
+	font-weight: bolder;
+	font-size: 20px;
+}
 </style>
 <script>
+	$(document).ready(function() {
 
-$(document).ready(function(){
+		$("#Notice").css("display", "inline");
+		$("#defaultOpen1").css("background-color", "gray");
+		$("#defaultOpen2").css("background-color", "gray");
+		$("#defaultOpen5").css("background-color", "gray");
 
-	$("#Notice").css("display","inline");
-	$("#defaultOpen1").css("background-color","gray");
-	$("#defaultOpen2").css("background-color","gray");
-	$("#defaultOpen5").css("background-color","gray");	
-	
-});
-
-
-
-
+	});
 </script>
 </head>
 
-	      <section id="fame_interface" 
-	      style="background-image: url('../static/imgs/KJM/너의이름은.jpg')">
+<section id="fame_interface"
+	style="background-image: url('../static/imgs/KJM/너의이름은.jpg')">
 
-        <div class="famelist">
-          <p>Hall of Best Dripper</p>
-       
-        <table id="fametable">
-          <tr>
-            <th>랭킹</th>
-            <th>작성자</th>
-            <th>사자성어</th>
-            <th>점수</th>
-            <th>작성일</th>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          
-        </table>
-        
-        <div class="pagination">
-          <a href="#">&laquo;</a>
-          <a href="#"class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">6</a>
-          <a href="#">&raquo;</a>
+	<div class="famelist">
+		<p>Hall of Best Dripper</p>
 
-          <div id="serch"><input type="text" placeholder="검색할 사자성어"></div>
-        </div>
+		<table id="fametable">
+			<tr>
+				<th>랭킹</th>
+				<th>작성자</th>
+				<th>사자성어</th>
+				<th>점수</th>
+				<th>작성일</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>쩔쩔이</td>
+				<td>태양만세</td>
+				<td>999</td>
+				<td>2021-01-01</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>농농이</td>
+				<td>쩔쩔이꺼</td>
+				<td>91</td>
+				<td>1532-08-01</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>빙빙이</td>
+				<td>내가할려</td>
+				<td>83</td>
+				<td>1532-08-02</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>희</td>
+				<td>고했는데</td>
+				<td>79</td>
+				<td>2025-02-22</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>엉이</td>
+				<td>인간녀석</td>
+				<td>75</td>
+				<td>2025-02-22</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>선생</td>
+				<td>만사귀찮</td>
+				<td>74</td>
+				<td>2025-02-22</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>연화</td>
+				<td>밥좀먹어</td>
+				<td>69</td>
+				<td>2025-02-22</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>친구</td>
+				<td>하하호호</td>
+				<td>61</td>
+				<td>2025-02-22</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>자삼이</td>
+				<td>난다섯글자</td>
+				<td>55</td>
+				<td>2025-02-22</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>세인이</td>
+				<td>핵쟁이다</td>
+				<td>42</td>
+				<td>2025-02-22</td>
+			</tr>
 
-        
-      </div>
-      </section>
+		</table>
+
+		<div class="pagination">
+			<a href="#">&laquo;</a> <a href="#" class="active">1</a> <a href="#">2</a>
+			<a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a>
+			<a href="#">&raquo;</a>
+
+			<div id="serch">
+				<input type="text" placeholder="검색할 사자성어">
+			</div>
+		</div>
+
+
+	</div>
+</section>
 <script>
 	$(document).ready(function() {
 		$("#navinfo").css("background-color", "black")
 		$("#headh1").html("명예의 전당")
 		$("#headp").html("여기는 고득점자를 박제하는 페이지")
-		
-		$("nav").css("background-color","navy")
-		
-		$("#btn-main").css("border-bottom-right-radius","10px")
-		$("#btn-hall").css("background-color","cornflowerblue")
-		$("#btn-hall").css("border-bottom-left-radius","10px")
-		$("#btn-hall").css("border-bottom-right-radius","10px")
-		$("#btn-info").css("border-bottom-left-radius","10px")
+
+		$("nav").css("background-color", "navy")
+
+		$("#btn-main").css("border-bottom-right-radius", "10px")
+		$("#btn-hall").css("background-color", "cornflowerblue")
+		$("#btn-hall").css("border-bottom-left-radius", "10px")
+		$("#btn-hall").css("border-bottom-right-radius", "10px")
+		$("#btn-info").css("border-bottom-left-radius", "10px")
 	})
 </script>
