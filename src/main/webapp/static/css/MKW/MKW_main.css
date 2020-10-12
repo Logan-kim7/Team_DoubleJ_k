@@ -42,7 +42,7 @@ section#main_content {
 
 #left_content p {
 	padding: 10px;
-	border: 2px solid black;
+	border: 2px solid white;
 }
 
 .newsimage {
@@ -67,15 +67,15 @@ section#main_content {
 
 fieldset {
 	display: inline-block;
-	border: 3px solid black;
+	border: 3px solid white;
 	border-radius: 8px;
 	width: 80%;
 	height: auto;
-	color: black;
+	color: white;
 }
 
 legend {
-	color: black;
+	color: white;
 	font-size: 25px;
 	font-weight: bold;
 	padding: 0px 50px;
@@ -103,7 +103,9 @@ legend {
 	width: 20%;
 	height: 100%;
 	text-align: center;
-	font-size: 40px;
+	font-size: 70px;
+	font-weight: bolder;
+	
 }
 
 .big_or {
@@ -139,6 +141,8 @@ legend {
 
 a {
 	text-decoration: none;
+	color: white;
+	font-weight: bolder;
 }
 
 ol {

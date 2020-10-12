@@ -17,7 +17,7 @@
 </head>
 <body>
 	<section id="main_content"
-		style="background-image: url('../static/imgs/MKW/pastel.png')">
+		style="background-image: url('../static/imgs/KJM/heand.gif')">
 		<aside id="left_content">
 			<a href="${rootPath}/news/"><fieldset>
 				<legend>
@@ -29,7 +29,7 @@
 				<br />
 
 				<div class="newstitle">
-					<span><h2>(칼럼) 세계적인 석학 그가 인용한 철학자의 한마디는?</h2></span>
+					<span><h2><a href="${rootPath}/news/">(칼럼) 세계적인 석학 그가 인용한 철학자의 한마디는?</a></h2></span>
 				</div>
 
 				<div class="newsstory">

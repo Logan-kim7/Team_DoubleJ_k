@@ -69,6 +69,10 @@ html, body {
 		<c:when test="${BODY == 'NOTICE_DETAIL'}">
 			<%@ include file="/WEB-INF/views/LJH/notice_detail.jspf"%>
 		</c:when>
+		
+		<c:when test="${BODY == 'NEWS_DETAIL'}">
+			<%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
+		</c:when>
 
 		<c:otherwise>
 
