@@ -19,7 +19,7 @@
 	<section id="main_content"
 		style="background-image: url('../static/imgs/MKW/pastel.png')">
 		<aside id="left_content">
-			<fieldset>
+			<a href="${rootPath}/news/"><fieldset>
 				<legend>
 					<h2>핫! 늬우스</h2>
 				</legend>
@@ -39,7 +39,7 @@
 						감정을 타파하기 위한 자아 성찰에서는 부정적인 요소를 파악하려고 애쓰는것 보다 거시적으로 물 흐르는듯이 삶 그 자체를
 						받아들이는게 부정적인고 악한 마음에서 빠져나오는 지름길이다</p>
 				</div>
-			</fieldset>
+			</fieldset></a>
 		</aside>
 
 		<section id="center_content">
