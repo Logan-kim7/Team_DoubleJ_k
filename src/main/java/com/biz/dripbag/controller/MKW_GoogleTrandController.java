@@ -20,7 +20,7 @@ public class MKW_GoogleTrandController {
 	CrwalingGooGle gServ;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) throws IOException {
+	public String home(Model model, long seq) throws IOException {
 
 		List<GoogleVO> googleList = gServ.googleTrend();
 

@@ -40,6 +40,11 @@ section#main_content {
 	text-align: center;
 }
 
+#left_content p {
+	padding: 10px;
+	border: 2px solid black;
+}
+
 .newsimage {
 	margin-top: 40px;
 	display: inline-block;
