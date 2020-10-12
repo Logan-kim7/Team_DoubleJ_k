@@ -26,6 +26,7 @@
 }
 
 #fametable tr {
+	color: wheat;
 	transition:all 0.7s;
 }
 

@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="${rootPath}/static/css/MKW/googletrand.css?ver=1"/>
+    <link rel="stylesheet" href="${rootPath}/static/css/MKW/googletrand.css?ver=0"/>
     <script src="https://code.jquery.com/jquery-latest.min.js%22%3E"></script>
     <script src="https://kit.fontawesome.com/c1d8b25418.js" crossorigin="anonymous"></script>
 <title>Insert title here</title>
@@ -16,7 +16,7 @@
 </head>
 
 	<section id="trand-bg"  
-	style="background-image: url('../static/imgs/KJM/생각.jpg')">
+	style="background-image: url('..')">
       <div id="headline">
         <fieldset id="headset">
           <legend id="headlegend">선택한 주제</legend>

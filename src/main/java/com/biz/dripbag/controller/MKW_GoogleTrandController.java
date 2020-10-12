@@ -20,15 +20,13 @@ public class MKW_GoogleTrandController {
 	CrwalingGooGle gServ;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model, long seq) throws IOException {
+	public String home(Model model) throws IOException {
 
 		List<GoogleVO> googleList = gServ.googleTrend();
 
 		String title = "";
-		for (int i = 0; i < 10; i++) {
-			title = googleList.get(i).getTitle().toString();
-			System.out.println(title);
-		}
+		title = googleList.get(1).getTitle().toString();
+		System.out.println(title);
 
 		model.addAttribute("TITLE", googleList);
 		model.addAttribute("BODY", "GOOGLE_HOME");
