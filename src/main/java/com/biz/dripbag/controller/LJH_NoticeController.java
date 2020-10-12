@@ -54,6 +54,7 @@ public class LJH_NoticeController
 	public String write(Model model, @ModelAttribute("noticeVO") NoticeVO vo)
 	{
 		noticeService.insert(vo);
+		System.out.println(vo.toString());
 		return "redirect:/notice";
 	}
 	

@@ -1,6 +1,11 @@
 package com.biz.dripbag.controller;
 
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,13 +25,24 @@ public class LJH_MemberController
 	private final UserService userService;
 	
 	@RequestMapping(value ="/check", method=RequestMethod.POST)
-	public String check(@ModelAttribute("userVO") UserVO userVO, Model model)
+	public String check(@ModelAttribute("userVO") UserVO userVO, Model model, HttpServletResponse response) throws IOException
 	{
 		if(userService.check(userVO) == true)
-		{
 			return "redirect:/main/";
-		}
 
+		
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out;
+		out = response.getWriter();
+		
+		out.println("<script language='javascript'>");
+		out.println("alert('로그인 해주세요')");
+		out.println("document.location.href='/oneday/user/login'");
+		out.println("</script>");
+		out.flush();
+		out.close();
+		
 		return "redirect:/";
 	}
 	
