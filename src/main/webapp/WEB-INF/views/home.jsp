@@ -58,17 +58,7 @@ html, body {
 			<%@ include file="/WEB-INF/views/MKW/googletrand.jspf"%>
 		</c:when>
 
-		<c:when test="${BODY == 'NOTICE_HOME'}">
-			<%@ include file="/WEB-INF/views/LJH/notice.jspf"%>
-		</c:when>
-		
-		<c:when test="${BODY == 'NOTICE_WRITE'}">
-			<%@ include file="/WEB-INF/views/LJH/notice_write.jspf"%>
-		</c:when>
 
-		<c:when test="${BODY == 'NOTICE_DETAIL'}">
-			<%@ include file="/WEB-INF/views/LJH/notice_detail.jspf"%>
-		</c:when>
 
 		<c:otherwise>
 

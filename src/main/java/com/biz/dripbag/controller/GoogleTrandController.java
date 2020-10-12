@@ -14,7 +14,7 @@ import com.biz.dripbag.model.GoogleVO;
 
 @RequestMapping(value = "/gtrand")
 @Controller
-public class MKW_GoogleTrandController {
+public class GoogleTrandController {
 
 	@Autowired
 	CrwalingGooGle gServ;
