@@ -4,11 +4,12 @@
   선정한 주제를
   위한 CSS공간*/
 #trand-bg {
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  width: 100%;
-  height: 100%;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100% auto;
+
 }
 
 #headline {
@@ -40,9 +41,11 @@
   선정한 주제를
   위한 CSS공간*/
 #listcustomers {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+	text-align: center;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 #listcustomers td,
@@ -60,11 +63,15 @@
 }
 
 #listcustomers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: gray;
-  color: white;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: gray;
+	color: white;
+}
+
+tbody {
+	width: 100%;
 }
 
 .pagination {
@@ -98,14 +105,16 @@ input {
   순위표와 입력창을
   위한 CSS공간*/
 #user_bord {
-  text-align: center;
+	display:inline-block;
+	text-align: center;
+	width: 100%;
+	height: auto;
 }
 
 .cmlist {
-  display: inline-block;
-  text-align: center;
-  width: 70%;
-  height: 100%;
+	display: inline-block;
+	text-align: center;
+	width: 70%;
 }
 
 .cmlist h2 {
