@@ -24,7 +24,7 @@ public class Dripbaginterceptor extends HandlerInterceptorAdapter
 		if(request.getSession().getAttribute("login_registration") == null)
 		{
 			log.debug("인터셉터 했음");
-			response.sendRedirect("/dripbag/");
+			sService.interceptorLogin(response, "로그인 해주세요");
 			return false;
 		}
 		return true;
