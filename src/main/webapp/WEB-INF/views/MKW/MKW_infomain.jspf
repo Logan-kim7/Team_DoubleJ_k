@@ -150,7 +150,7 @@ fieldset {
 			</div>
 		</fieldset>
 		<div id="str_box">
-			<a href="${rootPath}/main/"><button class="infobt" type="button">start</button></a>
+			<button class="infobt" type="button">start</button>
 		</div>
 
 

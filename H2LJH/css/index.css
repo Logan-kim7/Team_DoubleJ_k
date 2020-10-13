@@ -37,8 +37,8 @@ form input, #singin, #singup{
     text-align: center;
 }
 
-#id_input  { top: 45%; }
-#pwd_input { top: 50%; }
+#id_input  { top: 55%; }
+#pwd_input { top: 60%; }
 #singin    { top  : 75%; padding: 0;}
 #singup    { top  : 79%; padding: 0;}
 
