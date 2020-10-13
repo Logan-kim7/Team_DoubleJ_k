@@ -231,25 +231,26 @@ input {
 	margin-top: 0px auto;
 	width: 200px;
 	height: 50px;
+	
 }
 
 .dropdown {
-	position: relative;
-	display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px gray;
-	padding: 12px 16px;
-	z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px gray;
+  padding: 12px 16px;
+  z-index: 1;
 }
 
 .dropdown:hover .dropdown-content {
-	display: block;
+  display: block;
 }
 /* 여기는 search_box 위한 
     css공간 */
@@ -274,10 +275,12 @@ input {
 			</div>
 
 			<div class="newsstory">
-				<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Aliquid, fuga qui. Atque beatae est ex expedita, repellendus autem,
-					illum similique cum quibusdam uck, veritatis nam voluptates modi
-					inventore tempore molestiae id!</h3>
+				<h3>
+					내에에에에에에용 내용용 <br /> Lorem ipsum dolor sit amet consectetur
+					adipisicing elit. Aliquid, fuga qui. Atque beatae est ex expedita,
+					repellendus autem, illum similique cum quibusdam fuck, veritatis
+					nam voluptates modi inventore tempore molestiae id!
+				</h3>
 			</div>
 		</fieldset>
 	</section>
@@ -305,81 +308,79 @@ input {
 
 			<table id="listcustomers">
 				<tr>
-					<th>랭킹</th>
 					<th>작성자</th>
-					<th>사자성어</th>
-					<th>점수</th>
+					<th>내용</th>
+					<th>좋아요</th>
+					<th>싫어요</th>
 					<th>작성일</th>
 				</tr>
 				<tr>
-					<td>1</td>
-					<td>쩔쩔이</td>
-					<td>태양만세</td>
-					<td>999</td>
-					<td>2021-01-01</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>2</td>
-					<td>농농이</td>
-					<td>쩔쩔이꺼</td>
-					<td>91</td>
-					<td>1532-08-01</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>3</td>
-					<td>빙빙이</td>
-					<td>내가할려</td>
-					<td>83</td>
-					<td>1532-08-02</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>4</td>
-					<td>희</td>
-					<td>고했는데</td>
-					<td>79</td>
-					<td>2025-02-22</td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>5</td>
-					<td>엉이</td>
-					<td>인간녀석</td>
-					<td>75</td>
-					<td>2025-02-22</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>7</td>
-					<td>선생</td>
-					<td>만사귀찮</td>
-					<td>74</td>
-					<td>2025-02-22</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>6</td>
-					<td>연화</td>
-					<td>밥좀먹어</td>
-					<td>69</td>
-					<td>2025-02-22</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>8</td>
-					<td>친구</td>
-					<td>하하호호</td>
-					<td>61</td>
-					<td>2025-02-22</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>9</td>
-					<td>자삼이</td>
-					<td>난다섯글자</td>
-					<td>55</td>
-					<td>2025-02-22</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<td>10</td>
-					<td>세인이</td>
-					<td>핵쟁이다</td>
-					<td>42</td>
-					<td>2025-02-22</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 			</table>
 
@@ -392,13 +393,15 @@ input {
 				<div class="container">
 					<span class="icon"><i class="fa fa-search"></i></span> <input
 						type="search" id="search" placeholder="Search..." />
-
-					<div class="dropdown">
-						<span>검색</span>
-						<div class="dropdown-content">
-							<a href="#">작성자</a></br> <a href="#">내용</a></br> <a href="#">제목+내용</a>
-						</div>
+				
+				<div class="dropdown">
+					<span>검색</span>
+					<div class="dropdown-content">
+						<a href="#">작성자</a></br>
+						<a href="#">내용</a></br>
+						<a href="#">제목+내용</a>	
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>

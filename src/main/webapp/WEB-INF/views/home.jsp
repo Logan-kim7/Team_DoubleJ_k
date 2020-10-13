@@ -21,9 +21,14 @@ html, body {
 	height: 100%;
 	display: flex;
 	flex-flow: column;
-	
 	margin: 0;
 	padding: 0;
+}
+
+body {
+ 	background: url("${rootPath}/static/imgs/LJH/Background.gif") no-repeat center center fixed;
+    background-size: contain;
+
 }
 </style>
 
@@ -58,18 +63,6 @@ html, body {
 			<%@ include file="/WEB-INF/views/MKW/googletrand.jspf"%>
 		</c:when>
 
-		<c:when test="${BODY == 'NOTICE_HOME'}">
-			<%@ include file="/WEB-INF/views/LJH/notice.jspf"%>
-		</c:when>
-		
-		<c:when test="${BODY == 'NOTICE_WRITE'}">
-			<%@ include file="/WEB-INF/views/LJH/notice_write.jspf"%>
-		</c:when>
-
-		<c:when test="${BODY == 'NOTICE_DETAIL'}">
-			<%@ include file="/WEB-INF/views/LJH/notice_detail.jspf"%>
-		</c:when>
-		
 		<c:when test="${BODY == 'NEWS_DETAIL'}">
 			<%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
 		</c:when>
