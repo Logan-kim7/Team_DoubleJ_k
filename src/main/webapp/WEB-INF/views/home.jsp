@@ -21,7 +21,6 @@ html, body {
 	height: 100%;
 	display: flex;
 	flex-flow: column;
-	
 	margin: 0;
 	padding: 0;
 }
