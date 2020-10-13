@@ -56,7 +56,7 @@
 					</legend>
 					<ol>
 						<c:forEach items="${GOOGLE}" var="google" begin="0" end="9">
-							<li><a href="${rootPath}/gtrand/">${google.seq + 1}위
+							<li><a href="${rootPath}/gtrand/${google.title}" >${google.seq + 1}위
 									${google.title}</a></li>
 						</c:forEach>
 					</ol>
