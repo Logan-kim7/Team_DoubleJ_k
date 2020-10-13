@@ -24,12 +24,6 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
-
-body {
- 	background: url("${rootPath}/static/imgs/LJH/Background.gif") no-repeat center center fixed;
-    background-size: contain;
-
-}
 </style>
 
 </head>
