@@ -8,7 +8,7 @@
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	width: 100%;
-	height: 100%;
+	height: 100% auto;
 }
 
 #headline {
@@ -40,10 +40,11 @@
   선정한 주제를
   위한 CSS공간*/
 #listcustomers {
-	display: inline-block;
+	text-align: center;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 #listcustomers td, #customers th {
@@ -68,7 +69,6 @@
 }
 
 tbody {
-	display: inline-block;
 	width: 100%;
 }
 
@@ -103,14 +103,16 @@ input {
   순위표와 입력창을
   위한 CSS공간*/
 #user_bord {
+	display:inline-block;
 	text-align: center;
+	width: 100%;
+	height: auto;
 }
 
 .cmlist {
 	display: inline-block;
 	text-align: center;
 	width: 70%;
-	height: 100%;
 }
 
 .cmlist h2 {
