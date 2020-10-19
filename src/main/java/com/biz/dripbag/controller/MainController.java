@@ -3,6 +3,8 @@ package com.biz.dripbag.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,8 +32,6 @@ public class MainController {
 		
 		for(GoogleVO one : googleList)
 			System.out.print(one.getTitle() + one.getSeq() + "\n");
-
-		
 		
 		model.addAttribute("GOOGLE", googleList);
 		model.addAttribute("BODY","MAIN_HOME");

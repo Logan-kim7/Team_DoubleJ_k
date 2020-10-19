@@ -20,26 +20,28 @@
 		style="background-image: url('../static/imgs/KJM/heand.gif')">
 		<aside id="left_content">
 			<a href="${rootPath}/news/"><fieldset>
-				<legend>
-					<h2>핫! 늬우스</h2>
-				</legend>
-				<div class="newsimage"
-					style="background-image: url('../static/imgs/MKW/simlyee학자.jpg');">
-				</div>
-				<br />
+					<legend>
+						<h2>핫! 늬우스</h2>
+					</legend>
+					<div class="newsimage"
+						style="background-image: url('../static/imgs/MKW/simlyee학자.jpg');">
+					</div>
+					<br />
 
-				<div class="newstitle">
-					<span><h2><a href="${rootPath}/news/">(칼럼) 세계적인 석학 그가 인용한 철학자의 한마디는?</a></h2></span>
-				</div>
+					<div class="newstitle">
+						<span><h2>
+								<a href="${rootPath}/news/">(칼럼) 세계적인 석학 그가 인용한 철학자의 한마디는?</a>
+							</h2></span>
+					</div>
 
-				<div class="newsstory">
-					<p>요즘 코로나로 사회가 큰 타격을 받고 있다. 경제적, 건강적인 타격 이외에도 우리는 정신적으로도 고통을 받고
-						있는데 이럴때 심리적으로 안정감을 얻고 편안한 삶을 추구한다면 가장 필요로 하는것이 자기 자신의 마음을 보는 거울이
-						아닐까 싶다. 철학자 나체가 말했다 심연을 오랫동안 들여다본다면 심영또한 우리를 들여다 보게 될것이다. 부정적인 생각과
-						감정을 타파하기 위한 자아 성찰에서는 부정적인 요소를 파악하려고 애쓰는것 보다 거시적으로 물 흐르는듯이 삶 그 자체를
-						받아들이는게 부정적인고 악한 마음에서 빠져나오는 지름길이다</p>
-				</div>
-			</fieldset></a>
+					<div class="newsstory">
+						<p>요즘 코로나로 사회가 큰 타격을 받고 있다. 경제적, 건강적인 타격 이외에도 우리는 정신적으로도 고통을
+							받고 있는데 이럴때 심리적으로 안정감을 얻고 편안한 삶을 추구한다면 가장 필요로 하는것이 자기 자신의 마음을 보는
+							거울이 아닐까 싶다. 철학자 나체가 말했다 심연을 오랫동안 들여다본다면 심영또한 우리를 들여다 보게 될것이다.
+							부정적인 생각과 감정을 타파하기 위한 자아 성찰에서는 부정적인 요소를 파악하려고 애쓰는것 보다 거시적으로 물
+							흐르는듯이 삶 그 자체를 받아들이는게 부정적인고 악한 마음에서 빠져나오는 지름길이다</p>
+					</div>
+				</fieldset></a>
 		</aside>
 
 		<section id="center_content">
@@ -56,7 +58,7 @@
 					</legend>
 					<ol>
 						<c:forEach items="${GOOGLE}" var="google" begin="0" end="9">
-							<li><a href="${rootPath}/gtrand/">${google.seq + 1}위
+							<li><a href="${rootPath}/gtrand/${google.title}" >${google.seq + 1}위
 									${google.title}</a></li>
 						</c:forEach>
 					</ol>

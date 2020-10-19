@@ -21,7 +21,7 @@
       <div id="headline">
         <fieldset id="headset">
           <legend id="headlegend">선택한 주제</legend>
-          	<p id="googletrand" items="${TITLE}" var="title">${title.title}</p>
+          	<p id="googletrand" items="${TITLE}" var="ti">${ti.title}</p>
         </fieldset>
       </div>
 
