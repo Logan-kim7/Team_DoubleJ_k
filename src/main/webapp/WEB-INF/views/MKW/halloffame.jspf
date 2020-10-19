@@ -46,7 +46,7 @@ $(document).ready(function(){
 	$("#Notice").css("display","inline");
 	$("#defaultOpen1").css("background-color","gray");
 	$("#defaultOpen2").css("background-color","gray");
-	$("#defaultOpen5").css("background-color","gray");	
+	$("#defaultOpen5").css("background-color","gray");
 	
 });
 
