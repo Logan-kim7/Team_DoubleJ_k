@@ -38,7 +38,7 @@ html, body {
 		</c:when>
 
 		<c:when test="${BODY == 'MAIN_HOME'}">
-			<%@ include file="/WEB-INF/views/KJM/KJM_main.jspf"%>
+			<%@ include file="/WEB-INF/views/MKW/MKW_main.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'HALL_OF_FAME'}">
@@ -50,7 +50,7 @@ html, body {
 		</c:when>
 
 		<c:when test="${BODY == 'NEWS_HOME'}">
-			<%@ include file="/WEB-INF/views/KJM/KJM_main.jspf"%>
+			<%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'GOOGLE_HOME'}">
