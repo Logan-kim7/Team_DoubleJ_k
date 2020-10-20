@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/main_layout.css">
+    <title>드립백 메인화면</title>
+  </head>
+
+  <body>
+
+    <header>
+        <div id="DripBag" class="navinfo">
+          <h1>메인 컨텐츠, 설명</h1>
+          <p>여기는 제공할 컨텐츠를 노출시킬 맨 처음의 메인화면</p>
+        </div>
+        
+        <div id="Bestcm" class="navinfo">
+          <h1>명예의전당</h1>
+          <p>여기는 명예의 전당 네비버튼</p>
+        </div>
+        
+        <div id="Notice" class="navinfo">
+          <h1>공지사항</h1>
+          <p>여기는 공지사항 네비버튼</p>
+        </div>
+        
+        <div id="issue" class="navinfo">
+          <h1>주간 베스트</h1>
+          <p>이번주 핫이슈 현황</p>
+        </div>
+      </header>
+        
+    <nav>
+        <button class="navbutton" onclick="openNav('DripBag', this, 'gray')" id="defaultOpen">메인화면</button>
+        <button class="navbutton" onclick="openNav('Bestcm', this, 'rgb(1,1,22)')">명예의전당</button>
+        <button class="navbutton" onclick="openNav('Notice', this, 'gray')">공지사항</button>
+        <button class="navbutton" onclick="openNav('issue', this, 'rgb(1,1,22)')">주간베스트</button>
+    </nav>
+
+    <section id="main_content">
+      <aside id="left_content">
+        <fieldset>
+          <legend><h2>핫! 늬우스</h2></legend>
+            <div class="newsimage">
+              <img src="..\images\gojanews.jpg" alt="대충 여기에 사진을 넣읍시다" />
+            </div>
+            <br />
+    
+              <div class="newstitle">
+                  <span><h2>여기는 제목</h2></span>
+                </div>
+                
+                <div class="newsstory">
+                  <p>
+                    내에에에에에에용 내용용 <br/>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+                    fuga qui. Atque beatae est ex expedita, repellendus autem, illum
+                    similique cum quibusdam fuck, veritatis nam voluptates modi
+                    inventore tempore molestiae id!
+                  </p>
+                </div>
+              </fieldset>
+      </aside>
+
+      <section id="center_content">
+        <div class="big_or"><p>OR</p></div>
+      </section>
+
+      <aside id="right_content">
+        <div class="googletrand">
+            <fieldset>
+          <legend><h2>Google Trand</h2></legend>
+          <ol>
+              <li><a href="#">1</a></li>
+              <li><a href="#">아이템 2</a></li>
+              <li><a href="#">목록의 아이템 3</a></li>
+              <li><a href="#">있는 목록의 아이템 4</a></li>
+              <li><a href="#">순서 있는 목록의 아이템 5</a></li>
+              <li><a href="#">순서 있는 목록의 아이템 6</a></li>
+              <li><a href="#">순서 있는 목록의 아이템 7</a></li>
+              <li><a href="#">순서 있는 목록의 아이템 8</a></li>
+              <li><a href="#">순서 있는 목록의 아이템 9</a></li>
+              <li><a href="#">순서 있는 목록의 아이템 10</a></li>
+          </ol>
+        </fieldset>
+        </div>
+      </aside>
+    </section>
+    <footer>
+      <h1>여기는 footer</h1>
+    </footer>
+  </body>
+
+  <script>
+    function openNav(NavName,elmnt,color) {
+      var i, navinfo, tablinks;
+      navinfo = document.getElementsByClassName("navinfo");
+      for (i = 0; i < navinfo.length; i++) {
+        navinfo[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("navbutton");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(NavName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+    
+    document.getElementById("defaultOpen").click();
+    </script>
+</html>

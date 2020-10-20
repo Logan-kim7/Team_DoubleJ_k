@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>트랜드 작성공간</title>
+    <link rel="stylesheet" type="text/css" href="../css/Gdriper.css">
+  </head>
+  <body>
+    <header>
+        <div id="DripBag" class="navinfo">
+          <h1>메인화면</h1>
+          <p>여기는 제공할 컨텐츠를 노출시킬 맨 처음의 메인화면</p>
+        </div>
+        </header>
+        
+        <div id="Bestcm" class="navinfo">
+          <h1>명예의전당</h1>
+          <p>여기는 명예의 전당</p>
+        </div>
+        
+        <div id="Notice" class="navinfo">
+          <h1>공지사항</h1>
+          <p>여기는 공지사항</p>
+        </div>
+        
+        <div id="issue" class="navinfo">
+          <h1>주간 베스트</h1>
+          <p>이번주 핫이슈 현황</p>
+        </div>
+        
+        <button class="navbutton" onclick="openNav('DripBag', this, 'gray')" id="defaultOpen">메인화면</button>
+        <button class="navbutton" onclick="openNav('Bestcm', this, 'rgb(1,1,22)')">명예의전당</button>
+        <button class="navbutton" onclick="openNav('Notice', this, 'gray')">공지사항</button>
+        <button class="navbutton" onclick="openNav('issue', this, 'rgb(1,1,22)')">주간베스트</button>
+
+      <div id="headline">
+        <span>
+        <fieldset id="headset">
+          <legend id="headlegend">선택한 주제</legend>
+          <span><p id="googletrand">호옹이!!</p></span>
+        </fieldset>
+      </span>
+      </div>
+
+      <div id="user_write">
+        <fieldset id="writeset">
+          <legend id="writelegend">내가 작성하기</legend>
+            <form class="inputbox">
+                <label for="fname">4자성어를 입력하세요</label>
+                <input type="text" id="fname" name="fname" placeholder="4글자만 입력가능!!!">
+            </form>
+            <form class="inputbox">
+                <label for="fname">내용을 입력하세요</label>
+                <input type="text" id="fname" name="fname" placeholder="12글자까지만 입력가능!!">
+            </form>
+        </fieldset>
+      </div>
+
+  <div id="writebutton">
+    <button id="throwit" type="button"><p>영 아니다</p></button>
+    <button id="addit" type="button"><p>잘만든것 같다</p></button>
+  </div>
+
+
+      <div id="user_bord">
+
+        <div class="cmlist">
+            
+          <h2>4자성어 Drip Bag </h2>
+       
+        <table id="listcustomers">
+          <tr>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>좋아요</th>
+            <th>싫어요</th>
+            <th>작성일</th>
+          </tr>
+          <tr>
+            <div>
+            <td></td>
+            </div>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          
+          
+        </table>
+        
+        <div class="pagination">
+          <a href="#">&laquo;</a>
+          <a href="#"class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">&raquo;</a>
+        </div>
+      </div>
+    </div>
+
+
+    <footer>
+      <h1>여기는 footer</h1>
+    </footer>
+  </body>
+
+  <script>
+    function openNav(NavName,elmnt,color) {
+      var i, navinfo, tablinks;
+      navinfo = document.getElementsByClassName("navinfo");
+      for (i = 0; i < navinfo.length; i++) {
+        navinfo[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("navbutton");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(NavName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+    
+    document.getElementById("defaultOpen").click();
+    </script>
+</html>

@@ -1,93 +1,125 @@
-@charset "UTF-8";
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-flow: column;
+}
 
 section#main_content {
 	flex: 100%;
 	width: 100%;
-	display: flex;
-
-	text-align: center;
-	background-size: 100% 100%;
-	width: 100%;
-	height: 100%%;
-
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100% 100%;
-
+	height:100%;
+	display: inline-flex;
 }
 
 #main_content aside {
-	flex: 4;
-	margin: 10px 3px;
+	flex: 1;
 	text-align: center;
 }
 
-#main_content section {
-	flex: 3px;
-	margin: 10px 3px;
-	overflow: auto;
+
+footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 0.7rem;
 }
+/* 여기는
+네비바를
+위한 CSS 공간 시작
+*/
+header {
+	position: relative;
+	z-index: 100;
+}
+
+.navbutton {
+	background-color: #555;
+	color: white;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 20px;
+	font: bold;
+	width: 25%;
+}
+
+.tablink:hover {
+	background-color: #777;
+}
+
+.navinfo {
+	color: white;
+	display: none;
+	padding: 50px;
+	text-align: center;
+}
+
+#DripBag {
+	background-color: rgb(1, 1, 22);
+}
+
+#Bestcm {
+	background-color: gray;
+}
+
+#Notice {
+	background-color: rgb(1, 1, 22);
+}
+
+#issue {
+	background-color: gray;
+}
+
+/* 여기는
+네비바를
+위한 CSS 공간
+*/
+
+
+
+
 
 /* 여기는
    레프트 콘텐츠를
     위한 CSS 공간*/
 #left_content {
-	position: relative;
+	
 	display: inline-block;
-	margin-top: 5%;
-	width: 40%;
 	height: 100%;
 	text-align: center;
 }
 
-#left_content p {
-	padding: 10px;
-	border: 2px solid white;
-}
-
-.newsimage {
-	margin-top: 40px;
-	display: inline-block;
-	height: auto;
-	height: 300px;
-	width: 80%;
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-}
-
-
-.newstitle {
-	display: inline-block;
-	width: 80%;
-	height: auto;
-	margin: 10px 0px;
-	border-radius: 8px;
-	padding: 10px;
-}
-
 fieldset {
 	display: inline-block;
-	border: 3px solid white;
+	border: 15px double black;
 	border-radius: 8px;
 	width: 80%;
 	height: auto;
-	color: white;
+	text-align: center;
+	margin-top: 40px;
+	color: black;
 }
 
 legend {
-	color: white;
-	font-size: 25px;
-	font-weight: bold;
+	color: black;
+	font-size: 60px;
+	font-weight: bolder;
 	padding: 0px 50px;
 }
 
-.newsstory {
-	display: inline-block;
-	width: 80%;
-	height: auto;
-	margin: 10px 0px;
-	font-size: 20px;
-}
+
 
 /* 여기는
    레프트 콘텐츠를
@@ -96,25 +128,14 @@ legend {
 /*여기는
     센터 콘텐츠를
     위한 CSS공간*/
-#center_content {
+#clock {
 	position: relative;
-	display: inline-block;
-	margin-top: 5%;
-	width: 20%;
-	height: 100%;
+	display: block;
+	height: 200px;
 	text-align: center;
-	font-size: 70px;
-	font-weight: bolder;
-	
+	font-size: 35px;
 }
 
-.big_or {
-	margin-top: 100%;
-}
-
-.big_or p {
-	font-size: 80px;
-}
 
 /*여기는
     센터 콘텐츠를
@@ -124,31 +145,34 @@ legend {
    right 콘텐츠를
     위한 CSS 공간*/
 #right_content {
-	position: relative;
 	display: inline-block;
-	margin-top: 5%;
 	height: 100%;
 	text-align: center;
 }
 
-.googletrand {
-	text-align: center;
-}
-
-.googletrand fieldset {
-	margin-top: 40px;
-}
-
 a {
 	text-decoration: none;
-	color: white;
-	font-weight: bolder;
+	color: black;
 }
 
 ol {
-	font-size: 30px;
+	
+	font-size: 33px;
 	margin: 20px 0px;
 	list-style: none;
+}
+li {
+	margin-bottom: 20px;
+	color: black;
+	font-weight: bolder;
+}
+
+li :hover {
+	font-size: 80px;
+	text-decoration:underline;
+	transition: all 0.9s;
+	cursor: pointer;
+	color: cornflowerblue;
 }
 
 /* 여기는
