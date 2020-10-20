@@ -20,25 +20,14 @@ public class GoogleTrandController {
 	@Autowired
 	CrwalingGooGle gServ;
 
-	@RequestMapping(value = "/{title:.+}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{title}", method = RequestMethod.GET)
 	public String home(Model model, @PathVariable("title") String title) throws IOException {
 
-		List<GoogleVO> googleList = gServ.googleTrend();
-
-		title = googleList.get(1).getTitle().toString();
-		System.out.println(title);
-
-		model.addAttribute("TITLE", googleList);
-		return "home";
-
-	}
-
-	@RequestMapping(value = "/{title}", method = RequestMethod.GET)
-	public String home(Model model, String title, int a) throws IOException {
-
-		model.addAttribute("TITLE", title);
 		model.addAttribute("BODY", "GOOGLE_HOME");
+		model.addAttribute("TITLE", title);
 		return "home";
+
 	}
+
 
 }
