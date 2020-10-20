@@ -21,7 +21,7 @@
   width: 80%;
   height: auto;
   margin-top: 30px;
-  border: 3px solid black;
+  border: 3px solid white;
   border-radius: 8px;
   text-align: center;
   font-weight: bold;
@@ -50,12 +50,16 @@
 
 #listcustomers td,
 #customers th {
-  border: 1px solid #ddd;
+  border: 1px solid #gray;
   padding: 8px;
 }
 
 #listcustomers tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: white;
+}
+
+#listcustomers tr:nth-child(odd) {
+  background-color: #ddd;
 }
 
 #listcustomers tr:hover {
