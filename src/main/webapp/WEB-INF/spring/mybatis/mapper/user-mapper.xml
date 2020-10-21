@@ -9,7 +9,6 @@
 	</select>
 	
 	<select id="findById">
-		select * from tbl_users where = #{useremail}
 	</select>
 	
 	<insert id="insert">

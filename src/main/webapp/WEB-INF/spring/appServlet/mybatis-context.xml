@@ -13,17 +13,10 @@
 	<bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-		<property name="username" value="${oracle.username}"/>
-		<property name="password" value="${oracle.password}"/>
+		<property name="username" value="dripbag"/>
+		<property name="password" value="dripbag"/>
 	</bean>
-	
- 
-	<!-- sqlSessionTemplate 
-	<bean class="org.mybatis.spring.SqlSessionTemplate">
-		<constructor-arg ref="sqlFactory" index="0"/>
-	</bean>
-	-->	
-	
+		
 	<bean id="sqlFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds"/>
 		<property name="mapperLocations" value="/WEB-INF/spring/mybatis/mapper/*-mapper.xml"/>
@@ -36,6 +29,5 @@
 	 </bean>
 
 	<!-- mybatis-scan -->
-	<!-- <mybatis-spring:scan base-package="com.biz.shop.persistence"/> -->
 	<mybatis-spring:scan base-package="com.biz.dripbag.mapper"/>
 </beans>

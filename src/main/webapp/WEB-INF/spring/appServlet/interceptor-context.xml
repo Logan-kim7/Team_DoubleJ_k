@@ -13,7 +13,7 @@
 	  <mvc:interceptor>
 	    <mvc:mapping path="/**"/>
 	    <mvc:exclude-mapping path="/"/>
-	    <mvc:exclude-mapping path="/user/check/"/>
+	    <mvc:exclude-mapping path="/user/check/**"/>
 	    <mvc:exclude-mapping path="/user/join/"/>
 	    <mvc:exclude-mapping path="/static/**"/>
 	    	<bean id="DripbagInterceptor" class="com.biz.dripbag.interceptor.Dripbaginterceptor"/>
