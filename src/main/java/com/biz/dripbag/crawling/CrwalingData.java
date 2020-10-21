@@ -29,7 +29,7 @@ public class CrwalingData
 	@Qualifier("GoogleServiceV1")
 	private final GoogleTrendeService googleService;
 	
-	@Scheduled(fixedDelay =  1)
+//	@Scheduled(fixedDelay =  1)
 	public void googleTrend() 
 	{
 		String url = "https://trends.google.co.kr/trends/trendingsearches/daily/rss?geo=KR";
@@ -62,7 +62,7 @@ public class CrwalingData
 	}
 	
 	
-	@Scheduled(cron = "0/10 * * * * *")
+//	@Scheduled(cron = "0/10 * * * * *")
 	public void news()
 	{
 		String[] detailNews = null;

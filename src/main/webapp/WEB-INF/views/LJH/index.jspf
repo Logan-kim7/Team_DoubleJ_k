@@ -3,21 +3,24 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
 
-<script>
-	function join()  
-	{ 		
-		document.getElementById("join_body").style.display == "none" ? document.getElementById("join_body").style.display="block" : document.getElementById("join_body").style.display="none";
-	}
-	
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-</script>
 <style>
-body, html {
- 	background: url("${rootPath}/static/imgs/LJH/Background.gif") no-repeat center center fixed;
-    background-size: contain;
+
+body{
     background-color: black;
+    height: 100%;
+    width: 100%;
     margin:  0;
     padding: 0;
+
+}
+
+#bg-image{
+    /* filter: blur(10px); */
+    height: 100%; 
+ 	background: url("${rootPath}/static/imgs/LJH/Background.gif") no-repeat center center fixed;
+    background-size: contain;
 }
 
 #MainLogo{
@@ -30,112 +33,188 @@ body, html {
     transform: translate(-50%);
 }
 
-
-#login_form input, #singin, #singup{
-    width: 20vw;
+#login_form input, #login_form button:nth-child(3), #login_form button:nth-child(4){
+    width: 16vw;
     font-size: 2vh;
+    padding: 0.5vh 0.5vw;
+	
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 
-    border: 0.1vh solid white;
+    border: 1px solid white;
+    outline:none;
+    
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
-
-    border-radius: 5vh;
-
+    border-radius: 1vh;
+	
+	
     position: absolute;
     left : 50%;
     transform: translate(-50%, -50%);
-
-    padding: 0.5vh 0.5vw;
-    text-align: center;
 }
 
-#id_input  { top: 55%; }
-#pwd_input { top: 60%; }
-#singin    { top  :65%; padding: 1px;}
-#singup    { top  : 69%; padding: 1px;}
+#login_form input:nth-child(1) { top: 55%; }
+#login_form input:nth-child(2) { top: 60%; }
+#login_form button:nth-child(3) { top: 67%; }
+#login_form button:nth-child(4) { top: 72%; }
 
-#singin:hover, #singup:hover{
-    cursor: pointer;
-    color: rgb(247, 174, 39);
-    border-color: rgb(247, 174, 39);
+#login_form button:nth-child(3), #login_form button:nth-child(4){
+	width: 17vw;
 }
-
 
 #join_body
 {   
     background-color: rgba(14, 13, 13, 0.7);
+    color: white;
     border: 1px solid white;
     border-radius: 35px;
 
-    height: 75vh;
-    width: 350px;
+    height: 70vh;
+    width: 300px;
     padding: 40px;
 
     text-align: center;
-    z-index: 999;
+    z-index: 2;
     
     position: absolute;
     left : 50%;
     top  : 50%;
     transform: translate(-50%, -50%);
 }
-#join_form
-{
+
+#join_body h1{
+	font-size: 34px;
+	font-family: Edo;
+}
+#join_body h1 i{
+	color: red;
+	margin: 1px auto;
+}
+
+#join_body form{
+    width: inherit;
+    height: 90%;
+
+    box-sizing: content-box;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#join_body form div{
 	width:100%;
-	height:100%;
-	display: flex;
-
+	height: 80%;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
-#join_form *{
-	width: 70%;	
-	height:4%;
-	margin: 65px 10px 0px 0px;
-	text-align:center;
-
-	border: 0.1vh solid white;
+#join_body form input{
+    width: 70%;
+    margin:30px auto;
+    outline: none;
+    background-color: inherit;
+    border-style:none;
+    border-bottom:solid 1px #cacaca;
+    border-collapse:collapse;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-
-    border-radius: 5vh;
 }
 
-#join_form button
+#join_body form button{
+    margin: 5px auto;
+    height:5%;
+    width: 75%;
+    
+    border: 1px solid white;
+    outline:none;
+    
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+#login_form input:focus, #join_body input:focus{
+	 border-color: rgb(247, 174, 39);
+	 font-weight: bold;
+}
+
+#login_form button:nth-child(3):hover, #login_form button:nth-child(4):hover,
+#join_body form button:hover
 {
-	position: absolute;
-    position: absolute;
-    left : 50%;
-    transform: translate(-50%, -50%);
-
-    padding: 0.5vh 0.5vw;
-    text-align: center;
-}
-#join_form button:hover
-{
- 	border-color: rgb(247, 174, 39);
- 	cursor: po
+    cursor: pointer;
+    color: rgb(247, 174, 39);
+    border-color: rgb(247, 174, 39);
 }
 
-#ss {top : 45%}
-#button_1 { top  : 77%;}
-#button_2 { top  : 82%;}
-
+#login_form input:focus::placeholder, #join_body input:focus::placeholder{
+    color: transparent;
+}
 </style>
 
+<script>
+ document.addEventListener("DOMContentLoaded", function()
+{
+	document.getElementById("join_body").style.display = "none"	
+	
+	const flag_button = document.querySelectorAll(".flag_button");
+	for(const button of flag_button)
+		button.addEventListener("click", function(event)
+		{
+			document.getElementById("join_body").style.display == "none" ? document.getElementById("join_body").style.display="block" : document.getElementById("join_body").style.display="none";
+			if(document.getElementById("join_body").style.display=="block")
+				document.getElementById("bg-image").style.filter = "blur(10px)";
+			else
+			{
+				document.getElementById("bg-image").style.filter = "none";	
+				document.getElementById("bg-check_id_ptag").value = "";
+			}
+		})
+
+	document.forms[1].elements[0].onblur = function()
+	{
+		let id = document.forms[1].elements[0].value;
+		$.ajax
+		({
+			url  : "${rootPath}/user/check/" + id,
+			type : "get",
+			success : function(data)
+			{
+				if(data === 1)			
+						$("#check_id_ptag").html("중복된 ID 입니다.");
+				else
+					$("#check_id_ptag").html("사용 가능한 ID 입니다.");
+			}
+		})
+		$("#check_id_ptag").css("color", "red");
+	}
+		
+})
+</script>
+
+<div id="bg-image">
 <img src="${rootPath}/static/imgs/LJH/logo.png" alt="MainLogo" id="MainLogo">
 
-<form:form modelAttribute="userVO" action="${rootPath}/user/check/" method="post" id="login_form" >
-	<form:input path="userId" id="id_input" required= "1" placeholder="ID"/>
-	<form:input path="userPassword" type="password" id="pwd_input" required= "1" placeholder="Password"/>
-	<button id = "singin" type="submit">Sing In</button>
-	<button id = "singup" type="button" onclick="join()">Sing Up</button>
-</form:form>
+<form action="${rootPath}/user/check/" method="post" id="login_form" autocomplete="off" >
+	<input name="u_email"    type="email"    required= "1" placeholder="Email"/>
+	<input name="u_password" type="password" required= "1" placeholder="Password"/>
+	<button type="submit">Sing In</button>
+	<button type="button" class="flag_button">Sing Up</button>
+</form>
+</div>
 
-<section id="join_body" style="display: none;">
-	<form:form modelAttribute="userVO" action="${rootPath}/user/join/" method="post" id="join_form">
-	    <form:input path="userId" placeholder="아이디"  required= "1" id="ss"/>
-	    <form:input path="userPassword" placeholder="비밀번호" required= "1"/>
-	    <button type="submit" id="button_1">회원가입</button>
-	    <button type="button" id="button_2" onclick="join()">취소</button>
-	</form:form>
+<section id="join_body">
+    <h1>Sing Up</h1>
+    <div id ="error_div"></div>
+    <form>
+    	<div>
+        	<p id="check_id_ptag"></p>
+        	<input type="email"    required="1" placeholder="Email">
+        	<input type="password" required="1" placeholder="Password">
+        </div>
+        <button type="submit">JOIN</button>
+        <button class="flag_button" type="button">CANCLE</button>
+    </form>
 </section>

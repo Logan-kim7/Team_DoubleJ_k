@@ -16,10 +16,10 @@ public class IndexController
 {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model, UserVO vo)
+	public String home(Model model)
 	{
 		model.addAttribute("BODY","INDEX_HOME");
-		model.addAttribute("userVO", vo);
+//		model.addAttribute("userVO", vo);
 		return "home";
 	}
 }
