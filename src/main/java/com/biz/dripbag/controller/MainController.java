@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.biz.dripbag.crawling.CrwalingGooGle;
+import com.biz.dripbag.crawling.CrwalingData;
 import com.biz.dripbag.model.GoogleVO;
 
 import lombok.RequiredArgsConstructor;
@@ -22,18 +22,18 @@ import lombok.RequiredArgsConstructor;
 public class MainController {
 	
 
-	private static final CrwalingGooGle googleService = new CrwalingGooGle();
+//	private static final CrwalingData googleService = new CrwalingData();
 	
 	
 	@RequestMapping(value = "/", method =  RequestMethod.GET)
 	public String home(Model model) throws IOException 
 	{
-		List<GoogleVO> googleList = googleService.googleTrend();
+//		List<GoogleVO> googleList = googleService.googleTrend();
 		
-		for(GoogleVO one : googleList)
-			System.out.print(one.getTitle() + one.getSeq() + "\n");
+//		for(GoogleVO one : googleList)
+//			System.out.print(one.getTitle() + one.getSeq() + "\n");
 		
-		model.addAttribute("GOOGLE", googleList);
+//		model.addAttribute("GOOGLE", googleList);
 		model.addAttribute("BODY","MAIN_HOME");
 		return"home";
 	}

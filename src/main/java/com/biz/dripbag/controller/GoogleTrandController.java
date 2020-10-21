@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.biz.dripbag.crawling.CrwalingGooGle;
+import com.biz.dripbag.crawling.CrwalingData;
 import com.biz.dripbag.model.GoogleVO;
 
 @RequestMapping(value = "/gtrand")
@@ -18,7 +18,7 @@ import com.biz.dripbag.model.GoogleVO;
 public class GoogleTrandController {
 
 	@Autowired
-	CrwalingGooGle gServ;
+	CrwalingData gServ;
 
 	@RequestMapping(value = "/{title}", method = RequestMethod.GET)
 	public String home(Model model, @PathVariable("title") String title) throws IOException {

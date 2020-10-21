@@ -15,21 +15,27 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.model.GoogleVO;
+import com.biz.dripbag.service.GoogleTrendeService;
+
+import lombok.RequiredArgsConstructor;
 
 @Qualifier("googleCrawling")
-@Service
+@RequiredArgsConstructor
 @Configuration
 @EnableScheduling
-public class CrwalingGooGle
+@Service
+public class CrwalingData
 {
-	@Scheduled(cron = "0/10 * * * * *")
+	@Qualifier("GoogleServiceV1")
+	private final GoogleTrendeService googleService;
+	
+	@Scheduled(fixedDelay =  1)
 	public void googleTrend() 
 	{
 		String url = "https://trends.google.co.kr/trends/trendingsearches/daily/rss?geo=KR";
 		Document doc;
 		  
-		GoogleVO googleVO; 
-		List<GoogleVO> googleList = new ArrayList<GoogleVO>();
+		GoogleVO vo; 
 		long seq = 0;
 		try 
 		{
@@ -38,12 +44,12 @@ public class CrwalingGooGle
 		
 		  for(Element one : trendList) 
 		  { 
-			  googleVO = new GoogleVO();
-			  googleVO.setSeq(seq); googleVO.setTitle(one.select("title").text());
-			  googleVO.setApproxTraffic(one.getElementsByTag("ht:approx_traffic").text());
-			  googleVO.setGoogleDate(one.getElementsByTag("pubDate").text());
-			  googleVO.setImgPath(one.getElementsByTag("ht:picture").text());
-			  googleList.add(googleVO); 
+			  vo = new GoogleVO(); 
+			  vo.setTitle(one.select("title").text());
+			  vo.setApproxTraffic(one.getElementsByTag("ht:approx_traffic").text());
+			  vo.setGoogleDate(one.getElementsByTag("pubDate").text());
+			  vo.setImgPath(one.getElementsByTag("ht:picture").text());
+			  googleService.insert(vo);
 			  seq++; 
 		  }
 		  
