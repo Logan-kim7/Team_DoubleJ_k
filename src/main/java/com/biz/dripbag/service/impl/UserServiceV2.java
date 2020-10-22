@@ -16,7 +16,7 @@ public class UserServiceV2 extends UserServiceV1
 	{
 		UserVO reqVO = vo;	
 		List<UserVO> userList = userDAO.selectAll();
-		String[] strCheck = new String[] { vo.getU_email(), vo.getU_password() };
+		String[] strCheck = new String[] { vo.getD_email(), vo.getD_password() };
 			
 		if(userList.size() == 0)  
 			return 1;
@@ -31,13 +31,13 @@ public class UserServiceV2 extends UserServiceV1
 		{
 			case 1: // 아이디 중복 체크
 				for(int i= 0; i < userList.size(); ++i)
-					if(userList.get(i).getU_email().equals(reqVO.getU_email())) 
+					if(userList.get(i).getD_email().equals(reqVO.getD_email())) 
 							return 1;
 				
 			case 2: // 로그인 체크
 				for(int i= 0; i < userList.size(); ++i)
-					if( userList.get(i).getU_email().equals(reqVO.getU_email()) && 
-					    userList.get(i).getU_password().equals(reqVO.getU_password())
+					if( userList.get(i).getD_email().equals(reqVO.getD_email()) && 
+					    userList.get(i).getD_password().equals(reqVO.getD_password())
 					   ) 
 						return 2;
 			}

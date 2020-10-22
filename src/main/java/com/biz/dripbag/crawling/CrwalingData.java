@@ -15,6 +15,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.model.GoogleVO;
+import com.biz.dripbag.service.DateService;
 import com.biz.dripbag.service.GoogleTrendeService;
 
 import lombok.RequiredArgsConstructor;
@@ -29,7 +30,9 @@ public class CrwalingData
 	@Qualifier("GoogleServiceV1")
 	private final GoogleTrendeService googleService;
 	
-//	@Scheduled(fixedDelay =  1)
+	private final DateService dateService;
+	
+	//@Scheduled(fixedDelay = 10000)
 	public void googleTrend() 
 	{
 		String url = "https://trends.google.co.kr/trends/trendingsearches/daily/rss?geo=KR";
@@ -45,11 +48,10 @@ public class CrwalingData
 		  for(Element one : trendList) 
 		  { 
 			  vo = new GoogleVO(); 
-			  vo.setTitle(one.select("title").text());
-			  vo.setApproxTraffic(one.getElementsByTag("ht:approx_traffic").text());
-			  vo.setGoogleDate(one.getElementsByTag("pubDate").text());
-			  vo.setImgPath(one.getElementsByTag("ht:picture").text());
-			  googleService.insert(vo);
+			  vo.setGtrand_title(one.select("title").text());
+			  vo.setGtrand_img(one.getElementsByTag("ht:picture").text());
+			  vo.setGtrand_date(dateService.dateTime()[0]);
+			  //googleService.insert(vo);
 			  seq++; 
 		  }
 		  

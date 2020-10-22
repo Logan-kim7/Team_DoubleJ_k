@@ -3,8 +3,6 @@ package com.biz.dripbag.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.biz.dripbag.service.SessionService;
@@ -12,10 +10,11 @@ import com.biz.dripbag.service.SessionService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@RequiredArgsConstructor
 @Slf4j
+@RequiredArgsConstructor
 public class Dripbaginterceptor extends HandlerInterceptorAdapter 
 {	
+	
 	private final SessionService sService;
 	
 	@Override

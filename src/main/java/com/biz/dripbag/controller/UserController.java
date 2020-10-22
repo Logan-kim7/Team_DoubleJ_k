@@ -52,7 +52,6 @@ public class UserController
 	@RequestMapping(value ={"/check", "/check/"}, method=RequestMethod.POST)
 	public String check(UserVO userVO, Model model, HttpServletRequest req, HttpServletResponse res) throws IOException
 	{
-		System.out.println(userVO.getU_email());
 //		if(uService.checkByUser(userVO, 2) == 2)
 //			sService.sessionRegistration(req, userVO);
 //		
@@ -65,22 +64,11 @@ public class UserController
 
 	
 	@RequestMapping(value= {"/join", "/join/"}, method = RequestMethod.POST)
-	public void PostJoin(@ModelAttribute("userVO") UserVO userVO, Model model, HttpServletResponse res) throws IOException
-	{		
-		String alertText = "";
-		int flag = uService.checkByUser(userVO, 1);
-		
-		if(flag == -1)
-			alertText = "공백 확인 해주세요.";
-		
-		else if(flag == 1)
-		{
+	public void PostJoin(UserVO userVO, Model model)
+	{				
+		System.out.println(userVO.toString());
+		if(uService.checkByUser(userVO, 1) == 1)
 			uService.insert(userVO);
-			alertText = "회원가입 완료";
-		}
-		else { alertText = "중복된 아이디 입니다."; }
-		
-		sService.interceptorLogin(res, alertText);		
 	}
 	
 	

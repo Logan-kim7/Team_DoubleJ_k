@@ -213,8 +213,8 @@ body{
 <img src="${rootPath}/static/imgs/LJH/logo.png" alt="MainLogo" id="MainLogo">
 
 <form action="${rootPath}/user/check/" method="post" id="login_form" autocomplete="off" >
-	<input name="u_email"    type="email"    required= "1" placeholder="Email"/>
-	<input name="u_password" type="password" required= "1" placeholder="Password"/>
+	<input name="d_email"    type="email"    required= "1" placeholder="Email"/>
+	<input name="d_password" type="password" required= "1" placeholder="Password"/>
 	<button type="submit">Sing In</button>
 	<button type="button" class="flag_button">Sing Up</button>
 </form>
@@ -223,11 +223,11 @@ body{
 <section id="join_body">
     <h1>Sing Up</h1>
     <div id ="error_div"></div>
-    <form>
+    <form action="${rootPath}/user/join" method="post">
     	<div>
         	<p id="check_id_ptag"></p>
-        	<input type="email"    required="1" placeholder="Email">
-        	<input type="password" required="1" placeholder="Password">
+        	<input name="d_email"    required="1" placeholder="Email">
+        	<input name="d_password" required="1" placeholder="Password">
         </div>
         <button type="submit">JOIN</button>
         <button class="flag_button" type="button">CANCLE</button>
