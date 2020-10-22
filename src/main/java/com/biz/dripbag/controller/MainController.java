@@ -22,20 +22,15 @@ import lombok.RequiredArgsConstructor;
 public class MainController {
 	
 
-//	private static final CrwalingData googleService = new CrwalingData();
-	
+	private final CrwalingData crwalingData;
 	
 	@RequestMapping(value = "/", method =  RequestMethod.GET)
 	public String home(Model model) throws IOException 
-	{
-//		List<GoogleVO> googleList = googleService.googleTrend();
-		
-//		for(GoogleVO one : googleList)
-//			System.out.print(one.getTitle() + one.getSeq() + "\n");
-		
-//		model.addAttribute("GOOGLE", googleList);
+	{			
+		model.addAttribute("GOOGLE", crwalingData.googleTrend());
+		model.addAttribute("NEWS", crwalingData.news());
 		model.addAttribute("BODY","MAIN_HOME");
-		return"home";
+		return "home";
 	}
 		
 		
