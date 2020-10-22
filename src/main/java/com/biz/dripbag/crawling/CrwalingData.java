@@ -118,7 +118,7 @@ public class CrwalingData
 				vo.setN_content(doc.select(".article_view p").text()); // content									
 				//newsService.insert(vo);
 				newsVOlist.add(vo);
-				log.debug();
+				
 				index++;
 			}			
 		}
