@@ -27,8 +27,8 @@ public class MainController {
 	@RequestMapping(value = "/", method =  RequestMethod.GET)
 	public String home(Model model) throws IOException 
 	{			
-		model.addAttribute("GOOGLE", crwalingData.googleTrend());
-		model.addAttribute("NEWS", crwalingData.news());
+		model.addAttribute("GOOGLE", crwalingData.getterGoogleList());
+		model.addAttribute("NEWS", crwalingData.getterNewsList());
 		model.addAttribute("BODY","MAIN_HOME");
 		return "home";
 	}
