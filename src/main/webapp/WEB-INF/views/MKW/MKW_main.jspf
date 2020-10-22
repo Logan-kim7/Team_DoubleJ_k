@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-10-20-3" />
+	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-10-20-12" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/c1d8b25418.js"
@@ -18,15 +18,24 @@
 <body>
 	<section id="main_content">
 		<aside id="left_content">
-			<a href="${rootPath}/news/"><fieldset>
-					<legend> 핫! 늬우스 </legend>
-					<div></div>
-				</fieldset> </a>
+			<fieldset>
+				<legend>ToDay NEWS</legend>
+				<ol>
+					<c:forEach items="${NEWS}" var="news" >
+						<li><a href="${rootPath}/newsmain/${news.n_seq}"></a></li>
+					</c:forEach>
+				</ol>
+			</fieldset>
 		</aside>
+
+		<div id="clock_main">
+			<p>2020-10-22 21:57</p>
+
+		</div>
 
 		<aside id="right_content">
 			<fieldset>
-				<legend> Google Trand </legend>
+				<legend>Google Trand</legend>
 				<ol>
 					<c:forEach items="${GOOGLE}" var="google">
 						<li><a href="${rootPath}/gtrand/${google.gt_title}">${google.gt_seq + 1}위
@@ -38,15 +47,17 @@
 	</section>
 </body>
 <script>
-	$(document).ready(function() {
-		$("#headh1").html("메인화면")
-		$("#headp").html("여기는 메인화면 이지롱 ><")
+	$(document).ready(
+			function() {
+				$("#headh1").html("DRIP BAG").css("font-size", "60px")
+				$("#headp").html("여기는 메인화면 이지롱 ><")
 
-		$("nav").css("background-color", "pink")
+				$("#navinfo").css("background-image",
+						"url('../static/imgs/KJM/main-hd.png')")
 
-		$("#btn-main").css("background-color", "cornflowerblue")
-		$("#btn-hall").css("border-bottom-left-radius", "10px")
-		$("#btn-main").css("border-bottom-right-radius", "10px")
-	})
+				$("#btn-main").css("background-color", "cornflowerblue")
+				$("#btn-hall").css("border-bottom-left-radius", "10px")
+				$("#btn-main").css("border-bottom-right-radius", "10px")
+			})
 </script>
 </html>

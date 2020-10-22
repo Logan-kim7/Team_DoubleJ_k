@@ -2,23 +2,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 <style>
-#foot {
-    text-align: center;
-    color: white;
-    font-size: 40px;
-    margin: 0;
-    padding:0;
-  }
-  
-  #footerdiv{
-  	height: 100px;
-  	text-align: center;
-  	background-color: black;
-  	line-height: 100px;
-
-  }
+	
+	
+	footer {
+		background-color: black;
+		color:white;
+		text-align: center;
+		padding:0.7rem;
+	}
 </style>
 
-<div id="footerdiv">
+<footer>
       <p id="foot">CopyRite &copy; Double_J_K by Kjm Ljh Mkw</p>
-</div>
+</footer>
