@@ -66,10 +66,8 @@ html, body {
 		</c:otherwise>
 	</c:choose>
 
-	<c:if test="${BODY != 'INDEX_HOME'}">
-		<footer>
+	<c:if test="${BODY != 'INDEX_HOME'}">	
 			<%@ include file="/WEB-INF/views/include/footer.jspf"%>
-		</footer>
 	</c:if>
 </body>
 

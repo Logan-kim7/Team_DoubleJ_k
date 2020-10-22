@@ -32,9 +32,13 @@ nav button {
 }
 
 #navinfo {
-	color: white;
+	background-position:center;
+	background-repeat: no-repeat;
+	background-size: 70% 100%;
+	color: black;
+	font-weight:bolder;
 	display: block;
-	padding: 50px;
+	padding: 40px;
 	text-align: center;
 	transition: all 1.5s;
 }

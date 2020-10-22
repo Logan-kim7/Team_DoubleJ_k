@@ -4,6 +4,7 @@
   선정한 주제를
   위한 CSS공간*/
 #trand-bg {
+	background-image: url('../static/imgs/KJM/생각.jpg');
 	text-align: center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;

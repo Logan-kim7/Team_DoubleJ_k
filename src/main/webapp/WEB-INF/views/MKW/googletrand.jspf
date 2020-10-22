@@ -3,24 +3,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 <!DOCTYPE html>
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/googletrand.css?ver=0" />
+	href="${rootPath}/static/css/MKW/googletrand.css?ver=12" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://kit.fontawesome.com/c1d8b25418.js"
-	crossorigin="anonymous"></script>
 <title>Insert title here</title>
-<style>
-</style>
 </head>
-
-<section id="trand-bg"
-	style="background-image: url('../static/imgs/KJM/생각.jpg')">
+<section id="trand-bg">
 	<div id="headline">
 		<fieldset id="headset">
 			<legend id="headlegend">선택한 주제</legend>
@@ -150,21 +142,20 @@
 </section>
 
 <script>
-	$(document)
-			.ready(
-					function() {
-						$("#headh1").html("구글 트랜드 검색어")
-						$("#headh1")
-								.css(
-										"style=background-image: url('../static/imgs/KJM/구글이미지.jpg')")
-						$("#headp").html("구글트랜드 검색어를 활용하여 댓글을 작성해보자")
+	$(document).ready(
+			function() {
+				$("#headh1").html("구글 트랜드 검색어")
+				$("#headp").html("구글트랜드 검색어를 활용하여 댓글을 작성해보자")
 
-						$("#btn-main").css("background-color", "#555")
-						$("#btn-hall").css("background-color", "#555")
-						$("#btn-info").css("background-color", "#555")
-						$("#btn-notice").css("background-color", "#555")
-						$("#navinfo").css("background-color", "gray")
-					})
+				$("#navinfo").css("background-image",
+						"url('../static/imgs/KJM/gt-hd.png')")
+
+				$("#btn-main").css("background-color", "#555")
+				$("#btn-hall").css("background-color", "#555")
+				$("#btn-info").css("background-color", "#555")
+				$("#btn-notice").css("background-color", "#555")
+
+			})
 
 	$("#throwit").click(function() {
 		alert("작성을 그만둘까요? ><");
