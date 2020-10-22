@@ -21,7 +21,8 @@ import com.biz.dripbag.service.GoogleTrendeService;
 import com.biz.dripbag.service.NewsService;
 
 import lombok.RequiredArgsConstructor;
-
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Qualifier("googleCrawling")
 @RequiredArgsConstructor
 @Configuration
@@ -38,7 +39,7 @@ public class CrwalingData
 	private final DateService dateService;
 	
 	private final List<GoogleVO> googleList;
-	private final List<NewsVO> newsList;
+	private final List<NewsVO> newsVOlist;
 	
 	
 	@Scheduled(fixedDelay = 10000)
@@ -82,7 +83,7 @@ public class CrwalingData
 	@Scheduled(fixedDelay = 10000)
 	public List<NewsVO> news()
 	{
-		newsList.clear();
+		newsVOlist.clear();
 		String newsUrl = "/?pageIndex=0"; // 뉴스 페이지 인덱스 문자열
 		String url = "https://mnews.sarangbang.com"; // 뉴스페이지 URL ( 디테일 붙이기 용도)
 		
@@ -100,11 +101,11 @@ public class CrwalingData
 			for(Element one : newsList)
 			{
 				detailNews[index] = url + one.select("a").attr("href");
-				System.out.println(detailNews[index]);
+				//System.out.println(detailNews[index]);
 				index++;
 			}
 			
-			newsList.clear();
+			
 			index = 0;
 			
 			for(String one : detailNews)
@@ -116,7 +117,8 @@ public class CrwalingData
 				vo.setN_img(doc.select(".figcaption.text-center img").attr("src")); // img url
 				vo.setN_content(doc.select(".article_view p").text()); // content									
 				//newsService.insert(vo);
-			
+				newsVOlist.add(vo);
+				log.debug();
 				index++;
 			}			
 		}
@@ -127,7 +129,7 @@ public class CrwalingData
 			e.printStackTrace();
 		}
 		
-		return newsList;
+		return newsVOlist;
 	}
 		
 }
