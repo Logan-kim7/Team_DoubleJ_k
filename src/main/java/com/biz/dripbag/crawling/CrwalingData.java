@@ -118,7 +118,9 @@ public class CrwalingData
 				vo.setN_img(doc.select(".figcaption.text-center img").attr("src")); // img url
 				vo.setN_content(doc.select(".article_view p").text()); // content									
 				//newsService.insert(vo);
+
 				newslist.add(vo);
+          
 			}			
 		}
 					

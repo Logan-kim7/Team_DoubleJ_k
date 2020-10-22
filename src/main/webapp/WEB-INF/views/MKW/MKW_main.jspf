@@ -36,12 +36,14 @@
 		<aside id="right_content">
 			<fieldset>
 				<legend>Google Trand</legend>
+				
 				<ol>
 					<c:forEach items="${GOOGLE}" var="google">
 						<li><a href="${rootPath}/gtrand/${google.gt_title}">${google.gt_seq + 1}위
 								${google.gt_title}</a></li>
 					</c:forEach>
 				</ol>
+				
 			</fieldset>
 		</aside>
 	</section>
