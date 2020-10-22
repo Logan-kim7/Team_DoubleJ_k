@@ -28,9 +28,9 @@
 			<fieldset>
 				<legend> Google Trand </legend>
 				<ol>
-					<c:forEach items="${GOOGLE}" var="google" begin="0" end="9">
-						<li><a href="${rootPath}/gtrand/${google.title}">${google.seq + 1}위
-								${google.title}</a></li>
+					<c:forEach items="${GOOGLE}" var="google">
+						<li><a href="${rootPath}/gtrand/${google.gt_title}">${google.gt_seq + 1}위
+								${google.gt_title}</a></li>
 					</c:forEach>
 				</ol>
 			</fieldset>
