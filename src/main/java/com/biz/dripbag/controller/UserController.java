@@ -34,6 +34,15 @@ public class UserController
 	@Autowired
 	final SessionService sService;
 	
+	
+	@ResponseBody
+	@RequestMapping(value ="/master", method=RequestMethod.GET)
+	public boolean master(HttpServletRequest req)
+	{
+		sService.tempMaster(req);
+		return true;
+	}
+	
 	@ResponseBody
 	@RequestMapping(value ="/check/{id}", method=RequestMethod.GET)
 	public String check(@PathVariable("id") String id)
