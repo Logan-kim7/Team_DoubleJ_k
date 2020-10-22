@@ -85,6 +85,10 @@ nav button:hover {
 		else if(NavSignal == "logout")
 		{ location.href="/dripbag/user/logout" }
 	}
+	
+	$(document).ready(function() {
+		$("#navinfo").css("background-color", "black")
+	})
 </script>
 </html>
 
