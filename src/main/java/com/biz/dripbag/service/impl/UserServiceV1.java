@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.mapper.UserDAO;
 import com.biz.dripbag.model.UserVO;
+import com.biz.dripbag.service.DateService;
 import com.biz.dripbag.service.UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,9 @@ public class UserServiceV1 implements UserService
 {
 	@Autowired
 	protected UserDAO userDAO;
+	
+	@Autowired
+	protected DateService dateService;
 	
 	@Override
 	public List<UserVO> selectAll() 
@@ -34,6 +38,8 @@ public class UserServiceV1 implements UserService
 	@Override
 	public int insert(UserVO vo) 
 	{
+		vo.setD_date(dateService.dateTime()[0]);
+		vo.setD_roll(1);
 		int ret = userDAO.insert(vo);
 		return ret;
 	}

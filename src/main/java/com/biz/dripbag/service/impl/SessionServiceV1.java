@@ -13,7 +13,7 @@ import com.biz.dripbag.service.SessionService;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Component
+@Component("SessionServiceV1")
 @Slf4j
 public class SessionServiceV1 implements SessionService
 {
