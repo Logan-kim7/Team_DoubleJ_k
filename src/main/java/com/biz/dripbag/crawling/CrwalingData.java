@@ -39,10 +39,21 @@ public class CrwalingData
 	private final DateService dateService;
 	
 	private final List<GoogleVO> googleList;
-	private final List<NewsVO> newsVOlist;
+	private final List<NewsVO> newslist;
 	
 	
-	@Scheduled(fixedDelay = 10000)
+	public List<GoogleVO> getterGoogleList()
+	{
+		return googleList;
+	}
+		
+	public List<NewsVO> getterNewsList()
+	{
+		return newslist;
+	}
+	
+	
+	@Scheduled(fixedDelay = 10000000)
 	public List<GoogleVO> googleTrend() 
 	{
 		googleList.clear();
@@ -63,8 +74,7 @@ public class CrwalingData
 			  vo.setGt_date(dateService.dateTime()[0]);
 //			  googleService.insert(vo);
 			  googleList.add(vo);
-			  ++index;
-			  if(index>= 10)
+			  if(index++ >= 10)
 				  break;
 		  }
 		  
@@ -80,46 +90,35 @@ public class CrwalingData
 	}
 	
 	
-	@Scheduled(fixedDelay = 10000)
+	@Scheduled(fixedDelay = 10000000)
 	public List<NewsVO> news()
 	{
-		newsVOlist.clear();
+		newslist.clear();
 		String newsUrl = "/?pageIndex=0"; // 뉴스 페이지 인덱스 문자열
 		String url = "https://mnews.sarangbang.com"; // 뉴스페이지 URL ( 디테일 붙이기 용도)
 		
 		NewsVO vo;
 		String[] detailNews;
-		int index = 0;
-		
+		int a = 0;
 		try 
 		{
 			Document doc = Jsoup.connect(url+newsUrl).get();
-			Elements newsList = doc.select(".list_news.rank").select("li");
-
-			detailNews = new String[newsList.size()];
+			Elements elNewsList = doc.select(".list_news.rank").select("li");
+			detailNews = new String[elNewsList.size()];
 		
-			for(Element one : newsList)
+			for(Element one : elNewsList)
+				detailNews[a++] = url + one.select("a").attr("href");
+			
+			for(int i=0; i<detailNews.length; ++i)
 			{
-				detailNews[index] = url + one.select("a").attr("href");
-				//System.out.println(detailNews[index]);
-				index++;
-			}
-			
-			
-			index = 0;
-			
-			for(String one : detailNews)
-			{
-				doc = Jsoup.connect(detailNews[index]).get();
+				doc = Jsoup.connect(detailNews[i]).get();
 				
 				vo = new NewsVO();
 				vo.setN_title(doc.select(".view_wrap > .article_head h3").text()); // Title
 				vo.setN_img(doc.select(".figcaption.text-center img").attr("src")); // img url
 				vo.setN_content(doc.select(".article_view p").text()); // content									
 				//newsService.insert(vo);
-				newsVOlist.add(vo);
-				log.debug();
-				index++;
+				newslist.add(vo);
 			}			
 		}
 					
@@ -128,8 +127,9 @@ public class CrwalingData
 			System.out.println("사랑방 뉴스 접속 실패 URL 확인");
 			e.printStackTrace();
 		}
-		
-		return newsVOlist;
+		System.out.println(newslist.size());
+		return newslist;
 	}
-		
+	
+
 }
