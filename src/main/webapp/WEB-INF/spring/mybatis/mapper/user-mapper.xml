@@ -5,15 +5,15 @@
   
  <mapper namespace = "com.biz.dripbag.mapper.UserDAO">
 	<select id="selectAll" resultType="userVO">
-		select * from tbl_users
+		select * from tbl_user
 	</select>
 	
 	<select id="findById">
-		select * from tbl_users where = #{useremail}
 	</select>
 	
 	<insert id="insert">
-	
+		INSERT INTO tbl_user(d_seq, d_email, d_password, d_date, d_roll) 
+				VALUES (seq_user.NEXTVAL, #{d_email}, #{d_password}, #{d_date}, #{d_roll})
 	</insert>
 	
 	<update id="update">

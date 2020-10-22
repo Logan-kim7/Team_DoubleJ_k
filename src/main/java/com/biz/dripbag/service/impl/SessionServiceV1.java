@@ -13,10 +13,18 @@ import com.biz.dripbag.service.SessionService;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Component
+@Component("SessionServiceV1")
 @Slf4j
 public class SessionServiceV1 implements SessionService
 {
+	
+	@Override
+	public boolean tempMaster(HttpServletRequest req) 
+	{
+		req.getSession().setAttribute("login_registration", "Master");
+		return true;
+	}
+	
 	@Override
 	public boolean sessionRegistration(HttpServletRequest req, UserVO vo) 
 	{
@@ -48,6 +56,8 @@ public class SessionServiceV1 implements SessionService
 		out.flush();
 		out.close();		
 	}
+
+
 
 
 }
