@@ -159,7 +159,6 @@ fieldset {
 
 <script>
 	$(document).ready(function() {
-		$("#navinfo").css("background-color", "black")
 		$("#headh1").html("사이트 소개")
 		$("#headp").html("도데체 왜? 만들어졌을까?")
 		

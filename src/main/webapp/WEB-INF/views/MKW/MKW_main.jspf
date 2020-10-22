@@ -47,7 +47,6 @@
 		$("#btn-main").css("background-color", "cornflowerblue")
 		$("#btn-hall").css("border-bottom-left-radius", "10px")
 		$("#btn-main").css("border-bottom-right-radius", "10px")
-		$("#navinfo").css("background-color", "black")
 	})
 </script>
 </html>
