@@ -32,14 +32,13 @@ public class CrwalingData
 	
 	private final DateService dateService;
 	
+	
 	//@Scheduled(fixedDelay = 10000)
 	public void googleTrend() 
 	{
 		String url = "https://trends.google.co.kr/trends/trendingsearches/daily/rss?geo=KR";
 		Document doc;
-		  
 		GoogleVO vo; 
-		long seq = 0;
 		try 
 		{
 		  doc = Jsoup.connect(url).get();
@@ -52,7 +51,6 @@ public class CrwalingData
 			  vo.setGtrand_img(one.getElementsByTag("ht:picture").text());
 			  vo.setGtrand_date(dateService.dateTime()[0]);
 			  //googleService.insert(vo);
-			  seq++; 
 		  }
 		  
 		} 
@@ -77,17 +75,17 @@ public class CrwalingData
 		{
 			Document doc = Jsoup.connect(url+newsUrl).get();
 			Elements newsList = doc.select(".list_news.rank").select("li");
+
 			detailNews = new String[newsList.size()];
-			
-			
+		
 			for(Element one : newsList)
 			{
 				detailNews[index] = url + one.select("a").attr("href");
 				System.out.println(detailNews[index]);
 				index++;
 			}
-			
 			newsList.clear();
+			
 			index = 0;
 			for(String one : detailNews)
 			{

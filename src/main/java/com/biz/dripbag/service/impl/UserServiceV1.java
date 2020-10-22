@@ -59,7 +59,7 @@ public class UserServiceV1 implements UserService
 	}
 	
 	@Override
-	public int checkByUser(UserVO vo, int check) 
+	public int checkByUser(UserVO vo) 
 	{
 		return 0;
 	}
