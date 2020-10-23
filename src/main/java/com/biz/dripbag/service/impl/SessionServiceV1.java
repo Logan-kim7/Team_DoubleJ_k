@@ -19,10 +19,9 @@ public class SessionServiceV1 implements SessionService
 {
 	
 	@Override
-	public boolean tempMaster(HttpServletRequest req) 
+	public void master(HttpServletRequest req) 
 	{
 		req.getSession().setAttribute("login_registration", "Master");
-		return true;
 	}
 	
 	@Override
@@ -36,22 +35,24 @@ public class SessionServiceV1 implements SessionService
 		}
 		
 		req.getSession().setAttribute("login_registration", vo);
-		log.debug("로그인 성공");
 		return true;
 	}
 	
 	@Override
-	public void interceptorLogin(HttpServletResponse response, String messege) throws IOException 
-	{
-		System.out.println(messege);
+	public void locationJump(HttpServletResponse response, String url, String msg) throws IOException 
+	{	
+		if(url == null)
+			url = "";
+		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
+		
 		PrintWriter out;
 		out = response.getWriter();
 		
 		out.println("<script language='javascript'>");
-		out.println("alert('" +  messege + "')");
-		out.println("document.location.href='/dripbag/'");
+		out.println("alert('" +  msg + "')");
+		out.println("document.location.href='/dripbag/"+ url +"'");
 		out.println("</script>");
 		out.flush();
 		out.close();		

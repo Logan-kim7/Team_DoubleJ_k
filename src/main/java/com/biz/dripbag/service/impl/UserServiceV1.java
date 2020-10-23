@@ -59,9 +59,15 @@ public class UserServiceV1 implements UserService
 	}
 	
 	@Override
-	public int checkByUser(UserVO vo) 
-	{
-		return 0;
+	public boolean checkByUser(UserVO vo, int flag) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean checkByUser(String id) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

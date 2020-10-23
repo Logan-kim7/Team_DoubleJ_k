@@ -5,5 +5,6 @@ import com.biz.dripbag.model.UserVO;
 
 public interface UserService extends GenericService<UserVO, Long>
 {
-	public int checkByUser(UserVO vo);
+	public boolean checkByUser(UserVO vo, int flag);
+	public boolean checkByUser(String id);
 }
