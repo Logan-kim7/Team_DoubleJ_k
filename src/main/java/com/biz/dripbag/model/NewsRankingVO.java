@@ -11,7 +11,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class NewsVO 
+public class NewsRankingVO 
 {
 	private long   n_seq;     //	NUMBER		PRIMARY KEY
 	private String n_date;    //	VARCHAR2(10)	NOT NULL	

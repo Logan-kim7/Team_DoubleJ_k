@@ -11,7 +11,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class GoogleVO {
+public class GoogleRankingVO {
 
 	private long   gt_seq;   // NUMBER PRIMARY KEY
 	private String gt_date;  // VARCHAR2(10)	  NOT NULL	

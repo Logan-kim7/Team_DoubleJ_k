@@ -12,30 +12,45 @@ public class UserServiceV2 extends UserServiceV1
 {
 	
 	@Override
-	public int checkByUser(UserVO vo) 
+	public boolean checkByUser(UserVO vo, int flag) 
 	{
 		List<UserVO> userList = userDAO.selectAll();
-		UserVO reqVO = vo;	
-		String[] strCheck = new String[] { vo.getD_email(), vo.getD_password() };
 		
-			
-		for(int i=0; i <strCheck.length; ++i)
-			if(strCheck[i].indexOf(" ") != -1)
-				return -1;
+		if(vo.getD_email().indexOf(" ") != -1 || vo.getD_password().indexOf(" ") != -1)
+			return false;
 		
 		if(userList.size() == 0)  
-			return 0;
+			return true;
+		
+		switch (flag) 
+		{
+     	  case 1:
+			for(int i=0; i<userList.size(); ++i)
+				if(userList.get(i).getD_email().equals(vo.getD_email()) == false)
+					return true;
+		  case 2:
+			for(int i=0; i<userList.size(); ++i)
+				if(userList.get(i).getD_password().equals(vo.getD_password()))
+					return false;
+		}
+		return false;
+	}
+	
+	public boolean checkByUser(String id)
+	{
+		if(id.equals("Master"))
+			return true;
+		
+		List<UserVO> userList = userDAO.selectAll();
+		
+		if(id.indexOf(" ") != -1)
+			return false;
 		
 		for(int i=0; i<userList.size(); ++i)
-		{	
-			if(userList.get(i).getD_email().equals(reqVO.getD_email()) == false)
-				return 1;
-
-
-			if( userList.get(i).getD_email().equals(reqVO.getD_email()) && userList.get(i).getD_password().equals(reqVO.getD_password()))
-				return 2;
-		}
-		return 0;
+			if(userList.get(i).getD_email().equals(id) == false)
+				return true;
+		
+		return false;
 	}
 		
 }

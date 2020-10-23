@@ -1,8 +1,8 @@
 package com.biz.dripbag.service;
 
-import com.biz.dripbag.model.GoogleVO;
+import com.biz.dripbag.model.GoogleRankingVO;
 
-public interface GoogleTrendeService extends GenericService<GoogleVO, Long> 
+public interface GoogleTrendeService extends GenericService<GoogleRankingVO, Long> 
 {
 	
 }
