@@ -16,7 +16,9 @@ $(function()
 	$("#headp").html("공지사항 관련 페이지");
 	$("#btn-notice").css("background-color", "cornflowerblue");
 	$("#btn-notice").css("border-bottom-left-radius", "10px");
+	$("#btn-notice").css("border-bottom-right-radius", "10px");
 	$("#btn-info").css("border-bottom-right-radius", "10px");
+	$("nav button:last-child").css("border-bottom-left-radius", "10px");
 	$("#navinfo").css("background-color", "black");
 	
 	//=====================================================

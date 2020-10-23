@@ -21,8 +21,9 @@
 			<fieldset>
 				<legend>ToDay NEWS</legend>
 				<ol>
-					<c:forEach items="${NEWS}" var="news" >
-						<li><a href="${rootPath}/newsmain/${news.n_seq}">${news.n_title}</a></li>
+					<c:forEach items="${NEWS}" var="news" varStatus="i">
+						<li>${i.index + 1}위&nbsp;<a
+							href="${rootPath}/newsmain/${news.n_seq}">${news.n_title}</a></li>
 					</c:forEach>
 				</ol>
 			</fieldset>
@@ -36,14 +37,14 @@
 		<aside id="right_content">
 			<fieldset>
 				<legend>Google Trand</legend>
-				
+
 				<ol>
-					<c:forEach items="${GOOGLE}" var="google">
-						<li><a href="${rootPath}/gtrand/${google.gt_title}">${google.gt_seq + 1}위
+					<c:forEach items="${GOOGLE}" var="google" varStatus="i">
+						<li><a href="${rootPath}/gtrand/${google.gt_title}">${i.index + 1}위&nbsp;
 								${google.gt_title}</a></li>
 					</c:forEach>
 				</ol>
-				
+
 			</fieldset>
 		</aside>
 	</section>
