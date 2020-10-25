@@ -2,7 +2,7 @@ package com.biz.dripbag.service.impl;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import com.biz.dripbag.mapper.GoogleDAO;
+import com.biz.dripbag.mapper.GoogleRankingDAO;
 import com.biz.dripbag.model.GoogleRankingVO;
 import com.biz.dripbag.service.GoogleTrendeService;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 public class GoogleTrendServiceV1 implements GoogleTrendeService 
 {
 
-	private final GoogleDAO googleDAO;
+	private final GoogleRankingDAO googleDAO;
 	
 	@Override
 	public List<GoogleRankingVO> selectAll() 
