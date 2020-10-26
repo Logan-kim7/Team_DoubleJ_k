@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function()
 	{
 		nav_button[i].onclick = function()
 		{
-			localStorage.removeItem("index");
 			localStorage.setItem("index", i);
 			document.location.href = "${rootPath}/" + nav_button[i].value + "/";
 		}

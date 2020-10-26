@@ -163,6 +163,7 @@ body{
 <script>
  document.addEventListener("DOMContentLoaded", function()
 {
+	 localStorage.removeItem("index");
 	 //=========================================================
 	 window.onkeydown = function()
      {
