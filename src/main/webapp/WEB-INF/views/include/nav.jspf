@@ -4,17 +4,14 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
 <script>
-localStorage.setItem("nav_backgroundColor", "cornflowerblue");
-
 document.addEventListener("DOMContentLoaded", function()
 {
-    let bgColor = localStorage.getItem("nav_backgroundColor");
  	let nav_button = document.getElementsByClassName("nav_button");
 	if(localStorage.getItem("index") != null)
 	{
-		let index = localStorage.getItem("index"); 	
-		nav_button[index].style.backgroundColor = bgColor;
-		nav_button[index].style.borderRadius = "10px";
+		let index = localStorage.getItem("index");
+		nav_button[index].style.backgroundColor = "cornflowerblue";
+		nav_button[index].style.borderRadius = "0px 0px 10px 10px";
 		document.querySelector("nav").style.backgroundColor = "#555";
 	}
 	

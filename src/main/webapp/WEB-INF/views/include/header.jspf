@@ -5,8 +5,12 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function()
-{	
-	document.getElementsByTagName("header")[0].style.backgroundColor = "black";
+{
+	
+	window.onload = function () {
+		document.getElementsByTagName("header")[0].style.backgroundColor	 = "black";	}
+	
+	//document.getElementsByTagName("header")[0].style.backgroundColor = "black";
 })
 
 </script> 
@@ -27,7 +31,7 @@ header{
 	
 	padding: 30px;
 	text-align: center;
-	transition: all 1.5s;	
+	transition: all 1s;
 }
 </style>
 
