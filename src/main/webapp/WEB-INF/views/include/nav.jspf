@@ -4,21 +4,30 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
 <script>
+localStorage.setItem("nav_backgroundColor", "cornflowerblue");
+
 document.addEventListener("DOMContentLoaded", function()
 {
+    let bgColor = localStorage.getItem("nav_backgroundColor");
+ 	let nav_button = document.getElementsByClassName("nav_button");
+	if(localStorage.getItem("index") != null)
+	{
+		let index = localStorage.getItem("index"); 	
+		nav_button[index].style.backgroundColor = bgColor;
+		nav_button[index].style.borderRadius = "10px";
+		document.querySelector("nav").style.backgroundColor = "#555";
+	}
 	
-	let nav_button = document.getElementsByClassName("nav_button");
 	for(let i=0; i<nav_button.length; ++i)
 	{
 		nav_button[i].onclick = function()
 		{
-  		  document.location.href = "${rootPath}/" + nav_button[i].value + "/";
+			localStorage.removeItem("index");
+			localStorage.setItem("index", i);
+			document.location.href = "${rootPath}/" + nav_button[i].value + "/";
 		}
-
 	}
-	
-})	
- 
+})
 </script>
 <style>
 nav {
@@ -41,6 +50,10 @@ nav button {
 	transition: all 0.7s;
 }
 
+nav .testsss{
+		background-color: red;
+}
+
 nav button:active{
 	background-color: red;
 }
@@ -51,9 +64,9 @@ nav button:hover {
 
 </style>
 <nav>
-	<button type="button" class="nav_button" value="main">메인화면</button>
+	<button type="button" class="nav_button" value="main" style="background-color: a;">메인화면</button>
 	<button type="button" class="nav_button" value="halloffame">명예의전당</button>
 	<button type="button" class="nav_button" value="info">사이트 소개</button>
-	<button type="button" class="nav_button" value="notice">공지사항</button>
+	<button type="button" class="nav_button" value="notice" id="test">공지사항</button>
 	<button type="button" class="nav_button" value="user/logout">로그아웃</button>
 </nav>

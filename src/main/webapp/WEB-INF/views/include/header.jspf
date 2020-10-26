@@ -7,23 +7,23 @@
 document.addEventListener("DOMContentLoaded", function()
 {	
 	document.getElementsByTagName("header")[0].style.backgroundColor = "black";
-	document.getElementsByTagName("h1")[0].style.color = "white";
-	document.getElementsByTagName("p")[0].style.color = "white";
 })
 
 </script> 
 
 <style>
 header{
- 	background-image:url("${rootPath}/static/imgs/KJM/main-hd.png");
-/* 	background-size: contain;
-	/* background-repeat: no-repeat; */ */
+	/*  
+	background-image:url("${rootPath}/static/imgs/KJM/main-hd.png");
+ 	background-size: contain;
+	background-repeat: no-repeat; 
 	background-position:center;
+	 */
 	
 	height:112px;
 
 	background-color:white;
-	color: black;
+	color: white;
 	
 	padding: 30px;
 	text-align: center;
