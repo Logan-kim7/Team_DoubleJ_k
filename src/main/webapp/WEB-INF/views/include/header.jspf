@@ -4,15 +4,8 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
 <script>
-document.addEventListener("DOMContentLoaded", function()
-{
-	
 	window.onload = function () {
 		document.getElementsByTagName("header")[0].style.backgroundColor	 = "black";	}
-	
-	//document.getElementsByTagName("header")[0].style.backgroundColor = "black";
-})
-
 </script> 
 
 <style>

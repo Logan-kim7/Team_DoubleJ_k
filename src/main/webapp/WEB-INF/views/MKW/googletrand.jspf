@@ -3,7 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
-<link rel="stylesheet" href="${rootPath}/static/css/MKW/googletrand.css?ver=12" />
+<link rel="stylesheet"
+	href="${rootPath}/static/css/MKW/googletrand.css?ver=13" />
 
 <section id="trand-bg">
 	<div id="headline">
@@ -13,32 +14,32 @@
 		</fieldset>
 	</div>
 
-	<div id="user_write">
-		<fieldset id="writeset">
-			<legend id="writelegend">내가 작성하기</legend>
+	<form id="gtinputbox">
+		<div id="user_write">
+			<fieldset id="writeset">
+				<legend id="writelegend">내가 작성하기</legend>
 
-			<form class="inputbox">
-				<label for="fname">4자성어를 입력하세요</label> <input type="text" id="fname"
-					name="fname" placeholder="4글자만 입력가능!!!">
-			</form>
 
-			<form class="inputbox">
-				<label for="fname">4자성어 설명을 입력하세요</label> <input type="text"
-					id="fname" name="fname" placeholder="12글자까지만 입력가능!!!">
-			</form>
+				<label for="fname">4자성어를 입력하세요</label>
+				<input type="text" id="fname" name="fname" placeholder="4글자만 입력가능!!!">
+				<label for="comment">4자성어 설명을 입력하세요</label>
+				<input type="text" id="comment" name="comment" placeholder="12글자까지만 입력가능!!!">
 
-		</fieldset>
-	</div>
+				<input type="hidden" id="title" name="title">
 
-	<div id="writebutton">
-		<button id="throwit" type="button">
-			<p>영 아니다</p>
-		</button>
-		<button id="addit" type="button">
-			<p>잘만든것 같다</p>
-		</button>
-	</div>
+			</fieldset>
+		</div>
 
+		<div id="writebutton">
+			<button id="throwit" type="button">
+				<p>영 아니다</p>
+			</button>
+			<button id="addit" type="button">
+				<p>잘만든것 같다</p>
+			</button>
+		</div>
+
+	</form>
 
 	<div id="user_bord">
 
@@ -151,8 +152,10 @@
 			})
 
 	$("#throwit").click(function() {
-		alert("작성을 그만둘까요? ><");
+		
+		if(alert("작성을 그만둘까요? ><");){
 		document.location.href = "/dripbag/main/"
+		}
 	})
 
 	$("#addit").click(function() {
