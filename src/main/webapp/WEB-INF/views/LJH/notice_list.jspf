@@ -51,9 +51,6 @@ td {
 		</c:forEach>
 	</table>
 
-	<div id="notice_button_div">
-		<button class="nav_button">글쓰기</button>
-	</div>
 
 	<div id="notice_button_serch">
 		<ul style="display: none" class="notice_ul">

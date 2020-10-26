@@ -7,12 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-10-20-12" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://kit.fontawesome.com/c1d8b25418.js"
-	crossorigin="anonymous"></script>
+<link rel="stylesheet"	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-10-20-14" />
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -49,18 +45,5 @@
 		</aside>
 	</section>
 </body>
-<script>
-	$(document).ready(
-			function() {
-				$("#headh1").html("DRIP BAG").css("font-size", "60px")
-				$("#headp").html("여기는 메인화면 이지롱 ><")
 
-				$("#navinfo").css("background-image",
-						"url('../static/imgs/KJM/main-hd.png')")
-
-				$("#btn-main").css("background-color", "cornflowerblue")
-				$("#btn-hall").css("border-bottom-left-radius", "10px")
-				$("#btn-main").css("border-bottom-right-radius", "10px")
-			})
-</script>
 </html>

@@ -157,19 +157,5 @@ fieldset {
 	</section>
 </section>
 
-<script>
-	$(document).ready(function() {
-		$("#headh1").html("사이트 소개")
-		$("#headp").html("도데체 왜? 만들어졌을까?")
-		
-		$("nav").css("background-color","black")
-		
-		$("#btn-hall").css("border-bottom-right-radius", "10px")
-		$("#btn-info").css("background-color", "cornflowerblue")
-		$("#btn-info").css("border-bottom-left-radius", "10px")
-		$("#btn-info").css("border-bottom-right-radius", "10px")
-		$("#btn-notice").css("border-bottom-left-radius", "10px")
-	})
-</script>
 
 

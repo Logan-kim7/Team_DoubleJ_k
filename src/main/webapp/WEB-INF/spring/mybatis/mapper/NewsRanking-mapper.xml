@@ -3,12 +3,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
- <mapper namespace = "com.biz.dripbag.mapper.NoticeDAO">
+ <mapper namespace = "com.biz.dripbag.mapper.NewsRankingDAO">
 	<select id="selectAll" resultType="noticeVO">
 		SELECT * FROM tbl_nRanking
 	</select>
 	
-	<select id="findById" resultType="noticeVO">
+	<select id="findById" resultType="NewsRankingVO">
 		SELECT * FROM tbl_nRanking WHERE n_seq = #{n_seq}
 	</select>
 	
