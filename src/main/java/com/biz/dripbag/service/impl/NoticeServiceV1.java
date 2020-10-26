@@ -40,4 +40,10 @@ public class NoticeServiceV1 implements NoticeService
 	{
 		return 0;
 	}
+
+	@Override
+	public NoticeVO findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

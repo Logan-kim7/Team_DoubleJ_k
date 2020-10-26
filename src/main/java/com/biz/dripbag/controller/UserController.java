@@ -1,6 +1,8 @@
 package com.biz.dripbag.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.biz.dripbag.model.UserVO;
@@ -34,35 +37,30 @@ public class UserController
 	final SessionService sService;
 	
 	@RequestMapping(value= {"/join", "/join/"}, method = RequestMethod.POST)
-	public void Join(UserVO userVO, Model model)
+	public void Join(UserVO userVO, HttpServletResponse res) throws IOException
 	{				
-		if(uService.checkByUser(userVO, 1) == true)
+		if(uService.findById(0, userVO, null) == true)
 			uService.insert(userVO);
-	}
-	
-	@ResponseBody
-	@RequestMapping(value ="/master", method=RequestMethod.GET)
-	public boolean master(HttpServletRequest req)
-	{
-		sService.master(req);
-		return true;
-	}
-	
-	@ResponseBody
-	@RequestMapping(value ="/check/{id}", method=RequestMethod.GET)
-	public boolean check(@PathVariable("id") String id)
-	{
-		if( uService.checkByUser(id) == true)
-			return true;
 		
-		return false;
+		sService.locationJump(res, null, "회원가입 완료");
+	}
+	
+	@ResponseBody
+	@RequestMapping(value ={"/check/", "/check"}, method=RequestMethod.GET)
+	public int check(@RequestParam("id") String id)
+	{		
+		if(uService.findById(1, null, id) == true)
+			return 1;
+		
+		return 0;
 	}
 	
 	@RequestMapping(value ={"/check", "/check/"}, method=RequestMethod.POST)
 	public String check(UserVO userVO, HttpServletRequest req, HttpServletResponse res) throws IOException
 	{
-		if(uService.checkByUser(userVO, 2) == false)
-			sService.sessionRegistration(req, userVO);
+
+		if(uService.findById(2, userVO, null) == true)
+			sService.sessionRegistration(req, userVO, null);
 
 		else
 			sService.locationJump(res, null, "ID or PWD 불일치");
@@ -73,8 +71,15 @@ public class UserController
 	@RequestMapping(value= {"/logout", "/logout/"}, method = RequestMethod.GET)
 	public void logout(HttpServletRequest req, HttpServletResponse res) throws IOException
 	{
-		sService.sessionRegistration(req, null);
+		sService.sessionRegistration(req, null, null);
 		sService.locationJump(res, null, "로그아웃 성공");
 	}
 	
+	
+	@ResponseBody
+	@RequestMapping(value ="/master", method=RequestMethod.GET)
+	public void master(HttpServletRequest req, @RequestParam("master") String master)
+	{
+		sService.sessionRegistration(req, null, master);
+	}
 }

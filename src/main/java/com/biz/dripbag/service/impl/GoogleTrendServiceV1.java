@@ -46,5 +46,11 @@ public class GoogleTrendServiceV1 implements GoogleTrendeService
 		int ret = googleDAO.delete(id);
 		return ret;
 	}
+
+	@Override
+	public GoogleRankingVO findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

@@ -40,4 +40,10 @@ public class NewsServiceV1 implements NewsService
 		return 0;
 	}
 
+	@Override
+	public NewsRankingVO findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

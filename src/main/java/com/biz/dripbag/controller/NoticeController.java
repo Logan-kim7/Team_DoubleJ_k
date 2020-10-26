@@ -38,7 +38,7 @@ public class NoticeController
 	{
 
 		model.addAttribute("BODY", "NOTICE_DETAIL");
-		return "home";
+		return "LJH/notice_home";
 	}
 	
 	@RequestMapping(value="/write", method=RequestMethod.GET)
@@ -51,7 +51,7 @@ public class NoticeController
 	@RequestMapping(value="/write", method=RequestMethod.POST)
 	public String write(Model model, @ModelAttribute("noticeVO") NoticeVO vo)
 	{
-		return "redirect:/noticeHome";
+		return "LJH/notice_home";
 	}
 	
 }

@@ -1,22 +1,156 @@
 @charset "UTF-8";
 
-body, html {
- 	background: url(../../imgs/LJH/Background.gif) no-repeat center center fixed;
-	background-size: contain;
-	background-color: black;
-	margin: 0;
-	padding: 0;
-}
-#MainLogo {
-	width: 70vw;
-	height: 50vh;
-	position: absolute;
-	left: 50%;
-	top: -10%;
-	transform: translate(-50%);
+
+body{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    margin:  0;
+    padding: 0;
 }
 
-#notice_body{
+#bg-image{
+    /* filter: blur(10px); */
+    height: 100%; 
+ 	/* background: url("${rootPath}/static/imgs/LJH/Background.gif") no-repeat center center fixed; */
+ 	background: url("../../imgs/LJH/Background.gif") no-repeat center center fixed;
+    background-size: contain;
+}
+
+#MainLogo{
+    width: 70vw;
+    height: 50vh;
+    
+    position: absolute;
+    left : 50%;
+    top  : -10%;
+    transform: translate(-50%);
+}
+
+#login_form input, #login_form button:nth-child(3), #login_form button:nth-child(4){
+    width: 17vw;
+    font-size: 2vh;
+    padding: 0.5vh 0.5vw;
 	
-	height: 100%;	
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+    border: 1px solid white;
+    outline:none;
+    
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1vh;
+	
+	
+    position: absolute;
+    left : 50%;
+    transform: translate(-50%, -50%);
+}
+
+#login_form input:nth-child(1) { top: 55%; }
+#login_form input:nth-child(2) { top: 60%; }
+#login_form button:nth-child(3) { top: 67%; }
+#login_form button:nth-child(4) { top: 72%; }
+
+#login_form button:nth-child(3), #login_form button:nth-child(4){
+	width: 17vw;
+}
+
+#join_body
+{   
+	box-sizing:content-box;
+
+    background-color: rgba(14, 13, 13, 0.7);
+    color: white;
+    border: 1px solid white;
+    border-radius: 35px;
+
+    height: 70vh;
+    width: 300px;
+    padding: 40px;
+
+    text-align: center;
+    z-index: 2;
+    
+    position: absolute;
+    left : 50%;
+    top  : 50%;
+    transform: translate(-50%, -50%);
+}
+
+#join_body h1{
+	font-size: 34px;
+	font-family: Edo;
+}
+#join_body h1 i{
+	color: red;
+	margin: 1px auto;
+}
+
+#join_body form{
+    width: inherit;
+    height: 90%;
+
+    box-sizing: content-box;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#join_body form div{
+	width:100%;
+	height: 75%;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#join_body form input{
+    width: 70%;
+    margin:30px auto;
+    outline: none;
+    background-color: inherit;
+    border-style:none;
+    border-bottom:solid 1px #cacaca;
+    border-collapse:collapse;
+    color: white;
+}
+
+#join_body form button{
+    margin: 5px auto;
+    height:5%;
+    width: 75%;
+    
+    border: 1px solid white;
+    outline:none;
+    
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+#check_id_ptag{
+	height: 20px;
+	margin:30px;
+	color: red;
+	font-weight: bold;
+}
+
+#login_form input:focus, #join_body input:focus{
+	 border-color: rgb(247, 174, 39);
+	 font-weight: bold;
+}
+
+#login_form button:nth-child(3):hover, #login_form button:nth-child(4):hover,
+#join_body form button:hover
+{
+    cursor: pointer;
+    color: rgb(247, 174, 39);
+    border-color: rgb(247, 174, 39);
+}
+
+#login_form input:focus::placeholder, #join_body input:focus::placeholder{
+    color: transparent;
 }

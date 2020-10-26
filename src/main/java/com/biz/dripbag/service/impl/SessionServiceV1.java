@@ -25,13 +25,19 @@ public class SessionServiceV1 implements SessionService
 	}
 	
 	@Override
-	public boolean sessionRegistration(HttpServletRequest req, UserVO vo) 
+	public boolean sessionRegistration(HttpServletRequest req, UserVO vo, String master) 
 	{
 		if(req.getSession().getAttribute("login_registration") != null)
 		{
 			req.getSession().removeAttribute("login_registration");
 			log.debug("로그아웃 성공");
 			return false;
+		}
+		
+		if(master != null && master.equals("master"))
+		{
+			req.getSession().setAttribute("login_registration", "master");
+			return true;
 		}
 		
 		req.getSession().setAttribute("login_registration", vo);

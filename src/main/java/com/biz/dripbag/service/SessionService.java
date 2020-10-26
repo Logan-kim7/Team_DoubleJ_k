@@ -10,7 +10,7 @@ import com.biz.dripbag.model.UserVO;
 public interface SessionService 
 {
 	public void master(HttpServletRequest req);
-	public boolean sessionRegistration(HttpServletRequest req, UserVO vo);
+	public boolean sessionRegistration(HttpServletRequest req, UserVO vo, String master);
 	public void locationJump(HttpServletResponse res, String url, String msg) throws IOException;
 	
 }
