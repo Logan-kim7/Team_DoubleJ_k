@@ -67,9 +67,8 @@ html, body {
 		<c:when test="${BODY == 'NOTICE_HOME'}">
 			<%@ include file="/WEB-INF/views/LJH/notice_home.jspf" %>
 		</c:when>
-		
 	</c:choose>
-
+	
 	<c:if test="${BODY != 'INDEX_HOME'}">	
 			<%@ include file="/WEB-INF/views/include/footer.jspf"%>
 	</c:if>
