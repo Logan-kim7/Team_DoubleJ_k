@@ -159,12 +159,19 @@
 	$("#throwit").click(function() {
 
 		if (confirm("작성을 그만둘까요? ><")) {
+			alert("좋은 생각이에요!!! ^^")
 			document.location.href = "/dripbag/main/"
+		} else {
+			alert("읭?")
 		}
 	})
 
 	$("#addit").click(function() {
-		if (confirm("서버에 추가됩니다 √"))
+		if (confirm("서버에 추가됩니다 √")){
+			alert("않이... yee게 뭐야!")
 			document.location.href = "/dripbag/main/"
+			} else {
+				alert("흥 칫 뿡! ")
+			}
 	})
 </script>
