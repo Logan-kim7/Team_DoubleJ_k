@@ -14,16 +14,15 @@
 		</fieldset>
 	</div>
 
-	<form id="gtinputbox">
+	<form id="gtinputbox" method="POST">
 		<div id="user_write">
 			<fieldset id="writeset">
 				<legend id="writelegend">내가 작성하기</legend>
 
-
-				<label for="fname">4자성어를 입력하세요</label>
-				<input type="text" id="fname" name="fname" placeholder="4글자만 입력가능!!!">
-				<label for="comment">4자성어 설명을 입력하세요</label>
-				<input type="text" id="comment" name="comment" placeholder="12글자까지만 입력가능!!!">
+				<label for="fname">4자성어를 입력하세요</label> <input type="text" id="fname"
+					name="fname" placeholder="4글자만 입력가능!!!"> <label
+					for="comment">4자성어 설명을 입력하세요</label> <input type="text"
+					id="comment" name="comment" placeholder="12글자까지만 입력가능!!!">
 
 				<input type="hidden" id="title" name="title">
 
@@ -46,83 +45,89 @@
 		<div class="cmlist">
 
 			<table id="listcustomers">
-				<tr>
-					<th>작성자</th>
-					<th>내용</th>
-					<th>좋아요</th>
-					<th>싫어요</th>
-					<th>작성일</th>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
+				<thead>
+					<tr>
+						<th>작성자</th>
+						<th>내용</th>
+						<th>좋아요</th>
+						<th>싫어요</th>
+						<th>작성일</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+
+				</tbody>
 
 			</table>
 
@@ -152,14 +157,14 @@
 			})
 
 	$("#throwit").click(function() {
-		
-		if(alert("작성을 그만둘까요? ><");){
-		document.location.href = "/dripbag/main/"
+
+		if (confirm("작성을 그만둘까요? ><")) {
+			document.location.href = "/dripbag/main/"
 		}
 	})
 
 	$("#addit").click(function() {
-		alert("서버에 추가됩니다 √");
-		document.location.href = "/dripbag/main/"
+		if (confirm("서버에 추가됩니다 √"))
+			document.location.href = "/dripbag/main/"
 	})
 </script>
