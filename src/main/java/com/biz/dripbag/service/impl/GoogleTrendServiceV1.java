@@ -8,7 +8,7 @@ import com.biz.dripbag.service.GoogleTrendeService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@Service("GoogleServiceV1")
+@Service("googleServiceV1")
 public class GoogleTrendServiceV1 implements GoogleTrendeService 
 {
 

@@ -6,7 +6,7 @@ import com.biz.dripbag.model.UserVO;
 
 
 
-@Service("UserServiceV2")
+@Service("userServiceV2")
 public class UserServiceV2 extends UserServiceV1 
 {
 	@Override

@@ -1,7 +1,5 @@
 package com.biz.dripbag.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.biz.dripbag.crawling.CrwalingData;
+import com.biz.dripbag.mapper.SearchDAO;
 import com.biz.dripbag.model.NoticeVO;
-import com.biz.dripbag.service.DateService;
 import com.biz.dripbag.service.NoticeService;
 
 import lombok.RequiredArgsConstructor;
@@ -22,13 +21,20 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class NoticeController
 {
-	@Qualifier("NoticeServiceV1")
-	private final NoticeService noticeService;
-	private final DateService dService;
+	@Qualifier("noticeServiceV1")
+	private final NoticeService nService;
+	
+	@Qualifier("CrawlingData")
+	private final CrwalingData cService;
+	
+	private final SearchDAO searchService;
 	
 	@RequestMapping(value={"/", ""}, method = RequestMethod.GET)
-	public String home(Model model, HttpServletRequest req)
-	{			
+	public String home(Model model)
+	{			 
+		model.addAttribute("TEST", searchService.selectAll("tbl_user"));
+		model.addAttribute("GOOGLE", cService.getGoogleList());
+		model.addAttribute("NEWS", 	cService.getNewsList());
 		model.addAttribute("BODY", "NOTICE_HOME");
 		return "home";
 	}
@@ -50,6 +56,13 @@ public class NoticeController
 	
 	@RequestMapping(value="/write", method=RequestMethod.POST)
 	public String write(Model model, @ModelAttribute("noticeVO") NoticeVO vo)
+	{
+		return "LJH/notice_home";
+	}
+	
+	
+	@RequestMapping(value="/select", method=RequestMethod.GET)
+	public String selectList(Model model, @ModelAttribute("noticeVO") NoticeVO vo)
 	{
 		return "LJH/notice_home";
 	}

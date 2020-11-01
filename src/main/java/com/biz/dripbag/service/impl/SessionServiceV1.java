@@ -6,23 +6,17 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.model.UserVO;
 import com.biz.dripbag.service.SessionService;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Component("SessionServiceV1")
+@Service("sessionServiceV1")
 @Slf4j
 public class SessionServiceV1 implements SessionService
 {
-	
-	@Override
-	public void master(HttpServletRequest req) 
-	{
-		req.getSession().setAttribute("login_registration", "Master");
-	}
 	
 	@Override
 	public boolean sessionRegistration(HttpServletRequest req, UserVO vo, String master) 
