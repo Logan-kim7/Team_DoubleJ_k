@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.biz.dripbag.model.NewsRankingVO;
 import com.biz.dripbag.service.NewsService;
 
-@Service("NewsServiceV1")
+@Service("newsServiceV1")
 public class NewsServiceV1 implements NewsService 
 {
 	@Override

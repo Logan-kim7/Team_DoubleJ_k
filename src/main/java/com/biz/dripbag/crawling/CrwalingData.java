@@ -23,17 +23,16 @@ import com.biz.dripbag.service.NewsService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
-@Qualifier("googleCrawling")
 @RequiredArgsConstructor
 @Configuration
 @EnableScheduling
-@Service
+@Service("CrawlingData")
 public class CrwalingData
 {
-	@Qualifier("GoogleServiceV1")
+	@Qualifier("googleServiceV1")
 	private final GoogleTrendeService googleService;
 	
-	@Qualifier("NewsServiceV1")
+	@Qualifier("newsServiceV1")
 	private final NewsService newsService;
 	
 	private final DateService dateService;
@@ -41,17 +40,8 @@ public class CrwalingData
 	private final List<GoogleRankingVO> googleList;
 	private final List<NewsRankingVO> newslist;
 	
-	
-	public List<GoogleRankingVO> getGoogleList()
-	{
-		return googleList;
-	}
-		
-	public List<NewsRankingVO> getNewsList()
-	{
-		return newslist;
-	}
-	
+	public List<GoogleRankingVO> getGoogleList() { return googleList; }
+	public List<NewsRankingVO> getNewsList() { return newslist; }
 	
 	@Scheduled(fixedDelay = 86400000)
 	public List<GoogleRankingVO> googleTrend() 
@@ -74,16 +64,10 @@ public class CrwalingData
 			  vo.setGt_date(dateService.dateTime()[0]);
 //			  googleService.insert(vo);
 			  googleList.add(vo);
-			  if(index++ >= 10)
-				  break;
+			  if(index++ >= 9) break;
 		  }
-		  
 		} 
-		catch (IOException e) 
-		{
-			System.out.println("구글 트렌드 접속 실패 URL 확인");
-			e.printStackTrace();
-		}
+		catch (IOException e) { System.out.println("구글 트렌드 접속 실패"); }
 		
 		index=0;
 		return googleList;
@@ -118,17 +102,10 @@ public class CrwalingData
 				vo.setN_img(doc.select(".figcaption.text-center img").attr("src")); // img url
 				vo.setN_content(doc.select(".article_view p").text()); // content									
 				//newsService.insert(vo);
-
 				newslist.add(vo);
-          
 			}			
 		}
-					
-		catch (IOException e) 
-		{
-			System.out.println("사랑방 뉴스 접속 실패 URL 확인");
-			e.printStackTrace();
-		}
+		catch (IOException e)  { System.out.println("사랑방 뉴스 접속 실패"); }
 		return newslist;
 	}
 	

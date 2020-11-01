@@ -39,14 +39,14 @@ td {
 
 <div id="notice_body">
 	<table>
+	<tr>
 		<th>제목</th>
 		<th>날짜</th>
 		<th>NO</th>
-		<c:forEach items="${NOTICE}" var="notice">
-			<tr class= "notice_title" data-seq="${notice.seq}">
-				<td>${notice.title}</td>
-				<td>${notice.date}</td>
-				<td>${notice.seq}</td>
+	</tr>
+		<c:forEach items="${TEST}" var="test">
+			<tr>	
+				<td>${test.D_EMAIL}</td>
 			</tr>
 		</c:forEach>
 	</table>

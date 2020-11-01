@@ -16,15 +16,18 @@ document.addEventListener("DOMContentLoaded", function()
 	         {
 	            $.ajax
 	            ({
-	    			contentType : "application/text",
-	           	url : `${rootPath}/user/master`,
-	           	type : "get",
-	           	data : {"master" : "master"}
+	           		url  		: "${rootPath}/user/check/",
+	           		type 		: "post",
+	           		data 		: {"master" : "master"},
+	           		success     : function()
+	           		{
+	           			document.location.href = "${rootPath}/main/";		
+	           		}
 	            })
-	          document.location.href = "${rootPath}/main/";
+	            
 	         }
 	    };	 
-	//================================ 회원가입 CSS ON & OFF ==========================================
+	//================================ 회원가입 CSS ON & OFF =====================
 	document.getElementById("join_body").style.display = "none"	
 	const flag_button = document.querySelectorAll(".flag_button");
 	for(const button of flag_button)
@@ -69,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function()
 				});
 			}
 	}
-	//=========================================================	
+	//==========================================================================
 })
 </script>
 

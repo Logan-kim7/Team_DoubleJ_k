@@ -13,7 +13,7 @@ import com.biz.dripbag.service.UserService;
 import lombok.RequiredArgsConstructor;
 
 
-@Service
+@Service("userServiceV1")
 @RequiredArgsConstructor
 public class UserServiceV1 implements UserService 
 {

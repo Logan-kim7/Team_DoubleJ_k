@@ -37,7 +37,7 @@ html, body {
 
 	<c:choose>
 		<c:when test="${BODY == 'INDEX_HOME'}">
-			<%@ include file="/WEB-INF/views/LJH/index.jspf"%>
+			<%@ include file="/WEB-INF/views/index.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'MAIN_HOME'}">
@@ -65,7 +65,7 @@ html, body {
 		</c:when>
 		
 		<c:when test="${BODY == 'NOTICE_HOME'}">
-			<%@ include file="/WEB-INF/views/LJH/notice_home.jspf" %>
+			<%@ include file="/WEB-INF/views/Notice/notice_home.jspf" %>
 		</c:when>
 	</c:choose>
 	

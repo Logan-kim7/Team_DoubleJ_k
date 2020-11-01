@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.biz.dripbag.model.NoticeVO;
 import com.biz.dripbag.service.NoticeService;
 
-@Service("NoticeServiceV1")
+@Service("noticeServiceV1")
 public class NoticeServiceV1 implements NoticeService 
 {	
 

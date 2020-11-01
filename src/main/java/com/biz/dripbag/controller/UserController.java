@@ -22,18 +22,20 @@ import com.biz.dripbag.service.SessionService;
 import com.biz.dripbag.service.UserService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 @RequestMapping(value = {"/user", "/user/"})
 @Controller
 public class UserController 
 {	
 	@Autowired
-	@Qualifier("UserServiceV2")
+	@Qualifier("userServiceV2")
 	private UserService uService;
 	
 	@Autowired
-	@Qualifier("SessionServiceV1")
+	@Qualifier("sessionServiceV1")
 	final SessionService sService;
 	
 	@RequestMapping(value= {"/join", "/join/"}, method = RequestMethod.POST)
@@ -47,8 +49,8 @@ public class UserController
 	
 	@ResponseBody
 	@RequestMapping(value ={"/check/", "/check"}, method=RequestMethod.GET)
-	public int check(@RequestParam("id") String id)
-	{		
+	public int joinIdCheck(@RequestParam("id") String id, String master)
+	{	
 		if(uService.findById(1, null, id) == true)
 			return 1;
 		
@@ -56,10 +58,16 @@ public class UserController
 	}
 	
 	@RequestMapping(value ={"/check", "/check/"}, method=RequestMethod.POST)
-	public String check(UserVO userVO, HttpServletRequest req, HttpServletResponse res) throws IOException
+	public String check(UserVO userVO, HttpServletRequest req, HttpServletResponse res, String master) throws IOException
 	{
-
-		if(uService.findById(2, userVO, null) == true)
+		
+		if(master != null)
+		{
+			sService.sessionRegistration(req, null, master);
+			return null;
+		}
+		
+		else if(uService.findById(2, userVO, null) == true)
 			sService.sessionRegistration(req, userVO, null);
 
 		else
@@ -76,10 +84,4 @@ public class UserController
 	}
 	
 	
-	@ResponseBody
-	@RequestMapping(value ="/master", method=RequestMethod.GET)
-	public void master(HttpServletRequest req, @RequestParam("master") String master)
-	{
-		sService.sessionRegistration(req, null, master);
-	}
 }
