@@ -7,9 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script src="https://kit.fontawesome.com/c1d8b25418.js"
-	crossorigin="anonymous"></script>
+
 <title>News main</title>
 <style>
 section#main_content {

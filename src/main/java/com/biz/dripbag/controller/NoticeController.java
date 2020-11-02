@@ -1,7 +1,5 @@
 package com.biz.dripbag.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.biz.dripbag.crawling.CrwalingData;
+import com.biz.dripbag.mapper.SearchDAO;
 import com.biz.dripbag.model.NoticeVO;
-import com.biz.dripbag.service.DateService;
 import com.biz.dripbag.service.NoticeService;
 
 import lombok.RequiredArgsConstructor;
@@ -22,42 +21,50 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class NoticeController
 {
-	@Qualifier("NoticeServiceV1")
-	private final NoticeService noticeService;
-	private final DateService dService;
+	@Qualifier("noticeServiceV1")
+	private final NoticeService nService;
+	
+	@Qualifier("CrawlingData")
+	private final CrwalingData cService;
+	
+	private final SearchDAO searchService;
+	
 	@RequestMapping(value={"/", ""}, method = RequestMethod.GET)
-	public String home(Model model, HttpServletRequest req)
-	{			
-		model.addAttribute("NOTICE", noticeService.selectAll());
+	public String home(Model model)
+	{			 
+		model.addAttribute("TEST", searchService.selectAll("tbl_user"));
+		model.addAttribute("GOOGLE", cService.getGoogleList());
+		model.addAttribute("NEWS", 	cService.getNewsList());
 		model.addAttribute("BODY", "NOTICE_HOME");
-		return "/LJH/notice";
+		return "home";
 	}
 		
 	@RequestMapping(value="/detail/{notice_seq}")
 	public String detail(@PathVariable("notice_seq") String seq, Model model)
 	{
-		long index = Integer.valueOf(seq);
-		NoticeVO vo = noticeService.findById(index);
-		System.out.println(vo.getTitle() + vo.getContent());
-		model.addAttribute("NOTICE_VO", noticeService.findById(index));
+
 		model.addAttribute("BODY", "NOTICE_DETAIL");
-		return "/LJH/notice";
+		return "LJH/notice_home";
 	}
 	
 	@RequestMapping(value="/write", method=RequestMethod.GET)
 	public String write(Model model, @ModelAttribute("noticeVO") NoticeVO vo, String dummy)
 	{
 		model.addAttribute("BODY", "NOTICE_WRITE");
-		return "/LJH/notice";
+		return "home";
 	}
 	
 	@RequestMapping(value="/write", method=RequestMethod.POST)
 	public String write(Model model, @ModelAttribute("noticeVO") NoticeVO vo)
 	{
-		String arrDate = dService.dateTime()[0];
-		vo.setDate(arrDate);
-		noticeService.insert(vo);
-		return "redirect:/notice";
+		return "LJH/notice_home";
+	}
+	
+	
+	@RequestMapping(value="/select", method=RequestMethod.GET)
+	public String selectList(Model model, @ModelAttribute("noticeVO") NoticeVO vo)
+	{
+		return "LJH/notice_home";
 	}
 	
 }

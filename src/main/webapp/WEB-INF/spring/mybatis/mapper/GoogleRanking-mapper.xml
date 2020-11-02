@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace = "com.biz.dripbag.mapper.GoogleRankingDAO">
+	<select id="selectAll" resultType="GoogleRankingVO">
+		SELECT * FROM tbl_gRanking
+	</select>
+	
+	<select id="findById" resultType="GoogleRankingVO">
+		SELECT * FROM tbl_gRanking WHERE gt_seq = #{gt_seq}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tbl_gRanking(gt_seq, gt_date, gt_title, gt_img)
+			 VALUES (seq_gt, #{gt_date}, #{gt_title}, #{gt_img})
+	</insert>
+	
+	<update id="update">
+	
+	</update>
+	
+	<delete id="delete">
+	</delete>
+	
+ </mapper>

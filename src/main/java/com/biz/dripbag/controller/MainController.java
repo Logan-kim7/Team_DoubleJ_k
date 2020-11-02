@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.biz.dripbag.crawling.CrwalingData;
-import com.biz.dripbag.model.GoogleVO;
+import com.biz.dripbag.model.GoogleRankingVO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -27,8 +27,8 @@ public class MainController {
 	@RequestMapping(value = "/", method =  RequestMethod.GET)
 	public String home(Model model) throws IOException 
 	{			
-		model.addAttribute("GOOGLE", crwalingData.getterGoogleList());
-		model.addAttribute("NEWS", crwalingData.getterNewsList());
+		model.addAttribute("GOOGLE", crwalingData.getGoogleList());
+		model.addAttribute("NEWS", crwalingData.getNewsList());
 		model.addAttribute("BODY","MAIN_HOME");
 		return "home";
 	}

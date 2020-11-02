@@ -3,11 +3,29 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
+<script>
+document.addEventListener("DOMContentLoaded", function()
+{
+ 	let nav_button = document.getElementsByClassName("nav_button");
+	if(localStorage.getItem("index") != null)
+	{
+		let index = localStorage.getItem("index");
+		nav_button[index].style.backgroundColor = "cornflowerblue";
+		nav_button[index].style.borderRadius = "0px 0px 10px 10px";
+		document.querySelector("nav").style.backgroundColor = "#555";
+	}
+	
+	for(let i=0; i<nav_button.length; ++i)
+	{
+		nav_button[i].onclick = function()
+		{
+			localStorage.setItem("index", i);
+			document.location.href = "${rootPath}/" + nav_button[i].value + "/";
+		}
+	}
+})
+</script>
 <style>
-header {
-	position: relative;
-}
-
 nav {
 	display: flex;
 	height: 10% auto;
@@ -20,76 +38,31 @@ nav button {
 	border: none;
 	outline: none;
 	cursor: pointer;
-	height: 65px;
+	height: 50px;
 	flex: 1;
 	font-size: 20px;
 	font: bold;
 	justify-content: center;
-}
-
-.tablink:hover {
-	background-color: #777;
-}
-
-#navinfo {
-	color: white;
-	display: block;
-	padding: 50px;
-	text-align: center;
-	transition: all 1.5s;
-}
-
-nav button {
 	transition: all 0.7s;
+}
+
+nav .testsss{
+		background-color: red;
+}
+
+nav button:active{
+	background-color: red;
 }
 
 nav button:hover {
 	background-color: crimson;
 }
 
-
-/* 여기는
-네비바를
-위한 CSS 공간
-*/
 </style>
-
-<header>
-
-	<div id="navinfo">
-		<h1 id=headh1></h1>
-		<p id="headp"></p>
-	</div>
-
-</header>
-
 <nav>
-	<button type="button" onclick="navOpen('main')" id="btn-main">메인화면</button>
-	<button type="button" onclick="navOpen('halloffame')" id="btn-hall">명예의전당</button>
-	<button type="button" onclick="navOpen('info')" id="btn-info">사이트 소개</button>
-	<button type="button" onclick="navOpen('notice')" id="btn-notice">공지사항</button>
-	<button type="button" onclick="navOpen('logout')" id="btn-notice">로그아웃</button>
+	<button type="button" class="nav_button" value="main" style="background-color: a;">메인화면</button>
+	<button type="button" class="nav_button" value="halloffame">명예의전당</button>
+	<button type="button" class="nav_button" value="info">사이트 소개</button>
+	<button type="button" class="nav_button" value="notice" id="test">공지사항</button>
+	<button type="button" class="nav_button" value="user/logout">로그아웃</button>
 </nav>
-
-<script>
-	function navOpen(NavSignal){
-		if(NavSignal == "main"){
-			 location.href="/dripbag/main/"
-		} else if(NavSignal == "halloffame"){
-			 location.href="/dripbag/halloffame/"
-		} else if(NavSignal == "info"){
-			 location.href="/dripbag/info/"
-		} else if(NavSignal == "notice"){
-			 location.href="/dripbag/notice/"
-		}
-		else if(NavSignal == "logout")
-		{ location.href="/dripbag/user/logout" }
-	}
-	
-	$(document).ready(function() {
-		$("#navinfo").css("background-color", "black")
-	})
-</script>
-</html>
-
-

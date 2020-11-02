@@ -3,11 +3,69 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
+<script>
+	window.onload = function () {
+		document.getElementsByTagName("header")[0].style.backgroundColor	 = "black";	}
+</script> 
+
+<style>
+header{
+	/*  
+	background-image:url("${rootPath}/static/imgs/KJM/main-hd.png");
+ 	background-size: contain;
+	background-repeat: no-repeat; 
+	background-position:center;
+	 */
+	
+	height:112px;
+
+	background-color:white;
+	color: white;
+	
+	padding: 30px;
+	text-align: center;
+	transition: all 1s;
+}
+</style>
+
 <header>
 
-	<div id="navinfo">
-		<h1 id=headh1></h1>
-		<p id="headp"></p>
-	</div>
+	<c:choose>
+		<c:when test="${BODY == 'MAIN_HOME'}">
+			<h1>DRIPBAG</h1>
+			<p>1</p>
+		</c:when>
+
+		<c:when test="${BODY == 'HALL_OF_FAME'}">
+			<h1>Ranking</h1>
+			<p>1</p>
+		</c:when>
+
+		<c:when test="${BODY == 'INFO_HOME'}">
+			<h1>INFO</h1>
+			<p>1</p>
+		</c:when>
+
+		<c:when test="${BODY == 'NEWS_HOME'}">
+			<h1>NEWS</h1>
+			<p>1</p>
+		</c:when>
+
+		<c:when test="${BODY == 'GOOGLE_HOME'}">
+			<h1>Google</h1>
+			<p></p>
+		</c:when>
+
+		<c:when test="${BODY == 'NEWS_DETAIL'}">
+			<h1></h1>
+			<p></p>
+		</c:when>
+			
+		<c:when test="${BODY == 'NOTICE_HOME'}">
+			<h1>Notice</h1>
+			<p>1</p>
+		</c:when>
+		
+</c:choose>
 
 </header>

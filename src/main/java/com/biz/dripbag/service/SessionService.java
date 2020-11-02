@@ -9,8 +9,6 @@ import com.biz.dripbag.model.UserVO;
 
 public interface SessionService 
 {
-	public boolean tempMaster(HttpServletRequest req);
-	public boolean sessionRegistration(HttpServletRequest req, UserVO vo);
-	public void interceptorLogin(HttpServletResponse res, String message) throws IOException;
-	
+	public boolean sessionRegistration(HttpServletRequest req, UserVO vo, String master);
+	public void locationJump(HttpServletResponse res, String url, String msg) throws IOException;	
 }

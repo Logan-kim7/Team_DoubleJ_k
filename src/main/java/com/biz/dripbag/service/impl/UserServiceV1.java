@@ -13,7 +13,7 @@ import com.biz.dripbag.service.UserService;
 import lombok.RequiredArgsConstructor;
 
 
-@Service
+@Service("userServiceV1")
 @RequiredArgsConstructor
 public class UserServiceV1 implements UserService 
 {
@@ -34,12 +34,18 @@ public class UserServiceV1 implements UserService
 	{
 		return userDAO.findById(id);
 	}
+	
+	@Override
+	public UserVO findById(String id) 
+	{
+		return userDAO.findById(id);
+	}
+
 
 	@Override
 	public int insert(UserVO vo) 
 	{
 		vo.setD_date(dateService.dateTime()[0]);
-		vo.setD_roll(1);
 		int ret = userDAO.insert(vo);
 		return ret;
 	}
@@ -59,9 +65,8 @@ public class UserServiceV1 implements UserService
 	}
 	
 	@Override
-	public int checkByUser(UserVO vo) 
-	{
-		return 0;
+	public boolean findById(int flag, UserVO vo, String id)   {
+		// TODO Auto-generated method stub
+		return false;
 	}
-
 }

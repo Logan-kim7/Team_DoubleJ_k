@@ -19,7 +19,6 @@ public class IndexController
 	public String home(Model model)
 	{
 		model.addAttribute("BODY","INDEX_HOME");
-//		model.addAttribute("userVO", vo);
 		return "home";
 	}
 }

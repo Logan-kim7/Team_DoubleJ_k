@@ -2,16 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
-<!DOCTYPE html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/googletrand.css?ver=12" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<title>Insert title here</title>
-</head>
+	href="${rootPath}/static/css/MKW/googletrand.css?ver=13" />
+
 <section id="trand-bg">
 	<div id="headline">
 		<fieldset id="headset">
@@ -20,115 +14,120 @@
 		</fieldset>
 	</div>
 
-	<div id="user_write">
-		<fieldset id="writeset">
-			<legend id="writelegend">내가 작성하기</legend>
+	<form id="gtinputbox" method="POST">
+		<div id="user_write">
+			<fieldset id="writeset">
+				<legend id="writelegend">내가 작성하기</legend>
 
-			<form class="inputbox">
 				<label for="fname">4자성어를 입력하세요</label> <input type="text" id="fname"
-					name="fname" placeholder="4글자만 입력가능!!!">
-			</form>
+					name="fname" placeholder="4글자만 입력가능!!!"> <label
+					for="comment">4자성어 설명을 입력하세요</label> <input type="text"
+					id="comment" name="comment" placeholder="12글자까지만 입력가능!!!">
 
-			<form class="inputbox">
-				<label for="fname">4자성어 설명을 입력하세요</label> <input type="text"
-					id="fname" name="fname" placeholder="12글자까지만 입력가능!!!">
-			</form>
+				<input type="hidden" id="title" name="title">
 
-		</fieldset>
-	</div>
+			</fieldset>
+		</div>
 
-	<div id="writebutton">
-		<button id="throwit" type="button">
-			<p>영 아니다</p>
-		</button>
-		<button id="addit" type="button">
-			<p>잘만든것 같다</p>
-		</button>
-	</div>
+		<div id="writebutton">
+			<button id="throwit" type="button">
+				<p>영 아니다</p>
+			</button>
+			<button id="addit" type="button">
+				<p>잘만든것 같다</p>
+			</button>
+		</div>
 
+	</form>
 
 	<div id="user_bord">
 
 		<div class="cmlist">
 
 			<table id="listcustomers">
-				<tr>
-					<th>작성자</th>
-					<th>내용</th>
-					<th>좋아요</th>
-					<th>싫어요</th>
-					<th>작성일</th>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
+				<thead>
+					<tr>
+						<th>작성자</th>
+						<th>내용</th>
+						<th>좋아요</th>
+						<th>싫어요</th>
+						<th>작성일</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+
+				</tbody>
 
 			</table>
 
@@ -158,12 +157,22 @@
 			})
 
 	$("#throwit").click(function() {
-		alert("작성을 그만둘까요? ><");
-		document.location.href = "/dripbag/main/"
+
+		if (confirm("작성을 그만둘까요? ><")) {
+			alert("좋은 생각이에요!!! ^^")
+			document.location.href = "/dripbag/main/"
+		} else {
+			alert("읭?")
+		}
 	})
 
 	$("#addit").click(function() {
-		alert("서버에 추가됩니다 √");
-		document.location.href = "/dripbag/main/"
+		if (confirm("서버에 추가됩니다 √")) {
+			let title = "asdf";
+			alert("않이... 이게 뭐야!")
+			document.location.href = "${rootPath}/gtrand/save/" + title
+		} else {
+			alert("흥 칫 뿡!")
+		}
 	})
 </script>

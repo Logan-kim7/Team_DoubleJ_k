@@ -1,41 +1,39 @@
 package com.biz.dripbag.service.impl;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.model.UserVO;
 
 
-@Service("UserServiceV2")
+
+@Service("userServiceV2")
 public class UserServiceV2 extends UserServiceV1 
 {
-	
 	@Override
-	public int checkByUser(UserVO vo) 
+	public boolean findById(int flag, UserVO vo, String id) 
 	{
-		List<UserVO> userList = userDAO.selectAll();
-		UserVO reqVO = vo;	
-		String[] strCheck = new String[] { vo.getD_email(), vo.getD_password() };
+		if(vo != null && (vo.getD_email().indexOf(" ") != -1 || vo.getD_password().indexOf(" ") != -1))
+			return false;
 		
+		if((id != null && id.indexOf(" ") != -1))
+			return false;
+
+		
+		switch (flag) 
+		{
+			case 0:
+				if(userDAO.findById(vo.getD_email()) == null);
+					return true;
+				
+			case 1:
+				if(userDAO.findById(id) == null)
+					return true;
 			
-		for(int i=0; i <strCheck.length; ++i)
-			if(strCheck[i].indexOf(" ") != -1)
-				return -1;
+			case 2:
+				if(vo != null && userDAO.findByUser(vo.getD_email(), vo.getD_password()) != null)
+					return true;
+		}	
 		
-		if(userList.size() == 0)  
-			return 0;
-		
-		for(int i=0; i<userList.size(); ++i)
-		{	
-			if(userList.get(i).getD_email().equals(reqVO.getD_email()) == false)
-				return 1;
-
-
-			if( userList.get(i).getD_email().equals(reqVO.getD_email()) && userList.get(i).getD_password().equals(reqVO.getD_password()))
-				return 2;
-		}
-		return 0;
+		return false;
 	}
-		
 }

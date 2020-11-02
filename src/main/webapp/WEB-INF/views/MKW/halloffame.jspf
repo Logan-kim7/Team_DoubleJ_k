@@ -7,8 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${rootPath}/static/css/MKW/halloffame.css?ver=1"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/c1d8b25418.js" crossorigin="anonymous"></script>
+
 <title>Insert title here</title>
 <style>
 	#fame_interface{
@@ -41,14 +40,6 @@
 </style>
 <script>
 
-$(document).ready(function(){
-
-	$("#Notice").css("display","inline");
-	$("#defaultOpen1").css("background-color","gray");
-	$("#defaultOpen2").css("background-color","gray");
-	$("#defaultOpen5").css("background-color","gray");
-	
-});
 
 
 
@@ -159,17 +150,4 @@ $(document).ready(function(){
         
       </div>
       </section>
-<script>
-	$(document).ready(function() {
-		$("#headh1").html("명예의 전당")
-		$("#headp").html("여기는 고득점자를 박제하는 페이지")
-		
-		$("nav").css("background-color","navy")
-		
-		$("#btn-main").css("border-bottom-right-radius","10px")
-		$("#btn-hall").css("background-color","cornflowerblue")
-		$("#btn-hall").css("border-bottom-left-radius","10px")
-		$("#btn-hall").css("border-bottom-right-radius","10px")
-		$("#btn-info").css("border-bottom-left-radius","10px")
-	})
-</script>
+

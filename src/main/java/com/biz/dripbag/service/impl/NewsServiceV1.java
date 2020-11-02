@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+
 import com.biz.dripbag.mapper.NewsDAO;
 import com.biz.dripbag.model.NewsVO;
 import com.biz.dripbag.service.NewsService;
@@ -40,6 +41,8 @@ public class NewsServiceV1 implements NewsService {
 
 		int ret = newsDAO.update(vo);
 		return ret;
+
+
 	}
 
 	@Override
@@ -47,6 +50,12 @@ public class NewsServiceV1 implements NewsService {
 		int ret = newsDAO.delete(id);
 
 		return ret;
+	}
+
+	@Override
+	public NewsRankingVO findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

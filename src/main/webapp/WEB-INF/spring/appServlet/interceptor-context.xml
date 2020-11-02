@@ -22,7 +22,7 @@
 	    <mvc:exclude-mapping path="/user/join/**"/>
 	    <mvc:exclude-mapping path="/static/**"/>
 			<bean id="DripbagInterceptor" class="com.biz.dripbag.interceptor.Dripbaginterceptor">
-				<constructor-arg ref="SessionServiceV1"></constructor-arg>
+				<constructor-arg ref="sessionServiceV1"></constructor-arg>
 			</bean>    	
 	  </mvc:interceptor>
 	</mvc:interceptors>
