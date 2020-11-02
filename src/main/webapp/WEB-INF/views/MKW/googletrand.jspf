@@ -168,8 +168,9 @@
 
 	$("#addit").click(function() {
 		if (confirm("서버에 추가됩니다 √")) {
-			alert("않이... yee게 뭐야!")
-			document.location.href = "/dripbag/main/"
+			let title = "asdf";
+			alert("않이... 이게 뭐야!")
+			document.location.href = "${rootPath}/gtrand/save/" + title
 		} else {
 			alert("흥 칫 뿡!")
 		}
