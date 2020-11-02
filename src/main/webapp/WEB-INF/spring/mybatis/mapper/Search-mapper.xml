@@ -4,11 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
  <mapper namespace = "com.biz.dripbag.mapper.SearchDAO">
- 
- 	<resultMap type="map" id="test"></resultMap>
- 
-	<select id="selectAll" resultMap="test">
-		SELECT * FROM ${table}
+  	
+	<select id="selectColumn" resultType="HashMap">
+		SELECT * FROM ${table} ORDER BY d_seq DESC
 	</select>
+				
+	<select id="searchListMap" resultMap="test">
 		
+	</select>
+
  </mapper>

@@ -14,8 +14,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import com.biz.dripbag.model.GoogleRankingVO;
-import com.biz.dripbag.model.NewsRankingVO;
+import com.biz.dripbag.model.GoogleVO;
+import com.biz.dripbag.model.NewsVO;
 import com.biz.dripbag.service.DateService;
 import com.biz.dripbag.service.GoogleTrendeService;
 import com.biz.dripbag.service.NewsService;
@@ -37,19 +37,19 @@ public class CrwalingData
 	
 	private final DateService dateService;
 	
-	private final List<GoogleRankingVO> googleList;
-	private final List<NewsRankingVO> newslist;
+	private final List<GoogleVO> googleList;
+	private final List<NewsVO> newslist;
 	
-	public List<GoogleRankingVO> getGoogleList() { return googleList; }
-	public List<NewsRankingVO> getNewsList() { return newslist; }
+	public List<GoogleVO> getGoogleList() { return googleList; }
+	public List<NewsVO> getNewsList() { return newslist; }
 	
 	@Scheduled(fixedDelay = 86400000)
-	public List<GoogleRankingVO> googleTrend() 
+	public List<GoogleVO> googleTrend() 
 	{
 		googleList.clear();
 		String url = "https://trends.google.co.kr/trends/trendingsearches/daily/rss?geo=KR";
 		Document doc;
-		GoogleRankingVO vo;
+		GoogleVO vo;
 		int index = 0;
 		try 
 		{
@@ -58,10 +58,10 @@ public class CrwalingData
 		
 		  for(Element one : trendList) 
 		  { 
-			  vo = new GoogleRankingVO(); 
-			  vo.setGt_title(one.select("title").text());
-			  vo.setGt_img(one.getElementsByTag("ht:picture").text());
-			  vo.setGt_date(dateService.dateTime()[0]);
+			  vo = new GoogleVO(); 
+			  vo.setTitle(one.select("title").text());
+			  vo.setImg(one.getElementsByTag("ht:picture").text());
+			  vo.setDate(dateService.dateTime()[0]);
 //			  googleService.insert(vo);
 			  googleList.add(vo);
 			  if(index++ >= 9) break;
@@ -75,13 +75,13 @@ public class CrwalingData
 	
 	
 	@Scheduled(fixedDelay = 86400000)
-	public List<NewsRankingVO> news()
+	public List<NewsVO> news()
 	{
 		newslist.clear();
 		String newsUrl = "/?pageIndex=0"; // 뉴스 페이지 인덱스 문자열
 		String url = "https://mnews.sarangbang.com"; // 뉴스페이지 URL ( 디테일 붙이기 용도)
 		
-		NewsRankingVO vo;
+		NewsVO vo;
 		String[] detailNews;
 		int index = 0;
 		try 
@@ -97,10 +97,10 @@ public class CrwalingData
 			{
 				doc = Jsoup.connect(detailNews[i]).get();
 				
-				vo = new NewsRankingVO();
-				vo.setN_title(doc.select(".view_wrap > .article_head h3").text()); // Title
-				vo.setN_img(doc.select(".figcaption.text-center img").attr("src")); // img url
-				vo.setN_content(doc.select(".article_view p").text()); // content									
+				vo = new NewsVO();
+				vo.setTitle(doc.select(".view_wrap > .article_head h3").text()); // Title
+				vo.setImg(doc.select(".figcaption.text-center img").attr("src")); // img url
+				vo.setContent(doc.select(".article_view p").text()); // content									
 				//newsService.insert(vo);
 				newslist.add(vo);
 			}			

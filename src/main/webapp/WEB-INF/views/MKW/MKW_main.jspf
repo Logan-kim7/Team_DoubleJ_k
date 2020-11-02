@@ -17,10 +17,10 @@
 			<fieldset>
 				<legend>ToDay NEWS</legend>
 				<ol>
-					<c:forEach items="${NEWS}" var="news" varStatus="i">
-						<li>${i.index + 1}위&nbsp;<a
-							href="${rootPath}/newsmain/${news.n_seq}">${news.n_title}</a></li>
-					</c:forEach>
+					  <c:forEach items="${NEWS}" var="news" varStatus="i" >
+                        <li><a href="${rootPath}/news/${i.index}">${news.title}</a></li>
+
+                    </c:forEach>
 				</ol>
 			</fieldset>
 		</aside>
@@ -35,8 +35,8 @@
 
 				<ol>
 					<c:forEach items="${GOOGLE}" var="google" varStatus="i">
-						<li><a href="${rootPath}/gtrand/${google.gt_title}">${i.index + 1}위&nbsp;
-								${google.gt_title}</a></li>
+						<li><a href="${rootPath}/gtrand/${google.title}">${i.index + 1}위&nbsp;
+								${google.title}</a></li>
 					</c:forEach>
 				</ol>
 

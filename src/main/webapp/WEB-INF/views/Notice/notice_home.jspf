@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
 
-<link rel="stylesheet" href="${rootPath}/static/css/Notice/home.css?ver=0">
+<link rel="stylesheet" href="${rootPath}/static/css/Notice/home.css?ver=2">
 <script>
 $(function() 
 {
@@ -76,8 +76,8 @@ $(function()
 			<button class="notice_nav_btn" name="change">변경</button>
 			<ul>
 				<c:forEach items="${GOOGLE}" var="google" varStatus="status">
-						<li>${google.gt_title}</li>
-					    <li style="display: none;">${NEWS[status.index].n_title}</li>
+						<li>${google.title}</li>
+					    <li style="display: none;">${NEWS[status.index].title}</li>
 				</c:forEach>
 			</ul>
 	</section>

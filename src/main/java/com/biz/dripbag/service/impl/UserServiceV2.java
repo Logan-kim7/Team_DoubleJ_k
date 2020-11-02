@@ -12,7 +12,7 @@ public class UserServiceV2 extends UserServiceV1
 	@Override
 	public boolean findById(int flag, UserVO vo, String id) 
 	{
-		if(vo != null && (vo.getD_email().indexOf(" ") != -1 || vo.getD_password().indexOf(" ") != -1))
+		if(vo != null && (vo.getEmail().indexOf(" ") != -1 || vo.getPassword().indexOf(" ") != -1))
 			return false;
 		
 		if((id != null && id.indexOf(" ") != -1))
@@ -22,7 +22,7 @@ public class UserServiceV2 extends UserServiceV1
 		switch (flag) 
 		{
 			case 0:
-				if(userDAO.findById(vo.getD_email()) == null);
+				if(userDAO.findById(vo.getEmail()) == null);
 					return true;
 				
 			case 1:
@@ -30,7 +30,7 @@ public class UserServiceV2 extends UserServiceV1
 					return true;
 			
 			case 2:
-				if(vo != null && userDAO.findByUser(vo.getD_email(), vo.getD_password()) != null)
+				if(vo != null && userDAO.findByUser(vo.getEmail(), vo.getPassword()) != null)
 					return true;
 		}	
 		

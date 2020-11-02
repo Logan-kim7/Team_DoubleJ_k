@@ -9,16 +9,16 @@
 	</select>
 	
 	<select id="findById" resultType="userVO">
-		select * from tbl_user where d_email = #{d_email}
+		select * from tbl_user where email = #{email}
 	</select>
 	
 	<select id="findByUser" resultType="userVO">
-		select * from tbl_user where d_email = #{d_email} AND d_password = #{d_password}
+		select * from tbl_user where email = #{email} AND password = #{password}
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO tbl_user(d_seq, d_email, d_password, d_date) 
-				VALUES (seq_user.NEXTVAL, #{d_email}, #{d_password}, #{d_date})
+		INSERT INTO tbl_user(seq, email, password, date) 
+				VALUES (seq_user.NEXTVAL, #{email}, #{password}, #{date})
 	</insert>
 	
 	<update id="update">

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.biz.dripbag.crawling.CrwalingData;
-import com.biz.dripbag.model.GoogleRankingVO;
+import com.biz.dripbag.model.GoogleVO;
 
 import lombok.RequiredArgsConstructor;
 

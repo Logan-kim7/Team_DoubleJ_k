@@ -4,32 +4,32 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.biz.dripbag.model.NewsRankingVO;
+import com.biz.dripbag.model.NewsVO;
 import com.biz.dripbag.service.NewsService;
 
 @Service("newsServiceV1")
 public class NewsServiceV1 implements NewsService 
 {
 	@Override
-	public List<NewsRankingVO> selectAll() {
+	public List<NewsVO> selectAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public NewsRankingVO findById(Long id) {
+	public NewsVO findById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int insert(NewsRankingVO vo) {
+	public int insert(NewsVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int update(NewsRankingVO vo) {
+	public int update(NewsVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -41,7 +41,7 @@ public class NewsServiceV1 implements NewsService
 	}
 
 	@Override
-	public NewsRankingVO findById(String id) {
+	public NewsVO findById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
