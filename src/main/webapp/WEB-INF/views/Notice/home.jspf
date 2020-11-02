@@ -6,57 +6,48 @@
 <script>
 $(function() 
 {
-	let flag = 0;
 	//=====================================================
 	$(".notice_title").click(function() {
 		let seq = $(this).data("seq");
 		document.location.href = "${rootPath}/notice/detail/" + seq;
 	})
 	//=====================================================
-		$("#notice_button_div button").click(function()
+		$(".notice_nav_btn").eq(0).click(function()
 		{
-			document.location.href = "${rootPath}/notice/write"
+			$("#toggle_div").toggle();
 		})
 	//=====================================================
-	$("#notice_search").click(function() {
-		if ($("#notice_search ul").css("display") == "none")
-			$("#notice_search ul").show();
-		else
-			$("#notice_search ul").hide();
-	})
 
-	$("#notice_search ul li").click(function() {
-		let temp = $("#notice_search em").text();
-		$("#notice_search em").html($(this).text());
-		$(this).text(temp);
-	})
-	//=====================================================
-		
-	$(".notice_nav_btn[name=change]").click(function()
+	//================== 구글 OR 뉴스 리스트 =============================		
+	$(".notice_nav_btn").eq(1).click(function()
 	{
 		$("#notice_nav > ul li").toggle();
 	})
 })
 </script>
 
-<div id = "div_body">
-   <section>
-	   <c:choose>
-			<c:when test="${BODY == 'NOTICE_WRITE'}">
-				<%@ include file="/WEB-INF/views/Notice/notice_write.jspf" %>
-			</c:when>
+<style>
+	#toggle_div{
+		display: none;
+		height: 80%;
+		width:  60%;
+		border: 6px solid red;
+		background: gray;
 		
-			<c:when test="${BODY == 'NOTICE_DETAIL'}">
-				<%@ include file="/WEB-INF/views/Notice/notice_detail.jspf"%>
-			</c:when>
+		position :absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);	
 			
-			<c:otherwise>
-				<%@ include file="/WEB-INF/views/Notice/notice_list.jspf" %>
-			</c:otherwise>
-						
-		</c:choose>
+	}
+</style>
+
+<div id = "div_body">	
+   <section>
+		<%@ include file="/WEB-INF/views/Notice/notice_list.jspf" %>
+		<div id="toggle_div"><%@ include file="/WEB-INF/views/Notice/write.jspf"%></div>
 	</section>  
-     
+       
 	<section id=notice_nav>
 		<div>
 		   	<select>
@@ -73,7 +64,7 @@ $(function()
 			
 
 			<button class="notice_nav_btn">글쓰기</button>
-			<button class="notice_nav_btn" name="change">변경</button>
+			<button class="notice_nav_btn">변경</button>
 			<ul>
 				<c:forEach items="${GOOGLE}" var="google" varStatus="status">
 						<li>${google.title}</li>

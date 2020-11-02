@@ -9,12 +9,8 @@
 		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd">
 	
-	
-	
 	<mvc:interceptors>
-		
 	  <mvc:interceptor>
-	  	
 	    <mvc:mapping path="/**"/>
 	    <mvc:exclude-mapping path="/"/>
 	    <mvc:exclude-mapping path="/user/master/**"/>

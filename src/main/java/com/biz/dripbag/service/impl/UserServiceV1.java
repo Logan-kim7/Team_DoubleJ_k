@@ -45,7 +45,7 @@ public class UserServiceV1 implements UserService
 	@Override
 	public int insert(UserVO vo) 
 	{
-		vo.setDate(dateService.dateTime()[0]);
+		vo.setDates(dateService.dateTime()[0]);
 		int ret = userDAO.insert(vo);
 		return ret;
 	}

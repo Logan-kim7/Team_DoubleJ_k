@@ -26,15 +26,10 @@ public class NoticeController
 	
 	@Qualifier("CrawlingData")
 	private final CrwalingData cService;
-	
-	@Qualifier("searchServiceV1")
-	private final SearchService sService;
-		
+			
 	@RequestMapping(value={"/", ""}, method = RequestMethod.GET)
 	public String home(Model model)
-	{				
-		
-		/* sService.seachColumn("tbl_user").toString(); */
+	{						
 		
 		model.addAttribute("GOOGLE", cService.getGoogleList());
 		model.addAttribute("NEWS", 	cService.getNewsList());
@@ -51,7 +46,7 @@ public class NoticeController
 	}
 	
 	@RequestMapping(value="/write", method=RequestMethod.GET)
-	public String write(Model model, @ModelAttribute("noticeVO") NoticeVO vo, String dummy)
+	public String write(Model model)
 	{
 		model.addAttribute("BODY", "NOTICE_WRITE");
 		return "home";
@@ -62,8 +57,7 @@ public class NoticeController
 	{
 		return "LJH/notice_home";
 	}
-	
-	
+		
 	@RequestMapping(value="/select", method=RequestMethod.GET)
 	public String selectList(Model model, @ModelAttribute("noticeVO") NoticeVO vo)
 	{

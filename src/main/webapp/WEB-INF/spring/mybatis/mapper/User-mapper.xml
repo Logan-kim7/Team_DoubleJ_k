@@ -13,12 +13,12 @@
 	</select>
 	
 	<select id="findByUser" resultType="userVO">
-		select * from tbl_user where email = #{email} AND password = #{password}
+		select * from tbl_user where email = #{email} AND pwd = #{pwd}
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO tbl_user(seq, email, password, date) 
-				VALUES (seq_user.NEXTVAL, #{email}, #{password}, #{date})
+		INSERT INTO tbl_user(seq, email, pwd, dates) 
+				VALUES (seq_user.NEXTVAL, #{email}, #{pwd}, #{dates})
 	</insert>
 	
 	<update id="update">

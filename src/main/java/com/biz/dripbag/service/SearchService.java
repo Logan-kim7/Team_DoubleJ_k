@@ -1,8 +1,9 @@
 package com.biz.dripbag.service;
 
+import java.util.List;
+import java.util.Map;
 
 public interface SearchService 
 {
-	public String[] seachColumn(String table);
-	//public List<Map<String, String>> selectSearch(String table, String strFlag, String strSearchValue);
+	public List<Map<String, String>> search(String table, String flag, String keyword);
 }

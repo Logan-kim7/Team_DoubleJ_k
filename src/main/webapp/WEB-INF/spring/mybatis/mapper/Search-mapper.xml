@@ -6,11 +6,32 @@
  <mapper namespace = "com.biz.dripbag.mapper.SearchDAO">
   	
 	<select id="selectColumn" resultType="HashMap">
-		SELECT * FROM ${table} ORDER BY d_seq DESC
+		SELECT * FROM ${table} WHERE ROWNUM = 1 ORDER BY seq DESC
 	</select>
-				
-	<select id="searchListMap" resultMap="test">
-		
+	
+	<select id="selectAll" resultType="HashMap">
+		SELECT * FROM ${table} WHERE TITLE 
+			LIKE  %'||#{keyword}||'%' OR CONTENT LIKE '%${value}' 
+				ORDER BY seq DESC
+	</select>
+	
+	<select id="selectTitle" resultType="HashMap">
+		SELECT * FROM ${table} WHERE TITLE 
+			LIKE  %'||#{keyword}||'%' 
+				ORDER BY seq DESC
+	</select>
+	
+	<select id="selectContent" resultType="HashMap">
+		SELECT * FROM ${table} WHERE CONTENT 
+			LIKE %'||#{keyword}||'%'  
+				ORDER BY seq DESC
+	</select>
+	
+	<select id="selectWriter" resultType="HashMap">
+		SELECT * FROM ${table} WHERE WRITER 
+			LIKE %'||#{keyword}||'%'  
+				ORDER BY seq DESC
 	</select>
 
  </mapper>
+ 
