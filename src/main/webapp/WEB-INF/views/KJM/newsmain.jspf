@@ -79,7 +79,7 @@ fieldset {
 }
 
 .newsimage {
-	margin-top: 40px;
+	margin-top: 10px;
 	display: inline-block;
 	height: auto;
 	width: auto;
@@ -94,16 +94,21 @@ fieldset {
 	display: inline-block;
 	width: 80%;
 	height: auto;
-	margin-top: 50px;
+	
 	border-radius: 8px;
 	padding: 10px;
+	
 }
 
 .newsstory {
 	display: inline-block;
 	width: 80%;
-	height: auto;
-	margin-top: 8px;
+	height: 100%;
+	text-align: center;
+	overflow: scroll;
+	font-weight: bolder;
+	font-size: 20px;
+
 }
 
 /* 여기는
@@ -263,22 +268,19 @@ input {
 				<h2>Top NEWS</h2>
 			</legend>
 			<div class="newsimage">
-				<img src="..\images\news.jpg" alt="대충 여기에 사진을 넣읍시다" />
+				<img src="${NEWSDATA.n_img}" alt="대충 여기에 사진을 넣읍시다" />
 			</div>
 			<br />
 
 			<div class="newstitle">
 
-				<span><h2>여기는 제목</h2></span>
+				<span><h2>${NEWSDATA.n_title}</h2></span>
 			</div>
 
 			<div class="newsstory">
-				<h3>
-					내에에에에에에용 내용용 <br /> Lorem ipsum dolor sit amet consectetur
-					adipisicing elit. Aliquid, fuga qui. Atque beatae est ex expedita,
-					repellendus autem, illum similique cum quibusdam fuck, veritatis
-					nam voluptates modi inventore tempore molestiae id!
-				</h3>
+				<p>
+					${NEWSDATA.n_content}
+				</p>
 			</div>
 		</fieldset>
 	</section>
@@ -312,74 +314,17 @@ input {
 					<th>싫어요</th>
 					<th>작성일</th>
 				</tr>
+				
+			<%-- 	<c:forEach items="${NEWSLIST}" var="NEWSDB">	
 				<tr>
+					<td>${NEWSDB.n_write}</td>
+					<td>${NEWSDB.n_content}</td>
 					<td></td>
 					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td>${NEWSDB.n_date}</td>
 				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
+				</c:forEach>
+				 --%>
 			</table>
 
 			<div class="pagination">

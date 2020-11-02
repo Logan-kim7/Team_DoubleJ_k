@@ -13,9 +13,8 @@ body {
 section#main_content {
 	flex: 1;
 	width: 100%;
-	height:100%;
+	height: 100%;
 	display: inline-flex;
-	
 }
 
 #main_content aside {
@@ -23,19 +22,20 @@ section#main_content {
 	text-align: center;
 }
 
-div#clock_main{
-	
+div#clock_main {
 	flex: 1;
 	text-align: center;
-	line-height:  100%;
+	line-height: 100%;
 	font-weight: bolder;
 	color: black;
 	font-size: 30px;
 }
-div#clock_main p{
+
+div#clock_main p {
 	margin-top: 60px;
-	line-height:  100%;
+	line-height: 100%;
 }
+
 footer {
 	background-color: black;
 	color: white;
@@ -96,15 +96,30 @@ header {
 위한 CSS 공간
 */
 
+/* 여기는
+사이드바를
+위한 CSS 공간
+*/
+div#side_content {
+	height: 100%;
+	width: 200px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+}
 
-
-
+/* 여기는
+사이드바를
+위한 CSS 공간
+*/
 
 /* 여기는
    레프트 콘텐츠를
     위한 CSS 공간*/
 #left_content {
-	
 	display: inline-block;
 	height: 100%;
 	text-align: center;
@@ -119,7 +134,6 @@ fieldset {
 	text-align: center;
 	margin-top: 40px;
 	color: black;
-	
 }
 
 legend {
@@ -128,10 +142,6 @@ legend {
 	font-weight: bolder;
 	padding: 0px 50px;
 }
-
-
-
-
 
 /* 여기는
    레프트 콘텐츠를
@@ -147,7 +157,6 @@ legend {
 	text-align: center;
 	font-size: 35px;
 }
-
 
 /*여기는
     센터 콘텐츠를
@@ -169,11 +178,11 @@ a {
 }
 
 ol {
-	
 	font-size: 15px;
 	margin: 20px 0px;
 	list-style: none;
 }
+
 li {
 	margin-bottom: 25px;
 	color: black;
@@ -182,7 +191,7 @@ li {
 
 li :hover {
 	font-size: 50px;
-	text-decoration:underline;
+	text-decoration: underline;
 	cursor: pointer;
 	color: cornflowerblue;
 }

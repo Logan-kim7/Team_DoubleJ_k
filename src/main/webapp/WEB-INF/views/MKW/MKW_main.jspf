@@ -13,14 +13,20 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
+	<div id="side_content">
+		<div>
+		</div>
+	</div>
 	<section id="main_content">
 		<aside id="left_content">
 			<fieldset>
 				<legend>ToDay NEWS</legend>
 				<ol>
-					<c:forEach items="${NEWS}" var="news" varStatus="i">
-						<li>${i.index + 1}위&nbsp;<a
-							href="${rootPath}/newsmain/${news.n_seq}">${news.n_title}</a></li>
+
+					<c:forEach items="${NEWS}" var="news" varStatus="i" >
+						<li><a href="${rootPath}/news/${i.index}">${news.n_title}</a></li>
+
 					</c:forEach>
 				</ol>
 			</fieldset>
