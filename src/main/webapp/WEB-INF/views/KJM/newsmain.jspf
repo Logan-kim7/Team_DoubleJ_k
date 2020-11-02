@@ -268,18 +268,18 @@ input {
 				<h2>Top NEWS</h2>
 			</legend>
 			<div class="newsimage">
-				<img src="${NEWSDATA.n_img}" alt="대충 여기에 사진을 넣읍시다" />
+				<img src="${NEWSDATA.img}" alt="대충 여기에 사진을 넣읍시다" />
 			</div>
 			<br />
 
 			<div class="newstitle">
 
-				<span><h2>${NEWSDATA.n_title}</h2></span>
+				<span><h2>${NEWSDATA.title}</h2></span>
 			</div>
 
 			<div class="newsstory">
 				<p>
-					${NEWSDATA.n_content}
+					${NEWSDATA.content}
 				</p>
 			</div>
 		</fieldset>

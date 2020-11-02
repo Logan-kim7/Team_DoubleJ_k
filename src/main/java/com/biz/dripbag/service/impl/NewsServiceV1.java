@@ -4,56 +4,44 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-
-import com.biz.dripbag.mapper.NewsDAO;
 import com.biz.dripbag.model.NewsVO;
 import com.biz.dripbag.service.NewsService;
 
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
-@Service("NewsServiceV1")
-public class NewsServiceV1 implements NewsService {
-
-	private final NewsDAO newsDAO;
-
+@Service("newsServiceV1")
+public class NewsServiceV1 implements NewsService 
+{
 	@Override
 	public List<NewsVO> selectAll() {
-
-		return newsDAO.selectAll();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public NewsVO findById(Long id) {
-
-		return newsDAO.findById(id);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public int insert(NewsVO vo) {
-		int ret = newsDAO.insert(vo);
-
-		return ret;
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
 	public int update(NewsVO vo) {
-
-		int ret = newsDAO.update(vo);
-		return ret;
-
-
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
 	public int delete(Long id) {
-		int ret = newsDAO.delete(id);
-
-		return ret;
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
-	public NewsRankingVO findById(String id) {
+	public NewsVO findById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

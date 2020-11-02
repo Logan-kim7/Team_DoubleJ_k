@@ -11,12 +11,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class GoogleRankingVO {
+public class GoogleVO {
 
-	private long   gt_seq;   // NUMBER PRIMARY KEY
-	private String gt_date;  // VARCHAR2(10)	  NOT NULL	
-	private String gt_title; // nVARCHAR2(225) NOT NULL	
-	private String gt_img;	 // nVARCHAR2(225)		
+	private long   seq;   // NUMBER PRIMARY KEY
+	private String date;  // VARCHAR2(10)	  NOT NULL	
+	private String title; // nVARCHAR2(225) NOT NULL	
+	private String img;	 // nVARCHAR2(225)		
 
 }
 

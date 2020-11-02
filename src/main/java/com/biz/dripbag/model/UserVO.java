@@ -14,10 +14,10 @@ import lombok.ToString;
 
 public class UserVO 
 {
-	private String d_seq; 	   // NUMBER		PRIMARY KEY
-	private String d_email;    // nVARCHAR2(100)	UNIQUE NOT NULL	
-	private String d_password; // nVARCHAR2(30)	NOT NULL	
-	private int    d_roll;	   	   // NUMBER	NOT NULL	
-	private String d_date;	   // VARCHAR2(10)	NOT NULL	
+	private String seq; 	   // NUMBER		PRIMARY KEY
+	private String email;    // nVARCHAR2(100)	UNIQUE NOT NULL	
+	private String password; // nVARCHAR2(30)	NOT NULL	
+	private int    roll;	   	   // NUMBER	NOT NULL	
+	private String date;	   // VARCHAR2(10)	NOT NULL	
 
 }

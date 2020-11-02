@@ -2,8 +2,8 @@ package com.biz.dripbag.service.impl;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import com.biz.dripbag.mapper.GoogleRankingDAO;
-import com.biz.dripbag.model.GoogleRankingVO;
+import com.biz.dripbag.mapper.GoogleDAO;
+import com.biz.dripbag.model.GoogleVO;
 import com.biz.dripbag.service.GoogleTrendeService;
 import lombok.RequiredArgsConstructor;
 
@@ -12,29 +12,29 @@ import lombok.RequiredArgsConstructor;
 public class GoogleTrendServiceV1 implements GoogleTrendeService 
 {
 
-	private final GoogleRankingDAO googleDAO;
+	private final GoogleDAO googleDAO;
 	
 	@Override
-	public List<GoogleRankingVO> selectAll() 
+	public List<GoogleVO> selectAll() 
 	{
 		return googleDAO.selectAll();
 	}
 
 	@Override
-	public GoogleRankingVO findById(Long id) 
+	public GoogleVO findById(Long id) 
 	{
 		return googleDAO.findById(id);
 	}
 
 	@Override
-	public int insert(GoogleRankingVO vo) 
+	public int insert(GoogleVO vo) 
 	{
 		int ret = googleDAO.insert(vo);
 		return ret;
 	}
 
 	@Override
-	public int update(GoogleRankingVO vo) 
+	public int update(GoogleVO vo) 
 	{
 		int ret = googleDAO.update(vo);
 		return ret;
@@ -48,7 +48,7 @@ public class GoogleTrendServiceV1 implements GoogleTrendeService
 	}
 
 	@Override
-	public GoogleRankingVO findById(String id) {
+	public GoogleVO findById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
