@@ -27,10 +27,9 @@
 				<fieldset>
 					<legend> To Day Top 10 News </legend>
 					<ol>
-						<c:forEach items="${NEWS}" var="news" begin="0" end="9">
-							<li><a href="${rootPath}/news/">${google.seq + 1}위
-									${google.title}</a></li>
-						</c:forEach>
+						<c:forEach items="${NEWS}" var="news" >
+						<li><a href="${rootPath}/newsmain/${news.n_seq}">${news.n_title}</a></li>
+					</c:forEach>
 					</ol>
 				</fieldset>
 			

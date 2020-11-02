@@ -15,7 +15,6 @@
 	crossorigin="anonymous"></script>
 
 <style>
-
 html, body {
 	width: 100%;
 	height: 100%;
@@ -61,13 +60,17 @@ html, body {
 			<%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
 		</c:when>
 
+		<c:when test="${NEWS == 'NEWSMAIN'}">
+			<%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
+		</c:when>
+
 		<c:otherwise>
 
 		</c:otherwise>
 	</c:choose>
 
-	<c:if test="${BODY != 'INDEX_HOME'}">	
-			<%@ include file="/WEB-INF/views/include/footer.jspf"%>
+	<c:if test="${BODY != 'INDEX_HOME'}">
+		<%@ include file="/WEB-INF/views/include/footer.jspf"%>
 	</c:if>
 </body>
 
