@@ -28,6 +28,10 @@ public class GoogleTrandController {
 		return "home";
 
 	}
+	
+	public String gSave() {
+		return "redirect:/main";
+	}
 
 
 }
