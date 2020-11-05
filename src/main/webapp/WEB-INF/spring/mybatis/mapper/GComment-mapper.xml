@@ -51,7 +51,6 @@
 		gc_time = #{gc_time, jdbcType=VARCHAR}
 		WHERE gc_seq = #{gc_seq,
 		jdbcType=VARCHAR}
-
 	</update>
 
 	<delete id="delete">
