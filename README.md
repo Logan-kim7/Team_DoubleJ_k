@@ -29,15 +29,15 @@
 --------------------------------
 ## 2. 개발 사용 Tools :wrench:
 ```
-:gun: Language : Java 1.8, HTML5, CSS3
-:file_folder: Package Manager : Maven 3.6.3
++ :gun: Language : Java 1.8, HTML5, CSS3 +
++ :file_folder: Package Manager : Maven 3.6.3 +
 
-:syringe: WAS : Tomcat 9.0.37
-:hocho: Frame Work : Spring 5.2.8 RELEASE
-IDE : Eclipse, VScode
-:package: DBMS : MySQL 8, Oracle XE11g
++ :syringe: WAS : Tomcat 9.0.37 +
++ :hocho: Frame Work : Spring 5.2.8 RELEASE +
++ IDE : Eclipse, VScode +
++ :package: DBMS : MySQL 8, Oracle XE11g +
 
-:door: IDE : SQL Developer19.2.1, MySQL Workbench8.0 CE
++ :door: IDE : SQL Developer19.2.1, MySQL Workbench8.0 CE +
 ```
 --------------------------------
 ## 3.구현기능 :globe_with_meridians:
