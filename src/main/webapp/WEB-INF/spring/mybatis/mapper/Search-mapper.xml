@@ -10,26 +10,27 @@
 	</select>
 	
 	<select id="selectAll" resultType="HashMap">
-		SELECT * FROM ${table} WHERE TITLE 
-			LIKE  %'||#{keyword}||'%' OR CONTENT LIKE '%${value}' 
+		SELECT * FROM ${table} WHERE  TITLE  LIKE '%'||#{keyword}||'%' OR 
+									  CONT   LIKE '%'||#{keyword}||'%' OR  
+									  WRITER LIKE '%'||#{keyword}||'%'
 				ORDER BY seq DESC
 	</select>
 	
 	<select id="selectTitle" resultType="HashMap">
 		SELECT * FROM ${table} WHERE TITLE 
-			LIKE  %'||#{keyword}||'%' 
+			LIKE  '%'||#{keyword}||'%' 
 				ORDER BY seq DESC
 	</select>
 	
 	<select id="selectContent" resultType="HashMap">
-		SELECT * FROM ${table} WHERE CONTENT 
-			LIKE %'||#{keyword}||'%'  
+		SELECT * FROM ${table} WHERE CONT 
+			LIKE '%'||#{keyword}||'%'  
 				ORDER BY seq DESC
 	</select>
 	
 	<select id="selectWriter" resultType="HashMap">
 		SELECT * FROM ${table} WHERE WRITER 
-			LIKE %'||#{keyword}||'%'  
+			LIKE '%'||#{keyword}||'%'  
 				ORDER BY seq DESC
 	</select>
 

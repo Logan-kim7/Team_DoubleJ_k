@@ -14,8 +14,8 @@ import lombok.ToString;
 public class NewsVO 
 {
 	private long   seq;     //	NUMBER		PRIMARY KEY
-	private String date;    //	VARCHAR2(10)	NOT NULL	
+	private String dates;    //	VARCHAR2(10)	NOT NULL	
 	private String title;   //	VARCHAR2(10)	NOT NULL	
 	private String img; 	  // nVARCHAR2(1300)		
-	private String content; //	nVARCHAR2(1300)			
+	private String cont; //	nVARCHAR2(1300)			
 }

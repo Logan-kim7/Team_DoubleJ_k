@@ -18,7 +18,8 @@ public class SearchServiceV1 implements SearchService {
 	@Override
 	public List<Map<String, String>> search(String table, String flag, String keyword) 
 	{
-		//List<String> keyList = new ArrayList<>(sDAO.selectColumn("tbl_user").keySet());		
+		
+		List<Map<String, String>> searchList = null;
 		int index = 0;
 		
 		if(flag.equalsIgnoreCase("all")) index = 1;
@@ -29,18 +30,28 @@ public class SearchServiceV1 implements SearchService {
 		 switch (index) 
 		{
 			case 1:
-				return sDAO.selectAll(table, keyword);
+				searchList = sDAO.selectAll(table, keyword);
+				break;
 		
 			case 2:
-				return sDAO.selectTitle(table, keyword);
+				searchList = sDAO.selectTitle(table, keyword);
 								
 			case 3:
-				return sDAO.selectContent(table, keyword);
+				searchList = sDAO.selectContent(table, keyword);
 								
 			case 4:
-				return sDAO.selectWriter(table, keyword);		
-		}
+				searchList = sDAO.selectWriter(table, keyword);		
+		}		 
+		 if(searchList.size() == 0)
+			 return null;
 		 
-		return null;
+		 List<String> keyList = new ArrayList<>(searchList.get(0).keySet());
+		 System.out.println(keyList.size());
+
+			for(int i=0; i<searchList.size(); ++i)
+				 for(String one : keyList)
+					 searchList.get(i).put(one, String.valueOf(searchList.get(i).get(one)));
+			
+		return searchList;
 	}
 }

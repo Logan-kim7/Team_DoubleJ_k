@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-10-20-14" />
+<link rel="stylesheet"	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-10-20-18" />
 
 <title>Insert title here</title>
 </head>
@@ -35,7 +35,7 @@
 
 				<ol>
 					<c:forEach items="${GOOGLE}" var="google" varStatus="i">
-						<li><a href="${rootPath}/gtrand/${google.title}">${i.index + 1}위&nbsp;
+						<li><a href="${rootPath}/gtrand/${i.index}">${i.index + 1}위&nbsp;
 								${google.title}</a></li>
 					</c:forEach>
 				</ol>

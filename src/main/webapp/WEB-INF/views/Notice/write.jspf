@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
-
 <script type="text/javascript">
 
 </script>
@@ -22,12 +21,15 @@
 	}
 	
 	form textarea{
-		height: 70%;
+		height: 80%;
+		margin-bottom: 15px;
 	}
 	
 </style>
 
-<form>
-	<input name="title">
-	<textarea name="content"></textarea>
+<form method="post" action="${rootPath}/notice/write">
+	<input name="writer" value="${member.email}" style="display: none;">
+	<input name="title" placeholder="제목">
+	<textarea name="cont"></textarea>
+	<button type="submit">등록</button>
 </form>

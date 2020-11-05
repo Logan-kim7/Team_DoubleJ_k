@@ -279,7 +279,7 @@ input {
 
 			<div class="newsstory">
 				<p>
-					${NEWSDATA.content}
+					${NEWSDATA.cont}
 				</p>
 			</div>
 		</fieldset>

@@ -9,11 +9,9 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>DripBag</title>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://kit.fontawesome.com/cc60939e22.js"
-	crossorigin="anonymous"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/cc60939e22.js" crossorigin="anonymous"></script>
+<script src="${rootPath}/static/js/search.js?ver=3"></script>
 <style>
 * {
 	box-sizing: border-box;
@@ -72,7 +70,7 @@ html, body {
 		</c:when>
 
 		<c:when test="${BODY == 'NOTICE_HOME'}">
-			<%@ include file="/WEB-INF/views/Notice/home.jspf"%>
+			<%@ include file="/WEB-INF/views/Notice/main.jspf"%>
 		</c:when>
 		
 	</c:choose>
