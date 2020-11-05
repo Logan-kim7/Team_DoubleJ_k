@@ -62,7 +62,7 @@ public class CrwalingData
 			  vo = new GoogleVO(); 
 			  vo.setTitle(one.select("title").text());
 			  vo.setImg(one.getElementsByTag("ht:picture").text());
-			  vo.setDate(dateService.dateTime()[0]);
+			  vo.setDates(dateService.dateTime()[0]);
 //			  googleService.insert(vo);
 			  googleList.add(vo);
 			  if(index++ >= 9) break;

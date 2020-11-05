@@ -74,11 +74,16 @@ html, body {
 		<c:when test="${BODY == 'NOTICE_HOME'}">
 			<%@ include file="/WEB-INF/views/Notice/main.jspf"%>
 		</c:when>
+<<<<<<< HEAD
 
 		<c:when test="${BODY == 'GC_LIST'}">
 			<%@ include file="/WEB-INF/views/MKW/gcomment_list.jspf"%>
 		</c:when>
 
+=======
+	
+				
+>>>>>>> de070b794be29d86d93b6535fb8e1a56667fff2b
 	</c:choose>
 
 	<c:if test="${BODY != 'INDEX_HOME'}">

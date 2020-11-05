@@ -4,10 +4,20 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
 <script>
+<<<<<<< HEAD
 	window.onload = function() {
 		document.getElementsByTagName("header")[0].style.backgroundColor = "black";
 	}
 </script>
+=======
+	window.onload = function () {
+		document.getElementsByTagName("header")[0].style.backgroundColor = "black" , background-image= url('../static/imgs/KJM/images (1).png'),
+		background-repeat= no-repeat ,background-size= cover ;}
+		document.getElementsByTagName("header")[1].style.backgroundColor = "gray";	}
+		document.getElementsByTagName("header")[2].style.backgroundColor = "black";	}
+		document.getElementsByTagName("header")[3].style.backgroundColor = "gray";	}
+</script> 
+>>>>>>> de070b794be29d86d93b6535fb8e1a56667fff2b
 
 <style>
 header {
