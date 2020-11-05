@@ -49,7 +49,7 @@
 * :mag:*
 
 --------------------------------
-## 4.개발자's :computer:
+## 4.developer's :computer:
 
 * :snail: 팀장 : 김주민 *
 * :muscle: 팀원 : 이정현 *
