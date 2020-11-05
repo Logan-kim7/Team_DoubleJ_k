@@ -29,8 +29,7 @@ public class GoogleTrandController {
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String userGSave(Model model) {
-		model.addAttribute("BODY", "MAIN_HOME");
-		return "home";
+		return "redirect:/main";
 	}
 
 
