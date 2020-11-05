@@ -33,7 +33,7 @@
 - :file_folder: Package Manager : Maven 3.6.3 
 - :syringe: WAS : Tomcat 9.0.37 
 - :hocho: Frame Work : Spring 5.2.8 RELEASE 
-- IDE : Eclipse, VScode 
+- :pencil2: IDE : Eclipse, VScode 
 - :package: DBMS : MySQL 8, Oracle XE11g 
 - :door: IDE : SQL Developer19.2.1, MySQL Workbench8.0 CE 
 
