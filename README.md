@@ -1,15 +1,16 @@
-# Team ProJect 네글자 댓글 게시판
+# Team ProJect 네글자 댓글 게시판 :clipboard:
 ================================
 
-## 목차 ##
+## 목차 ## :ledger:
 ```
     1.  개발 이유
     2.  개발 사용 Tools
-    3.  개발자's
-    4.  프로젝트 후기...
+    3.  구현기능    
+    4.  개발자's
+    5.  프로젝트 후기... 
 ```
 --------------------------------
-## 1 개발배경
+## 1 개발배경 :pencil2:
 ```
 한 사람의 인격을 나타내는 기준이 되는 가장 중요한 부분 중 하나가
 ‘말’이라고 생각된다 ‘말’ 이라는 단어와 연결되는 단어는 ‘글’이며
@@ -26,23 +27,23 @@
 스스로 찾기를 바라는 마음에서 기획되었다 볼 수 있다
 ```
 --------------------------------
-## 2. 개발 사용 Tools
+## 2. 개발 사용 Tools :wrench:
 ```
-■ Language : Java 1.8, HTML5, CSS3
-■ Package Manager : Maven 3.6.3
-■ WAS : Tomcat 9.0.37
-■ Frame Work : Spring 5.2.8 RELEASE
+■ :gun: Language : Java 1.8, HTML5, CSS3
+■ :file_folder: Package Manager : Maven 3.6.3
+■ :syringe: WAS : Tomcat 9.0.37
+■ :hocho: Frame Work : Spring 5.2.8 RELEASE
 ■ IDE : Eclipse, VScode
 
-■ DBMS : MySQL 8, Oracle XE11g
-■ IDE : SQL Developer19.2.1, MySQL Workbench8.0 CE
+■ :package: DBMS : MySQL 8, Oracle XE11g
+■ :door: IDE : SQL Developer19.2.1, MySQL Workbench8.0 CE
 ```
 --------------------------------
-## 3.  개발자's
+## 3.  개발자's :computer:
 
-- 팀장 : 김주민 << 거의 묻어가기
-- 팀원 : 이정현 
-- 팀원 : 문견우
+-:squirrel: 팀장 : 김주민 << 거의 묻어가기
+-:muscle: 팀원 : 이정현 
+-:baby: 팀원 : 문견우
 
 --------------------------------
 ## 4. 개발후기 :clap:
