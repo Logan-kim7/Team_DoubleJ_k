@@ -4,36 +4,34 @@ import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.model.UserVO;
 
-
-
 @Service("userServiceV2")
 public class UserServiceV2 extends UserServiceV1 
-{
+{	
 	@Override
-	public boolean findById(int flag, UserVO vo, String id) 
+	public UserVO findById(int flag, UserVO vo, String id) 
 	{
 		if(vo != null && (vo.getEmail().indexOf(" ") != -1 || vo.getPwd().indexOf(" ") != -1))
-			return false;
+			return null;
 		
 		if((id != null && id.indexOf(" ") != -1))
-			return false;
-
+			return null;
 		
 		switch (flag) 
 		{
 			case 0:
-				if(userDAO.findById(vo.getEmail()) == null);
-					return true;
+				if(userDAO.findById(vo.getEmail()) == null) return vo = new UserVO();
+				break;
 				
 			case 1:
-				if(userDAO.findById(id) == null)
-					return true;
-			
+				if(userDAO.findById(id) == null) return vo = new UserVO();
+				break;
+				
 			case 2:
-				if(vo != null && userDAO.findByUser(vo.getEmail(), vo.getPwd()) != null)
-					return true;
+				vo = userDAO.findByUser(vo.getEmail(), vo.getPwd());
+				if(vo != null) return vo;
+				break;
 		}	
 		
-		return false;
+		return null;
 	}
 }

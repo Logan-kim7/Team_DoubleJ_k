@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+table {
+	width: 95%;
+	height: 90%;
+	margin: 5px auto;
+	border-collapse: collapse;
+}
+
+table th:nth-child(2), table td:nth-child(2)
+{
+	width: 60%;
+}
+
+.tr_notice_List {
+	height: 5%;
+	border-bottom: 1px solid #ccc;
+	font-size: 20px;
+}
+
+table .tr_notice_List:nth-child(0n+1) {
+	background-color: #daf1cd;
+}
+
+table .tr_notice_List:hover:nth-child(1n+2) {
+	cursor: pointer;
+	background-color: #f5baa0;
+}
+
+.tr_notice_List td {
+	text-align: center;
+}
+

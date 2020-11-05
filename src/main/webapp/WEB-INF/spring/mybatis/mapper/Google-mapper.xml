@@ -13,8 +13,8 @@
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO tbl_gRanking(seq, date, title, img)
-			 VALUES (seq_gt, #{date}, #{title}, #{img})
+		INSERT INTO tbl_gRanking(seq, dates, title, img)
+			 VALUES (seq_gt, #{dates}, #{title}, #{img})
 	</insert>
 	
 	<update id="update">

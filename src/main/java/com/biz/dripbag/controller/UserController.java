@@ -36,12 +36,12 @@ public class UserController
 	
 	@Autowired
 	@Qualifier("sessionServiceV1")
-	final SessionService sService;
+	private SessionService sService;
 	
 	@RequestMapping(value= {"/join", "/join/"}, method = RequestMethod.POST)
 	public void Join(UserVO userVO, HttpServletResponse res) throws IOException
 	{				
-		if(uService.findById(0, userVO, null) == true)
+		if(uService.findById(0, userVO, null) != null)
 			uService.insert(userVO);
 		
 		sService.locationJump(res, null, "회원가입 완료");
@@ -49,12 +49,15 @@ public class UserController
 	
 	@ResponseBody
 	@RequestMapping(value ={"/check/", "/check"}, method=RequestMethod.GET)
-	public int joinIdCheck(@RequestParam("id") String id, String master)
+	public boolean joinIdCheck(@RequestParam("id") String id, String master)
 	{	
-		if(uService.findById(1, null, id) == true)
-			return 1;
+		if(uService.findById(1, null, id) != null)
+		{
+			System.out.println("dd");
+			return true;
+		}
 		
-		return 0;
+		return false;
 	}
 	
 	@RequestMapping(value ={"/check", "/check/"}, method=RequestMethod.POST)
@@ -62,16 +65,18 @@ public class UserController
 	{
 		
 		if(master != null)
-		{
 			sService.sessionRegistration(req, null, master);
-			return null;
-		}
 		
-		else if(uService.findById(2, userVO, null) == true)
-			sService.sessionRegistration(req, userVO, null);
+		else 
+		{
+			userVO = uService.findById(2, userVO, null);
+			if(userVO != null)
+				sService.sessionRegistration(req, userVO, null);
+			else
+				sService.locationJump(res, null, "ID or PWD 불일치");
+		}
 
-		else
-			sService.locationJump(res, null, "ID or PWD 불일치");
+		
 		
 		return "redirect:/main/";
 	}

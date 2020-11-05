@@ -15,12 +15,12 @@ import lombok.ToString;
 public class NoticeVO 
 {
 	private long   seq;
-	private String date;
-	private String time;
+	private String dates;
+	private String times;
 	private String title;
 	private String writer;
-	private String content;
-	private String like;
-	private String views;
+	private String cont;
+	private long likes;
+	private long views;
 	
 }

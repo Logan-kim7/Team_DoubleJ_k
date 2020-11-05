@@ -65,8 +65,8 @@ public class UserServiceV1 implements UserService
 	}
 	
 	@Override
-	public boolean findById(int flag, UserVO vo, String id)   {
+	public UserVO findById(int flag, UserVO vo, String id)   {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 }

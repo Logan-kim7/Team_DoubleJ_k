@@ -100,7 +100,7 @@ public class CrwalingData
 				vo = new NewsVO();
 				vo.setTitle(doc.select(".view_wrap > .article_head h3").text()); // Title
 				vo.setImg(doc.select(".figcaption.text-center img").attr("src")); // img url
-				vo.setContent(doc.select(".article_view p").text()); // content									
+				vo.setCont(doc.select(".article_view p").text()); // content									
 				//newsService.insert(vo);
 				newslist.add(vo);
 			}			

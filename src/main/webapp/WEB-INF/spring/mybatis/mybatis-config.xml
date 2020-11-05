@@ -2,8 +2,10 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
-  
+   
 <configuration>
+    <settings><setting name="jdbcTypeForNull" value="NULL" /> </settings>
+    
 	<typeAliases>
 		<typeAlias type="com.biz.dripbag.model.UserVO" alias="userVO"/>
 		<typeAlias type="com.biz.dripbag.model.NoticeVO" alias="noticeVO"/>
