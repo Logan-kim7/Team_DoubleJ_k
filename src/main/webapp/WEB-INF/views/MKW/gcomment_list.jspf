@@ -123,8 +123,7 @@
 	}
 
 	let listtr = document.getElementsByTagName("tr");
-	listtr.forEach(function(tr){
+	for (const tr of listtr) {
 	    tr.addEventListener("click", clickItem);
-	    
-	})
+	}
 </script>
