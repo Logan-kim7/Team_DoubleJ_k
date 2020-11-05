@@ -26,4 +26,18 @@
 브레이크를 걸 수 있는 건전하고 자율적으로 즐길 수 있는 댓글 문화가 형성되면 어떨까 해서 이러한 서비스를 기획했다. 
 댓글은 적을 수 있되 제한된 흐름 안에서 간결하고 뜻이 명확히 전달될 수 있도록 하고 그 안에서 위트와 해학적인 부분을 이용자 
 스스로 찾기를 바라는 마음에서 기획되었다 볼 수 있다
-...
+```
+
+## 2. 개발 사용 Tools
+```
+■ Language : Java 1.8, HTML5, CSS3
+■ Package Manager : Maven 3.6.3
+■ WAS : Tomcat 9.0.37
+■ Frame Work : Spring 5.2.8 RELEASE
+■ IDE : Eclipse, VScode
+
+■ DBMS : MySQL 8, Oracle XE11g
+■ IDE : SQL Developer19.2.1, MySQL Workbench8.0 CE
+```
+
+
