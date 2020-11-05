@@ -39,7 +39,7 @@
 ■ :door: IDE : SQL Developer19.2.1, MySQL Workbench8.0 CE
 ```
 --------------------------------
-## 3.구현기능 :computer:
+## 3.구현기능 :globe_with_meridians:
 
 
 --------------------------------
