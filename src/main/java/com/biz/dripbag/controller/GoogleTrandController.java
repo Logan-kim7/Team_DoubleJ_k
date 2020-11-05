@@ -28,6 +28,11 @@ public class GoogleTrandController {
 		return "home";
 
 	}
+	
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public String userGSave(Model model) {
+		return "redirect:/main";
+	}
 
 
 }
