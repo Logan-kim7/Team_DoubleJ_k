@@ -40,7 +40,7 @@
 ```
 --------------------------------
 ## 3.구현기능 :globe_with_meridians:
-+:mag: :newspaper: To Day Top 10 News Crawling한 후 댓글작성 +
+* :mag: :newspaper: To Day Top 10 News Crawling한 후 댓글작성*
 *:mag:*
 *:mag:*
 *:mag:*
@@ -50,7 +50,7 @@
 --------------------------------
 ## 4.개발자's :computer:
 
-* :snail: 팀장 : 김주민 << 거의 묻어가기*
+* :snail: 팀장 : 김주민*
 * :muscle: 팀원 : 이정현*
 * :baby: 팀원 : 문견우*
 
