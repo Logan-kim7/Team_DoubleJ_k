@@ -35,6 +35,7 @@ public class CrwalingData
 	@Qualifier("newsServiceV1")
 	private final NewsService newsService;
 	
+	@Qualifier("dateV1")
 	private final DateService dateService;
 	
 	private final List<GoogleVO> googleList;
