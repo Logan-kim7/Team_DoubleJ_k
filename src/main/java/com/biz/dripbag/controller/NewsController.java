@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.biz.dripbag.crawling.CrwalingData;
+import com.biz.dripbag.model.NewsVO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,15 +23,13 @@ public class NewsController {
     @Autowired
     CrwalingData nServ;
     
-    @RequestMapping(value = "/{n_index}", method =  RequestMethod.GET)
+    private int ret;
+    
+    @RequestMapping(value = {"/", "/{n_index}"}, method =  RequestMethod.GET)
     public String news(Model model, @PathVariable("n_index") String n_index) throws IOException {
         
+        ret =  Integer.valueOf(n_index);
         
-        int ret =  Integer.valueOf(n_index);
-        
-        //log.debug(">>>>>>"+nServ.getterNewsList().size());
-        
-        System.out.println(ret);
         model.addAttribute("BODY","NEWS_HOME");
         model.addAttribute("NEWS", "NEWSMAIN");
         model.addAttribute("NEWSLIST",nServ.getNewsList());
@@ -39,5 +38,13 @@ public class NewsController {
 
         return "home";
     }
+    
+    @RequestMapping(value = {"/write", "/write/"}, method =  RequestMethod.POST)
+    public String write(NewsVO vo)  {
+        
+        return "redirect:/news/" + ret;
+    }
+    
+    
 
 }

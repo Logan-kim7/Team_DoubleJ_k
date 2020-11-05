@@ -94,10 +94,8 @@ fieldset {
 	display: inline-block;
 	width: 80%;
 	height: auto;
-	
 	border-radius: 8px;
 	padding: 10px;
-	
 }
 
 .newsstory {
@@ -108,7 +106,6 @@ fieldset {
 	overflow: scroll;
 	font-weight: bolder;
 	font-size: 20px;
-
 }
 
 /* 여기는
@@ -234,26 +231,25 @@ input {
 	margin-top: 0px auto;
 	width: 200px;
 	height: 50px;
-	
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px gray;
-  padding: 12px 16px;
-  z-index: 1;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px gray;
+	padding: 12px 16px;
+	z-index: 1;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+	display: block;
 }
 /* 여기는 search_box 위한 
     css공간 */
@@ -278,9 +274,7 @@ input {
 			</div>
 
 			<div class="newsstory">
-				<p>
-					${NEWSDATA.cont}
-				</p>
+				<p>${NEWSDATA.cont}</p>
 			</div>
 		</fieldset>
 	</section>
@@ -293,38 +287,40 @@ input {
 				<legend>
 					<h2>4자성어 Drip Bag 입력공간</h2>
 				</legend>
-				<form>
-					<label for="fname"></label> <input type="text" id="fname"
-						name="fname" placeholder="4자성어를 입력하세요">
-				</form>
-				<form>
-					<label for="fname"></label> <input type="text" id="fname"
-						name="fname" placeholder="내용은 12글자까지만 입력가능!!">
+				<form action= "${rootPath}/news/write" method= "post" >
+					<label for="fname"></label> 
+					<input type="text" id="dripbagip" name="title" placeholder="4자성어를 입력하세요"> 
+					<input type="text" id="dripdagcm" name="cont" placeholder="내용은 12글자까지만 입력가능!!">
+					<button type="submit" id="write_button">입력</button>
 				</form>
 
-				<button class="write_button">입력</button>
-				<button class="write_button">저장</button>
 			</fieldset>
 
 			<table id="listcustomers">
 				<tr>
+					<th>번호</th>
 					<th>작성자</th>
+					<th>작성 날짜</th>
+					<th>작성 시간</th>
+					<th>제목</th>
 					<th>내용</th>
 					<th>좋아요</th>
-					<th>싫어요</th>
-					<th>작성일</th>
+					<th>조회수</th>
 				</tr>
-				
-			<%-- 	<c:forEach items="${NEWSLIST}" var="NEWSDB">	
-				<tr>
-					<td>${NEWSDB.n_write}</td>
-					<td>${NEWSDB.n_content}</td>
-					<td></td>
-					<td></td>
-					<td>${NEWSDB.n_date}</td>
-				</tr>
+
+				<c:forEach items="${NEWSLIST}" var="NEWSDB">
+					<tr>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+					</tr>
 				</c:forEach>
-				 --%>
+
 			</table>
 
 			<div class="pagination">
@@ -335,16 +331,13 @@ input {
 			<div class="search_box">
 				<div class="container">
 					<span class="icon"><i class="fa fa-search"></i></span> <input
-						type="search" id="search" placeholder="Search..." />
-				
-				<div class="dropdown">
-					<span>검색</span>
-					<div class="dropdown-content">
-						<a href="#">작성자</a></br>
-						<a href="#">내용</a></br>
-						<a href="#">제목+내용</a>	
-					</div>
-				</div>
+						type="search" id="search" class="search_input"
+						placeholder="Search..." /> <select class="search_select">
+						<option value="all">전체</option>
+						<option value="title">제목</option>
+						<option value="content">내용</option>
+						<option value="writer">작성자</option>
+					</select>
 				</div>
 			</div>
 		</div>

@@ -2,17 +2,11 @@ package com.biz.dripbag.service.impl;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
-import com.biz.dripbag.mapper.GoogleDAO;
 import com.biz.dripbag.model.NewsVO;
 import com.biz.dripbag.service.NewsService;
 
-import lombok.RequiredArgsConstructor;
-@RequiredArgsConstructor
-@Service("newsServiceV1")
-public class NewsServiceV1 implements NewsService 
-{
+public class NcommentV1 implements NewsService {
+
 	@Override
 	public List<NewsVO> selectAll() {
 		// TODO Auto-generated method stub
@@ -21,6 +15,12 @@ public class NewsServiceV1 implements NewsService
 
 	@Override
 	public NewsVO findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public NewsVO findById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -41,12 +41,6 @@ public class NewsServiceV1 implements NewsService
 	public int delete(Long id) {
 		// TODO Auto-generated method stub
 		return 0;
-	}
-
-	@Override
-	public NewsVO findById(String id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

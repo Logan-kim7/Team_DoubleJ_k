@@ -30,11 +30,15 @@ div#clock_main{
 	line-height:  100%;
 	font-weight: bolder;
 	color: black;
-	font-size: 30px;
-}
-div#clock_main p{
+	font-size: 50px;
+	font-stretch: expanded;
 	margin-top: 60px;
 	line-height:  100%;
+}
+
+#clock_main:hover {
+	
+	
 }
 footer {
 	background-color: black;
