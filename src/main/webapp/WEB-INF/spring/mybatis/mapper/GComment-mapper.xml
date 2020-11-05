@@ -5,19 +5,50 @@
 
 <mapper namespace="com.biz.dripbag.mapper.GCommentDAO">
 	<select id="selectAll" resultType="GCommentVO">
+		SELECT * FROM tbl_gcomment ORDER BY gc_likes DESC
 	</select>
 
 	<select id="findById" resultType="GCommentVO">
+		SELECT * FROM tbl_gcomment
+		WHERE gc_seq = #{gc_seq}
 	</select>
 
 	<insert id="insert">
+		INSERT INTO tbl_gcomment (
+		gc_seq,
+		gc_seqC,
+		gc_writer,
+		gc_date,
+		gc_time,
+		gc_title,
+		gc_explain,
+		gc_likes,
+		gc_views
+		) VALUES (
+		SEQ_GC.NEXTVAL,
+		SEQ_GCC.NEXTVAL,
+		#{gc_writer},
+		#{gc_date},
+		#{gc_time},
+		#{gc_title},
+		#{gc_explain},
+		0,
+		0
+		)
 	</insert>
 
 	<update id="update">
-
+	UPDATE tbl_gcomment SET
+		gc_title = #{gc_title, jdbcType=VARCHAR},
+		gc_explain = #{gc_explain, jdbcType=VARCHAR},
+		gc_date = #{gc_date, jdbcType=VARCHAR}
+		gc_time = #{gc_time, jdbcType=VARCHAR}
+		WHERE gc_seq = #{gc_seq, jdbcType=VARCHAR}
+		
 	</update>
 
 	<delete id="delete">
+	DELETE tbl_gcomment WHERE gc_seq = #{gc_seq}
 	</delete>
 
 </mapper>
