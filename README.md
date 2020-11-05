@@ -40,8 +40,9 @@
 ```
 --------------------------------
 ## 3.구현기능 :globe_with_meridians:
-* :mag: :newspaper: To Day Top 10 News Crawling한 후 댓글작성*
-*:mag:*
+
+*:mag: :door: Log in sing in 기능   *
+*:mag: :newspaper: To Day Top 10 News Crawling한 후 댓글작성*
 *:mag:*
 *:mag:*
 *:mag:*
