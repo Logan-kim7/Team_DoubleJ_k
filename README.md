@@ -29,36 +29,36 @@
 --------------------------------
 ## 2. 개발 사용 Tools :wrench:
 ```
-+ :gun: Language : Java 1.8, HTML5, CSS3 +
-+ :file_folder: Package Manager : Maven 3.6.3 +
++ :gun: Language : Java 1.8, HTML5, CSS3 
++ :file_folder: Package Manager : Maven 3.6.3 
 
-+ :syringe: WAS : Tomcat 9.0.37 +
-+ :hocho: Frame Work : Spring 5.2.8 RELEASE +
-+ IDE : Eclipse, VScode +
-+ :package: DBMS : MySQL 8, Oracle XE11g +
++ :syringe: WAS : Tomcat 9.0.37 
++ :hocho: Frame Work : Spring 5.2.8 RELEASE 
++ IDE : Eclipse, VScode 
++ :package: DBMS : MySQL 8, Oracle XE11g 
 
-+ :door: IDE : SQL Developer19.2.1, MySQL Workbench8.0 CE +
++ :door: IDE : SQL Developer19.2.1, MySQL Workbench8.0 CE 
 ```
 --------------------------------
 ## 3.구현기능 :globe_with_meridians:
 
-* :mag: :door: Log in, sing in function 구현   *
-* :mag: :newspaper: To Day Top 10 News Crawling한 후 댓글작성 function 구현*
-* :mag: :chart_with_upwards_trend: Goolgle Trand search Top 10 Crawling한 후 댓글작성 function 구현 *
-* :mag: :bar_chart: Ranking function 구현 *
-* :mag: :thumbsup: Like function 구현*
-* :mag:*
+* :mag: :door: Log in, sing in function 구현   
+* :mag: :newspaper: To Day Top 10 News Crawling한 후 댓글작성 function 구현
+* :mag: :chart_with_upwards_trend: Goolgle Trand search Top 10 Crawling한 후 댓글작성 function 구현 
+* :mag: :bar_chart: Ranking function 구현 
+* :mag: :thumbsup: Like function 구현
+* :mag:
 
 --------------------------------
 ## 4.developer's :computer:
 
-* :snail: 팀장 : 김주민 *
-* :muscle: 팀원 : 이정현 *
-* :baby: 팀원 : 문견우 *
+* :snail: 팀장 : 김주민 
+* :muscle: 팀원 : 이정현 
+* :baby: 팀원 : 문견우 
 
 --------------------------------
 ## 5.개발후기 :clap:
 
-* 김주민: *
-* 이정현: *
-* 문견우: *
+* 김주민: 
+* 이정현: 
+* 문견우: 
