@@ -23,9 +23,11 @@ public class GCommentListController {
 	public String gComentList(Model model) {
 
 		List<GCommentVO> gcList = gcService.selectAll();
+		List<GCommentVO> gctList = gcService.selectTop();
 
 		model.addAttribute("BODY", "GC_LIST");
 		model.addAttribute("GC_LIST", gcList);
+		model.addAttribute("GCT_LIST", gctList);
 
 		return "home";
 	}

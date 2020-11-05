@@ -33,7 +33,7 @@ public class GoogleTrandController {
 		model.addAttribute("BODY", "GOOGLE_HOME");
 		model.addAttribute("TITLE", gServ.getGoogleList().get(intSeq).getTitle());
 		
-		List<GCommentVO> gcList = gcService.selectAll();
+		List<GCommentVO> gcList = gcService.selectTop();
 		
 		model.addAttribute("GC_LIST", gcList);
 

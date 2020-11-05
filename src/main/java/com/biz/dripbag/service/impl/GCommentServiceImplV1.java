@@ -42,14 +42,14 @@ public class GCommentServiceImplV1 implements GCommentService {
 
 	@Override
 	public int insert(GCommentVO gcVO) {
-		
+
 		LocalDateTime date = LocalDateTime.now();
 		String writeDate = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(date);
 		String writeTime = DateTimeFormatter.ofPattern("HH:mm:ss").format(date);
-		
+
 		gcVO.setGc_date(writeDate);
 		gcVO.setGc_time(writeTime);
-		
+
 		int ret = gcDao.insert(gcVO);
 		return ret;
 	}
@@ -64,6 +64,12 @@ public class GCommentServiceImplV1 implements GCommentService {
 
 		int ret = gcDao.delete(id);
 		return ret;
+	}
+
+	@Override
+	public List<GCommentVO> selectTop() {
+		List<GCommentVO> gcList = gcDao.selectTop();
+		return gcList;
 	}
 
 }

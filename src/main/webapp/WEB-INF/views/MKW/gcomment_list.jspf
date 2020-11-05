@@ -68,9 +68,8 @@
 
 #to_list:hover {
 	background-color: cornflowerblue;
-	box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3)
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3)
 }
-
 </style>
 
 <section id="gcl_section">
@@ -93,7 +92,7 @@
 				</c:if>
 
 				<c:forEach items="${GC_LIST}" var="gc" end="19">
-					<tr>
+					<tr class="gc_item">
 						<td>${gc.gc_writer}</td>
 						<td>${gc.gc_title}</td>
 						<td>${gc.gc_explain}</td>
@@ -118,4 +117,14 @@
 
 	let goButton = document.getElementById("to_list");
 	goButton.addEventListener("click", goHome);
+
+	function clickItem() {
+		alert("클 ~ 릭!!! ><");
+	}
+
+	let listtr = document.getElementsByTagName("tr");
+	listtr.forEach(function(tr){
+	    tr.addEventListener("click", clickItem);
+	    
+	})
 </script>
