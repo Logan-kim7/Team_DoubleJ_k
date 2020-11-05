@@ -119,7 +119,7 @@
 	goButton.addEventListener("click", goHome);
 
 	function clickItem() {
-		alert("클 ~ 릭!!! ><");
+		document.location.href = "${rootPath}/gclist/thumbUp";
 	}
 
 	let listtr = document.getElementsByTagName("tr");

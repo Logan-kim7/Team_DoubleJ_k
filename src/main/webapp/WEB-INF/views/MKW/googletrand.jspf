@@ -19,8 +19,8 @@
 			<fieldset id="writeset">
 				<legend id="writelegend">내가 작성하기</legend>
 
-				<label>작성자</label> <input type="text" id="gc_writer"
-					name="gc_writer" placeholder="작성자" /> <label>4자성어를 입력하세요</label> <input
+				<label>작성자</label> <input type="hidden" id="gc_writer"
+					name="gc_writer" value="${member.email}" placeholder="작성자" /> <label>4자성어를 입력하세요</label> <input
 					type="text" id="gc_title" name="gc_title"
 					placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어 설명을 입력하세요</label> <input
 					type="text" id="gc_explain" name="gc_explain"

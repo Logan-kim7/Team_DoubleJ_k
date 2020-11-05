@@ -17,10 +17,7 @@
 	</insert>
 	
 	
-	<update id="hit" >	
-		<selectKey order="BEFORE" >
-			SELECT seq_nviews.NEXTVAL FROM DUAL
-		</selectKey>
+	<update id="hit" >
 		UPDATE tbl_notice SET views = views+1 WHERE seq = #{seq}
 	</update>
 	

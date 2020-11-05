@@ -24,23 +24,19 @@
 		INSERT INTO tbl_gcomment (
 		gc_seq,
 		gc_seqC,
-		gc_writer,
 		gc_date,
 		gc_time,
+		gc_writer,
 		gc_title,
-		gc_explain,
-		gc_likes,
-		gc_views
+		gc_explain
 		) VALUES (
 		SEQ_GC.NEXTVAL,
 		SEQ_GCC.NEXTVAL,
-		#{gc_writer},
 		#{gc_date},
 		#{gc_time},
+		#{gc_writer},
 		#{gc_title},
-		#{gc_explain},
-		0,
-		0
+		#{gc_explain}
 		)
 	</insert>
 

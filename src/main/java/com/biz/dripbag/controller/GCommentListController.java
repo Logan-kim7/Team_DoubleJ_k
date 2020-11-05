@@ -31,5 +31,8 @@ public class GCommentListController {
 
 		return "home";
 	}
+	
+	
+	
 
 }
