@@ -40,7 +40,7 @@
 ```
 --------------------------------
 ## 3.구현기능 :globe_with_meridians:
-*:mag:*
+*:mag: :newspaper: To Day Top 10 News Crawling한 후 댓글작성 *
 *:mag:*
 *:mag:*
 *:mag:*
