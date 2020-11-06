@@ -104,6 +104,12 @@
 		</table>
 	</div>
 
+	<div class="pagination">
+		<a href="#">&laquo;</a> <a href="#" class="active">1</a> <a href="#">2</a>
+		<a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a>
+		<a href="#">&raquo;</a>
+	</div>
+
 	<div id="button_box">
 		<button id="to_list" type="button">홈으로</button>
 	</div>
@@ -133,8 +139,9 @@
 		let all_item = document.querySelectorAll(".gc_item");
 		all_item.forEach(function(item_data) {
 			item_data.addEventListener("click", function() {
-				let id = item_data.getAttribute("data-id");
-				document.location.href = `${rootPath}/thumbsup/?id=` + id;
+				let seq = item_data.getAttribute("data-id");
+				document.location.href = `${rootPath}/gclist/thumbsup?id=`
+						+ seq;
 			});
 		});
 

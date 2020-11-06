@@ -35,12 +35,15 @@ public class GCommentListController {
 		return "home";
 	}
 
-	@RequestMapping(value = "/thumbsup/{seq}", method = RequestMethod.GET)
-	public String thumbsUp(@PathVariable("seq") Long seq) {
+	@RequestMapping(value = "/thumbsup", method = RequestMethod.GET)
+	public String thumbsUp(@RequestParam("id") Long seq) {
 
-		System.out.println("\n\n\n" + seq + "\n\n\n");
+		long sequence = Long.valueOf(seq);
+		System.out.println("\n\n\n" + sequence + "\n\n\n");
 
-		gcService.hit(seq);
+		GCommentVO vo = gcService.findById(sequence);
+
+		gcService.hit(vo);
 
 		return "home";
 	}
