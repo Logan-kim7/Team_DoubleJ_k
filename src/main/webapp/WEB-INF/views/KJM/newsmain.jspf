@@ -145,12 +145,13 @@ ol {
 	font-size: 30px;
 }
 
-.write_button {
+#write_button {
 	background-color: gray; /* Green */
 	border: none;
 	border-radius: 8px;
 	color: black;
-	padding: 20px;
+	font-weight:bolder;
+	padding: 15px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -159,9 +160,12 @@ ol {
 	cursor: pointer;
 }
 
-.write_button:hover {
-	background-color: gray;
+#write_button:hover {
+	background-color: navy;
+	box-shadow: navy;
 	color: white;
+	transition: 0.7rem;
+	
 }
 
 /* 여기는
@@ -256,6 +260,26 @@ input {
 </style>
 
 </head>
+<script>
+$(document).ready(function(){ 
+	$('#dripbagip').keyup(function(){ 
+		if ($(this).val().length > $(this).attr('maxlength')) { 
+			alert('최대 4글자 입력가능'); 
+			$(this).val($(this).val().substr(0, $(this).attr('maxlength'))); 
+			} 
+		});
+	});
+	
+$(document).ready(function(){ 
+	$('#dripdagcm').keyup(function(){ 
+		if ($(this).val().length > $(this).attr('maxlength')) { 
+			alert('최대 12글자 입력가능'); 
+			$(this).val($(this).val().substr(0, $(this).attr('maxlength'))); 
+			} 
+		});
+	});
+
+</script>
 
 <section id="main_content">
 	<section>
@@ -264,9 +288,11 @@ input {
 				<h2>Top NEWS</h2>
 			</legend>
 			<div class="newsimage">
-				<img src="${NEWSDATA.img}" alt="대충 여기에 사진을 넣읍시다" />
+
+				<img src="${NEWSDATA.img}" alt="대충 여기에 사진을 넣읍시다" onerror="this.src='../static/imgs/KJM/noimg-icon.jpg'"/>
+
 			</div>
-			<br />
+			<br/>
 
 			<div class="newstitle">
 
@@ -287,10 +313,12 @@ input {
 				<legend>
 					<h2>4자성어 Drip Bag 입력공간</h2>
 				</legend>
-				<form action= "${rootPath}/news/write" method= "post" >
+
+				<form action="${rootPath}/news/write" method="post">
 					<label for="fname"></label> 
-					<input type="text" id="dripbagip" name="title" placeholder="4자성어를 입력하세요"> 
-					<input type="text" id="dripdagcm" name="cont" placeholder="내용은 12글자까지만 입력가능!!">
+					<input type="text" id="dripbagip" maxlength="4" name="title" placeholder="네글자로만 입력하세요!!"> 
+					<input type="text" id="dripdagcm" maxlength="12" name="cont" placeholder="내용은 12글자까지만 입력가능!!"></br>
+
 					<button type="submit" id="write_button">입력</button>
 				</form>
 

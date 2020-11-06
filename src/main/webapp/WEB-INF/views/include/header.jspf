@@ -71,8 +71,10 @@ header {
 		</c:when>
 
 		<c:when test="${BODY == 'GC_LIST'}">
+
 			<h1>최신 작성</h1>
 			<p>실시간 검색어 사자성어 리스트</p>
+
 		</c:when>
 
 	</c:choose>

@@ -52,7 +52,7 @@ html, body {
 		</c:when>
 
 		<c:when test="${BODY == 'INFO_HOME'}">
-			<%@ include file="/WEB-INF/views/MKW/MKW_infomain.jspf"%>
+			<%@ include file="/WEB-INF/views/KJM/infomain.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'NEWS_HOME'}">

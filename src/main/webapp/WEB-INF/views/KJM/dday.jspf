@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<script type="text/javascript" charset="utf-8">
+// Javascript
+$(function() {
+  var currentDate = new Date();
+  $('div#clock').countdown(15 * 24 * 60 * 60 * 1000 + currentDate.valueOf(), function(event) {
+    $this = $(this);
+    switch(event.type) {
+      case "seconds":
+      case "minutes":
+      case "hours":
+      case "daysLeft":
+        $this.find('span#'+event.type).html(event.value);
+        break;
+      case "finished":
+        $this.fadeTo('slow', .5);
+        break;
+    }
+  });
+});
+</script>
+
+<div id="clock">
+  <p>
+    <span id="hours"></span>
+    Hours
+  </p>
+  <div class="space">:</div>
+  <p>
+    <span id="minutes"></span>
+    Minutes
+  </p>
+  <div class="space">:</div>
+  <p>
+    <span id="seconds"></span>
+    Seconds
+  </p>
+</div>
