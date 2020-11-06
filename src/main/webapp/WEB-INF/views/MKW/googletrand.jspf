@@ -4,7 +4,7 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
 <link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/googletrand.css?ver=17" />
+	href="${rootPath}/static/css/MKW/googletrand.css?ver=18" />
 
 <section id="trand-bg">
 	<div id="headline">
@@ -94,12 +94,32 @@
 	})
 
 	$("#addit").click(function() {
-		if (confirm("확실합니까? 추가할까요? 잘못 올려도 바꿔줄 생각 없어요")) {
-			alert("서버에 추가됩니... 이게 뭐야!!  ><")
-			let mainform = document.getElementById("gtinputbox");
-			mainform.submit();
-		} else {
-			alert("다행이다...")
+
+		let title = document.getElementById("gc_title");
+		let jujerriy = document.getElementById("gc_explain");
+
+		function adding() {
+			if (confirm("확실합니까? 추가할까요? 잘못 올려도 바꿔줄 생각 없어요")) {
+				alert("서버에 추가됩니... 이게 뭐야!!  ><")
+				let mainform = document.getElementById("gtinputbox");
+				mainform.submit();
+			} else {
+				alert("다행이다...")
+			}
 		}
+
+		function fourdollar() {
+			if (title.value.length != 4) {
+				alert("사☆자☆성☆어 이므로 적게도 말고 많게도 않게 4글자만!!! ><")
+				title.focus();
+			} else if (jujerriy.value.length > 20) {
+				alert("설명은 20자를 넘어가면 안되는데... ><")
+				jujerriy.focus();
+			} else {
+				adding();
+			}
+		}
+		
+		fourdollar();
 	})
 </script>

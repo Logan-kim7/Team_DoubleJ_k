@@ -45,7 +45,7 @@ public class GoogleTrandController {
 	public String userGSave(Model model, @ModelAttribute GCommentVO gcVO) {
 		gcService.insert(gcVO);
 		
-		return "redirect:/main/";
+		return "redirect:/gclist/";
 	}
 
 }
