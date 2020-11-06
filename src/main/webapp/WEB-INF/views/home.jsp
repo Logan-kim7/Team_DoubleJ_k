@@ -14,11 +14,13 @@
 <script src="https://kit.fontawesome.com/cc60939e22.js"
 	crossorigin="anonymous"></script>
 <script src="${rootPath}/static/js/search.js?ver=5"></script>
+<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
 <style>
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'East Sea Dokdo', cursive;
 }
 
 html, body {
