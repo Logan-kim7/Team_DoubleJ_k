@@ -15,6 +15,11 @@
 	<insert id="insert">
 		INSERT INTO tbl_googleList(seq, dates, title, img)
 			 VALUES (seq_gl.NEXTVAL, #{dates}, #{title}, #{img})
+			 
+		<selectKey order="AFTER" keyProperty="seq"  resultType="_long">
+			SELECT seq_gl.CURRVAL FROM DUAL
+		</selectKey>
+		
 	</insert>
 	
 	<update id="update">

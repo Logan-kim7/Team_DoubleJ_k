@@ -39,7 +39,8 @@ public class GoogleListServiceV1 implements GoogleListService
 	@Override
 	public int update(GoogleListVO vo) 
 	{
-		int ret = googleDAO.update(vo);
+		googleDAO.update(vo);
+		int ret = (int)vo.getSeq();
 		return ret;
 	}
 

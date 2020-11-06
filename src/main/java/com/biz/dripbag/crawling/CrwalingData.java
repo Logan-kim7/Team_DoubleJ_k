@@ -61,10 +61,12 @@ public class CrwalingData
 			  vo.setTitle(one.select("title").text());
 			  vo.setImg(one.getElementsByTag("ht:picture").text());
 			  vo.setDates(dateService.dateTime()[0]);
-			  googleService.insert(vo);
+			  vo.setSeq(googleService.insert(vo));
 			  googleList.add(vo);
 			  if(index++ >= 9) break;
 		  }
+		 		  
+		  
 		} 
 		catch (IOException e) { System.out.println("구글 트렌드 접속 실패"); }
 		
