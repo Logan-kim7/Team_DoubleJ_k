@@ -54,7 +54,7 @@
 	text-align: right;
 }
 
-#to_list {
+.btn_glist {
 	background-color: black;
 	color: white;
 	border: none;
@@ -141,7 +141,8 @@
 	</div>
 
 	<div id="button_box">
-		<button id="to_list" type="button">홈으로</button>
+		<button class="btn_glist" id="to_list" type="button">홈으로</button>
+		<button class="btn_glist" id="btn_again" type="button">또 쓸거지롱</button>
 	</div>
 
 </section>
