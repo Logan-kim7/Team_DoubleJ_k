@@ -32,26 +32,16 @@ div#clock_main {
 	line-height: 100%;
 	font-weight: bolder;
 	color: black;
-<<<<<<< HEAD
-	font-size: 30px;
 }
 
 div#clock_main p {
-=======
 	font-size: 50px;
 	font-stretch: expanded;
->>>>>>> de070b794be29d86d93b6535fb8e1a56667fff2b
 	margin-top: 60px;
 	line-height: 100%;
 }
 
-<<<<<<< HEAD
-=======
-#clock_main:hover {
 	
-	
-}
->>>>>>> de070b794be29d86d93b6535fb8e1a56667fff2b
 footer {
 	background-color: black;
 	color: white;
@@ -174,7 +164,7 @@ a {
 }
 
 ol {
-	font-size: 15px;
+	font-size: 20px;
 	margin: 20px 0px;
 	list-style: none;
 }
