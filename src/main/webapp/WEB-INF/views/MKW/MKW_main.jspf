@@ -7,11 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
 <link rel="stylesheet"	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-11-05-0" />
-=======
-<link rel="stylesheet"	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-10-20-17" />
->>>>>>> de070b794be29d86d93b6535fb8e1a56667fff2b
 
 <title>Insert title here</title>
 </head>
