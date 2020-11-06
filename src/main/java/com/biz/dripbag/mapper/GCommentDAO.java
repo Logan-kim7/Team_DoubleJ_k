@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.biz.dripbag.model.GCommentVO;
 
-public interface GCommentDAO extends GenericDAO<GCommentVO, Long>{
+public interface GCommentDAO extends GenericDAO<GCommentVO, Long> {
+
 	public List<GCommentVO> selectTop();
+
+	public int hit(Long seq);
 }

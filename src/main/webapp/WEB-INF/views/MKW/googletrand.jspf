@@ -20,10 +20,10 @@
 				<legend id="writelegend">내가 작성하기</legend>
 
 				<label>작성자</label> <input type="hidden" id="gc_writer"
-					name="gc_writer" value="${member.email}" placeholder="작성자" /> <label>4자성어를 입력하세요</label> <input
-					type="text" id="gc_title" name="gc_title"
-					placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어 설명을 입력하세요</label> <input
-					type="text" id="gc_explain" name="gc_explain"
+					name="gc_writer" value="${member.email}" placeholder="작성자" /> <label>4자성어를
+					입력하세요</label> <input type="text" id="gc_title" name="gc_title"
+					placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어
+					설명을 입력하세요</label> <input type="text" id="gc_explain" name="gc_explain"
 					placeholder="20글자까지만 입력가능!!!" />
 			</fieldset>
 		</div>
@@ -32,7 +32,7 @@
 			<button id="throwit" type="button">
 				<p>영 아니다</p>
 			</button>
-			<button id="addit" type="submit">
+			<button id="addit" type="button">
 				<p>잘만든것 같다</p>
 			</button>
 		</div>
@@ -91,13 +91,19 @@
 
 		if (confirm("작성을 그만둘까요? ><")) {
 			alert("좋은 생각이에요!!! ^^")
-			document.location.href = "/dripbag/main/"
+			document.location.href = "${rootPath}/main/"
 		} else {
 			alert("읭?")
 		}
 	})
 
 	$("#addit").click(function() {
-		alert("서버에 추가됩니... 이게 뭐야!  ><")
+		if (confirm("추가할까요?")) {
+			alert("서버에 추가됩니... 이게 뭐야!  ><")
+			let mainform = document.getElementById("gtinputbox");
+			mainform.submit();
+		} else {
+			alert("다행이다...")
+		}
 	})
 </script>

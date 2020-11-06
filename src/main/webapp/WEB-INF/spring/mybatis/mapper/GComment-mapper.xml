@@ -38,7 +38,7 @@
 		#{gc_time},
 		#{gc_writer},
 		#{gc_title},
-		#{gc_explain}
+		#{gc_explain},
 		0,
 		0
 		)
@@ -60,5 +60,10 @@
 	<delete id="delete">
 		DELETE tbl_gcomment WHERE gc_seq = #{gc_seq}
 	</delete>
+
+	<update id="hit">
+		UPDATE tbl_gcomment SET gc_views = gc_views+1 WHERE gc_seq
+		= #{gc_seq}
+	</update>
 
 </mapper>

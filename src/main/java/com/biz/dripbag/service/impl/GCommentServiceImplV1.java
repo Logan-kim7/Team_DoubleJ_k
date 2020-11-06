@@ -71,5 +71,10 @@ public class GCommentServiceImplV1 implements GCommentService {
 		List<GCommentVO> gcList = gcDao.selectTop();
 		return gcList;
 	}
+	
+	@Override
+	public int hit(Long seq) {
+		return gcDao.hit(seq);
+	}
 
 }

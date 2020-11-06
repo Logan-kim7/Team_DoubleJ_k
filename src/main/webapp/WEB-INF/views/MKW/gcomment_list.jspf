@@ -92,7 +92,7 @@
 				</c:if>
 
 				<c:forEach items="${GC_LIST}" var="gc" end="19">
-					<tr class="gc_item">
+					<tr class="gc_item" data-id="${gc.gc_seq}">
 						<td>${gc.gc_writer}</td>
 						<td>${gc.gc_title}</td>
 						<td>${gc.gc_explain}</td>
@@ -111,19 +111,32 @@
 </section>
 
 <script>
-	function goHome() {
-		document.location.href = "${rootPath}/main/"
-	}
+	document.addEventListener("DOMContentLoaded", function() {
 
-	let goButton = document.getElementById("to_list");
-	goButton.addEventListener("click", goHome);
+		function goHome() {
+			document.location.href = "${rootPath}/main/"
+		}
 
-	function clickItem() {
-		document.location.href = "${rootPath}/gclist/thumbUp";
-	}
+		let goButton = document.getElementById("to_list");
+		goButton.addEventListener("click", goHome);
 
-	let listtr = document.getElementsByTagName("tr");
-	for (const tr of listtr) {
-	    tr.addEventListener("click", clickItem);
-	}
+		function clickItem() {
+			// document.location.href = "${rootPath}/gclist/thumbUp";
+			alert(id);
+		}
+
+		/*let listtr = document.getElementsByTagName("tr");
+		for (const tr of listtr) {
+		    tr.addEventListener("click", clickItem);
+		}*/
+
+		let all_item = document.querySelectorAll(".gc_item");
+		all_item.forEach(function(item_data) {
+			item_data.addEventListener("click", function() {
+				let id = item_data.getAttribute("data-id");
+				document.location.href = `${rootPath}/thumbsup/?id=` + id;
+			});
+		});
+
+	});
 </script>
