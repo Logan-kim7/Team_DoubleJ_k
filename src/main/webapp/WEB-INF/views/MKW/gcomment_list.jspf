@@ -70,6 +70,34 @@
 	background-color: cornflowerblue;
 	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3)
 }
+
+#pagination {
+	padding-top: 10px;
+	text-align: center;
+}
+
+#pagesec {
+	display: inline-block;
+	width: auto;
+}
+
+#pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+#pagination a.active {
+	background-color: gray;
+	color: white;
+	border-radius: 5px;
+}
+
+#pagination a:hover:not(.active) {
+	background-color: darkgray;
+	border-radius: 5px;
+}
 </style>
 
 <section id="gcl_section">
@@ -87,7 +115,7 @@
 			<tbody>
 				<c:if test="${empty GC_LIST}">
 					<tr>
-						<td colspan="5">게시글이 없지롱</td>
+						<td colspan="6">게시글이 없지롱</td>
 					</tr>
 				</c:if>
 
@@ -104,10 +132,12 @@
 		</table>
 	</div>
 
-	<div class="pagination">
-		<a href="#">&laquo;</a> <a href="#" class="active">1</a> <a href="#">2</a>
-		<a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a>
-		<a href="#">&raquo;</a>
+	<div id="pagination">
+		<section id="pagesec">
+			<a href="#">&laquo;</a> <a href="#" class="active">1</a> <a href="#">2</a>
+			<a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a>
+			<a href="#">&raquo;</a>
+		</section>
 	</div>
 
 	<div id="button_box">
@@ -139,9 +169,13 @@
 		let all_item = document.querySelectorAll(".gc_item");
 		all_item.forEach(function(item_data) {
 			item_data.addEventListener("click", function() {
-				let seq = item_data.getAttribute("data-id");
-				document.location.href = `${rootPath}/gclist/thumbsup?id=`
-						+ seq;
+				if (confirm("이 사자성어를 추천하시겠습니까?")) {
+					let seq = item_data.getAttribute("data-id");
+					document.location.href = `${rootPath}/gclist/thumbsup?id=`
+							+ seq;
+				} else {
+					alert("흥 칫 뿡!")
+				}
 			});
 		});
 

@@ -45,7 +45,7 @@ public class GCommentListController {
 
 		gcService.hit(vo);
 
-		return "home";
+		return "redirect:/gclist/";
 	}
 
 }
