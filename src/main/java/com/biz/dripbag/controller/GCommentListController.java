@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.biz.dripbag.model.GCommentVO;
 import com.biz.dripbag.service.GCommentService;
@@ -19,7 +22,7 @@ public class GCommentListController {
 	@Qualifier("gcServiceV1")
 	GCommentService gcService;
 
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String gComentList(Model model) {
 
 		List<GCommentVO> gcList = gcService.selectAll();
@@ -31,8 +34,15 @@ public class GCommentListController {
 
 		return "home";
 	}
-	
-	
-	
+
+	@RequestMapping(value = "/thumbsup/{seq}", method = RequestMethod.GET)
+	public String thumbsUp(@PathVariable("seq") Long seq) {
+
+		System.out.println("\n\n\n" + seq + "\n\n\n");
+
+		gcService.hit(seq);
+
+		return "home";
+	}
 
 }

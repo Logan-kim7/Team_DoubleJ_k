@@ -61,4 +61,9 @@
 		DELETE tbl_gcomment WHERE gc_seq = #{gc_seq}
 	</delete>
 
+	<update id="hit">
+		UPDATE tbl_gcomment SET gc_views = gc_views+1 WHERE gc_seq
+		= #{gc_seq}
+	</update>
+
 </mapper>
