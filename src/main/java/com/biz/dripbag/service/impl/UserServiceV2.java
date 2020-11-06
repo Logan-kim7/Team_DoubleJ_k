@@ -10,11 +10,13 @@ public class UserServiceV2 extends UserServiceV1
 	@Override
 	public UserVO findById(int flag, UserVO vo, String id) 
 	{
+		if((id != null && id.indexOf(" ") != -1))
+			return null;
+		
+		
 		if(vo != null && (vo.getEmail().indexOf(" ") != -1 || vo.getPwd().indexOf(" ") != -1))
 			return null;
 		
-		if((id != null && id.indexOf(" ") != -1))
-			return null;
 		
 		switch (flag) 
 		{

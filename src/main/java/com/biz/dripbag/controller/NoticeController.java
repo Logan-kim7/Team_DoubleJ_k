@@ -14,6 +14,7 @@ import com.biz.dripbag.crawling.CrwalingData;
 import com.biz.dripbag.model.NoticeVO;
 import com.biz.dripbag.service.HitService;
 import com.biz.dripbag.service.NoticeService;
+import com.biz.dripbag.service.SearchService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,19 +25,28 @@ import lombok.RequiredArgsConstructor;
 public class NoticeController
 {
 	@Qualifier("noticeServiceV1")
-	private final NoticeService nService;
+	private final NoticeService noticeService;
 	
 	@Qualifier("CrawlingData")
 	private final CrwalingData cService;
 	
 	@Qualifier("hitV1")
 	private final HitService hService;
+	
+	@Qualifier("searchServiceV1")
+	private final SearchService searchService;
+					
 				
 	@RequestMapping(value={"/", ""}, method = RequestMethod.GET)
 	public String home(Model model)
-	{						
+	{		
+		if(searchService.getSearch() != null)
+			model.addAttribute("LIST", searchService.getSearch());
+		
+		else
+			model.addAttribute("LIST", noticeService.selectAll());
 
-		model.addAttribute("NOTICE_LIST", nService.selectAll());
+		
 		model.addAttribute("GOOGLE", cService.getGoogleList());
 		model.addAttribute("NEWS", 	cService.getNewsList());
 		model.addAttribute("BODY", "NOTICE_HOME");
@@ -47,8 +57,7 @@ public class NoticeController
 	public String detail(@PathVariable("seq") String seq, Model model, HttpServletRequest req)
 	{
 		long iseq = Long.valueOf(seq);
-		if(hService.hit(req) == true)
-				nService.hit(iseq);
+		noticeService.hit(iseq);
 				
 		model.addAttribute("BODY", "NOTICE_DETAIL");
 		return "home";
@@ -64,7 +73,7 @@ public class NoticeController
 	@RequestMapping(value="/write", method=RequestMethod.POST)
 	public String write(Model model, @ModelAttribute("noticeVO") NoticeVO vo)
 	{
-		nService.insert(vo);
+		noticeService.insert(vo);
 		return "redirect:/notice/";
 	}
 		

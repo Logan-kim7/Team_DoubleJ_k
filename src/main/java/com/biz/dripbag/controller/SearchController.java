@@ -1,6 +1,5 @@
 package com.biz.dripbag.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,23 +24,14 @@ public class SearchController
 		
 	@ResponseBody
 	@RequestMapping(value={"", "/"}, method = RequestMethod.GET)
-	public List<Map<String, String>> search(@RequestParam Map<String, String> map, HttpServletRequest req)
-	{
-		 System.out.println(map.get("flag"));
-		List<Map<String, String>> lists = sService.search(map.get("table"), map.get("flag"), map.get("content"));
-		
-		if(lists == null || lists.size() == 0)
-			return null;
-		
-		req.getSession().setAttribute("SearchList", lists);
-		return lists;
-	}
-	
-	@ResponseBody
-	@RequestMapping(value={"/clear", "/clear/"}, method = RequestMethod.GET)
-	public void clear(String path, String flag, HttpServletRequest req)
-	{
-		if(flag.equals("0"))
-			req.getSession().removeAttribute("SearchList");
+	public boolean search(@RequestParam Map<String, String> map, HttpServletRequest req)
+	{		
+		if(sService.searchV2(map.get("table"), map.get("flag"), map.get("content")) == null)
+		{
+			sService.clear();
+			return false;
+		}
+
+		return true;
 	}
 }

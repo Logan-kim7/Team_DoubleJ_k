@@ -20,7 +20,6 @@ import com.biz.dripbag.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RequiredArgsConstructor
 @RequestMapping(value = {"/user", "/user/"})
 @Controller
@@ -37,10 +36,14 @@ public class UserController
 	@RequestMapping(value= {"/join", "/join/"}, method = RequestMethod.POST)
 	public void Join(UserVO userVO, HttpServletResponse res) throws IOException
 	{				
-		if(uService.findById(0, userVO, null) != null)
-			uService.insert(userVO);
 		
-		sService.locationJump(res, null, "회원가입 완료");
+		if(uService.findById(0, userVO, null) != null)
+		{
+			uService.insert(userVO);
+			sService.locationJump(res, null, "회원가입 완료");
+		}
+		
+		sService.locationJump(res, null, "ID OR PWD 확인해주세요");
 	}
 	
 	@ResponseBody
@@ -48,10 +51,7 @@ public class UserController
 	public boolean joinIdCheck(@RequestParam("id") String id, String master)
 	{	
 		if(uService.findById(1, null, id) != null)
-		{
-			System.out.println("dd");
 			return true;
-		}
 		
 		return false;
 	}
@@ -59,7 +59,6 @@ public class UserController
 	@RequestMapping(value ={"/check", "/check/"}, method=RequestMethod.POST)
 	public String check(UserVO userVO, HttpServletRequest req, HttpServletResponse res, String master) throws IOException
 	{
-		
 		if(master != null)
 			sService.sessionRegistration(req, null, master);
 		
@@ -70,10 +69,7 @@ public class UserController
 				sService.sessionRegistration(req, userVO, null);
 			else
 				sService.locationJump(res, null, "ID or PWD 불일치");
-		}
-
-		
-		
+		}		
 		return "redirect:/main/";
 	}
 	

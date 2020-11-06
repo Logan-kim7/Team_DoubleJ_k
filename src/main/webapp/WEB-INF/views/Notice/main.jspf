@@ -3,6 +3,7 @@
 <c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
 
 <link rel="stylesheet" href="${rootPath}/static/css/Notice/main.css?ver=1">
+<link rel="stylesheet" href="${rootPath}/static/css/Notice/write.css?ver=1">
 <script>
 $(function() 
 {	
@@ -10,7 +11,11 @@ $(function()
 			$(".notice_nav_btn").eq(0).click(function() { $("#notice_nav > ul li").toggle(); });
 	else
 		{
-			$(".notice_nav_btn").eq(1).click(function() { $("#toggle_div").toggle(); });
+			$(".notice_nav_btn").eq(1).click(function() 
+					{ 
+						$("#toggle_div").fadeToggle("slow"); 
+						$("#toggle_div:last").click(function(){ $("#toggle_div").hide(); }) 
+					});
 			$(".notice_nav_btn").eq(2).click(function() { $("#notice_nav > ul li").toggle(); });
 		}
 	

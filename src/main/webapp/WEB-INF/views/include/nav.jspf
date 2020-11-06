@@ -21,24 +21,9 @@ document.addEventListener("DOMContentLoaded", function()
         { 
         	sessionStorage.setItem("index", i);
 			sessionStorage.setItem("search", "0");
-			clearSearch();
 			document.location.href = "${rootPath}/" + nav_button[i].value + "/"; 
         }
 	});
-	
-	
-	function clearSearch()
-	{			
-		let path = window.location.pathname.split("/");	
-		let flag = sessionStorage.getItem("search");
-		$.ajax
-		({
-			url  : "http://localhost:8080/dripbag/any/search/clear",
-			type : "get",
-			data : {"flag" : flag},
-			success : function(data) { sessionStorage.removeItem("search"); }
-		}); 
-	}
 })
 </script>
 <style>

@@ -7,25 +7,62 @@
 <link rel="stylesheet" href="${rootPath}/static/css/Notice/list.css?var=0">
 
 <script>
-	document.addEventListener("DOMContentLoaded", function()
-	{
-		const trList = document.querySelectorAll(".tr_notice_List");
-		trList.forEach(function(e, i)
+document.addEventListener("DOMContentLoaded", function()
+{	
+	const delete_button = document.querySelector(".tr_notice_List");
+	const dSelect = document.querySelectorAll(".check_seq");
+ 	const tr_list = document.querySelectorAll(".tr_notice_List");
+	let seq_list = [];
+		
+	dSelect.forEach(function(e)
+	{  e.onclick = function(e) { e.stopPropagation(); } });
+
+    tr_list.forEach(function(e)
+    { 
+      e.onclick = function() 
+      {  
+    	  if(e.dataset.seq == "undefined" || e.dataset.seq == undefined)
+    		  return;
+    	  
+    	  document.location.href = "${rootPath}/notice/detail/" + e.dataset.seq;  
+      }
+    });
+    
+    
+    
+	/* delete_button.onclick = function()
+	{		
+		delete_seq.forEach(function(delete_seq, index)
 		{
-			e.onclick = function()
-			{
-				document.location.href = "${rootPath}/notice/detail/" + e.dataset.seq;	
-			}
-		})
-		
-		
+			if(delete_seq.checked == true)
+				seq_list[index] = delete_seq.dataset.seq;
+		});
 				
-	});
+		$.ajax
+		({			
+			type : "POST",
+			url  : "${rootPath}/api/send/delete",
+			data : {"delete_seq" : seq_list},
+			traditional : true, 
+			success : function(data)
+			{
+				alert("삭제 완료");
+				window.location.reload();
+			},
+			error : function(error)
+			{
+				alert("체크박스는 한개이상 선택 해주세요");
+			}
+		}); 
+	}; */
+
+});
 </script>
 
 <div id="notice_body">
 	<table>
 	<tr class="tr_notice_List">
+		<c:if test="${member.roll == 1}"><th>선택</th></c:if>
 		<th>NO</th>
 		<th>제목</th>
 		<th>작성자</th>
@@ -33,62 +70,22 @@
 		<th>조회</th>
 		<th>추천</th>
 	</tr>
-			<c:choose>
-				<c:when test="${not empty SearchList}">
-					<c:forEach items="${SearchList}" var="search" end="14" varStatus="i">
-						<tr class="tr_notice_List" data-seq="${search.SEQ}">
-							<td>${search.SEQ}</td>
-							<td>${search.TITLE}</td>
-							<td>${search.WRITER}</td>
-							<td>${search.DATES}-${search.TIMES}</td>
-							<td>${search.VIEWS}</td>
-							<td>${search.LIKES}</td>
-						</tr>
-						<c:if test="${i.last && i.index < 14}">
-							<c:forEach begin="${i.index}" end="${14}" varStatus="j">
-								<tr class="tr_notice_List">
-									<c:forEach begin="0" end="5">
-										<td></td>
-									</c:forEach>
-								</tr>
-							</c:forEach>
-						</c:if>
-					</c:forEach>
-				</c:when>
-				
-				<c:otherwise>
-					<c:if test="${func:length(NOTICE_LIST) == 0}">
-						<c:forEach begin="0" end="14" varStatus="i">
-							<tr class="tr_notice_List">
-								<c:forEach begin="0" end="5">
-									<td></td>
-								</c:forEach>
-							</tr>
-						</c:forEach>
-					
-					</c:if>
-					<c:forEach items="${NOTICE_LIST}" var="notice" end="14" varStatus="i">
-						<tr class="tr_notice_List" data-seq="${notice.seq}" >	
-							<td>${notice.seq}</td>
-							<td>${notice.title}</td>
-							<td>${notice.writer}</td>
-							<td>${notice.dates}-${notice.times}</td>
-							<td>${notice.views}</td>
-							<td>${notice.likes}</td>
-						</tr>
-						<c:if test="${i.last && i.index < 14}">
-							<c:forEach begin="${i.index}" end="14">
-								<tr class="tr_notice_List">
-									<c:forEach begin="0" end="5">
-										<td></td>
-									</c:forEach>
-								</tr>
-					    	</c:forEach>
-						</c:if>
-					</c:forEach>
-				</c:otherwise>
-			</c:choose>
+	
+	<c:forEach items="${LIST}" var="list" varStatus="i">
+	<tr class="tr_notice_List" data-seq="${list.seq}">
+		<c:if test="${member.roll == 1}"> <td><input type="checkbox" data-seq="${list.seq}" class="check_seq"></td> </c:if>
+		<td>${list.seq}</td>
+		<td>${list.title}</td>
+		<td>${list.writer}</td>
+		<td>${list.dates}-${list.times}</td>
+		<td>${list.views}</td>
+		<td>${list.likes}</td>
+	</tr>	
+		<c:if test="${i.last && i.index < 14}">
+			<c:forEach begin="${i.index}" end="14" varStatus="j">
+				<tr class="tr_notice_List"> <c:forEach begin="0" end="6"> <td></td> </c:forEach> </tr>
+			</c:forEach>
+		</c:if>
+	</c:forEach>
 	</table>
 </div>
-
-

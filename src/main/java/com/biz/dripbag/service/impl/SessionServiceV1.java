@@ -6,24 +6,31 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.model.UserVO;
+import com.biz.dripbag.service.SearchService;
 import com.biz.dripbag.service.SessionService;
 
-import lombok.extern.slf4j.Slf4j;
 
 @Service("sessionServiceV1")
-@Slf4j
 public class SessionServiceV1 implements SessionService
 {	
+	@Qualifier("searchServiceV1")
+	@Autowired
+	SearchService search;
+	
+	private String urlPath;
+	
 	@Override
 	public boolean sessionRegistration(HttpServletRequest req, UserVO vo, String master) 
 	{
 		if(req.getSession().getAttribute("login_registration") != null)
 		{
 			req.getSession().removeAttribute("login_registration");
-			return false;
+				return false;
 		}
 		
 		if(master != null && master.equals("master"))
@@ -60,7 +67,7 @@ public class SessionServiceV1 implements SessionService
 		out.close();		
 	}
 
-	public void Searchclear(HttpServletRequest req, String urlPath)
+	public void Searchclear(HttpServletRequest req)
 	{
 		String temp = splitStr(req.getServletPath());
 		if(urlPath == null)
@@ -68,7 +75,7 @@ public class SessionServiceV1 implements SessionService
 
 		if(temp.contains(urlPath) == false )
 		{
-			req.getSession().removeAttribute("SearchList");
+			search.clear();
 			urlPath = temp;
 		}
 	}

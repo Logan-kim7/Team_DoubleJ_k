@@ -88,14 +88,3 @@ html, body {
 	border-bottom: 2px solid crimson;
 }
 
-#toggle_div {
-	display: none;
-	height: 80%;
-	width: 60%;
-	border: 6px solid red;
-	background: gray;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-}

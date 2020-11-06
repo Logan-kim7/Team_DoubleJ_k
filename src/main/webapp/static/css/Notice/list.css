@@ -7,7 +7,7 @@ table {
 	border-collapse: collapse;
 }
 
-table th:nth-child(2), table td:nth-child(2)
+table th:nth-child(3), table td:nth-child(3)
 {
 	width: 60%;
 }
@@ -19,12 +19,14 @@ table th:nth-child(2), table td:nth-child(2)
 }
 
 table .tr_notice_List:nth-child(0n+1) {
+	height:10px;
 	background-color: #daf1cd;
 }
 
 table .tr_notice_List:hover:nth-child(1n+2) {
 	cursor: pointer;
-	background-color: #f5baa0;
+	/* background-color: #ccc; */
+	border-bottom: 1px solid crimson;
 }
 
 .tr_notice_List td {

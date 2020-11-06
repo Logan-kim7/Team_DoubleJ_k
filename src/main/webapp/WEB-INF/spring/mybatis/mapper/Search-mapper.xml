@@ -33,6 +33,33 @@
 			LIKE '%'||#{keyword}||'%'  
 				ORDER BY seq DESC
 	</select>
+	
+		<!--  ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ V2 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ -->
+
+	<select id="all" resultType="searchVO">
+		SELECT * FROM ${table} WHERE  TITLE  LIKE '%'||#{keyword}||'%' OR 
+									  CONT   LIKE '%'||#{keyword}||'%' OR  
+									  WRITER LIKE '%'||#{keyword}||'%'
+				ORDER BY seq DESC
+	</select>
+	
+	<select id="title" resultType="searchVO">
+		SELECT * FROM ${table} WHERE TITLE 
+			LIKE  '%'||#{keyword}||'%' 
+				ORDER BY seq DESC
+	</select>
+	
+	<select id="content" resultType="searchVO">
+		SELECT * FROM ${table} WHERE CONT 
+			LIKE '%'||#{keyword}||'%'  
+				ORDER BY seq DESC
+	</select>
+	
+	<select id="writer" resultType="searchVO">
+		SELECT * FROM ${table} WHERE WRITER 
+			LIKE '%'||#{keyword}||'%'  
+				ORDER BY seq DESC
+	</select>
 
  </mapper>
  

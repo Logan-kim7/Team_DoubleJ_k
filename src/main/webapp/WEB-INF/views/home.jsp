@@ -13,7 +13,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/cc60939e22.js"
 	crossorigin="anonymous"></script>
-<script src="${rootPath}/static/js/search.js?ver=3"></script>
+<script src="${rootPath}/static/js/search.js?ver=5"></script>
 <style>
 * {
 	box-sizing: border-box;
