@@ -40,7 +40,7 @@
 --------------------------------
 ## 3.구현기능 :globe_with_meridians:
 
-* :mag: :door: Log in, sing in function 구현   
+* :mag: :door: Log in & out , sing in function 구현   
 * :mag: :newspaper: To Day Top 10 News Crawling한 후 댓글작성 function 구현
 * :mag: :chart_with_upwards_trend: Goolgle Trand search Top 10 Crawling한 후 댓글작성 function 구현 
 * :mag: :bar_chart: Ranking function 구현 
