@@ -4,14 +4,16 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.biz.dripbag.mapper.NewsDAO;
 import com.biz.dripbag.model.NewsListVO;
 import com.biz.dripbag.service.NewsListService;
 
 import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Service("newsServiceV1")
-public class NewsServiceV1 implements NewsListService 
+public class NewsListV1 implements NewsListService 
 {
+	
 	@Override
 	public List<NewsListVO> selectAll() {
 		// TODO Auto-generated method stub

@@ -35,8 +35,8 @@ header {
 <header>
 
 	<c:choose>
-		<c:when test="${BODY == 'MAIN_HOME'}">
-			<h1>DRIPBAG</h1>
+		<c:when test="${BODY == 'MAIN_HOME'}">	
+			<h1 >DRIPBAG </h1>
 			<p>1</p>
 		</c:when>
 
