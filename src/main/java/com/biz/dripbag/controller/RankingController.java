@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @RequestMapping(value = "/halloffame")
 @Controller
-public class HallOfFameController {
+public class RankingController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {

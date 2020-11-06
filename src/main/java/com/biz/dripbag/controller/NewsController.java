@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.biz.dripbag.crawling.CrwalingData;
-import com.biz.dripbag.model.NewsVO;
+import com.biz.dripbag.model.NewsListVO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -40,7 +40,7 @@ public class NewsController {
     }
     
     @RequestMapping(value = {"/write", "/write/"}, method =  RequestMethod.POST)
-    public String write(NewsVO vo)  {
+    public String write(NewsListVO vo)  {
         
         return "redirect:/news/" + ret;
     }

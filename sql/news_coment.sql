@@ -1,4 +1,6 @@
-CREATE TABLE tbl_newsC (
+-- NEWS ?éò?ù¥Ïß? ?ûÖ?ãà?ã§.
+
+CREATE TABLE tbl_newsComent (
 
         seq	NUMBER		PRIMARY KEY,
         seqC	NUMBER	NOT NULL UNIQUE	,
@@ -9,17 +11,9 @@ CREATE TABLE tbl_newsC (
         cont	nVARCHAR2(20),		
         likes	NUMBER,		
         views	NUMBER		
-
-
 );
 
-
 CREATE SEQUENCE seq_newsC START WITH 1 INCREMENT BY 1;
-CREATE SEQUENCE seq_news START WITH 1 INCREMENT BY 1;
 
-
-INSERT INTO tbl_newsc
-VALUES (seq_news.nextval,seq_newsC.nextval, 'ÌôçÍ∏∏Îèô','1','1','Ïõå','Ï∂•ÏäµÎãàÎã§','1','1');
-commit;
-
-SELECT * FROM tbl_newsc;
+DROP TABLE tbl_newsC;
+DROP SEQUENCE seq_newsC;

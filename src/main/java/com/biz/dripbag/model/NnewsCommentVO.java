@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class NCommentVO {
+public class NnewsCommentVO {
 	private Long seq; //NUMBER		PRIMARY KEY,
 	private Long seqC;    //	NUMBER 	NOT NULL UNIQUE	,
 	private String writer;	//nVARCHAR2(100)	NOT NULL,	

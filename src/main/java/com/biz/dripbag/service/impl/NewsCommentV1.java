@@ -2,37 +2,37 @@ package com.biz.dripbag.service.impl;
 
 import java.util.List;
 
-import com.biz.dripbag.model.NewsVO;
-import com.biz.dripbag.service.NewsService;
+import com.biz.dripbag.model.NewsListVO;
+import com.biz.dripbag.service.NewsListService;
 
-public class NcommentV1 implements NewsService {
+public class NewsCommentV1 implements NewsListService {
 
 	@Override
-	public List<NewsVO> selectAll() {
+	public List<NewsListVO> selectAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public NewsVO findById(Long id) {
+	public NewsListVO findById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public NewsVO findById(String id) {
+	public NewsListVO findById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int insert(NewsVO vo) {
+	public int insert(NewsListVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int update(NewsVO vo) {
+	public int update(NewsListVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

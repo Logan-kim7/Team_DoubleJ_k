@@ -11,15 +11,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class GoogleVO {
-	
-	 
+public class GoogleListVO {
 
 	private long   seq;   // NUMBER PRIMARY KEY
 	private String dates;  // VARCHAR2(10)	  NOT NULL	
 	private String title; // nVARCHAR2(225) NOT NULL	
-	private String img;	 // nVARCHAR2(225)
-	private String cont;	 		
+	private String img;	 // nVARCHAR2(225)		
 
 }
 

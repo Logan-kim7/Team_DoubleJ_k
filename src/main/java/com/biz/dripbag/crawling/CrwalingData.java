@@ -1,7 +1,6 @@
 package com.biz.dripbag.crawling;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.jsoup.Jsoup;
@@ -14,15 +13,14 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import com.biz.dripbag.model.GoogleVO;
-import com.biz.dripbag.model.NewsVO;
+import com.biz.dripbag.model.GoogleListVO;
+import com.biz.dripbag.model.NewsListVO;
 import com.biz.dripbag.service.DateService;
-import com.biz.dripbag.service.GoogleTrendeService;
-import com.biz.dripbag.service.NewsService;
+import com.biz.dripbag.service.GoogleListService;
+import com.biz.dripbag.service.NewsListService;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-@Slf4j
+
 @RequiredArgsConstructor
 @Configuration
 @EnableScheduling
@@ -30,27 +28,27 @@ import lombok.extern.slf4j.Slf4j;
 public class CrwalingData
 {
 	@Qualifier("googleServiceV1")
-	private final GoogleTrendeService googleService;
+	private final GoogleListService googleService;
 	
 	@Qualifier("newsServiceV1")
-	private final NewsService newsService;
+	private final NewsListService newsService;
 	
 	@Qualifier("dateV1")
 	private final DateService dateService;
 	
-	private final List<GoogleVO> googleList;
-	private final List<NewsVO> newslist;
+	private final List<GoogleListVO> googleList;
+	private final List<NewsListVO> newslist;
 	
-	public List<GoogleVO> getGoogleList() { return googleList; }
-	public List<NewsVO> getNewsList() { return newslist; }
+	public List<GoogleListVO> getGoogleList() { return googleList; }
+	public List<NewsListVO> getNewsList() { return newslist; }
 	
 	@Scheduled(fixedDelay = 86400000)
-	public List<GoogleVO> googleTrend() 
+	public List<GoogleListVO> googleTrend() 
 	{
 		googleList.clear();
 		String url = "https://trends.google.co.kr/trends/trendingsearches/daily/rss?geo=KR";
 		Document doc;
-		GoogleVO vo;
+		GoogleListVO vo;
 		int index = 0;
 		try 
 		{
@@ -59,11 +57,11 @@ public class CrwalingData
 		
 		  for(Element one : trendList) 
 		  { 
-			  vo = new GoogleVO(); 
+			  vo = new GoogleListVO(); 
 			  vo.setTitle(one.select("title").text());
 			  vo.setImg(one.getElementsByTag("ht:picture").text());
 			  vo.setDates(dateService.dateTime()[0]);
-//			  googleService.insert(vo);
+			  googleService.insert(vo);
 			  googleList.add(vo);
 			  if(index++ >= 9) break;
 		  }
@@ -76,13 +74,13 @@ public class CrwalingData
 	
 	
 	@Scheduled(fixedDelay = 86400000)
-	public List<NewsVO> news()
+	public List<NewsListVO> news()
 	{
 		newslist.clear();
 		String newsUrl = "/?pageIndex=0"; // 뉴스 페이지 인덱스 문자열
 		String url = "https://mnews.sarangbang.com"; // 뉴스페이지 URL ( 디테일 붙이기 용도)
 		
-		NewsVO vo;
+		NewsListVO vo;
 		String[] detailNews;
 		int index = 0;
 		try 
@@ -98,11 +96,11 @@ public class CrwalingData
 			{
 				doc = Jsoup.connect(detailNews[i]).get();
 				
-				vo = new NewsVO();
+				vo = new NewsListVO();
 				vo.setTitle(doc.select(".view_wrap > .article_head h3").text()); // Title
 				vo.setImg(doc.select(".figcaption.text-center img").attr("src")); // img url
 				vo.setCont(doc.select(".article_view p").text()); // content									
-				//newsService.insert(vo);
+				newsService.insert(vo);
 				newslist.add(vo);
 			}			
 		}

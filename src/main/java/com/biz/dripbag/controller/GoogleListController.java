@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.biz.dripbag.crawling.CrwalingData;
-import com.biz.dripbag.model.GCommentVO;
-import com.biz.dripbag.service.GCommentService;
+import com.biz.dripbag.model.GoogleCommentVO;
+import com.biz.dripbag.service.GoogleCommentService;
 
 @RequestMapping(value = "/gtrand")
 @Controller
-public class GoogleTrandController {
+public class GoogleListController {
 	
 	@Autowired
 	@Qualifier("gcServiceV1")
-	GCommentService gcService;
+	GoogleCommentService gcService;
 
 	@Autowired
 	CrwalingData gServ;
@@ -33,7 +33,7 @@ public class GoogleTrandController {
 		model.addAttribute("BODY", "GOOGLE_HOME");
 		model.addAttribute("TITLE", gServ.getGoogleList().get(intSeq).getTitle());
 		
-		List<GCommentVO> gcList = gcService.selectTop();
+		List<GoogleCommentVO> gcList = gcService.selectTop();
 		
 		model.addAttribute("GC_LIST", gcList);
 
@@ -42,7 +42,7 @@ public class GoogleTrandController {
 	}
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String userGSave(Model model, @ModelAttribute GCommentVO gcVO) {
+	public String userGSave(Model model, @ModelAttribute GoogleCommentVO gcVO) {
 		gcService.insert(gcVO);
 		
 		return "redirect:/gclist/";

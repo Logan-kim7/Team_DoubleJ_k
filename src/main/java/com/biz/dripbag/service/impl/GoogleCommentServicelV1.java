@@ -7,55 +7,55 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.biz.dripbag.mapper.GCommentDAO;
-import com.biz.dripbag.model.GCommentVO;
-import com.biz.dripbag.service.GCommentService;
+import com.biz.dripbag.mapper.GoogleCommentDAO;
+import com.biz.dripbag.model.GoogleCommentVO;
+import com.biz.dripbag.service.GoogleCommentService;
 
 @Service("gcServiceV1")
-public class GCommentServiceImplV1 implements GCommentService {
+public class GoogleCommentServicelV1 implements GoogleCommentService {
 
 	@Autowired
-	GCommentDAO gcDao;
+	GoogleCommentDAO gcDao;
 
 	@Override
-	public List<GCommentVO> selectAll() {
-		List<GCommentVO> gcList = gcDao.selectAll();
+	public List<GoogleCommentVO> selectAll() {
+		List<GoogleCommentVO> gcList = gcDao.selectAll();
 		return gcList;
 	}
 
 	@Override
-	public GCommentVO findById(Long id) {
+	public GoogleCommentVO findById(Long id) {
 
-		GCommentVO gcVO = gcDao.findById(id);
+		GoogleCommentVO gcVO = gcDao.findById(id);
 
 		return gcVO;
 	}
 
 	@Override
-	public GCommentVO findById(String id) {
+	public GoogleCommentVO findById(String id) {
 
 		long seq = Long.valueOf(id);
-		GCommentVO gcVO = gcDao.findById(id);
+		GoogleCommentVO gcVO = gcDao.findById(id);
 
 		return gcVO;
 	}
 
 	@Override
-	public int insert(GCommentVO gcVO) {
+	public int insert(GoogleCommentVO gcVO) {
 
 		LocalDateTime date = LocalDateTime.now();
 		String writeDate = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(date);
 		String writeTime = DateTimeFormatter.ofPattern("HH:mm:ss").format(date);
 
-		gcVO.setGc_date(writeDate);
-		gcVO.setGc_time(writeTime);
+		gcVO.setDates(writeDate);
+		gcVO.setTimes(writeTime);
 
 		int ret = gcDao.insert(gcVO);
 		return ret;
 	}
 
 	@Override
-	public int update(GCommentVO gcVO) {
+	public int update(GoogleCommentVO gcVO) {
 		return gcDao.update(gcVO);
 	}
 
@@ -67,13 +67,13 @@ public class GCommentServiceImplV1 implements GCommentService {
 	}
 
 	@Override
-	public List<GCommentVO> selectTop() {
-		List<GCommentVO> gcList = gcDao.selectTop();
+	public List<GoogleCommentVO> selectTop() {
+		List<GoogleCommentVO> gcList = gcDao.selectTop();
 		return gcList;
 	}
 	
 	@Override
-	public int hit(GCommentVO gcVO) {
+	public int hit(GoogleCommentVO gcVO) {
 		return gcDao.hit(gcVO);
 	}
 

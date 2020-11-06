@@ -13,14 +13,14 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class GCommentVO {
-	private Long gc_seq;
-	private Long gc_seqC;
-	private String gc_writer;
-	private String gc_date;
-	private String gc_time;
-	private String gc_title;
-	private String gc_explain;
-	private Long gc_likes;
-	private Long gc_views;
+public class GoogleCommentVO {
+	private Long seq;
+	private Long seqC;
+	private String writer;
+	private String dates;
+	private String times;
+	private String title;
+	private String cont;
+	private Long likes;
+	private Long views;
 }
