@@ -14,7 +14,6 @@ import com.biz.dripbag.crawling.CrwalingData;
 import com.biz.dripbag.model.NoticeVO;
 import com.biz.dripbag.service.HitService;
 import com.biz.dripbag.service.NoticeService;
-import com.biz.dripbag.service.SearchService;
 
 import lombok.RequiredArgsConstructor;
 

@@ -28,7 +28,9 @@
 		gc_time,
 		gc_writer,
 		gc_title,
-		gc_explain
+		gc_explain,
+		gc_likes,
+		gc_views
 		) VALUES (
 		SEQ_GC.NEXTVAL,
 		SEQ_GCC.NEXTVAL,
@@ -37,6 +39,8 @@
 		#{gc_writer},
 		#{gc_title},
 		#{gc_explain}
+		0,
+		0
 		)
 	</insert>
 
