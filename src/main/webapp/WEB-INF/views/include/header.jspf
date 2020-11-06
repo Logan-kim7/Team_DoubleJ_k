@@ -37,27 +37,27 @@ header {
 	<c:choose>
 		<c:when test="${BODY == 'MAIN_HOME'}">
 			<h1>DRIPBAG</h1>
-			<p>1</p>
+			<p>마음에 드는 주제를 선택하세요!</p>
 		</c:when>
 
 		<c:when test="${BODY == 'HALL_OF_FAME'}">
-			<h1>Ranking</h1>
-			<p>1</p>
+			<h1>명예의 전당</h1>
+			<p>우리 웹사이트 역사에서 가장 히트한 사람들</p>
 		</c:when>
 
 		<c:when test="${BODY == 'INFO_HOME'}">
 			<h1>INFO</h1>
-			<p>1</p>
+			<p>왜 이런 사이트가 만들어졌냐면...</p>
 		</c:when>
 
 		<c:when test="${BODY == 'NEWS_HOME'}">
 			<h1>NEWS</h1>
-			<p>1</p>
+			<p>핫 늬우스!</p>
 		</c:when>
 
 		<c:when test="${BODY == 'GOOGLE_HOME'}">
 			<h1>Google</h1>
-			<p></p>
+			<p>트랜디한 검색어 주제</p>
 		</c:when>
 
 		<c:when test="${BODY == 'NEWS_DETAIL'}">
@@ -66,13 +66,13 @@ header {
 		</c:when>
 
 		<c:when test="${BODY == 'NOTICE_HOME'}">
-			<h1>Notice</h1>
-			<p>1</p>
+			<h1>공지사항</h1>
+			<p>여긴 사실 드립의 공간은 아닙니다만</p>
 		</c:when>
 
 		<c:when test="${BODY == 'GC_LIST'}">
-			<h1>구글의 기운을 받은 사자성어 리스트</h1>
-			<p>오옹오</p>
+			<h1>최신 작성</h1>
+			<p>실시간 검색어 사자성어 리스트</p>
 		</c:when>
 
 	</c:choose>
