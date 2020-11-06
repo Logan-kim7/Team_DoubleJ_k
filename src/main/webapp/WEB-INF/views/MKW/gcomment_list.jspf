@@ -54,7 +54,7 @@
 	text-align: right;
 }
 
-#to_list {
+.btn_glist {
 	background-color: black;
 	color: white;
 	border: none;
@@ -154,7 +154,6 @@
 		}
 
 		let goButton = document.getElementById("to_list");
-		
 		goButton.addEventListener("click", goHome);
 
 		let all_item = document.querySelectorAll(".gc_item");
