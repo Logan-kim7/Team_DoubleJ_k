@@ -32,26 +32,21 @@ div#clock_main {
 	line-height: 100%;
 	font-weight: bolder;
 	color: black;
-<<<<<<< HEAD
 	font-size: 30px;
 }
 
 div#clock_main p {
-=======
 	font-size: 50px;
 	font-stretch: expanded;
->>>>>>> de070b794be29d86d93b6535fb8e1a56667fff2b
+
 	margin-top: 60px;
 	line-height: 100%;
 }
 
-<<<<<<< HEAD
-=======
 #clock_main:hover {
 	
 	
 }
->>>>>>> de070b794be29d86d93b6535fb8e1a56667fff2b
 footer {
 	background-color: black;
 	color: white;
@@ -121,6 +116,10 @@ header {
 	text-align: center;
 }
 
+
+
+
+
 fieldset {
 	display: inline-block;
 	border: 15px double black;
@@ -162,6 +161,7 @@ legend {
    right 콘텐츠를
     위한 CSS 공간*/
 #right_content {
+	
 	display: inline-block;
 	height: 100%;
 	text-align: center;

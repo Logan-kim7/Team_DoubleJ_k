@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-11-05-0" />
+<link rel="stylesheet"	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-11-05-1s" />
 
 <title>Insert title here</title>
 </head>
@@ -15,7 +15,7 @@
 	<section id="main_content">
 		<aside id="left_content">
 			<fieldset>
-				<legend>ToDay NEWS</legend>
+				<legend><img alt="이미지를 불러오지 못했습니다." src="../static/imgs/KJM/news_logo.png" width="120px" height="120px"></legend>
 				<ol>
 					  <c:forEach items="${NEWS}" var="news" varStatus="i" >
                         <li><a href="${rootPath}/news/${i.index}">${news.title}</a></li>
@@ -30,9 +30,10 @@
 			${DATE}
 		</div>
 
-		<aside id="right_content">
+		<aside id="right_content" >
 			<fieldset>
-				<legend>Google Trand</legend>
+
+				<legend><img alt="이미지를 불러오지 못했습니다." src="../static/imgs/KJM/google-bigG.png" height="120px" ></legend>
 
 				<ol>
 					<c:forEach items="${GOOGLE}" var="google" varStatus="i">
