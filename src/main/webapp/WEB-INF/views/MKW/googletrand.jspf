@@ -23,7 +23,7 @@
 				<inputy type="hidden" id="" name="seqc" value="${TITLE.seq}"> 
 				<input type="hidden" id="gc_writer" name="writer" value="${member.email}" placeholder="작성자" /> <label>4자성어를 입력하세요</label> 
 				<input type="text" id="gc_title" name="title" placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어 설명을 입력하세요</label> 
-				<input type="text" id="gc_explain" name="cont" placeholder="20글자까지만 입력가능!!!" />
+				<input type="text" id="gc_explain" name="cont" placeholder="12글자까지만 입력가능!!!" />
 			</fieldset>
 		</div>
 
@@ -98,8 +98,12 @@
 		let jujerriy = document.getElementById("gc_explain");
 
 		function adding() {
+			if(title.value == "gay"){
+				document.location.href = "https://www.youtube.com/watch?v=htEVWnYSWS4";
+			}
+			
 			if (confirm("확실합니까? 추가할까요? 잘못 올려도 바꿔줄 생각 없어요")) {
-				alert("서버에 추가됩니... 이게 뭐야!!  ><")
+				alert("서버에 추가됩니... 이게 뭐야!!  ><");
 				let mainform = document.getElementById("gtinputbox");
 				mainform.submit();
 			} else {
@@ -111,8 +115,8 @@
 			if (title.value.length != 4) {
 				alert("사☆자☆성☆어 이므로 적게도 말고 많게도 않게 4글자만!!! ><")
 				title.focus();
-			} else if (jujerriy.value.length > 20) {
-				alert("설명은 20자를 넘어가면 안되는데... ><")
+			} else if (jujerriy.value.length > 12) {
+				alert("설명은 12자를 넘어가면 안되는데... ><");
 				jujerriy.focus();
 			} else {
 				adding();
