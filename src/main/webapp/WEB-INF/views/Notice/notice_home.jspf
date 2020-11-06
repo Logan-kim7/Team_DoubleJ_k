@@ -1,0 +1,84 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
+
+<link rel="stylesheet" href="${rootPath}/static/css/Notice/home.css?ver=0">
+<script>
+$(function() 
+{
+	let flag = 0;
+	//=====================================================
+	$(".notice_title").click(function() {
+		let seq = $(this).data("seq");
+		document.location.href = "${rootPath}/notice/detail/" + seq;
+	})
+	//=====================================================
+		$("#notice_button_div button").click(function()
+		{
+			document.location.href = "${rootPath}/notice/write"
+		})
+	//=====================================================
+	$("#notice_search").click(function() {
+		if ($("#notice_search ul").css("display") == "none")
+			$("#notice_search ul").show();
+		else
+			$("#notice_search ul").hide();
+	})
+
+	$("#notice_search ul li").click(function() {
+		let temp = $("#notice_search em").text();
+		$("#notice_search em").html($(this).text());
+		$(this).text(temp);
+	})
+	//=====================================================
+		
+	$(".notice_nav_btn[name=change]").click(function()
+	{
+		$("#notice_nav > ul li").toggle();
+	})
+})
+</script>
+
+<div id = "div_body">
+   <section>
+	   <c:choose>
+			<c:when test="${BODY == 'NOTICE_WRITE'}">
+				<%@ include file="/WEB-INF/views/Notice/notice_write.jspf" %>
+			</c:when>
+		
+			<c:when test="${BODY == 'NOTICE_DETAIL'}">
+				<%@ include file="/WEB-INF/views/Notice/notice_detail.jspf"%>
+			</c:when>
+			
+			<c:otherwise>
+				<%@ include file="/WEB-INF/views/Notice/notice_list.jspf" %>
+			</c:otherwise>
+						
+		</c:choose>
+	</section>  
+     
+	<section id=notice_nav>
+		<div>
+		   	<select>
+				<option>전체</option>
+				<option>내용</option>
+				<option>작성자</option>
+			</select>
+		</div>
+		
+			<div>
+				<input placeholder="search">
+				<i class="fas fa-search"></i>
+			</div>
+			
+
+			<button class="notice_nav_btn">글쓰기</button>
+			<button class="notice_nav_btn" name="change">변경</button>
+			<ul>
+				<c:forEach items="${GOOGLE}" var="google" varStatus="status">
+						<li>${google.gt_title}</li>
+					    <li style="display: none;">${NEWS[status.index].n_title}</li>
+				</c:forEach>
+			</ul>
+	</section>
+</div>

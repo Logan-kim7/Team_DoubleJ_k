@@ -110,7 +110,7 @@ fieldset {
 	style="background-image: url('../static/imgs/KJM/충돌.jpg')">
 
 	<section>
-		<p class="text_title">What's Drip bag?</p>
+		<p class="text_title">What's a Drip bag?</p>
 		<br />
 		<fieldset>
 			<legend class="legend">사이트 구현 배경</legend>
@@ -143,12 +143,16 @@ fieldset {
 			<legend class="legend">사이트 이용 방법</legend>
 			<div class="maintitle">
 				<ol id="how_list" start="1">
-					<li>댓글을적고싶은 뉴스기사 또는 실시간검색어 선택</li>
+					<li>댓글을적고싶은 기사&실시간검색어 선택</li>
 					<li>4자성어 입력창에 4글자로 드립작성 부연설명12글자이내 작성</li>
 					<li>좋아요 점수가 높을수록 더많은 포인트 및 레벨 부여</li>
 				</ol>
 			</div>
 		</fieldset>
+		<div id="str_box">
+			<button class="infobt" type="button">start</button>
+		</div>
+
 
 	</section>
 </section>

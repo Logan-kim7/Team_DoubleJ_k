@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace = "com.biz.dripbag.mapper.NewsRankingDAO">
+	<select id="selectAll" resultType="noticeVO">
+		SELECT * FROM tbl_nRanking
+	</select>
+	
+	<select id="findById" resultType="NewsRankingVO">
+		SELECT * FROM tbl_nRanking WHERE n_seq = #{n_seq}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tbl_gRanking(n_seq, n_date, n_title, n_img)
+			 VALUES (seq_newsRanking, #{n_date}, #{n_title}, #{n_img})
+	</insert>
+	
+	<update id="update">
+	
+	</update>
+	
+	<delete id="delete">
+	</delete>
+	
+ </mapper>
