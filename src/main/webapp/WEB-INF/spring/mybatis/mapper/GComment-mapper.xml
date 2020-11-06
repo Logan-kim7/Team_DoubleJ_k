@@ -38,7 +38,7 @@
 		#{gc_time},
 		#{gc_writer},
 		#{gc_title},
-		#{gc_explain}
+		#{gc_explain},
 		0,
 		0
 		)
