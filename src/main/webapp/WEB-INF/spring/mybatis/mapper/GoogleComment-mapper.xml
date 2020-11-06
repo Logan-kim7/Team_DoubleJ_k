@@ -28,15 +28,15 @@
 		times,
 		writer,
 		title,
-		cont,
+		cont
 		) VALUES (
 		SEQ_GC.NEXTVAL,
-		SEQ_GCC.NEXTVAL,
+		#{seqC},
 		#{dates},
 		#{times},
 		#{writer},
 		#{title},
-		#{cont},
+		#{cont}
 		)
 	</insert>
 

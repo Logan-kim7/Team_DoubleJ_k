@@ -31,7 +31,7 @@ public class GoogleListController {
 	public String home(Model model, @PathVariable("seq") String seq) throws IOException {
 		int intSeq = Integer.valueOf(seq);
 		model.addAttribute("BODY", "GOOGLE_HOME");
-		model.addAttribute("TITLE", gServ.getGoogleList().get(intSeq).getTitle());
+		model.addAttribute("TITLE", gServ.getGoogleList().get(intSeq));
 		
 		List<GoogleCommentVO> gcList = gcService.selectTop();
 		
@@ -43,6 +43,8 @@ public class GoogleListController {
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String userGSave(Model model, @ModelAttribute GoogleCommentVO gcVO) {
+		
+		gcVO.setSeqC( gServ.getGoogleList().get(0).getSeq()); 
 		gcService.insert(gcVO);
 		
 		return "redirect:/gclist/";

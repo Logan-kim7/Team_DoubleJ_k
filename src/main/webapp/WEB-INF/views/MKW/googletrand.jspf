@@ -10,7 +10,7 @@
 	<div id="headline">
 		<fieldset id="headset">
 			<legend id="headlegend">선택한 주제</legend>
-			<p id="googletrand">${TITLE}</p>
+			<p id="googletrand">${TITLE.title}</p>
 		</fieldset>
 	</div>
 
@@ -19,12 +19,11 @@
 			<fieldset id="writeset">
 				<legend id="writelegend">내가 작성하기</legend>
 
-				<label>작성자</label> <input type="hidden" id="gc_writer"
-					name="gc_writer" value="${member.email}" placeholder="작성자" /> <label>4자성어를
-					입력하세요</label> <input type="text" id="gc_title" name="gc_title"
-					placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어
-					설명을 입력하세요</label> <input type="text" id="gc_explain" name="gc_explain"
-					placeholder="20글자까지만 입력가능!!!" />
+				<label>작성자</label> 
+				<inputy type="hidden" id="" name="seqc" value="${TITLE.seq}"> 
+				<input type="hidden" id="gc_writer" name="writer" value="${member.email}" placeholder="작성자" /> <label>4자성어를 입력하세요</label> 
+				<input type="text" id="gc_title" name="title" placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어 설명을 입력하세요</label> 
+				<input type="text" id="gc_explain" name="cont" placeholder="20글자까지만 입력가능!!!" />
 			</fieldset>
 		</div>
 
@@ -65,11 +64,11 @@
 
 						<c:forEach items="${GC_LIST}" var="gc" end="9">
 							<tr>
-								<td>${gc.gc_writer}</td>
-								<td>${gc.gc_title}</td>
-								<td>${gc.gc_explain}</td>
-								<td>${gc.gc_views}</td>
-								<td>${gc.gc_date}</td>
+								<td>${gc.writer}</td>
+								<td>${gc.title}</td>
+								<td>${gc.cont}</td>
+								<td>${gc.views}</td>
+								<td>${gc.dates}</td>
 							</tr>
 						</c:forEach>
 

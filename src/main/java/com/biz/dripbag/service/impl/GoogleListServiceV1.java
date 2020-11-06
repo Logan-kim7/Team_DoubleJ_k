@@ -32,15 +32,15 @@ public class GoogleListServiceV1 implements GoogleListService
 	@Override
 	public int insert(GoogleListVO vo) 
 	{
-		int ret = googleDAO.insert(vo);
+		googleDAO.insert(vo);
+		int ret = (int)vo.getSeq();
 		return ret;
 	}
 
 	@Override
 	public int update(GoogleListVO vo) 
 	{
-		googleDAO.update(vo);
-		int ret = (int)vo.getSeq();
+		int ret = googleDAO.update(vo);
 		return ret;
 	}
 
