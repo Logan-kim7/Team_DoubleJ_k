@@ -4,5 +4,5 @@ import com.biz.dripbag.model.NoticeVO;
 
 public interface NoticeDAO extends GenericDAO<NoticeVO, Long>
 {
-	
+	public long hit(long seq);
 }

@@ -9,12 +9,13 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>DripBag</title>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://kit.fontawesome.com/cc60939e22.js" crossorigin="anonymous"></script>
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/cc60939e22.js"
+	crossorigin="anonymous"></script>
+<script src="${rootPath}/static/js/search.js?ver=3"></script>
 <style>
-
-*{
+* {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -51,7 +52,7 @@ html, body {
 		</c:when>
 
 		<c:when test="${BODY == 'INFO_HOME'}">
-			<%@ include file="/WEB-INF/views/MKW/MKW_infomain.jspf"%>
+			<%@ include file="/WEB-INF/views/KJM/infomain.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'NEWS_HOME'}">
@@ -66,20 +67,22 @@ html, body {
 			<%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
 		</c:when>
 
-
 		<c:when test="${NEWS == 'NEWSMAIN'}">
 			<%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
 		</c:when>
 
-		<c:otherwise>
+		<c:when test="${BODY == 'NOTICE_HOME'}">
+			<%@ include file="/WEB-INF/views/Notice/main.jspf"%>
+		</c:when>
 
-		</c:otherwise>
+		<c:when test="${BODY == 'GC_LIST'}">
+			<%@ include file="/WEB-INF/views/MKW/gcomment_list.jspf"%>
+		</c:when>
+
 	</c:choose>
 
 	<c:if test="${BODY != 'INDEX_HOME'}">
 		<%@ include file="/WEB-INF/views/include/footer.jspf"%>
-
-	
 	</c:if>
 </body>
 

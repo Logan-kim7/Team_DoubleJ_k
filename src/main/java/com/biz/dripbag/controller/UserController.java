@@ -1,8 +1,6 @@
 package com.biz.dripbag.controller;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,8 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,12 +32,12 @@ public class UserController
 	
 	@Autowired
 	@Qualifier("sessionServiceV1")
-	final SessionService sService;
+	private SessionService sService;
 	
 	@RequestMapping(value= {"/join", "/join/"}, method = RequestMethod.POST)
 	public void Join(UserVO userVO, HttpServletResponse res) throws IOException
 	{				
-		if(uService.findById(0, userVO, null) == true)
+		if(uService.findById(0, userVO, null) != null)
 			uService.insert(userVO);
 		
 		sService.locationJump(res, null, "회원가입 완료");
@@ -49,12 +45,15 @@ public class UserController
 	
 	@ResponseBody
 	@RequestMapping(value ={"/check/", "/check"}, method=RequestMethod.GET)
-	public int joinIdCheck(@RequestParam("id") String id, String master)
+	public boolean joinIdCheck(@RequestParam("id") String id, String master)
 	{	
-		if(uService.findById(1, null, id) == true)
-			return 1;
+		if(uService.findById(1, null, id) != null)
+		{
+			System.out.println("dd");
+			return true;
+		}
 		
-		return 0;
+		return false;
 	}
 	
 	@RequestMapping(value ={"/check", "/check/"}, method=RequestMethod.POST)
@@ -62,16 +61,18 @@ public class UserController
 	{
 		
 		if(master != null)
-		{
 			sService.sessionRegistration(req, null, master);
-			return null;
-		}
 		
-		else if(uService.findById(2, userVO, null) == true)
-			sService.sessionRegistration(req, userVO, null);
+		else 
+		{
+			userVO = uService.findById(2, userVO, null);
+			if(userVO != null)
+				sService.sessionRegistration(req, userVO, null);
+			else
+				sService.locationJump(res, null, "ID or PWD 불일치");
+		}
 
-		else
-			sService.locationJump(res, null, "ID or PWD 불일치");
+		
 		
 		return "redirect:/main/";
 	}

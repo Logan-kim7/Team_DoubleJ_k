@@ -5,9 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.biz.dripbag.model.UserVO;
-import com.biz.dripbag.service.UserService;
-
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

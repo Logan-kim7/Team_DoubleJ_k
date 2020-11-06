@@ -1,3 +1,7 @@
+html {
+	overflow-y: scroll;
+}
+
 html, body {
 	width: 100%;
 	height: 100%;
@@ -28,14 +32,26 @@ div#clock_main {
 	line-height: 100%;
 	font-weight: bolder;
 	color: black;
+<<<<<<< HEAD
 	font-size: 30px;
 }
 
 div#clock_main p {
+=======
+	font-size: 50px;
+	font-stretch: expanded;
+>>>>>>> de070b794be29d86d93b6535fb8e1a56667fff2b
 	margin-top: 60px;
 	line-height: 100%;
 }
 
+<<<<<<< HEAD
+=======
+#clock_main:hover {
+	
+	
+}
+>>>>>>> de070b794be29d86d93b6535fb8e1a56667fff2b
 footer {
 	background-color: black;
 	color: white;
@@ -93,26 +109,6 @@ header {
 
 /* 여기는
 네비바를
-위한 CSS 공간
-*/
-
-/* 여기는
-사이드바를
-위한 CSS 공간
-*/
-div#side_content {
-	height: 100%;
-	width: 200px;
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	background-color: #111;
-	overflow-x: hidden;
-}
-
-/* 여기는
-사이드바를
 위한 CSS 공간
 */
 
@@ -184,7 +180,7 @@ ol {
 }
 
 li {
-	margin-bottom: 25px;
+	margin-bottom: 40px;
 	color: black;
 	font-weight: bolder;
 }

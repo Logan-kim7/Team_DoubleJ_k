@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
+<script type="text/javascript">
+
+</script>
+<style>
+	form{
+		height: 100%;
+		width: 90%;
+		display: flex;
+		justify-content:center;
+		flex-direction: column;
+
+		margin: 5px auto;		
+	}
+	form input{
+		height:5%;
+		margin-bottom: 20px;
+	}
+	
+	form textarea{
+		height: 80%;
+		margin-bottom: 15px;
+	}
+	
+</style>
+
+<form method="post" action="${rootPath}/notice/write">
+	<input name="writer" value="${member.email}" style="display: none;">
+	<input name="title" placeholder="제목">
+	<textarea name="cont"></textarea>
+	<button type="submit">등록</button>
+</form>

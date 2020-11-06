@@ -1,10 +1,11 @@
 package com.biz.dripbag.service;
 
 import java.util.List;
+import java.util.Map;
 
-import org.apache.ibatis.annotations.Param;
+import javax.servlet.http.HttpServletRequest;
 
 public interface SearchService 
 {
-	public List<String> selectAll(@Param("table") String table);
+	public List<Map<String, String>> search(String table, String flag, String keyword);
 }

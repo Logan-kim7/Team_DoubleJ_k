@@ -7,33 +7,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-10-20-14" />
+<link rel="stylesheet"	href="${rootPath}/static/css/MKW/MKW_main.css?ver=2020-11-05-0" />
 
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<div id="side_content">
-		<div>
-		</div>
-	</div>
 	<section id="main_content">
 		<aside id="left_content">
 			<fieldset>
 				<legend>ToDay NEWS</legend>
 				<ol>
+					  <c:forEach items="${NEWS}" var="news" varStatus="i" >
+                        <li><a href="${rootPath}/news/${i.index}">${news.title}</a></li>
 
-					<c:forEach items="${NEWS}" var="news" varStatus="i" >
-						<li><a href="${rootPath}/news/${i.index}">${news.n_title}</a></li>
-
-					</c:forEach>
+                    </c:forEach>
 				</ol>
 			</fieldset>
 		</aside>
 
+
 		<div id="clock_main">
-			<p>2020-10-22 21:57</p>
+			${DATE}
 		</div>
 
 		<aside id="right_content">
@@ -42,8 +36,8 @@
 
 				<ol>
 					<c:forEach items="${GOOGLE}" var="google" varStatus="i">
-						<li><a href="${rootPath}/gtrand/${google.gt_title}">${i.index + 1}위&nbsp;
-								${google.gt_title}</a></li>
+						<li><a href="${rootPath}/gtrand/${i.index}">${i.index + 1}위&nbsp;
+								${google.title}</a></li>
 					</c:forEach>
 				</ol>
 

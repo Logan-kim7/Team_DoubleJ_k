@@ -4,11 +4,35 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
  <mapper namespace = "com.biz.dripbag.mapper.SearchDAO">
- 
- 	<resultMap type="map" id="test"></resultMap>
- 
-	<select id="selectAll" resultMap="test">
-		SELECT * FROM ${table}
+  	
+	<select id="selectColumn" resultType="HashMap">
+		SELECT * FROM ${table} WHERE ROWNUM = 1 ORDER BY seq DESC
 	</select>
-		
+	
+	<select id="selectAll" resultType="HashMap">
+		SELECT * FROM ${table} WHERE  TITLE  LIKE '%'||#{keyword}||'%' OR 
+									  CONT   LIKE '%'||#{keyword}||'%' OR  
+									  WRITER LIKE '%'||#{keyword}||'%'
+				ORDER BY seq DESC
+	</select>
+	
+	<select id="selectTitle" resultType="HashMap">
+		SELECT * FROM ${table} WHERE TITLE 
+			LIKE  '%'||#{keyword}||'%' 
+				ORDER BY seq DESC
+	</select>
+	
+	<select id="selectContent" resultType="HashMap">
+		SELECT * FROM ${table} WHERE CONT 
+			LIKE '%'||#{keyword}||'%'  
+				ORDER BY seq DESC
+	</select>
+	
+	<select id="selectWriter" resultType="HashMap">
+		SELECT * FROM ${table} WHERE WRITER 
+			LIKE '%'||#{keyword}||'%'  
+				ORDER BY seq DESC
+	</select>
+
  </mapper>
+ 

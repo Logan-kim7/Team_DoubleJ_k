@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.biz.dripbag.service.DateService;
 
-@Component
+@Component("dateV1")
 public class DateV1 implements DateService 
 {
 	@Override

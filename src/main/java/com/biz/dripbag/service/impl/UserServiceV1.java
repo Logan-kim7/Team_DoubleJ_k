@@ -45,7 +45,7 @@ public class UserServiceV1 implements UserService
 	@Override
 	public int insert(UserVO vo) 
 	{
-		vo.setD_date(dateService.dateTime()[0]);
+		vo.setDates(dateService.dateTime()[0]);
 		int ret = userDAO.insert(vo);
 		return ret;
 	}
@@ -65,8 +65,8 @@ public class UserServiceV1 implements UserService
 	}
 	
 	@Override
-	public boolean findById(int flag, UserVO vo, String id)   {
+	public UserVO findById(int flag, UserVO vo, String id)   {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 }

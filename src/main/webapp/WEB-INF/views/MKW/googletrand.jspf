@@ -4,7 +4,7 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
 <link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/googletrand.css?ver=13" />
+	href="${rootPath}/static/css/MKW/googletrand.css?ver=18" />
 
 <section id="trand-bg">
 	<div id="headline">
@@ -14,18 +14,17 @@
 		</fieldset>
 	</div>
 
-	<form id="gtinputbox" method="POST">
+	<form id="gtinputbox" method="POST" action="${rootPath}/gtrand/save">
 		<div id="user_write">
 			<fieldset id="writeset">
 				<legend id="writelegend">내가 작성하기</legend>
 
-				<label for="fname">4자성어를 입력하세요</label> <input type="text" id="fname"
-					name="fname" placeholder="4글자만 입력가능!!!"> <label
-					for="comment">4자성어 설명을 입력하세요</label> <input type="text"
-					id="comment" name="comment" placeholder="12글자까지만 입력가능!!!">
-
-				<input type="hidden" id="title" name="title">
-
+				<label>작성자</label> <input type="hidden" id="gc_writer"
+					name="gc_writer" value="${member.email}" placeholder="작성자" /> <label>4자성어를
+					입력하세요</label> <input type="text" id="gc_title" name="gc_title"
+					placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어
+					설명을 입력하세요</label> <input type="text" id="gc_explain" name="gc_explain"
+					placeholder="20글자까지만 입력가능!!!" />
 			</fieldset>
 		</div>
 
@@ -44,135 +43,83 @@
 
 		<div class="cmlist">
 
-			<table id="listcustomers">
-				<thead>
-					<tr>
-						<th>작성자</th>
-						<th>내용</th>
-						<th>좋아요</th>
-						<th>싫어요</th>
-						<th>작성일</th>
-					</tr>
-				</thead>
+			<a href="${rootPath}/gclist/">
+				<table id="listcustomers">
+					<caption>현재 TOP10</caption>
+					<thead>
+						<tr>
+							<th>작성자</th>
+							<th>4자성어</th>
+							<th>설명</th>
+							<th>점수</th>
+							<th>작성일</th>
+						</tr>
+					</thead>
 
-				<tbody>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
+					<tbody>
+						<c:if test="${empty GC_LIST}">
+							<tr>
+								<td colspan="5">게시글이 없지롱</td>
+							</tr>
+						</c:if>
 
-				</tbody>
+						<c:forEach items="${GC_LIST}" var="gc" end="9">
+							<tr>
+								<td>${gc.gc_writer}</td>
+								<td>${gc.gc_title}</td>
+								<td>${gc.gc_explain}</td>
+								<td>${gc.gc_views}</td>
+								<td>${gc.gc_date}</td>
+							</tr>
+						</c:forEach>
 
-			</table>
+					</tbody>
 
-			<div class="pagination">
-				<a href="#">&laquo;</a> <a href="#" class="active">1</a> <a href="#">2</a>
-				<a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a>
-				<a href="#">&raquo;</a>
-			</div>
+				</table>
+			</a>
+
 		</div>
 	</div>
 </section>
 
 <script>
-	$(document).ready(
-			function() {
-				$("#headh1").html("구글 트랜드 검색어")
-				$("#headp").html("구글트랜드 검색어를 활용하여 댓글을 작성해보자")
-
-				$("#navinfo").css("background-image",
-						"url('../static/imgs/KJM/gt-hd.png')")
-
-				$("#btn-main").css("background-color", "#555")
-				$("#btn-hall").css("background-color", "#555")
-				$("#btn-info").css("background-color", "#555")
-				$("#btn-notice").css("background-color", "#555")
-
-			})
-
 	$("#throwit").click(function() {
 
 		if (confirm("작성을 그만둘까요? ><")) {
 			alert("좋은 생각이에요!!! ^^")
-			document.location.href = "/dripbag/main/"
+			document.location.href = "${rootPath}/main/"
 		} else {
 			alert("읭?")
 		}
 	})
 
 	$("#addit").click(function() {
-		if (confirm("서버에 추가됩니다 √")) {
-			let title = "asdf";
-			alert("않이... 이게 뭐야!")
-			document.location.href = "${rootPath}/gtrand/save/" + title
-		} else {
-			alert("흥 칫 뿡!")
+
+		let title = document.getElementById("gc_title");
+		let jujerriy = document.getElementById("gc_explain");
+
+		function adding() {
+			if (confirm("확실합니까? 추가할까요? 잘못 올려도 바꿔줄 생각 없어요")) {
+				alert("서버에 추가됩니... 이게 뭐야!!  ><")
+				let mainform = document.getElementById("gtinputbox");
+				mainform.submit();
+			} else {
+				alert("다행이다...")
+			}
 		}
+
+		function fourdollar() {
+			if (title.value.length != 4) {
+				alert("사☆자☆성☆어 이므로 적게도 말고 많게도 않게 4글자만!!! ><")
+				title.focus();
+			} else if (jujerriy.value.length > 20) {
+				alert("설명은 20자를 넘어가면 안되는데... ><")
+				jujerriy.focus();
+			} else {
+				adding();
+			}
+		}
+		
+		fourdollar();
 	})
 </script>

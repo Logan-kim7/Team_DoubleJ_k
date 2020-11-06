@@ -5,5 +5,5 @@ import com.biz.dripbag.model.UserVO;
 
 public interface UserService extends GenericService<UserVO, Long>
 {
-	public boolean findById(int flag, UserVO vo, String id);
+	public UserVO findById(int flag, UserVO vo, String id);
 }

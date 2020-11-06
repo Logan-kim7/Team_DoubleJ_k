@@ -1,0 +1,94 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="func" uri="http://java.sun.com/jsp/jstl/functions" %>
+<c:set var="rootPath" value='${pageContext.request.contextPath}' />
+
+<link rel="stylesheet" href="${rootPath}/static/css/Notice/list.css?var=0">
+
+<script>
+	document.addEventListener("DOMContentLoaded", function()
+	{
+		const trList = document.querySelectorAll(".tr_notice_List");
+		trList.forEach(function(e, i)
+		{
+			e.onclick = function()
+			{
+				document.location.href = "${rootPath}/notice/detail/" + e.dataset.seq;	
+			}
+		})
+		
+		
+				
+	});
+</script>
+
+<div id="notice_body">
+	<table>
+	<tr class="tr_notice_List">
+		<th>NO</th>
+		<th>제목</th>
+		<th>작성자</th>
+		<th>날짜</th>
+		<th>조회</th>
+		<th>추천</th>
+	</tr>
+			<c:choose>
+				<c:when test="${not empty SearchList}">
+					<c:forEach items="${SearchList}" var="search" end="14" varStatus="i">
+						<tr class="tr_notice_List" data-seq="${search.SEQ}">
+							<td>${search.SEQ}</td>
+							<td>${search.TITLE}</td>
+							<td>${search.WRITER}</td>
+							<td>${search.DATES}-${search.TIMES}</td>
+							<td>${search.VIEWS}</td>
+							<td>${search.LIKES}</td>
+						</tr>
+						<c:if test="${i.last && i.index < 14}">
+							<c:forEach begin="${i.index}" end="${14}" varStatus="j">
+								<tr class="tr_notice_List">
+									<c:forEach begin="0" end="5">
+										<td></td>
+									</c:forEach>
+								</tr>
+							</c:forEach>
+						</c:if>
+					</c:forEach>
+				</c:when>
+				
+				<c:otherwise>
+					<c:if test="${func:length(NOTICE_LIST) == 0}">
+						<c:forEach begin="0" end="14" varStatus="i">
+							<tr class="tr_notice_List">
+								<c:forEach begin="0" end="5">
+									<td></td>
+								</c:forEach>
+							</tr>
+						</c:forEach>
+					
+					</c:if>
+					<c:forEach items="${NOTICE_LIST}" var="notice" end="14" varStatus="i">
+						<tr class="tr_notice_List" data-seq="${notice.seq}" >	
+							<td>${notice.seq}</td>
+							<td>${notice.title}</td>
+							<td>${notice.writer}</td>
+							<td>${notice.dates}-${notice.times}</td>
+							<td>${notice.views}</td>
+							<td>${notice.likes}</td>
+						</tr>
+						<c:if test="${i.last && i.index < 14}">
+							<c:forEach begin="${i.index}" end="14">
+								<tr class="tr_notice_List">
+									<c:forEach begin="0" end="5">
+										<td></td>
+									</c:forEach>
+								</tr>
+					    	</c:forEach>
+						</c:if>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
+	</table>
+</div>
+
+

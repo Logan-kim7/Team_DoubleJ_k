@@ -6,5 +6,5 @@ import com.biz.dripbag.model.UserVO;
 
 public interface UserDAO extends GenericDAO<UserVO, Long>
 {
-	public UserVO findByUser(@Param("d_email")String id, @Param("d_password")String pwd);
+	public UserVO findByUser(@Param("email")String id, @Param("pwd")String pwd);
 }

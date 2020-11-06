@@ -29,11 +29,26 @@ fieldset {
 	background-size: cover;
 }
 
+#exset {
+	text-align: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+}
+
 #info_center {
 	text-align: center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	width: 100%;
+	height: 100%;
 }
+
+#hwset {
+	
+	background-repeat: no-repeat;
+	
+}
+
 /* 여기는
    center 콘텐츠를
     위한 CSS 공간*/
@@ -79,42 +94,40 @@ fieldset {
 
 .text_title {
 	font-size: 40px;
-	color: white; 
-	font-weight : bolder;
+	color: balck;
+	font-weight: bolder;
 	text-align: center;
 	align-items: center;
 	text-shadow: (0, 0, 0, 0.7);
 	font-weight: bolder
 }
 
-	.maintitle{
-	color:  white;
+.maintitle {
+	color: balck;
 	font-weight: bold;
 }
-.legend{
-	color: white;
-	font-size:20px;
+
+.legend {
+	color: balck;
+	font-size: 20px;
 	font-weight: bolder;
-	
 }
 
-fieldset{
+fieldset {
 	border: 3px solid #ddd;
 	padding: 30px;
 	display: inline-block;
 	width: 70%;
-
-
 }
 </style>
 
-<section id="info_center"
-	style="background-image: url('../static/imgs/KJM/충돌.jpg')">
+<section id="info_center">
 
 	<section>
 		<p class="text_title">What's a Drip bag?</p>
 		<br />
-		<fieldset>
+		<fieldset id="exset"
+			style="background-image: url('../static/imgs/KJM/together.png')">
 			<legend class="legend">사이트 구현 배경</legend>
 			<div class="maintitle">
 				<p>
@@ -131,24 +144,24 @@ fieldset{
 		</fieldset>
 	</section>
 
-	<section>
+	<section id="hwset" style="background-image: url('../static/imgs/KJM/tools.jpg')">
 		<p class="text_title">How to DripBag?</p>
 		<fieldset>
 			<legend class="legend">사이트 이용 방법</legend>
 			<div class="maintitle">
 				<ol start="1">
-					<li>댓글을적고싶은 기사&실시간검색어 선택</li>
-					<li></li>
-					<li>4자성어 입력창에 4글자로 드립작성 부연설명12글자이내 작성</li>
+					<li>댓글을적고싶은 기사 & Google Trand 검색어 선택</li>
+					<li>각자 콘텐츠에 맞는 4글자 댓글 & 부연설명 작성</li>
+					<li>좋아요 숫자가 올라가는것을 확인</li>
 					<li>좋아요 점수가 높을수록 더많은 포인트 및 레벨 부여</li>
 				</ol>
-				</div>
+			</div>
 		</fieldset>
 		<div id="str_box">
 			<button class="infobt" type="button">start</button>
 		</div>
-		
-		
+
+
 	</section>
 </section>
 

@@ -5,23 +5,39 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function()
-{
- 	let nav_button = document.getElementsByClassName("nav_button");
-	if(localStorage.getItem("index") != null)
+{	
+	let nav_button = document.querySelectorAll(".nav_button");
+ 	
+	if(${navFlag} != null)
 	{
-		let index = localStorage.getItem("index");
-		nav_button[index].style.backgroundColor = "cornflowerblue";
-		nav_button[index].style.borderRadius = "0px 0px 10px 10px";
+		nav_button[${navFlag}].style.backgroundColor = "cornflowerblue";
+		nav_button[${navFlag}].style.borderRadius = "0px 0px 10px 10px";
 		document.querySelector("nav").style.backgroundColor = "#555";
 	}
 	
-	for(let i=0; i<nav_button.length; ++i)
-	{
-		nav_button[i].onclick = function()
-		{
-			localStorage.setItem("index", i);
-			document.location.href = "${rootPath}/" + nav_button[i].value + "/";
-		}
+	nav_button.forEach(function(e, i)
+    {
+        e.onclick = function()
+        { 
+        	sessionStorage.setItem("index", i);
+			sessionStorage.setItem("search", "0");
+			clearSearch();
+			document.location.href = "${rootPath}/" + nav_button[i].value + "/"; 
+        }
+	});
+	
+	
+	function clearSearch()
+	{			
+		let path = window.location.pathname.split("/");	
+		let flag = sessionStorage.getItem("search");
+		$.ajax
+		({
+			url  : "http://localhost:8080/dripbag/any/search/clear",
+			type : "get",
+			data : {"flag" : flag},
+			success : function(data) { sessionStorage.removeItem("search"); }
+		}); 
 	}
 })
 </script>
@@ -58,9 +74,17 @@ nav button:hover {
 	background-color: crimson;
 }
 
+#juje {
+	font-size: 15px;
+}
+
+.nav_button p {
+	display: inline;
+}
+
 </style>
 <nav>
-	<button type="button" class="nav_button" value="main" style="background-color: a;">메인화면</button>
+	<button type="button" class="nav_button" value="main" style="background-color: a;"><p>HOME</p><p id="juje">(주제선정)</p></button>
 	<button type="button" class="nav_button" value="halloffame">명예의전당</button>
 	<button type="button" class="nav_button" value="info">사이트 소개</button>
 	<button type="button" class="nav_button" value="notice" id="test">공지사항</button>
