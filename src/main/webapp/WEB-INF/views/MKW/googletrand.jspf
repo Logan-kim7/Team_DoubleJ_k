@@ -24,7 +24,9 @@
 					입력하세요</label> <input type="text" id="gc_title" name="gc_title"
 					placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어
 					설명을 입력하세요</label> <input type="text" id="gc_explain" name="gc_explain"
-					placeholder="20글자까지만 입력가능!!!" />
+
+					placeholder="12글자까지만 입력가능!!!" />
+
 			</fieldset>
 		</div>
 
@@ -112,8 +114,10 @@
 			if (title.value.length != 4) {
 				alert("사☆자☆성☆어 이므로 적게도 말고 많게도 않게 4글자만!!! ><")
 				title.focus();
-			} else if (jujerriy.value.length > 20) {
-				alert("설명은 20자를 넘어가면 안되는데... ><")
+
+			} else if (jujerriy.value.length > 12) {
+				alert("설명은 12자를 넘어가면 안되는데... ><")
+
 				jujerriy.focus();
 			} else {
 				adding();

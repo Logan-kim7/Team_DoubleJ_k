@@ -288,7 +288,9 @@ $(document).ready(function(){
 				<h2>Top NEWS</h2>
 			</legend>
 			<div class="newsimage">
+
 				<img src="${NEWSDATA.img}" alt="대충 여기에 사진을 넣읍시다" onerror="this.src='../static/imgs/KJM/noimg-icon.jpg'"/>
+
 			</div>
 			<br/>
 
@@ -311,10 +313,12 @@ $(document).ready(function(){
 				<legend>
 					<h2>4자성어 Drip Bag 입력공간</h2>
 				</legend>
+
 				<form action="${rootPath}/news/write" method="post">
 					<label for="fname"></label> 
 					<input type="text" id="dripbagip" maxlength="4" name="title" placeholder="네글자로만 입력하세요!!"> 
 					<input type="text" id="dripdagcm" maxlength="12" name="cont" placeholder="내용은 12글자까지만 입력가능!!"></br>
+
 					<button type="submit" id="write_button">입력</button>
 				</form>
 
