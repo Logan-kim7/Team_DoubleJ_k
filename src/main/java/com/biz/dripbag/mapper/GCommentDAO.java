@@ -8,5 +8,5 @@ public interface GCommentDAO extends GenericDAO<GCommentVO, Long> {
 
 	public List<GCommentVO> selectTop();
 
-	public int hit(Long seq);
+	public int hit(GCommentVO gcVO);
 }

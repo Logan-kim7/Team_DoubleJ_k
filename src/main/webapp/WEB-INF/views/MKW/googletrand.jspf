@@ -4,7 +4,7 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
 <link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/googletrand.css?ver=16" />
+	href="${rootPath}/static/css/MKW/googletrand.css?ver=17" />
 
 <section id="trand-bg">
 	<div id="headline">
@@ -45,6 +45,7 @@
 
 			<a href="${rootPath}/gclist/">
 				<table id="listcustomers">
+					<caption>현재 TOP10</caption>
 					<thead>
 						<tr>
 							<th>작성자</th>
@@ -77,11 +78,6 @@
 				</table>
 			</a>
 
-			<div class="pagination">
-				<a href="#">&laquo;</a> <a href="#" class="active">1</a> <a href="#">2</a>
-				<a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a>
-				<a href="#">&raquo;</a>
-			</div>
 		</div>
 	</div>
 </section>
@@ -98,8 +94,8 @@
 	})
 
 	$("#addit").click(function() {
-		if (confirm("추가할까요?")) {
-			alert("서버에 추가됩니... 이게 뭐야!  ><")
+		if (confirm("확실합니까? 추가할까요? 잘못 올려도 바꿔줄 생각 없어요")) {
+			alert("서버에 추가됩니... 이게 뭐야!!  ><")
 			let mainform = document.getElementById("gtinputbox");
 			mainform.submit();
 		} else {

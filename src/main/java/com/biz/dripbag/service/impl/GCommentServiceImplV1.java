@@ -73,8 +73,8 @@ public class GCommentServiceImplV1 implements GCommentService {
 	}
 	
 	@Override
-	public int hit(Long seq) {
-		return gcDao.hit(seq);
+	public int hit(GCommentVO gcVO) {
+		return gcDao.hit(gcVO);
 	}
 
 }

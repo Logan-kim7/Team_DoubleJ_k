@@ -12,7 +12,7 @@
 
 	<select id="selectTop" resultType="GCommentVO">
 		SELECT * FROM tbl_gcomment
-		ORDER BY gc_likes DESC
+		ORDER BY gc_views DESC
 	</select>
 
 	<select id="findById" resultType="GCommentVO">
@@ -63,7 +63,7 @@
 
 	<update id="hit">
 		UPDATE tbl_gcomment SET gc_views = gc_views+1 WHERE gc_seq
-		= #{gc_seq}
+		= #{gc_seq, jdbcType=VARCHAR}
 	</update>
 
 </mapper>

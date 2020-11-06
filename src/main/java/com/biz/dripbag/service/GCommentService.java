@@ -8,5 +8,5 @@ public interface GCommentService extends GenericService<GCommentVO, Long> {
 
 	public List<GCommentVO> selectTop();
 
-	int hit(Long seq);
+	int hit(GCommentVO gcVO);
 }
