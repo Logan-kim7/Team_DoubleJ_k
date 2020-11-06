@@ -54,7 +54,7 @@
 	text-align: right;
 }
 
-.btn_glist {
+#to_list {
 	background-color: black;
 	color: white;
 	border: none;
@@ -142,7 +142,6 @@
 
 	<div id="button_box">
 		<button class="btn_glist" id="to_list" type="button">홈으로</button>
-		<button class="btn_glist" id="btn_again" type="button">또 쓸거지롱</button>
 	</div>
 
 </section>
@@ -155,17 +154,8 @@
 		}
 
 		let goButton = document.getElementById("to_list");
+		
 		goButton.addEventListener("click", goHome);
-
-		function clickItem() {
-			// document.location.href = "${rootPath}/gclist/thumbUp";
-			alert(id);
-		}
-
-		/*let listtr = document.getElementsByTagName("tr");
-		for (const tr of listtr) {
-		    tr.addEventListener("click", clickItem);
-		}*/
 
 		let all_item = document.querySelectorAll(".gc_item");
 		all_item.forEach(function(item_data) {
