@@ -10,10 +10,14 @@
 		ORDER BY seq DESC
 	</select>
 
-	<select id="selectTop" resultType="NewsCommentVO">
+	<select id="findBySelect" resultType="NewsCommentVO">
 		SELECT * FROM tbl_newsComment
-		ORDER BY views DESC
+		WHERE seqj = #{seqj} 
+		ORDER BY seqj DESC
+		
+		
 	</select>
+	
 
 	<select id="findById" resultType="NewsCommentVO">
 		SELECT * FROM tbl_newsComment

@@ -10,6 +10,8 @@ import com.biz.dripbag.model.NewsCommentVO;
 import com.biz.dripbag.service.NewsCommentService;
 import com.biz.dripbag.service.sub.DateService;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service("NewsCommentV1")
 public class NewsCommentV1 implements NewsCommentService 
 {
@@ -57,6 +59,14 @@ public class NewsCommentV1 implements NewsCommentService
 	public int delete(Long id) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public List<NewsCommentVO> findBySelect(long PK) {
+		
+		System.out.println(newsCommentDAO.findBySelect(PK).toString());
+		
+		return newsCommentDAO.findBySelect(PK);
 	}
 
 	

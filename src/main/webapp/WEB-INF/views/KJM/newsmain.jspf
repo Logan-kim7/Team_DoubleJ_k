@@ -333,17 +333,17 @@ $(document).ready(function(){
 					<th>좋아요</th>
 					<th>조회수</th>
 				</tr>
-
+			
 				<c:forEach items="${NEWSLIST}" var="NEWSDB">
 					<tr>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
+						<td>${NEWSDB.seq}</td>
+						<td>${NEWSDB.writer}</td>
+						<td>${NEWSDB.dates}</td>
+						<td>${NEWSDB.dates}</td>
+						<td>${NEWSDB.title}</td>
+						<td>${NEWSDB.cont}</td>
+						<td>${NEWSDB.likes}</td>
+						<td>${NEWSDB.views}</td>
 					</tr>
 				</c:forEach>
 
