@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function()
 		let table;
 			 if (path[2] == "notice") { table = "tbl_notice" }
 		else if (path[2] == "gtrand") { table = "tbl_googleComent" }			
-		else if (path[2] == "news")   { table = "tbl_NewsComent" }
+		else if (path[2] == "news")   { table = "tbl_NewsComment" }
 		$.ajax
 		({
 			url 		: rootPath + path[2] + "/search",

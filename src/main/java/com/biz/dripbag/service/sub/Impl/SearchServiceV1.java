@@ -61,6 +61,9 @@ public class SearchServiceV1 implements SearchService
 	public List<SearchVO> searchV2(String table, String flag, String keyword, String seq) 
 	{
 		int index = 0;
+		if(table == null)
+			return null;
+		
 		if(flag.equalsIgnoreCase("all")) 		  index = 1;
 		else if(flag.equalsIgnoreCase("title"))   index = 2;
 		else if(flag.equalsIgnoreCase("content")) index = 3;	  

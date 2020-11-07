@@ -30,6 +30,12 @@ header {
 	text-align: center;
 	transition: all 1s;
 }
+
+#ranking{
+    
+
+
+}
 </style>
 
 <header>
@@ -41,6 +47,7 @@ header {
 		</c:when>
 
 		<c:when test="${BODY == 'HALL_OF_FAME'}">
+		 	<img id="ranking"  src="../static/imgs/KJM/pngwing.png"/>
 			<h1>Ranking</h1>
 			<p>1</p>
 		</c:when>

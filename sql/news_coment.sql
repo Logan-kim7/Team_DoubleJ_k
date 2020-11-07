@@ -1,9 +1,9 @@
--- NEWS ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.
+-- NEWS ?ï¿½ï¿½?ï¿½ï¿½ï¿?? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.
 
 CREATE TABLE tbl_newsComment (
 
         seq	    NUMBER		PRIMARY KEY,
-        seqJ	NUMBER	NOT NULL UNIQUE	,
+        seqJ	NUMBER	NOT NULL,
         writer	nVARCHAR2(100)	NOT NULL,	
         dates	nVARCHAR2(10)	NOT NULL,	
         times	nVARCHAR2(10)	NOT NULL,	

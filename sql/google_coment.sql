@@ -2,7 +2,7 @@
 
 CREATE TABLE tbl_googleComent (
     seq	    NUMBER		 PRIMARY KEY ,
-    seqj    NUMBER	 UNIQUE NOT NULL ,
+    seqj    NUMBER	        NOT NULL ,
     writer	nVARCHAR2(100)	NOT NULL ,	
     dates	VARCHAR2(10)	NOT NULL ,	
     times	VARCHAR2(10)	NOT NULL ,	

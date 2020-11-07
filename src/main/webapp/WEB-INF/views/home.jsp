@@ -14,7 +14,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/cc60939e22.js"
 	crossorigin="anonymous"></script>
-<script src="${rootPath}/static/js/search.js?ver=5"></script>
+<script src="${rootPath}/static/js/search.js?ver=7"></script>
 <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
 <style>
 * {

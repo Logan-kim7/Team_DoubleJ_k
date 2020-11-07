@@ -19,8 +19,11 @@ document.addEventListener("DOMContentLoaded", function()
     {
         e.onclick = function()
         { 
-        	sessionStorage.setItem("index", i);
-			sessionStorage.setItem("search", "0");
+        	$.ajax
+    		({
+    			url 		: "${rootPath}/clear/search",
+    			type 		: "GET"
+    		});
 			document.location.href = "${rootPath}/" + nav_button[i].value + "/"; 
         }
 	});
