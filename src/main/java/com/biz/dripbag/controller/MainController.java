@@ -22,9 +22,7 @@ public class MainController {
 	
 	@RequestMapping(value = "/", method =  RequestMethod.GET)
 	public String home(Model model) throws IOException 
-	{			
-		
-		
+	{				
 		model.addAttribute("GOOGLE", crwalingData.getGoogleList());
 		model.addAttribute("NEWS", crwalingData.getNewsList());
 		model.addAttribute("BODY","MAIN_HOME");
@@ -32,10 +30,7 @@ public class MainController {
 		return "home";
 	}
 	
-	
-	
-	
-	
+
 	public String[] datetime() {
 		
 		LocalDateTime DateTime = LocalDateTime.now();
@@ -43,15 +38,6 @@ public class MainController {
 		String strTime = DateTimeFormatter.ofPattern("HH:mm").format(DateTime);
 		String[] arrDate = new String[] {strDate, strTime};
 		return arrDate;
-		
-		
-		
-		
-		
+			
 	}
-	
-	
-		
-	
-
 }
