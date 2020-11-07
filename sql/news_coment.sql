@@ -1,13 +1,13 @@
--- NEWS ?éò?ù¥Ïß? ?ûÖ?ãà?ã§.
+-- NEWS ?ÔøΩÔøΩ?ÔøΩÔøΩÔøΩ? ?ÔøΩÔøΩ?ÔøΩÔøΩ?ÔøΩÔøΩ.
 
 CREATE TABLE tbl_newsComment (
 
         seq	    NUMBER		PRIMARY KEY,
         seqJ	NUMBER	NOT NULL UNIQUE	,
         writer	nVARCHAR2(100)	NOT NULL,	
-        dates	VARCHAR2(10)	NOT NULL,	
-        times	VARCHAR2(10)	NOT NULL,	
-        title	VARCHAR2(10)	NOT NULL,	
+        dates	nVARCHAR2(10)	NOT NULL,	
+        times	nVARCHAR2(10)	NOT NULL,	
+        title	nVARCHAR2(10)	NOT NULL,	
         cont	nVARCHAR2(20),		
         likes	NUMBER,		
         views	NUMBER		
@@ -15,7 +15,7 @@ CREATE TABLE tbl_newsComment (
 -- seq_nc = seq
 CREATE SEQUENCE seq_nc START WITH 1 INCREMENT BY 1;
 
-DROP TABLE tbl_newsComent;
+DROP TABLE tbl_newsComment;
 DROP SEQUENCE seq_nc;
 
 select * from tbl_newscoment;

@@ -34,10 +34,10 @@ public class NewsController {
     public String news(Model model, @PathVariable("n_index") String n_index) throws IOException {
         
         ret =  Integer.valueOf(n_index);
-        long longRet = ret;
+        long longRet = nServ.getNewsList().get(ret).getSeq();
         model.addAttribute("BODY","NEWS_HOME");
         model.addAttribute("NEWS", "NEWSMAIN");
-        model.addAttribute("NEWSLIST",newsComentService.findById(longRet));
+        model.addAttribute("NEWSLIST",newsComentService.findBySelect(longRet));
         model.addAttribute("NEWSDATA",nServ.getNewsList().get(ret));
        
 
