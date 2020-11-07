@@ -2,13 +2,18 @@ document.addEventListener("DOMContentLoaded", function()
 {		
 	const rootPath = "http://localhost:8080/dripbag/";
 	
+	
+
 	//=============================================================================
-	$(".search_input").focus()
+	if($(".search_input").length)
 	{
-		window.onkeydown = function(event)
+		$(".search_input").focus()
 		{
-			if(event.keyCode == 13)
-				search();
+			window.onkeydown = function(event)
+			{
+				if(event.keyCode == 13)
+					search();
+			}
 		}
 	}
 	;
@@ -24,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function()
 		
 		let path = window.location.pathname.split("/");
 		let table;
-			 if (path[2] == "notice")  { table = "tbl_notice" }
-		else if (path[2] == "gtrand") { table = "tbl_gtrand" }			
-		else if (path[2] == "news")   { table = "tbl_news" }
+			 if (path[2] == "notice") { table = "tbl_notice" }
+		else if (path[2] == "gtrand") { table = "tbl_googleComent" }			
+		else if (path[2] == "news")   { table = "tbl_NewsComent" }
 		$.ajax
 		({
 			url 		: rootPath + path[2] + "/search",
@@ -35,7 +40,8 @@ document.addEventListener("DOMContentLoaded", function()
 			data : { 
 					 "table"   : table, 
 					 "flag"    : $(".search_select option:selected").val(),
-					 "content" : $(".search_input").val()
+					 "content" : $(".search_input").val(),
+					 "seq"	   : $(".search_inpu").attr("name")
 				   },
 			success : function(data)
 			{

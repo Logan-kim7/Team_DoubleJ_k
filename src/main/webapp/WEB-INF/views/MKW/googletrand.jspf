@@ -20,10 +20,10 @@
 				<legend id="writelegend">내가 작성하기</legend>
 
 				<label>작성자</label> 
-				<inputy type="hidden" id="" name="seqc" value="${TITLE.seq}"> 
-				<input type="hidden" id="gc_writer" name="writer" value="${member.email}" placeholder="작성자" /> <label>4자성어를 입력하세요</label> 
-				<input type="text" id="gc_title" name="title" placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어 설명을 입력하세요</label> 
-				<input type="text" id="gc_explain" name="cont" placeholder="12글자까지만 입력가능!!!" />
+				<input type="hidden" name="seqj" value="${TITLE.seq}"> 
+				<input type="hidden" id="writer" name="writer" value="${member.email}" placeholder="작성자" /> <label>4자성어를 입력하세요</label> 
+				<input type="text" id="title" name="title" placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어 설명을 입력하세요</label> 
+				<input type="text" id="explain" name="cont" placeholder="12글자까지만 입력가능!!!" />
 			</fieldset>
 		</div>
 

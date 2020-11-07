@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.biz.dripbag.service.SearchService;
+import com.biz.dripbag.service.sub.SearchService;
 
 @RequestMapping(value="/{any}/search")
 @Controller
@@ -26,7 +26,7 @@ public class SearchController
 	@RequestMapping(value={"", "/"}, method = RequestMethod.GET)
 	public boolean search(@RequestParam Map<String, String> map, HttpServletRequest req)
 	{		
-		if(sService.searchV2(map.get("table"), map.get("flag"), map.get("content")) == null)
+		if(sService.searchV2(map.get("table"), map.get("flag"), map.get("content"), map.get("seq")) == null)
 		{
 			sService.clear();
 			return false;

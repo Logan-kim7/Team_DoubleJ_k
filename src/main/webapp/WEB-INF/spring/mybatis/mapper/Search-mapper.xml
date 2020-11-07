@@ -5,9 +5,6 @@
   
  <mapper namespace = "com.biz.dripbag.mapper.SearchDAO">
   	
-	<select id="selectColumn" resultType="HashMap">
-		SELECT * FROM ${table} WHERE ROWNUM = 1 ORDER BY seq DESC
-	</select>
 	
 	<select id="selectAll" resultType="HashMap">
 		SELECT * FROM ${table} WHERE  TITLE  LIKE '%'||#{keyword}||'%' OR 
@@ -37,27 +34,36 @@
 		<!--  ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ V2 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ -->
 
 	<select id="all" resultType="searchVO">
-		SELECT * FROM ${table} WHERE  TITLE  LIKE '%'||#{keyword}||'%' OR 
+		SELECT * FROM ${table} WHERE  <if test="seqC != null and !seqC.equals('')">
+										seqJ = #{seqJ} AND
+									  </if>
+									  TITLE  LIKE '%'||#{keyword}||'%' OR 
 									  CONT   LIKE '%'||#{keyword}||'%' OR  
 									  WRITER LIKE '%'||#{keyword}||'%'
 				ORDER BY seq DESC
 	</select>
 	
 	<select id="title" resultType="searchVO">
-		SELECT * FROM ${table} WHERE TITLE 
-			LIKE  '%'||#{keyword}||'%' 
+		SELECT * FROM ${table} WHERE <if test="seqC != null and !seqC.equals('')">
+										seqJ = #{seqJ} AND
+									  </if> 
+		TITLE LIKE  '%'||#{keyword}||'%' 
 				ORDER BY seq DESC
 	</select>
 	
 	<select id="content" resultType="searchVO">
-		SELECT * FROM ${table} WHERE CONT 
-			LIKE '%'||#{keyword}||'%'  
+		SELECT * FROM ${table} WHERE <if test="seqC != null and !seqC.equals('')">
+										seqJ = #{seqJ} AND
+									  </if> 
+		CONT LIKE '%'||#{keyword}||'%'  
 				ORDER BY seq DESC
 	</select>
 	
 	<select id="writer" resultType="searchVO">
-		SELECT * FROM ${table} WHERE WRITER 
-			LIKE '%'||#{keyword}||'%'  
+		SELECT * FROM ${table} WHERE <if test="seqC != null and !seqC.equals('')">
+										seqC = #{seqC} AND
+									  </if> 
+		WRITER LIKE '%'||#{keyword}||'%'  
 				ORDER BY seq DESC
 	</select>
 

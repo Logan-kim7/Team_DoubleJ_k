@@ -1,4 +1,4 @@
-package com.biz.dripbag.service.sub;
+package com.biz.dripbag.service.sub.Impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.mapper.SearchDAO;
 import com.biz.dripbag.model.SearchVO;
-import com.biz.dripbag.service.SearchService;
+import com.biz.dripbag.service.sub.SearchService;
 
 @Service("searchServiceV1")
 public class SearchServiceV1 implements SearchService 
@@ -17,6 +17,7 @@ public class SearchServiceV1 implements SearchService
 	@Autowired
 	protected SearchDAO sDAO;
 	
+	@Autowired(required = false)
 	protected List<SearchVO> searchList;
 			
 	@Override
@@ -57,9 +58,8 @@ public class SearchServiceV1 implements SearchService
 	}
 
 	@Override
-	public List<SearchVO> searchV2(String table, String flag, String keyword) 
+	public List<SearchVO> searchV2(String table, String flag, String keyword, String seq) 
 	{
-		searchList = new ArrayList<SearchVO>();
 		int index = 0;
 		if(flag.equalsIgnoreCase("all")) 		  index = 1;
 		else if(flag.equalsIgnoreCase("title"))   index = 2;
@@ -69,19 +69,19 @@ public class SearchServiceV1 implements SearchService
 		 switch (index) 
 		{
 			case 1:
-				searchList = sDAO.all(table, keyword);
+				searchList = sDAO.all(table, keyword, seq);
 				break;
 		
 			case 2:
-				searchList = sDAO.title(table, keyword);
+				searchList = sDAO.title(table, keyword, seq);
 				break;
 								
 			case 3:
-				searchList = sDAO.content(table, keyword);
+				searchList = sDAO.content(table, keyword, seq);
 				break;
 								
 			case 4:
-				searchList = sDAO.writer(table, keyword);
+				searchList = sDAO.writer(table, keyword, seq);
 				break;
 		}	
 		 if(searchList.size() == 0 || searchList == null)

@@ -15,9 +15,9 @@ import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.model.GoogleListVO;
 import com.biz.dripbag.model.NewsListVO;
-import com.biz.dripbag.service.DateService;
 import com.biz.dripbag.service.GoogleListService;
 import com.biz.dripbag.service.NewsListService;
+import com.biz.dripbag.service.sub.DateService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -64,10 +64,7 @@ public class CrwalingData
 			  vo.setSeq(googleService.insert(vo));			  
 			  googleList.add(vo);
 			  if(index++ >= 9) break;
-		  }
-		  for(GoogleListVO one : googleList)
-		 		System.out.println(one.getSeq());
-		  
+		  }		  
 		} 
 		catch (IOException e) { System.out.println("구글 트렌드 접속 실패"); }
 		
@@ -100,10 +97,11 @@ public class CrwalingData
 				doc = Jsoup.connect(detailNews[i]).get();
 				
 				vo = new NewsListVO();
+				vo.setDates(dateService.dateTime()[0]);			  
 				vo.setTitle(doc.select(".view_wrap > .article_head h3").text()); // Title
 				vo.setImg(doc.select(".figcaption.text-center img").attr("src")); // img url
-				vo.setCont(doc.select(".article_view p").text()); // content									
-				newsService.insert(vo);
+				vo.setCont(doc.select(".article_view p").text()); // content	
+				vo.setSeq(newsService.insert(vo));
 				newslist.add(vo);
 			}			
 		}

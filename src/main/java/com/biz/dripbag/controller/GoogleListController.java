@@ -44,7 +44,7 @@ public class GoogleListController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String userGSave(Model model, @ModelAttribute GoogleCommentVO gcVO) {
 		
-		gcVO.setSeqC( gServ.getGoogleList().get(0).getSeq()); 
+		gcVO.setSeqj( gServ.getGoogleList().get(0).getSeq()); 
 		gcService.insert(gcVO);
 		
 		return "redirect:/gclist/";

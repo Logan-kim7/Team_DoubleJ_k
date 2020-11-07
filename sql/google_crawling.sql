@@ -6,6 +6,6 @@ create table tbl_googleList
     img	nVARCHAR2(225)			
 );
 
-create SEQUENCE seq_gl start WITH 1 INCREMENT by 1;
-
+create SEQUENCE seq_googleList start WITH 1 INCREMENT by 1;
+drop sequence seq_googleList;
 commit;

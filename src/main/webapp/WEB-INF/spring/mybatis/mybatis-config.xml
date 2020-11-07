@@ -9,8 +9,9 @@
 	<typeAliases>
 		<typeAlias type="com.biz.dripbag.model.UserVO" alias="userVO"/>
 		<typeAlias type="com.biz.dripbag.model.NoticeVO" alias="noticeVO"/>
-		<typeAlias type="com.biz.dripbag.model.GoogleVO" alias="googleVO" />
-		<typeAlias type="com.biz.dripbag.model.NewsVO" alias="newsVO" />
+		<typeAlias type="com.biz.dripbag.model.GoogleListVO" alias="googleListVO" />
+		<typeAlias type="com.biz.dripbag.model.NewsListVO" alias="newsListVO" />
 		<typeAlias type="com.biz.dripbag.model.searchVO" alias="searchVO" />
+		<typeAlias type="com.biz.dripbag.model.NewsCommentVO" alias="NewsCommentVO" />
 	</typeAliases>
 </configuration>

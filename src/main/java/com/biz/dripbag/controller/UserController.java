@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.biz.dripbag.model.UserVO;
-import com.biz.dripbag.service.SessionService;
 import com.biz.dripbag.service.UserService;
+import com.biz.dripbag.service.sub.SessionService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -14,8 +14,7 @@ import lombok.ToString;
 public class SearchVO 
 {
 	private long seq; 	   // NUMBER		 PRIMARY KEY
-	private long seqN;     // NUMBER		 PRIMARY KEY
-	private long seqC;     // NUMBER		 PRIMARY KEY
+	private long seqj;     // NUMBER		 PRIMARY KEY
 	private String writer; // nVARCHAR2(100) NOT NULL	
 	private String dates;  // VARCHAR2(10)	 NOT NULL	
 	private String times;  // VARCHAR2(10)	 NOT NULL	

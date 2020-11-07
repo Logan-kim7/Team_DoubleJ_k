@@ -1,0 +1,87 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value='${pageContext.request.contextPath}' />
+
+<style>
+#pagination {
+	padding-top: 10px;
+	text-align: center;
+}
+
+#pagesec {
+	display: inline-block;
+	width: auto;
+}
+
+#pagination p {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+#pagination a.active {
+	background-color: gray;
+	color: white;
+	border-radius: 5px;
+}
+
+#pagination a:hover:not(.active) {
+	background-color: darkgray;
+	border-radius: 5px;
+	margin:5px;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function()
+{	
+
+	let pageSection = document.querySelector("#pageDiv");
+	let path = window.location.pathname.split("/");
+	let num;
+	let table;
+	{ table = "tbl_notice" }
+	
+		 if (path[2] == "notice") { path = 15; num = ${fn:length( LIST )}; table = "tbl_notice"; }
+	else if (path[2] == "gtrand") { path = 0;  num = ${fn:length( LIST )}; table = "tbl_googleComent" }			
+	else if (path[2] == "news")   { path = 0;  num = ${fn:length( LIST )}; table = "tbl_NewsComent"; }		 
+	const size = Math.ceil(num / path);
+			
+	for(let i =0; i<size; ++i)
+		pageSection.innerHTML += "<p data-page=" + (i+1) + ">" + (i+1) + '</p>';
+	
+		let seq = document.getElementsByClassName("tr_notice_List")[path].dataset.seq;
+		$("#pageDiv p").click(function()				
+		{
+			$.ajax
+			 ({
+				url  : document.location.href + "page/",
+				type : "post",
+				data : { "seq"   : seq, 
+						 "page"  : $(this).attr("data-page"),
+						 "table" : table
+					   },
+				success : function(data)
+				{
+					location.reload();
+				},
+				error : function()
+				{
+					
+				}
+			 });
+		});	 
+});
+</script>
+<c:set var="last_seq" value="asdasd"/>
+<div id="pagination">
+	<section id="pagesec">
+		<a href="#">&laquo;</a>
+		<div id ="pageDiv">
+			
+		</div>
+		<a href="#">&raquo;</a>
+	</section>
+</div>

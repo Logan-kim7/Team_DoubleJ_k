@@ -28,18 +28,14 @@ document.addEventListener("DOMContentLoaded", function()
 	for(const button of flag_button)
 		button.addEventListener("click", function(event)
 		{
-			document.getElementById("join_body").style.display == "none" ? document.getElementById("join_body").style.display="block" : document.getElementById("join_body").style.display="none";
-			if(document.getElementById("join_body").style.display=="block")
-			{
-				document.getElementById("bg-image").style.filter = "blur(10px)";
-				document.getElementById("check_id_ptag").textContent = "";
-				document.forms[1].reset();
-			}
-			else
-			{
-				document.getElementById("bg-image").style.filter = "none";	
-				document.getElementById("bg-check_id_ptag").value = "";
-			}
+			document.getElementById("check_id_ptag").textContent = "";
+			document.forms[1].reset();
+			document.getElementById("bg-image").style.filter = "blur(10px)";				
+			
+			if(document.getElementById("join_body").style.display != "none")
+				document.getElementById("bg-image").style.filter = "none";
+					
+			$("#join_body").slideToggle("650"); 
 		})
 	//======================아이디 중복 AJAX =================================
 		document.forms[1].elements[0].onblur = function()

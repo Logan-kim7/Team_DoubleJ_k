@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.biz.dripbag.crawling.CrwalingData;
+import com.biz.dripbag.model.NewsCommentVO;
 import com.biz.dripbag.model.NewsListVO;
-import com.biz.dripbag.service.NewsListService;
+import com.biz.dripbag.service.NewsCommentService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,9 +23,12 @@ public class NewsController {
     
     
     @Autowired
-    CrwalingData nServ;
+    private CrwalingData nServ;
         
     private int ret;
+    
+    @Autowired
+    private NewsCommentService newsComentService;
     
     @RequestMapping(value = {"/", "/{n_index}"}, method =  RequestMethod.GET)
     public String news(Model model, @PathVariable("n_index") String n_index) throws IOException {
@@ -41,9 +45,10 @@ public class NewsController {
     }
     
     @RequestMapping(value = {"/write", "/write/"}, method =  RequestMethod.POST)
-    public String write(NewsListVO vo)  {
-
-    	
+    public String write(NewsCommentVO vo)  
+    {
+    	System.out.println(vo.toString());
+    	newsComentService.insert(vo);
         return "redirect:/news/" + ret;
     }
     

@@ -3,25 +3,25 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.biz.dripbag.mapper.GoogleCommentDAO">
+<mapper namespace="com.biz.dripbag.mapper.NewsCommentDAO">
 
-	<select id="selectAll" resultType="GoogleCommentVO">
-		SELECT * FROM tbl_googleComent
+	<select id="selectAll" resultType="NewsCommentVO">
+		SELECT * FROM tbl_newsComment
 		ORDER BY seq DESC
 	</select>
 
-	<select id="selectTop" resultType="GoogleCommentVO">
-		SELECT * FROM tbl_googleComent
+	<select id="selectTop" resultType="NewsCommentVO">
+		SELECT * FROM tbl_newsComment
 		ORDER BY views DESC
 	</select>
 
-	<select id="findById" resultType="GoogleCommentVO">
-		SELECT * FROM tbl_googleComent
+	<select id="findById" resultType="NewsCommentVO">
+		SELECT * FROM tbl_newsComment
 		WHERE seq = #{seq}
 	</select>
 
-	<insert id="insert">
-		INSERT INTO tbl_googleComent (
+	<insert id="insert" parameterType="NewsCommentVO">
+		INSERT INTO tbl_newsComment (
 		seq,
 		seqJ,
 		dates,
@@ -30,7 +30,7 @@
 		title,
 		cont
 		) VALUES (
-		SEQ_GC.NEXTVAL,
+		SEQ_NC.NEXTVAL,
 		#{seqj},
 		#{dates},
 		#{times},
@@ -41,7 +41,7 @@
 	</insert>
 
 	<update id="update">
-		UPDATE tbl_gcomment SET
+		UPDATE tbl_newsComment SET
 		title = #{title, jdbcType=VARCHAR},
 		cont  = #{cont,  jdbcType=VARCHAR},
 		dates = #{dates, jdbcType=VARCHAR},
@@ -50,11 +50,11 @@
 	</update>
 
 	<delete id="delete">
-		DELETE tbl_gcomment WHERE seq = #{seq}
+		DELETE tbl_newsComment WHERE seq = #{seq}
 	</delete>
 
 	<update id="hit">
-		UPDATE tbl_gcomment SET gc_views = gc_views+1 WHERE seq = #{seq, jdbcType=VARCHAR}
+		UPDATE tbl_newsComment SET views = views+1 WHERE seq = #{seq, jdbcType=VARCHAR}
 	</update>
 
 </mapper>

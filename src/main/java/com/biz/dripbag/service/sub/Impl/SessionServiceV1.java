@@ -1,4 +1,4 @@
-package com.biz.dripbag.service.sub;
+package com.biz.dripbag.service.sub.Impl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.model.UserVO;
-import com.biz.dripbag.service.SearchService;
-import com.biz.dripbag.service.SessionService;
+import com.biz.dripbag.service.sub.SearchService;
+import com.biz.dripbag.service.sub.SessionService;
 
 
 @Service("sessionServiceV1")

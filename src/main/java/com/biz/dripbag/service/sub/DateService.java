@@ -1,4 +1,4 @@
-package com.biz.dripbag.service;
+package com.biz.dripbag.service.sub;
 
 public interface DateService {
 	public String[] dateTime();

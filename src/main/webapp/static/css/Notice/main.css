@@ -5,6 +5,7 @@ html, body {
 	padding: 0;
 	height: 100%;
 	width: 100%;
+	font-size: 20px;
 }
 
 #div_body {
@@ -16,14 +17,16 @@ html, body {
 
 #notice_body{
 	height: 100%;
+	display: flex;
+    flex-direction: column;
 }
 
 #div_body section:nth-child(1) {
-	width: 90%;
+	width: 100%;
 }
 
 #div_body section:nth-child(2) {
-	width: 10%;
+	width: 15%;
 	margin-right: 5px;
 	display: flex;
 	justify-content: flex-start;
@@ -34,6 +37,7 @@ html, body {
 	margin: 3px auto;
 	border: none;
 	outline: none;
+	font-size: 20px;
 }
 
 #notice_nav div {
@@ -47,6 +51,7 @@ html, body {
 #notice_nav div:nth-child(2) {
 	display: flex;
 	margin-bottom: 10px;
+	width: 100%;
 }
 
 #notice_nav select, #notice_nav button {
@@ -65,6 +70,7 @@ html, body {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	margin-top: 10px;
 }
 
 #notice_nav ul li {
@@ -77,14 +83,19 @@ html, body {
 
 #notice_nav button {
 	height: 30px;
+    font-weight: bolder;
+    background: tomato;
+    
 }
 
 #notice_nav button:hover {
 	background-color: #2ecc71;
+	transition: background 0.5s;
 }
 
 #notice_nav ul li:hover{
 	cursor: pointer;
 	border-bottom: 2px solid crimson;
+	transition: border-bottom 0.7s;
 }
 

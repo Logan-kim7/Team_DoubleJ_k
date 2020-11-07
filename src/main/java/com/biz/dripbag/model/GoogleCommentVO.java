@@ -15,7 +15,7 @@ import lombok.ToString;
 @Builder
 public class GoogleCommentVO {
 	private Long seq;
-	private Long seqC;
+	private Long seqj;
 	private String writer;
 	private String dates;
 	private String times;

@@ -309,11 +309,12 @@ $(document).ready(function(){
 
 			<fieldset id="write">
 				<legend>
-					<h2>4자성어 Drip Bag 입력공간</h2>
+					<h2>4자성어 Drip Bag 입력공간 ${NEWSDATA.seq}</h2>
 				</legend>
 				<form action="${rootPath}/news/write" method="post">
 					<label for="fname"></label> 
-					<input style="display: none" value="${TITLE.seq}" name="seqc">
+					<input type="hidden" value="${NEWSDATA.seq}" name="seqj">
+					<input type="hidden" value="${member.email}" name="writer">
 					<input type="text" id="dripbagip" maxlength="4" name="title" placeholder="네글자로만 입력하세요!!"> 
 					<input type="text" id="dripdagcm" maxlength="12" name="cont" placeholder="내용은 12글자까지만 입력가능!!"></br>
 					<button type="submit" id="write_button">입력</button>
