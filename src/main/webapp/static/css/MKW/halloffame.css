@@ -10,7 +10,6 @@
 	background-size: 100% 100%;
 }
 
-
 .pagination {
 	display: inline-block;
 	margin-top: 10px;
@@ -44,6 +43,42 @@ input {
 	width: 70%;
 	height: 100% auto;
 	padding: 3% 0 10% 0;
+}
+
+.fametable {
+	width: 100%;
+}
+
+.fametable caption {
+	font-size: 50px;
+	color: white;
+}
+
+.fametable thead th {
+	border: 4px dashed white;
+	color: white;
+	background-color: gray;
+	padding: 5px;
+	font-size: 25px;
+}
+
+.fametable tbody td {
+	border: 2px solid gray;
+	color: black;
+	background-color: rgba(255, 255, 255, 0.5);
+	font-size: 20px;
+}
+
+.fametable tbody tr:first-child td {
+	border: 5px solid gold;
+}
+
+.fametable tbody tr:nth-child(2) td {
+	border: 5px solid silver;
+}
+
+.fametable tbody tr:nth-child(3) td {
+	border: 5px solid brown;
 }
 
 #serch {

@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/halloffame.css?ver=7" />
+	href="${rootPath}/static/css/MKW/halloffame.css?ver=13" />
 
 <title>Insert title here</title>
 <style>
@@ -39,20 +39,58 @@
 	style="background-image: url('../static/imgs/KJM/너의이름은.jpg')">
 
 	<div id="famelist">
-	
-	<table id="gfame"></table>
-	<table id=""></table>
 
+		<table class="fametable" id="gfame">
+			<caption>사상 최고의 실시간 검색어 드리퍼</caption>
+			<thead>
+				<tr>
+					<th>순위</th>
+					<th>점수</th>
+					<th>작성자</th>
+					<th>사자성어</th>
+					<th>설명</th>
+					<th>작성날짜</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${GITEM}" var="google" end="4" varStatus="i">
+					<tr>
+						<td>${i.count}위</td>
+						<td>${google.likes}</td>
+						<td>${google.writer}</td>
+						<td>${google.title}</td>
+						<td>${google.cont}</td>
+						<td>${google.dates}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 
-		<div class="pagination">
-			<a href="#">&laquo;</a> <a href="#" class="active">1</a> <a href="#">2</a>
-			<a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a>
-			<a href="#">&raquo;</a>
-
-			<div id="serch">
-				<input type="text" placeholder="검색할 사자성어">
-			</div>
-		</div>
+		<table class="fametable" id="nfame">
+			<caption>사상 최고의 뉴스기사 드리퍼</caption>
+			<thead>
+				<tr>
+					<th>순위</th>
+					<th>점수</th>
+					<th>작성자</th>
+					<th>사자성어</th>
+					<th>설명</th>
+					<th>작성날짜</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${NITEM}" var="news" end="4" varStatus="i">
+					<tr>
+						<td>${i.count}+1</td>
+						<td>${news.likes}</td>
+						<td>${news.writer}</td>
+						<td>${news.title}</td>
+						<td>${news.cont}</td>
+						<td>${news.dates}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 
 	</div>
 </section>
