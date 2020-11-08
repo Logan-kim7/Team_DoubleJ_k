@@ -8,6 +8,10 @@
 		SELECT * FROM tbl_notice ORDER BY seq DESC
 	</select>
 	
+	<select id="test" resultType="noticeVO">
+		select * from tbl_notice ROWNUM  <![CDATA[<= ]]> 15 ORDER BY seq DESC
+	</select>
+	
 	<select id="findById" resultType="noticeVO">
 	</select>
 	
@@ -25,5 +29,8 @@
 	<delete id="delete">
 		
 	</delete>
+	
+	
+
 	
  </mapper>

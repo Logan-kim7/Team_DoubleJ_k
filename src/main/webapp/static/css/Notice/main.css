@@ -9,7 +9,7 @@ html, body {
 }
 
 #div_body {
-	height: 100%;
+	height: auto;
 	width: 100%;
 	margin: 10px auto;
 	display: flex;

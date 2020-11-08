@@ -15,9 +15,9 @@ public interface SearchDAO
 	 public List<Map<String, String>> selectContent(@Param("table")String table, @Param("keyword")String keyword);
 	 public List<Map<String, String>> selectWriter(@Param("table")String table,  @Param("keyword")String keyword);
 	 
-	 public List<SearchVO> all(@Param("table")String table,     @Param("keyword")String keyword,  @Param("seqJ")String seq);
-	 public List<SearchVO> title(@Param("table")String table,   @Param("keyword")String keyword,  @Param("seqJ")String seq);
-	 public List<SearchVO> content(@Param("table")String table, @Param("keyword")String keyword,  @Param("seqJ")String seq);
-	 public List<SearchVO> writer(@Param("table")String table,  @Param("keyword")String keyword,  @Param("seqJ")String seq);
+	 public List<SearchVO> all(@Param("table")String table,     @Param("keyword")String keyword,  @Param("seqj")String seq);
+	 public List<SearchVO> title(@Param("table")String table,   @Param("keyword")String keyword,  @Param("seqj")String seq);
+	 public List<SearchVO> content(@Param("table")String table, @Param("keyword")String keyword,  @Param("seqj")String seq);
+	 public List<SearchVO> writer(@Param("table")String table,  @Param("keyword")String keyword,  @Param("seqj")String seq);
 	 public List<SearchVO> pageSearch(String table);
 }

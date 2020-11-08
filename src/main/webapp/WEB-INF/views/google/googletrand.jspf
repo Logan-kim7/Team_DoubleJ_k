@@ -1,0 +1,162 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value='${pageContext.request.contextPath}' />
+
+<link rel="stylesheet"
+	href="${rootPath}/static/css/MKW/googletrand.css?ver=32" />
+
+<section id="trand-bg">
+	<div id="headline">
+		<fieldset id="headset">
+			<legend id="headlegend">선택한 주제</legend>
+			<p id="googletrand">${TITLE.title}</p>
+		</fieldset>
+	</div>
+
+	<form id="gtinputbox" method="POST" action="${rootPath}/gtrand/save">
+		<div id="user_write">
+			<fieldset id="writeset">
+				<legend id="writelegend">작성하기</legend>
+
+				<input type="hidden" name="seqj" value="${TITLE.seq}"> <input
+					type="hidden" id="writer" name="writer" value="${member.email}"
+					placeholder="작성자" />
+
+				<div class="inive">
+					<label>4자성어를 입력하세요</label> <input type="text" id="title"
+						name="title" placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" />
+				</div>
+
+				<div class="inive">
+					<label>4자성어 설명을 입력하세요</label> <input type="text" id="explain"
+						name="cont" placeholder="12글자까지만 입력가능!!!" />
+				</div>
+			</fieldset>
+		</div>
+
+		<div id="writebutton">
+			<button id="throwit" type="button">
+				<p>영 아니다</p>
+			</button>
+			<button id="addit" type="button">
+				<p>잘만든것 같다</p>
+			</button>
+		</div>
+
+	</form>
+
+	<div id="user_bord">
+
+		<div id="bord_list">
+
+			<table id="hot_guys">
+				<caption>현재 TOP10</caption>
+				<thead>
+					<tr>
+						<th>작성자</th>
+						<th>4자성어</th>
+						<th>4자성어 설명</th>
+						<th>점수</th>
+						<th>작성일</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<c:if test="${empty GC_LIST}">
+						<tr>
+							<td colspan="5">게시글이 없지롱</td>
+						</tr>
+					</c:if>
+
+					<c:forEach items="${GC_LIST}" var="gc" end="9">
+						<tr class="gc_item" data-id="${gc.seq}">
+							<td>${gc.writer}</td>
+							<td>${gc.title}</td>
+							<td>${gc.cont}</td>
+							<td>${gc.likes}</td>
+							<td>${gc.dates}</td>
+						</tr>
+					</c:forEach>
+
+				</tbody>
+
+			</table>
+
+		</div>
+	</div>
+</section>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+
+		let all_item = document.querySelectorAll(".gc_item");
+		all_item.forEach(function(item_data) {
+			item_data.addEventListener("click", function() {
+				if (confirm("이 사자성어를 추천하시겠습니까?")) {
+					let seq = item_data.getAttribute("data-id");
+					document.location.href = `${rootPath}/gtrand/thumbsup?id=`
+							+ seq;
+				} else {
+					alert("흥 칫 뿡!");
+				}
+			})
+		})
+
+	});
+
+	$("#throwit").click(function() {
+
+		if (confirm("작성을 그만둘까요? ><")) {
+			alert("좋은 생각이에요!!! ^^")
+			document.location.href = "${rootPath}/main/"
+		} else {
+			alert("읭?")
+		}
+	})
+
+	$("#addit")
+			.click(
+					function() {
+
+						let title = document.getElementById("title");
+						let jujerriy = document.getElementById("explain");
+
+						if (title.value == "pinkpink") {
+							alert("★요★정★출★현★")
+							document.location.href = "https://www.youtube.com/watch?v=htEVWnYSWS4";
+						} else if (title.value == "심영") {
+							alert("대한민국에서 가장 밈적인 존재를 소환합니다 ><")
+							document.location.href = "https://www.youtube.com/watch?v=D3s1bXK16f0";
+						} else if (title.value == "JtoJ") {
+							alert("이 사이트 제작자의 정신나간 블로그를 소개합니다 ><")
+							document.location.href = "https://blog.naver.com/moonlf2000";
+						}
+
+						function adding() {
+
+							if (confirm("확실합니까? 추가할까요? 잘못 올려도 바꿔줄 생각 없어요")) {
+								alert("서버에 추가됩니... 이게 뭐야!!  ><");
+								let mainform = document
+										.getElementById("gtinputbox");
+								mainform.submit();
+							} else {
+								alert("다행이다...")
+							}
+						}
+
+						function fourdollar() {
+							if (title.value.length != 4) {
+								alert("사☆자☆성☆어 이므로 적게도 말고 많게도 않게 4글자만!!! ><")
+								title.focus();
+							} else if (jujerriy.value.length > 12) {
+								alert("설명은 12자를 넘어가면 안되는데... ><");
+								jujerriy.focus();
+							} else {
+								adding();
+							}
+						}
+
+						fourdollar();
+					})
+</script>

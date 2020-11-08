@@ -19,6 +19,8 @@ public class SearchServiceV1 implements SearchService
 	
 	@Autowired(required = false)
 	protected List<SearchVO> searchList;
+	
+	private String strSearch = null;
 			
 	@Override
 	public List<Map<String, String>> search(String table, String flag, String keyword) 
@@ -64,6 +66,8 @@ public class SearchServiceV1 implements SearchService
 		if(table == null)
 			return null;
 		
+		System.out.println("SEARCH V2" + seq);
+		strSearch = keyword;
 		if(flag.equalsIgnoreCase("all")) 		  index = 1;
 		else if(flag.equalsIgnoreCase("title"))   index = 2;
 		else if(flag.equalsIgnoreCase("content")) index = 3;	  
@@ -97,13 +101,21 @@ public class SearchServiceV1 implements SearchService
 	public void clear() 
 	{
 		if(searchList != null)
-			searchList = null;		
+		{
+			searchList = null;
+			strSearch = null;
+		}
 	}
 
 	@Override
 	public List<SearchVO> getSearch() 
 	{
 		return this.searchList;
+	}
+
+	@Override
+	public String searchName() {
+		return strSearch;
 	}
 
 }

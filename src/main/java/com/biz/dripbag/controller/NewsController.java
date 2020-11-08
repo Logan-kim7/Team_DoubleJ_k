@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.biz.dripbag.crawling.CrwalingData;
 import com.biz.dripbag.model.NewsCommentVO;
 import com.biz.dripbag.service.NewsCommentService;
+import com.biz.dripbag.service.sub.PageService;
 import com.biz.dripbag.service.sub.SearchService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -29,23 +30,32 @@ public class NewsController {
 	
     @Autowired
     private CrwalingData nServ;
-        
-    private int ret;
-    
+            
     @Autowired
     private NewsCommentService newsComentService;
     
-    @RequestMapping(value = {"/", "/{n_index}"}, method =  RequestMethod.GET)
+	@Autowired
+	@Qualifier("pageV1")
+	private PageService pageService;
+    
+    private int ret;
+    
+    @RequestMapping(value = "/{n_index}/", method =  RequestMethod.GET)
     public String news(Model model, @PathVariable("n_index") String n_index) throws IOException {
         
         ret =  Integer.valueOf(n_index);
         long longRet = nServ.getNewsList().get(ret).getSeq();
-		List<?> list =  searchService.getSearch() != null ? searchService.getSearch() : newsComentService.findBySelect(longRet);	
+        
+		List<?> list = pageService.getPage();
+		if(list == null)
+			list = searchService.getSearch() != null ? searchService.getSearch() : newsComentService.findBySelect(longRet);
+	
         model.addAttribute("BODY","NEWS_HOME");
         model.addAttribute("NEWS", "NEWSMAIN");
         model.addAttribute("NEWSLIST", list);
         model.addAttribute("NEWSDATA",nServ.getNewsList().get(ret));
-       
+    	model.addAttribute("CURPAGE", pageService.curPage());
+		model.addAttribute("TOTALPAGE", pageService.allSize("tbl_NewsComment", longRet));
 
         return "home";
     }
@@ -53,9 +63,9 @@ public class NewsController {
     @RequestMapping(value = {"/write", "/write/"}, method =  RequestMethod.POST)
     public String write(NewsCommentVO vo)  
     {
-    	System.out.println(vo.toString());
+    	searchService.clear();
     	newsComentService.insert(vo);
-        return "redirect:/news/" + ret;
+        return "redirect:/news/" + ret + "/";
     }
     
     

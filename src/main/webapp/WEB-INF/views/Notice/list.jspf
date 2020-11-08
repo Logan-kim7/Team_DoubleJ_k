@@ -3,7 +3,7 @@
 <%@ taglib prefix="func" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
-<link rel="stylesheet" href="${rootPath}/static/css/Notice/list.css?var=2">
+<link rel="stylesheet" href="${rootPath}/static/css/Notice/list.css?var=3">
 
 <script>
 document.addEventListener("DOMContentLoaded", function()
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function()
 
 <div id="notice_body">
 	<table>
-	<tr class="tr_notice_List">
+	<tr class="tr_notice_List_th">
 		<th>선택</th>
 		<th>NO</th>
 		<th>제목</th>
@@ -90,6 +90,13 @@ document.addEventListener("DOMContentLoaded", function()
 			</c:forEach>
 		</c:if>
 	</c:forEach>
+	
+	<c:if test="${empty LIST}"> 
+		<c:forEach begin="${i.index}" end="14" varStatus="j">
+		<tr class="tr_notice_List"> <c:forEach begin="0" end="5"> <td></td> </c:forEach> </tr>
+		</c:forEach>
+	</c:if>
+	
 	</table>
-	<%@ include file="/WEB-INF/views/include/list_pagenation2.jspf" %>
+	<%@ include file="/WEB-INF/views/Notice/pagiNation.jspf" %>
 </div>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.mapper.GoogleCommentDAO;
 import com.biz.dripbag.model.GoogleCommentVO;
+import com.biz.dripbag.model.NewsCommentVO;
 import com.biz.dripbag.service.GoogleCommentService;
 
 @Service("gcServiceV1")
@@ -21,6 +22,12 @@ public class GoogleCommentServicelV1 implements GoogleCommentService {
 	public List<GoogleCommentVO> selectAll() {
 		List<GoogleCommentVO> gcList = gcDao.selectAll();
 		return gcList;
+	}
+	
+	public List<NewsCommentVO> findBySelect(long PK)
+	{
+		System.out.println(gcDao.findBySelect(PK));
+		return gcDao.findBySelect(PK);
 	}
 
 	@Override
@@ -49,7 +56,7 @@ public class GoogleCommentServicelV1 implements GoogleCommentService {
 
 		gcVO.setDates(writeDate);
 		gcVO.setTimes(writeTime);
-
+		System.out.println(gcVO.toString());
 		int ret = gcDao.insert(gcVO);
 		return ret;
 	}

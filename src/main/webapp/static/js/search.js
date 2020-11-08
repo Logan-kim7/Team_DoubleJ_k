@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", function()
 {		
 	const rootPath = "http://localhost:8080/dripbag/";
 	
-	
-
 	//=============================================================================
 	if($(".search_input").length)
 	{
@@ -41,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function()
 					 "table"   : table, 
 					 "flag"    : $(".search_select option:selected").val(),
 					 "content" : $(".search_input").val(),
-					 "seq"	   : $(".search_inpu").attr("name")
+					 "seq"	   : $(".search_input").data("seq")
 				   },
 			success : function(data)
 			{

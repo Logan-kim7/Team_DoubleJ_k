@@ -3,5 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
 
-	<p>테스트 제목 : ${NOTICE_VO.title}</p>
-	<p>테스트 내용 : ${NOTICE_VO.content}</p>
+	<c:forEach items="${LIST}" var="i">
+			<p>${i.title}</p>
+	</c:forEach>

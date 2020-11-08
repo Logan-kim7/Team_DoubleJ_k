@@ -18,7 +18,7 @@
 				<legend><img alt="이미지를 불러오지 못했습니다." src="../static/imgs/KJM/news_logo.png" width="120px" height="120px"></legend>
 				<ol>
 					  <c:forEach items="${NEWS}" var="news" varStatus="i" >
-                        <li><a href="${rootPath}/news/${i.index}">${news.title}</a></li>
+                        <li><a href="${rootPath}/news/${i.index}/">${news.title}</a></li>
 
                     </c:forEach>
 				</ol>
@@ -37,7 +37,7 @@
 
 				<ol>
 					<c:forEach items="${GOOGLE}" var="google" varStatus="i">
-						<li><a href="${rootPath}/gtrand/${i.index}">${i.index + 1}위&nbsp;
+						<li><a href="${rootPath}/gtrand/${i.index}/">${i.index + 1}위&nbsp;
 								${google.title}</a></li>
 					</c:forEach>
 				</ol>

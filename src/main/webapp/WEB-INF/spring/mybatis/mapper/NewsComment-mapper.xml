@@ -13,7 +13,7 @@
 	<select id="findBySelect" resultType="NewsCommentVO">
 		SELECT * FROM tbl_newsComment
 		WHERE seqj = #{seqj} 
-		ORDER BY seqj DESC
+		ORDER BY seq DESC
 		
 		
 	</select>

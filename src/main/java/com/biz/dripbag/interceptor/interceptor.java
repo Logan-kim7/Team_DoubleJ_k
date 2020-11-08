@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @RequiredArgsConstructor
-public class Dripbaginterceptor extends HandlerInterceptorAdapter 
+public class interceptor extends HandlerInterceptorAdapter 
 {	
 	@Qualifier("sessionServiceV1")
 	private final SessionService sService;

@@ -198,28 +198,6 @@ ol {
 	color: white;
 }
 
-.pagination {
-	display: inline-block;
-}
-
-.pagination a {
-	color: black;
-	float: left;
-	padding: 8px 16px;
-	text-decoration: none;
-}
-
-.pagination a.active {
-	background-color: gray;
-	color: white;
-	border-radius: 5px;
-}
-
-.pagination a:hover:not(.active) {
-	background-color: darkgray;
-	border-radius: 5px;
-}
-
 input {
 	width: 70%;
 	margin: 20px 0px;
@@ -233,9 +211,18 @@ input {
     css공간 */
 .search_box {
 	margin-top: 0px auto;
-	width: 200px;
+	width: 100%;
 	height: 50px;
 }
+
+.container{
+	width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 .dropdown {
 	position: relative;
@@ -335,7 +322,7 @@ $(document).ready(function(){
 				</tr>
 			
 				<c:forEach items="${NEWSLIST}" var="NEWSDB">
-					<tr>
+					<tr class="newsComment_list" data-seq="${NEWSDB.seq}"> 
 						<td>${NEWSDB.seq}</td>
 						<td>${NEWSDB.writer}</td>
 						<td>${NEWSDB.dates}</td>
@@ -349,21 +336,19 @@ $(document).ready(function(){
 
 			</table>
 
-			<div class="pagination">
-				<a href="#">&laquo;</a> <a href="#" class="active">1</a> <a href="#">2</a>
-				<a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a>
-				<a href="#">&raquo;</a>
-			</div>
+		<%@ include file="/WEB-INF/views/Notice/pagiNation.jspf" %>
 			<div class="search_box">
 				<div class="container">
-					<span class="icon"><i class="fa fa-search"></i></span> <input
-						type="search" id="search" class="search_input"
-						placeholder="Search..." /> <select class="search_select">
+					<select class="search_select">
 						<option value="all">전체</option>
 						<option value="title">제목</option>
 						<option value="content">내용</option>
 						<option value="writer">작성자</option>
 					</select>
+					 
+				<input type="search" id="search" class="search_input" placeholder="Search..." data-seq="${NEWSDATA.seq}"/>
+				<span class="icon"><i class="fa fa-search"></i></span> 
+	
 				</div>
 			</div>
 		</div>

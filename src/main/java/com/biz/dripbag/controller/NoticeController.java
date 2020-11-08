@@ -1,6 +1,7 @@
 package com.biz.dripbag.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,16 +12,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.biz.dripbag.crawling.CrwalingData;
 import com.biz.dripbag.model.NoticeVO;
+import com.biz.dripbag.model.SearchVO;
 import com.biz.dripbag.service.NoticeService;
 import com.biz.dripbag.service.sub.HitService;
-import com.biz.dripbag.service.sub.PaginationService;
+import com.biz.dripbag.service.sub.PageService;
 import com.biz.dripbag.service.sub.SearchService;
 
 import lombok.RequiredArgsConstructor;
-
 
 @RequiredArgsConstructor
 @RequestMapping(value="/notice")
@@ -39,18 +42,22 @@ public class NoticeController
 	@Qualifier("searchServiceV1")
 	private final SearchService searchService;
 	
-	@Qualifier("paginationV1")
-	private final PaginationService pageService;
-					
-				
+	@Qualifier("pageV1")
+	private final PageService pageService;
+						
 	@RequestMapping(value={"/", ""}, method = RequestMethod.GET)
 	public String home(Model model)
-	{		
-		List<?> list =  searchService.getSearch() != null ? searchService.getSearch() : noticeService.selectAll();	
+	{
+		List<?> list = pageService.getPage();
+		if(list == null)
+			list = searchService.getSearch() != null ? searchService.getSearch() : noticeService.selectAll();
+
 		model.addAttribute("LIST", list);
 		model.addAttribute("GOOGLE", cService.getGoogleList());
 		model.addAttribute("NEWS", 	cService.getNewsList());
 		model.addAttribute("BODY", "NOTICE_HOME");
+		model.addAttribute("CURPAGE", pageService.curPage());
+		model.addAttribute("TOTALPAGE", pageService.allSize("tbl_notice"));
 		return "home";
 	}
 		
@@ -77,13 +84,5 @@ public class NoticeController
 		noticeService.insert(vo);
 		return "redirect:/notice/";
 	}
-		
-	@RequestMapping(value="/select", method=RequestMethod.GET)
-	public String selectList(Model model, @ModelAttribute("noticeVO") NoticeVO vo)
-	{
-		return "LJH/notice_home";
-	}
-
-
 	
 }

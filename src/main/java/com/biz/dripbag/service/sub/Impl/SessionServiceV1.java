@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.model.UserVO;
+import com.biz.dripbag.service.sub.PageService;
 import com.biz.dripbag.service.sub.SearchService;
 import com.biz.dripbag.service.sub.SessionService;
 
@@ -21,6 +22,10 @@ public class SessionServiceV1 implements SessionService
 	@Qualifier("searchServiceV1")
 	@Autowired
 	SearchService search;
+	
+	@Qualifier("pageV1")
+	@Autowired
+	PageService page;
 	
 	private String urlPath;
 	
@@ -76,6 +81,7 @@ public class SessionServiceV1 implements SessionService
 		if(temp.contains(urlPath) == false )
 		{
 			search.clear();
+			page.clear();
 			urlPath = temp;
 		}
 	}

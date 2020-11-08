@@ -34,17 +34,19 @@
 		<!--  ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ V2 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ -->
 
 	<select id="all" resultType="searchVO">
-		SELECT * FROM ${table} WHERE  <if test="seqJ != null and !seqJ.equals('')">
-										seqJ = #{seqJ} AND  
+		SELECT * FROM ${table} WHERE  <if test="seqj != null and !seqj.equals('')">
+										seqJ = #{seqj} AND  
 									  </if>
-									  TITLE  LIKE '%'||#{keyword}||'%' OR 
-									  CONT   LIKE '%'||#{keyword}||'%' OR  
-									  WRITER LIKE '%'||#{keyword}||'%'
+									  (  TITLE  LIKE '%'||#{keyword}||'%' OR 
+									     CONT   LIKE '%'||#{keyword}||'%' OR  
+									     WRITER LIKE '%'||#{keyword}||'%'
+									  )
 				ORDER BY seq DESC
 	</select>
 	
 	<select id="title" resultType="searchVO">
-		SELECT * FROM ${table} WHERE <if test="seqJ != null and !seqJ.equals('')">
+		SELECT * FROM ${table} WHERE <if test="seqj != null and !seqj.equals('')">
+										seqJ = #{seqj} AND  
 									  </if> 
 		TITLE LIKE  '%'||#{keyword}||'%' 
 				ORDER BY seq DESC
@@ -52,13 +54,15 @@
 	
 	<select id="content" resultType="searchVO">
 		SELECT * FROM ${table} WHERE <if test="seqJ != null and !seqJ.equals('')">
+										seqJ = #{seqj} AND 
 									  </if> 
 		CONT LIKE '%'||#{keyword}||'%'  
 				ORDER BY seq DESC
 	</select>
 	
 	<select id="writer" resultType="searchVO">
-		SELECT * FROM ${table} WHERE <if test="seqJ != null and !seqJ.equals('')">
+		SELECT * FROM ${table} WHERE <if test="seqj != null and !seqj.equals('')">
+									  seqJ = #{seqj} AND 	
 									  </if> 
 		WRITER LIKE '%'||#{keyword}||'%'  
 				ORDER BY seq DESC

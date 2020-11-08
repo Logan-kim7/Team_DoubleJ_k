@@ -15,6 +15,10 @@ public class SearchVO
 {
 	private long seq; 	   // NUMBER		 PRIMARY KEY
 	private long seqj;     // NUMBER		 PRIMARY KEY
+	private String roll;
+	private String pwd;
+	private String email;
+	private String img;
 	private String writer; // nVARCHAR2(100) NOT NULL	
 	private String dates;  // VARCHAR2(10)	 NOT NULL	
 	private String times;  // VARCHAR2(10)	 NOT NULL	

@@ -3,10 +3,12 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
 
-<form method="post" action="${rootPath}/notice/write">
-	<input name="writer" value="${member.email}" style="display: none;">
-	<input name="title" placeholder="제목">
-	<textarea name="cont"></textarea>
-	<button type="submit">등록</button>
-	<button type="button">취소</button>
-</form>
+<div id="toggle_div">
+	<form method="post" action="${rootPath}/notice/write">
+		<input name="writer" value="${member.email}" style="display: none;">
+		<input name="title" placeholder="제목">
+		<textarea name="cont"></textarea>
+		<button type="submit">등록</button>
+		<button type="button">취소</button>
+	</form>
+</div>

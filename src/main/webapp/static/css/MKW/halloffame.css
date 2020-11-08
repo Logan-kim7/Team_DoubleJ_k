@@ -7,69 +7,14 @@
 	text-align: center;
 	height: 100%;
 	background-repeat: no-repeat;
-	background-size: 100% 100%; 
-}
-
-#fametable {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-#fametable td, #customers th {
-	border: 1px solid #ddd;
-	padding: 8px;
-}
-
-#fametable tr:nth-child(odd) {
-	background-color: rgba(255,255,255,0.2);
-}
-
-#fametable tr {
-	transition:all 0.7s;
-}
-
-#fametable tr:hover {
-	background-color: #ddd;
-}
-
-#fametable th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: center;
-	background-color: gray;
-	color: white;
-	border: 2px dashed white;
-}
-
-.pagination {
-	display: inline-block;
-	margin-top: 10px;
-}
-
-.pagination a {
-	color: black;
-	float: left;
-	padding: 8px 16px;
-	text-decoration: none;
-}
-
-.pagination a.active {
-	background-color: gray;
-	color: white;
-	border-radius: 5px;
-}
-
-.pagination a:hover:not(.active) {
-	background-color: darkgray;
-	border-radius: 5px;
+	background-size: 100% 100%;
 }
 
 input {
 	width: 100%;
 }
 
-.famelist {
+#famelist {
 	display: inline-block;
 	text-align: center;
 	width: 70%;
@@ -77,13 +22,40 @@ input {
 	padding: 3% 0 10% 0;
 }
 
-.famelist h2 {
-	font-size: 30px;
-	padding: 20px 0px;
+.fametable {
+	width: 100%;
 }
 
-.famelist tr {
-	height: 40px;
+.fametable caption {
+	font-size: 50px;
+	color: white;
+}
+
+.fametable thead th {
+	border: 4px dashed white;
+	color: white;
+	background-color: gray;
+	padding: 5px;
+	font-size: 25px;
+}
+
+.fametable tbody td {
+	border: 2px solid gray;
+	color: black;
+	background-color: rgba(255, 255, 255, 0.5);
+	font-size: 20px;
+}
+
+.fametable tbody tr:first-child td {
+	border: 5px solid gold;
+}
+
+.fametable tbody tr:nth-child(2) td {
+	border: 5px solid silver;
+}
+
+.fametable tbody tr:nth-child(3) td {
+	border: 5px solid brown;
 }
 
 #serch {

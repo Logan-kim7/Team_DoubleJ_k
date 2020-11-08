@@ -8,18 +8,17 @@ table {
 	border-collapse: collapse;
 }
 
-table th:nth-child(3), table td:nth-child(3)
-{
+table th:nth-child(3), table td:nth-child(3){
 	width: 60%;
 }
 
-.tr_notice_List {
+.tr_notice_List, .tr_notice_List_th {
 	height: 5%;
 	border-bottom: 2px solid #ccc;
 	font-size: 30px;
 }
 
-table .tr_notice_List:nth-child(0n+1) {
+table .tr_notice_List_th:nth-child(0n+1) {
 	height:10px;
 	background-color: #daf1cd;
 }
@@ -30,6 +29,6 @@ table .tr_notice_List:hover:nth-child(1n+2) {
 	transition: border-bottom 0.7s;
 }
 
-.tr_notice_List td {
+.tr_notice_List td, .tr_notice_List_th td {
 	text-align: center;
 }

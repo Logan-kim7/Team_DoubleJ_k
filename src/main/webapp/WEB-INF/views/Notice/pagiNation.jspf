@@ -1,0 +1,111 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value='${pageContext.request.contextPath}' />
+
+<style>
+#pagination {
+	padding-top: 10px;
+	text-align: center;
+}
+
+#pagesec {
+	display: inline-block;
+	width: auto;
+}
+
+#pagination p {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+#pagination p.active {
+	background-color: gray;
+	color: white;
+	border-radius: 5px;
+}
+
+#pagination p:hover {
+	cursor: pointer;
+	background-color: #ccc;
+	color:white;
+	border-radius: 5px;
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function()
+{	
+
+	let pageSection = document.querySelector("#pageDiv");
+	let max = window.location.pathname.split("/");
+	let seq;
+	let click_page;
+	let check;
+	let flag;
+	let tr_class;
+		 if (max[2] == "notice") { max = 15;  check = ${TOTALPAGE}; tr_class=".tr_notice_List" }
+	else if (max[2] == "gtrand") { max = 10;  check = ${TOTALPAGE}; tr_class=".newsComment_list"}			
+	else if (max[2] == "news")   { max = 10;  check = ${TOTALPAGE}; tr_class=".gc_item"}		 
+	let size = Math.ceil(check / max);
+	
+	if(size == 0)
+		size = 1;
+	
+	for(let i = 0; i < size; ++i)	
+		pageSection.innerHTML += '<p class="pagein" data-page=' + (i+1) + ">" + (i+1) + '</p>';
+		
+		$(".pagein").each(function()
+		{
+			if($(this).data("page") == ${CURPAGE})
+			{
+				$(this).attr("class", "active");
+				return false;
+			}
+		});
+	
+		$("#pageDiv p").click(function()				
+		{
+			click_page = $(this).data("page"); // 갱신할 현재 페이지
+	
+			if(click_page > ${CURPAGE} )
+			{
+				flag = "<";
+				seq = $(tr_class).eq(0).data("seq") - ((click_page - ${CURPAGE}) * max);
+				seq = 1 ? 2 : 2;
+			}
+			else
+			{
+				flag = ">";
+				seq = $(tr_class).eq(0).data("seq") + ((click_page - ${CURPAGE}) * max);
+			}  
+			
+			
+			if(click_page == ${CURPAGE})
+				return false;
+			
+			$.ajax
+			 ({
+				url  : "${rootPath}/page/",
+				type : "get",
+				data : { "seq"      : seq, 
+						 "nextpage" : click_page,
+						 "curpage"  : ${CURPAGE},
+						 "max"      : max,
+						 "flag"     : flag,
+					   },
+				success : function(data) { location.reload(); },
+				error : function() { }
+			 });
+		});	 
+});
+</script>
+<div id="pagination">
+	<section id="pagesec">
+		<div id ="pageDiv">			
+		</div>
+	</section>
+</div>

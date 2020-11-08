@@ -11,17 +11,13 @@ document.addEventListener("DOMContentLoaded", function()
 			$(".notice_nav_btn").eq(0).click(function() { $("#notice_nav > ul li").toggle(); });
 	else
 		{
-			$(".notice_nav_btn").eq(1).click(function() 
-					{ 
-						$("#toggle_div").fadeToggle("slow"); 
-						$("#toggle_div:last").click(function(){ $("#toggle_div").hide(); }) 
-					});
+			$("#toggle_div > form button").eq(-1).click(function(){ $("#toggle_div").fadeToggle("slow"); });
+			$(".notice_nav_btn").eq(1).click(function() {  $("#toggle_div").fadeToggle("slow");  });
 			$(".notice_nav_btn").eq(2).click(function() { $("#notice_nav > ul li").toggle(); });
 		}
 	
 	//=====================================================
 	$(".notice_title").click(function() {
-		let seq = $(this).data("seq");
 		document.location.href = "${rootPath}/notice/detail/" + $(this).data("seq");
 	});
 	//=====================================================
@@ -41,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function()
    <section>
 		<%@ include file="/WEB-INF/views/Notice/list.jspf" %>
 		
-		<div id="toggle_div"><%@ include file="/WEB-INF/views/Notice/write.jspf"%></div>
+		<%@ include file="/WEB-INF/views/Notice/write.jspf"%>
 	</section>  
        
 	<section id=notice_nav>

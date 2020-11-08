@@ -14,7 +14,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/cc60939e22.js"
 	crossorigin="anonymous"></script>
-<script src="${rootPath}/static/js/search.js?ver=7"></script>
+<script src="${rootPath}/static/js/search.js?ver=9"></script>
 <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
 <style>
 * {
@@ -47,39 +47,27 @@ html, body {
 		</c:when>
 
 		<c:when test="${BODY == 'MAIN_HOME'}">
-			<%@ include file="/WEB-INF/views/MKW/MKW_main.jspf"%>
+			<%@ include file="/WEB-INF/views/main.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'HALL_OF_FAME'}">
-			<%@ include file="/WEB-INF/views/MKW/halloffame.jspf"%>
+			<%@ include file="/WEB-INF/views/Ranking/halloffame.jspf"%>
 		</c:when>
-
+	
 		<c:when test="${BODY == 'INFO_HOME'}">
-			<%@ include file="/WEB-INF/views/KJM/infomain.jspf"%>
-		</c:when>
-
-		<c:when test="${BODY == 'NEWS_HOME'}">
-			<%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
+			<%@ include file="/WEB-INF/views/infomation/infomain.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'GOOGLE_HOME'}">
-			<%@ include file="/WEB-INF/views/MKW/googletrand.jspf"%>
+			<%@ include file="/WEB-INF/views/google/googletrand.jspf"%>
 		</c:when>
 
-		<c:when test="${BODY == 'NEWS_DETAIL'}">
-			<%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
-		</c:when>
-
-		<c:when test="${NEWS == 'NEWSMAIN'}">
-			<%@ include file="/WEB-INF/views/KJM/newsmain.jspf"%>
+		<c:when test="${BODY == 'NEWS_HOME'}">
+			<%@ include file="/WEB-INF/views/news/newsmain.jspf"%>
 		</c:when>
 
 		<c:when test="${BODY == 'NOTICE_HOME'}">
 			<%@ include file="/WEB-INF/views/Notice/main.jspf"%>
-		</c:when>
-
-		<c:when test="${BODY == 'GC_LIST'}">
-			<%@ include file="/WEB-INF/views/MKW/gcomment_list.jspf"%>
 		</c:when>
 
 	</c:choose>

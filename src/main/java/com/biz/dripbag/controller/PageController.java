@@ -7,32 +7,30 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.biz.dripbag.service.sub.PageService;
 import com.biz.dripbag.service.sub.SearchService;
 
-@RequestMapping(value="/{any}/search")
+@RequestMapping(value="/page")
 @Controller
-public class SearchController 
+public class PageController 
 {
-	@Qualifier("searchServiceV1")
+	@Qualifier("pageV1")
 	@Autowired
-	private SearchService sService;
+	private PageService pageService;
 		
 	@ResponseBody
-	@RequestMapping(value={"", "/"}, method = RequestMethod.GET)
-	public boolean search(@RequestParam Map<String, String> map, HttpServletRequest req)
-	{		
-		System.out.println(map.get("seq"));
-		if(sService.searchV2(map.get("table"), map.get("flag"), map.get("content"), map.get("seq")) == null)
-		{
-			sService.clear();
-			return false;
-		}
-
+	@RequestMapping(value= {"", "/"}, method = RequestMethod.GET)
+	public boolean page(Model model, @RequestParam Map<String, String> map)
+	{			
+		System.out.println("ddddd");
+		pageService.test("tbl_notice", map.get("seq"), map.get("max"), map.get("flag"), map.get("nextpage"));		
 		return true;
 	}
+	
 }
