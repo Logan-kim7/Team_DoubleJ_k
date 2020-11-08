@@ -22,7 +22,7 @@ import com.biz.dripbag.service.sub.SearchService;
 @RequestMapping(value = "/gtrand")
 @Controller
 public class GoogleListController {
-	
+
 	@Autowired
 	@Qualifier("gcServiceV1")
 	GoogleCommentService gcService;
@@ -54,7 +54,6 @@ public class GoogleListController {
 		model.addAttribute("BODY", "GOOGLE_HOME");
 		model.addAttribute("TITLE", gServ.getGoogleList().get(ret));
 		model.addAttribute("GC_LIST", gclist);
-
 		return "home";
 
 	}
@@ -67,7 +66,6 @@ public class GoogleListController {
 		return "redirect:/gtrand/" + ret + "/";
 	}
 	
-
 	@RequestMapping(value = "/thumbsup", method = RequestMethod.GET)
 	public String thumbsUp(@RequestParam("id") Long seq) {
 
@@ -77,7 +75,7 @@ public class GoogleListController {
 
 		gcService.hit(vo);
 
-		return "redirect:/gtrand/" + ret;
+		return "redirect:/gtrand/" + ret + "/";
 	}
 
 }

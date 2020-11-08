@@ -11,20 +11,19 @@ import com.biz.dripbag.service.NewsCommentService;
 import com.biz.dripbag.service.sub.DateService;
 
 import lombok.extern.slf4j.Slf4j;
+
 @Slf4j
 @Service("NewsCommentV1")
-public class NewsCommentV1 implements NewsCommentService 
-{
+public class NewsCommentV1 implements NewsCommentService {
 	@Autowired
 	private NewsCommentDAO newsCommentDAO;
-	
+
 	@Autowired
 	private DateService dateService;
-	
+
 	@Override
-	public List<NewsCommentVO> selectAll() 
-	{
-		
+	public List<NewsCommentVO> selectAll() {
+
 		return newsCommentDAO.selectAll();
 	}
 
@@ -41,8 +40,7 @@ public class NewsCommentV1 implements NewsCommentService
 	}
 
 	@Override
-	public int insert(NewsCommentVO vo) 
-	{
+	public int insert(NewsCommentVO vo) {
 		vo.setDates(dateService.dateTime()[0]);
 		vo.setTimes(dateService.dateTime()[1]);
 		int ret = newsCommentDAO.insert(vo);
@@ -63,12 +61,16 @@ public class NewsCommentV1 implements NewsCommentService
 
 	@Override
 	public List<NewsCommentVO> findBySelect(long PK) {
-		
+
 		System.out.println(newsCommentDAO.findBySelect(PK).toString());
-		
+
 		return newsCommentDAO.findBySelect(PK);
 	}
 
-	
+	@Override
+	public List<NewsCommentVO> selectTop() {
+		return newsCommentDAO.selectTop();
+
+	}
 
 }

@@ -13,7 +13,6 @@ import com.biz.dripbag.service.NewsCommentService;
 @RequestMapping(value = "/halloffame")
 @Controller
 public class RankingController {
-	
 	@Autowired
 	@Qualifier("gcServiceV1")
 	GoogleCommentService gService;
@@ -27,11 +26,10 @@ public class RankingController {
 
 		model.addAttribute("BODY", "HALL_OF_FAME");
 		model.addAttribute("GITEM", gService.selectTop());
-		model.addAttribute("NITEM", nService.selectAll());
+		model.addAttribute("NITEM", nService.selectTop());
 
 		return "home";
 
 	}
 
-	
 }

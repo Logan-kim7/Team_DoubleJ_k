@@ -6,19 +6,28 @@
 <mapper namespace="com.biz.dripbag.mapper.GoogleCommentDAO">
 
 	<select id="selectAll" resultType="GoogleCommentVO">
-		SELECT * FROM tbl_googleComment
+		SELECT * FROM
+		tbl_googleComment
 		ORDER BY seq DESC
 	</select>
 
 	<select id="selectTop" resultType="GoogleCommentVO">
-		SELECT * FROM tbl_googleComment
-		ORDER BY views DESC
+		SELECT * FROM
+		tbl_googleComment
+		ORDER BY likes DESC
 	</select>
-	
-		<select id="findBySelect" resultType="NewsCommentVO">
-		SELECT * FROM tbl_googleComment
-		WHERE seqj = #{seqj} 
-		ORDER BY seq DESC	
+
+	<select id="findBySelect" resultType="GoogleCommentVO">
+		SELECT * FROM
+		tbl_googleComment
+		WHERE seqj = #{seqj}
+	</select>
+
+	<select id="selectForForm" resultType="GoogleCommentVO">
+		SELECT * FROM
+		tbl_googleComent
+		WHERE seqJ = #{seqJ}
+		ORDER BY seq DESC
 	</select>
 
 	<select id="findById" resultType="GoogleCommentVO">
@@ -34,7 +43,9 @@
 		times,
 		writer,
 		title,
-		cont
+		cont,
+		likes,
+		views
 		) VALUES (
 		SEQ_GC.NEXTVAL,
 		#{seqj},
@@ -42,17 +53,22 @@
 		#{times},
 		#{writer},
 		#{title},
-		#{cont}
+		#{cont},
+		0,
+		0
 		)
 	</insert>
 
 	<update id="update">
 		UPDATE tbl_googleComment SET
-		title = #{title, jdbcType=VARCHAR},
-		cont  = #{cont,  jdbcType=VARCHAR},
-		dates = #{dates, jdbcType=VARCHAR},
+		title = #{title,
+		jdbcType=VARCHAR},
+		cont = #{cont, jdbcType=VARCHAR},
+		dates = #{dates,
+		jdbcType=VARCHAR},
 		times = #{times, jdbcType=VARCHAR}
-		WHERE seq = #{seq, jdbcType=VARCHAR}
+		WHERE seq = #{seq,
+		jdbcType=VARCHAR}
 	</update>
 
 	<delete id="delete">
@@ -60,7 +76,8 @@
 	</delete>
 
 	<update id="hit">
-		UPDATE tbl_googleComment SET views = views+1 WHERE seq = #{seq, jdbcType=VARCHAR}
+		UPDATE tbl_googleComment SET likes = likes+1 WHERE
+		seq = #{seq, jdbcType=VARCHAR}
 	</update>
 
 </mapper>

@@ -8,6 +8,10 @@ import com.biz.dripbag.model.NewsCommentVO;
 public interface GoogleCommentDAO extends GenericDAO<GoogleCommentVO, Long> {
 
 	public List<GoogleCommentVO> selectTop();
+
 	public List<NewsCommentVO> findBySelect(long PK);
+
+	public List<GoogleCommentVO> selectForForm(Long seqJ);
+
 	public int hit(GoogleCommentVO gcVO);
 }

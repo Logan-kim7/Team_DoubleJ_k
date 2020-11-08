@@ -8,6 +8,8 @@ public interface NewsCommentService extends GenericService<NewsCommentVO, Long> 
 
 	public List<NewsCommentVO> findBySelect(long PK);
 	
+	public List<NewsCommentVO> selectTop();
+	
 	
 	
 

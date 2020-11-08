@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,9 @@
 <script src="https://kit.fontawesome.com/cc60939e22.js"
 	crossorigin="anonymous"></script>
 <script src="${rootPath}/static/js/search.js?ver=9"></script>
-<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap"
+	rel="stylesheet">
 <style>
 * {
 	box-sizing: border-box;
@@ -53,7 +55,7 @@ html, body {
 		<c:when test="${BODY == 'HALL_OF_FAME'}">
 			<%@ include file="/WEB-INF/views/Ranking/halloffame.jspf"%>
 		</c:when>
-	
+
 		<c:when test="${BODY == 'INFO_HOME'}">
 			<%@ include file="/WEB-INF/views/infomation/infomain.jspf"%>
 		</c:when>
@@ -65,7 +67,7 @@ html, body {
 		<c:when test="${BODY == 'NEWS_HOME'}">
 			<%@ include file="/WEB-INF/views/news/newsmain.jspf"%>
 		</c:when>
-
+		
 		<c:when test="${BODY == 'NOTICE_HOME'}">
 			<%@ include file="/WEB-INF/views/Notice/main.jspf"%>
 		</c:when>
