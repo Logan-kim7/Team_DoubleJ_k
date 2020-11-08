@@ -10,20 +10,41 @@
 						         ROWNUM  <![CDATA[<= ]]>       #{max}
 						         <if test="search != null and !search.equals('')">					  
 									  AND 
-									  TITLE  LIKE '%'||#{search}||'%' OR 
-									  CONT   LIKE '%'||#{search}||'%' OR  
-									  WRITER LIKE '%'||#{search}||'%'
+									( 
+										TITLE  LIKE '%'||#{search}||'%' OR 
+									    CONT   LIKE '%'||#{search}||'%' OR  
+									  	WRITER LIKE '%'||#{search}||'%'
+									 )
 								 </if> 
 						   ORDER BY seq DESC
 	</select> 
+	
+	 	<select id="testj" resultType="SearchVO">		
+	select * from ${table} WHERE seq     <![CDATA[ ${flag} ]]> #{seq} AND 
+						         ROWNUM  <![CDATA[<= ]]>       #{max}
+						         <if test="search != null and !search.equals('')">					  
+									  AND 
+									( 
+										TITLE  LIKE '%'||#{search}||'%' OR 
+									    CONT   LIKE '%'||#{search}||'%' OR  
+									  	WRITER LIKE '%'||#{search}||'%'
+									 )
+								 </if> 
+						   ORDER BY seq DESC
+	</select> 
+	
+	
+	
 	
 	<select id="size" resultType="_int">
 		select count(*) from ${table}
 				         <if test="search != null and !search.equals('')">					  
 							  WHERE
+							  (
 							  TITLE  LIKE '%'||#{search}||'%' OR 
 							  CONT   LIKE '%'||#{search}||'%' OR  
 							  WRITER LIKE '%'||#{search}||'%'
+							  )
 						 </if> 
 				   ORDER BY seq DESC
 	</select>
@@ -33,9 +54,11 @@
 		select count(*) from ${table} WHERE seqj = #{seqj} 
 				         <if test="search != null and !search.equals('')">					  
 							  AND
+							  (
 							  TITLE  LIKE '%'||#{search}||'%' OR 
 							  CONT   LIKE '%'||#{search}||'%' OR  
 							  WRITER LIKE '%'||#{search}||'%'
+							  )
 						 </if> 
 				   ORDER BY seq DESC
 	</select>

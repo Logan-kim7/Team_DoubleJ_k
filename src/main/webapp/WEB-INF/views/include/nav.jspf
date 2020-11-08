@@ -24,6 +24,18 @@ document.addEventListener("DOMContentLoaded", function()
     			url 		: "${rootPath}/clear/search",
     			type 		: "GET"
     		});
+        	if(nav_button[i].value == "user/delete")
+        		{
+        			var text = prompt('본인 EMAIL 입력 하세요'); 
+        			if(text != "${member.email}" || text == null)
+        			{
+        				location.reload();
+        				return false;
+        			}
+        			else
+        				document.location.href = "${rootPath}/" + nav_button[i].value + "/";
+        		}
+        	
 			document.location.href = "${rootPath}/" + nav_button[i].value + "/"; 
         }
 	});
@@ -77,4 +89,5 @@ nav button:hover {
 	<button type="button" class="nav_button" value="info">사이트 소개</button>
 	<button type="button" class="nav_button" value="notice" id="test">공지사항</button>
 	<button type="button" class="nav_button" value="user/logout">로그아웃</button>
+	<button type="button" class="nav_button" value="user/delete">회원탈퇴</button>
 </nav>

@@ -6,12 +6,12 @@
 <mapper namespace="com.biz.dripbag.mapper.NewsCommentDAO">
 
 	<select id="selectAll" resultType="NewsCommentVO">
-		SELECT * FROM tbl_newsComent
+		SELECT * FROM tbl_newsComment
 		ORDER BY seq DESC
 	</select>
 
 	<select id="findBySelect" resultType="NewsCommentVO">
-		SELECT * FROM tbl_newsComent
+		SELECT * FROM tbl_newsComment
 		WHERE seqj = #{seqj} 
 		ORDER BY seq DESC
 	</select>
@@ -23,12 +23,12 @@
 	
 
 	<select id="findById" resultType="NewsCommentVO">
-		SELECT * FROM tbl_newsComent
+		SELECT * FROM tbl_newsComment
 		WHERE seq = #{seq}
 	</select>
 
 	<insert id="insert" parameterType="NewsCommentVO">
-		INSERT INTO tbl_newsComent (
+		INSERT INTO tbl_newsComment (
 		seq,
 		seqJ,
 		dates,
@@ -48,7 +48,7 @@
 	</insert>
 
 	<update id="update">
-		UPDATE tbl_newsComent SET
+		UPDATE tbl_newsComment SET
 		title = #{title, jdbcType=VARCHAR},
 		cont  = #{cont,  jdbcType=VARCHAR},
 		dates = #{dates, jdbcType=VARCHAR},
@@ -57,7 +57,7 @@
 	</update>
 
 	<delete id="delete">
-		DELETE tbl_newsComent WHERE seq = #{seq}
+		DELETE tbl_newsComment WHERE seq = #{seq}
 	</delete>
 
 	<update id="hit">

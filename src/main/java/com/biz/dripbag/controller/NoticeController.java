@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,15 +43,22 @@ public class NoticeController
 	@Qualifier("searchServiceV1")
 	private final SearchService searchService;
 	
+	@Autowired
 	@Qualifier("pageV1")
-	private final PageService pageService;
+	private PageService pageService;
 						
 	@RequestMapping(value={"/", ""}, method = RequestMethod.GET)
 	public String home(Model model)
 	{
 		List<?> list = pageService.getPage();
 		if(list == null)
+		{
+			System.out.println("페이지 검색 없음");
 			list = searchService.getSearch() != null ? searchService.getSearch() : noticeService.selectAll();
+		}
+			
+			else
+				System.out.println(list.toString());
 
 		model.addAttribute("LIST", list);
 		model.addAttribute("GOOGLE", cService.getGoogleList());
@@ -83,6 +91,14 @@ public class NoticeController
 	{
 		noticeService.insert(vo);
 		return "redirect:/notice/";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value= {"/page", "/page/"}, method = RequestMethod.GET)
+	public boolean page(Model model, @RequestParam Map<String, String> map)
+	{			
+		if(pageService.test("tbl_notice", map.get("seq"), map.get("max"), map.get("flag"), map.get("nextpage")) != null);		
+			return true;		
 	}
 	
 }

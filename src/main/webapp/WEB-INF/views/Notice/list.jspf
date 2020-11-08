@@ -3,7 +3,7 @@
 <%@ taglib prefix="func" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
-<link rel="stylesheet" href="${rootPath}/static/css/Notice/list.css?var=3">
+<link rel="stylesheet" href="${rootPath}/static/css/Notice/list.css?var=4">
 
 <script>
 document.addEventListener("DOMContentLoaded", function()
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function()
 <div id="notice_body">
 	<table>
 	<tr class="tr_notice_List_th">
-		<th>선택</th>
+
 		<th>NO</th>
 		<th>제목</th>
 		<th>작성자</th>
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function()
 	
 	<c:forEach items="${LIST}" var="list" varStatus="i" end="14">
 	<tr class="tr_notice_List" data-seq="${list.seq}">
-		<td data-asd="${list.seq}"><input type="checkbox" data-seq="${list.seq}" class="check_seq"></td>
+		
 		<td>${list.seq}</td>
 		<td>${list.title}</td>
 		<td>${list.writer}</td>
@@ -98,5 +98,5 @@ document.addEventListener("DOMContentLoaded", function()
 	</c:if>
 	
 	</table>
-	<%@ include file="/WEB-INF/views/Notice/pagiNation.jspf" %>
+	<%@ include file="/WEB-INF/views/include/pagiNation.jspf" %>
 </div>

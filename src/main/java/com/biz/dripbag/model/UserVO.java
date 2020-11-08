@@ -14,7 +14,7 @@ import lombok.ToString;
 
 public class UserVO 
 {
-	private String seq; 	   // NUMBER		PRIMARY KEY
+	private long seq; 	   // NUMBER		PRIMARY KEY
 	private String email;    // nVARCHAR2(100)	UNIQUE NOT NULL	
 	private String pwd; // nVARCHAR2(30)	NOT NULL	
 	private int    roll;	   	   // NUMBER	NOT NULL	

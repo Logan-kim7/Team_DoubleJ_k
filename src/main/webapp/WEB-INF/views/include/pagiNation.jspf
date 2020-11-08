@@ -39,7 +39,6 @@
 <script>
 document.addEventListener("DOMContentLoaded", function()
 {	
-
 	let pageSection = document.querySelector("#pageDiv");
 	let max = window.location.pathname.split("/");
 	let seq;
@@ -48,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function()
 	let flag;
 	let tr_class;
 		 if (max[2] == "notice") { max = 15;  check = ${TOTALPAGE}; tr_class=".tr_notice_List" }
-	else if (max[2] == "gtrand") { max = 10;  check = ${TOTALPAGE}; tr_class=".newsComment_list"}			
-	else if (max[2] == "news")   { max = 10;  check = ${TOTALPAGE}; tr_class=".gc_item"}		 
-	let size = Math.ceil(check / max);
+	else if (max[2] == "gtrand") { max = 10;  check = ${TOTALPAGE}; tr_class=".gc_item"}			
+	else if (max[2] == "news")   { max = 10;  check = ${TOTALPAGE}; tr_class=".newsComment_list"}		 
+	let size = Math.ceil(check / max); 
 	
 	if(size == 0)
 		size = 1;
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function()
 			{
 				flag = "<";
 				seq = $(tr_class).eq(0).data("seq") - ((click_page - ${CURPAGE}) * max);
-				seq = 1 ? 2 : 2;
+				if(seq == 1) seq = 2;
 			}
 			else
 			{
@@ -89,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function()
 			
 			$.ajax
 			 ({
-				url  : "${rootPath}/page/",
+				url  : document.location.href + "page",
 				type : "get",
 				data : { "seq"      : seq, 
 						 "nextpage" : click_page,

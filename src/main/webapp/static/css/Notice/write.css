@@ -30,6 +30,8 @@
 		top: 50%;
 		transform: translate(-50%, -50%);
 		
+		border: 7px solid white;
+		border-radius: 5px;
 	}
 	
 #toggle_div	form *{	

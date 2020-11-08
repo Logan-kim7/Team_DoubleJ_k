@@ -326,7 +326,7 @@ $(document).ready(function(){
 						<td>${NEWSDB.seq}</td>
 						<td>${NEWSDB.writer}</td>
 						<td>${NEWSDB.dates}</td>
-						<td>${NEWSDB.dates}</td>
+						<td>${NEWSDB.times}</td>
 						<td>${NEWSDB.title}</td>
 						<td>${NEWSDB.cont}</td>
 						<td>${NEWSDB.likes}</td>
@@ -336,7 +336,8 @@ $(document).ready(function(){
 
 			</table>
 
-		<%@ include file="/WEB-INF/views/Notice/pagiNation.jspf" %>
+		<%@ include file="/WEB-INF/views/include/pagiNation.jspf" %>
+		
 			<div class="search_box">
 				<div class="container">
 					<select class="search_select">

@@ -80,5 +80,13 @@ public class UserController
 		sService.locationJump(res, null, "로그아웃 성공");
 	}
 	
+	@RequestMapping(value= {"/delete", "/delete/"}, method = RequestMethod.GET)
+	public String delete(HttpServletRequest req, HttpServletResponse res) throws IOException
+	{
+		UserVO vo = (UserVO)req.getSession().getAttribute("member");
+		sService.sessionRegistration(req, null, null);
+		uService.delete(Long.valueOf(vo.getSeq()));
+		return "redirect:/";
+	}
 	
 }

@@ -3,7 +3,7 @@
 <c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
 
 <link rel="stylesheet" href="${rootPath}/static/css/Notice/main.css?ver=1">
-<link rel="stylesheet" href="${rootPath}/static/css/Notice/write.css?ver=1">
+
 <script>
 document.addEventListener("DOMContentLoaded", function()
 {		

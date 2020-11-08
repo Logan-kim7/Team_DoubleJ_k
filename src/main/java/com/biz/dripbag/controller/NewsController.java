@@ -2,6 +2,7 @@ package com.biz.dripbag.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.biz.dripbag.crawling.CrwalingData;
 import com.biz.dripbag.model.NewsCommentVO;
@@ -68,8 +71,15 @@ public class NewsController {
         return "redirect:/news/" + ret + "/";
     }
     
-    
-   
+  
+	@ResponseBody
+	@RequestMapping(value= {"/{any}/page", "/{any}/page/"}, method = RequestMethod.GET)
+	public boolean page(Model model, @RequestParam Map<String, String> map)
+	{			
+
+		if(pageService.testj("tbl_NewsComment", map.get("seq"), map.get("max"), map.get("flag"), map.get("nextpage")) != null);		
+			return true;		
+	}
     
     
 
