@@ -29,14 +29,17 @@ public class GoogleListController {
 	CrwalingData gServ;
 	
 	private int ret;
+	private Long seqJ;
 
 	@RequestMapping(value = "/{seq}", method = RequestMethod.GET)
 	public String home(Model model, @PathVariable("seq") String seq) throws IOException {
 		ret = Integer.valueOf(seq);
 		model.addAttribute("BODY", "GOOGLE_HOME");
 		model.addAttribute("TITLE", gServ.getGoogleList().get(ret));
+		
+		Long seqJ = Long.valueOf(gServ.getGoogleList().get(0).getSeq());
 
-		List<GoogleCommentVO> gcList = gcService.selectTop();
+		List<GoogleCommentVO> gcList = gcService.selectForForm(seqJ);
 
 		model.addAttribute("GC_LIST", gcList);
 
@@ -50,7 +53,7 @@ public class GoogleListController {
 		gcVO.setSeqj(gServ.getGoogleList().get(0).getSeq());
 		gcService.insert(gcVO);
 
-		return "redirect:/gclist/";
+		return "redirect:/gtrand/" + ret;
 	}
 
 	@RequestMapping(value = "/thumbsup", method = RequestMethod.GET)

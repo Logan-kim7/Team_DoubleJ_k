@@ -24,6 +24,12 @@ public class GoogleCommentServicelV1 implements GoogleCommentService {
 	}
 
 	@Override
+	public List<GoogleCommentVO> selectForForm(Long seqJ) {
+		List<GoogleCommentVO> gcList = gcDao.selectForForm(seqJ);
+		return gcList;
+	}
+
+	@Override
 	public GoogleCommentVO findById(Long id) {
 
 		GoogleCommentVO gcVO = gcDao.findById(id);
@@ -71,7 +77,7 @@ public class GoogleCommentServicelV1 implements GoogleCommentService {
 		List<GoogleCommentVO> gcList = gcDao.selectTop();
 		return gcList;
 	}
-	
+
 	@Override
 	public int hit(GoogleCommentVO gcVO) {
 		return gcDao.hit(gcVO);
