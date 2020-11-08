@@ -15,19 +15,15 @@ document.addEventListener("DOMContentLoaded", function()
 			$(".notice_nav_btn").eq(1).click(function() {  $("#toggle_div").fadeToggle("slow");  });
 			$(".notice_nav_btn").eq(2).click(function() { $("#notice_nav > ul li").toggle(); });
 		}
-	
-	//=====================================================
-	$(".notice_title").click(function() {
-		document.location.href = "${rootPath}/notice/detail/" + $(this).data("seq");
-	});
+
 	//=====================================================
 		$("#notice_nav > ul li").click(function()
 		{
 			 if($(this).attr("id") == 'gli') 
-				document.location.href = "${rootPath}/gtrand/" + $(this).val();
+				document.location.href = "${rootPath}/gtrand/" + $(this).val() + "/";
 				
 			else
-				document.location.href = "${rootPath}/news/" + $(this).val();
+				document.location.href = "${rootPath}/news/" + $(this).val() + "/";
 		});
 	//=====================================================			
 });

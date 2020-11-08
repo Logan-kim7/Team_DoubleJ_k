@@ -10,64 +10,59 @@ document.addEventListener("DOMContentLoaded", function()
 {	
 	document.getElementById("pagesec").style.display = "flex";
 	document.getElementById("pagesec").style.justifyContent = "center";
-	
-	const delete_button = document.querySelector(".tr_notice_List");
-	const dSelect = document.querySelectorAll(".check_seq");
- 	const tr_list = document.querySelectorAll(".tr_notice_List");
+	let delete_seq = document.querySelectorAll(".is_seq")
+	let tr_list = document.querySelectorAll(".tr_notice_List");
 	let seq_list = [];
 	
-	if(${member.roll == 1})
-		$(".tr_notice_List").children().eq(0).css("display", "block");
-	else
-		$(".tr_notice_List").children().eq(0).css("display", "none");
+
+	//=====================================================
+	$(".tr_notice_List").click(function() 
+	{
+			if($(this).data("seq") == "undefined" || $(this).data("seq") == undefined)
+  		  		return;
 		
-	dSelect.forEach(function(e)
-	{  e.onclick = function(e) { e.stopPropagation(); } });
-
-    tr_list.forEach(function(e)
-    { 
-      e.onclick = function() 
-      {  
-    	  if(e.dataset.seq == "undefined" || e.dataset.seq == undefined)
-    		  return;
-    	  
-    	  document.location.href = "${rootPath}/notice/detail/" + e.dataset.seq;  
-      }
-  	 });
-	/* delete_button.onclick = function()
-	{		
-		delete_seq.forEach(function(delete_seq, index)
-		{
-			if(delete_seq.checked == true)
-				seq_list[index] = delete_seq.dataset.seq;
-		});
-				
-		$.ajax
-		({			
-			type : "POST",
-			url  : "${rootPath}/api/send/delete",
-			data : {"delete_seq" : seq_list},
-			traditional : true, 
-			success : function(data)
-			{
-				alert("삭제 완료");
-				window.location.reload();
-			},
-			error : function(error)
-			{
-				alert("체크박스는 한개이상 선택 해주세요");
-			}
-		}); 
-	}; */
-
+			document.location.href = "${rootPath}/notice/detail/" + $(this).data("seq");
+	});
+	//=====================================================
+	delete_seq.forEach(function(e) {  e.onclick = function(e) { e.stopPropagation(); } });
 	
+	if(${member.roll == 1})
+	{
+		$(".notice_nav_btn").eq(0).click(function()
+		{
+				delete_seq.forEach(function(delete_seq, index)
+				{
+					if(delete_seq.checked == true)
+						seq_list[index] = delete_seq.dataset.seq;
+				});
+				
+				 $.ajax
+					({			
+						type : "POST",
+						url  : "${rootPath}/notice/deletes/",
+						data : {"delete_seq" : seq_list},
+						traditional : true, 
+						success : function(data)
+						{
+							alert("삭제 완료");
+							window.location.reload();
+						},
+						error : function(error)
+						{
+							alert("체크박스는 한개이상 선택 해주세요");
+							window.location.reload();
+						}
+					});
+			});
+	}
+	//=====================================================
 });
 </script>
 
 <div id="notice_body">
 	<table>
 	<tr class="tr_notice_List_th">
-
+		<c:if test="${member.roll == 1}"><th>선택</th></c:if>
 		<th>NO</th>
 		<th>제목</th>
 		<th>작성자</th>
@@ -77,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function()
 	
 	<c:forEach items="${LIST}" var="list" varStatus="i" end="14">
 	<tr class="tr_notice_List" data-seq="${list.seq}">
-		
+		<c:if test="${member.roll == 1}"><td data-asd="${list.seq}"><input type="checkbox" data-seq="${list.seq}" class="is_seq"></td></c:if>
 		<td>${list.seq}</td>
 		<td>${list.title}</td>
 		<td>${list.writer}</td>

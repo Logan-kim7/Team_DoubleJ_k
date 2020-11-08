@@ -8,7 +8,7 @@
 	<form method="post" action="${rootPath}/notice/write">
 		<input name="writer" value="${member.email}" style="display: none;">
 		<input name="title" placeholder="제목">
-		<textarea name="cont"></textarea>
+		<textarea name="cont" style="resize:none;"></textarea>
 		<button type="submit">등록</button>
 		<button type="button">취소</button>
 	</form>

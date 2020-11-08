@@ -94,6 +94,16 @@ public class NoticeController
 	}
 	
 	@ResponseBody
+	@RequestMapping(value="/deletes", method=RequestMethod.POST)
+	public String deletes(@RequestParam String delete_seq[])
+	{
+
+		noticeService.deletes(delete_seq);
+		return "redirect:/notice/";
+	}
+	
+	
+	@ResponseBody
 	@RequestMapping(value= {"/page", "/page/"}, method = RequestMethod.GET)
 	public boolean page(Model model, @RequestParam Map<String, String> map)
 	{			

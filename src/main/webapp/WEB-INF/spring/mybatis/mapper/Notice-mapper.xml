@@ -30,6 +30,12 @@
 		
 	</delete>
 	
+	<delete id="deletes">
+		DELETE tbl_notice WHERE seq IN  
+		<foreach collection="array" item="seq" index="index" separator="," open="(" close=")">
+		#{seq}
+		</foreach>
+	</delete>
 	
 
 	

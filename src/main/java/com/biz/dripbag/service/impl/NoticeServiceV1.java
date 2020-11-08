@@ -64,4 +64,10 @@ public class NoticeServiceV1 implements NoticeService
 		long hit = noticeDAO.hit(pk);
 		return false;
 	}
+
+	@Override
+	public int deletes(String[] pk)
+	{	
+		return noticeDAO.deletes(pk);	
+	}
 }
