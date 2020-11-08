@@ -27,12 +27,14 @@ public class GoogleListController {
 
 	@Autowired
 	CrwalingData gServ;
+	
+	private int ret;
 
 	@RequestMapping(value = "/{seq}", method = RequestMethod.GET)
 	public String home(Model model, @PathVariable("seq") String seq) throws IOException {
-		int intSeq = Integer.valueOf(seq);
+		ret = Integer.valueOf(seq);
 		model.addAttribute("BODY", "GOOGLE_HOME");
-		model.addAttribute("TITLE", gServ.getGoogleList().get(intSeq));
+		model.addAttribute("TITLE", gServ.getGoogleList().get(ret));
 
 		List<GoogleCommentVO> gcList = gcService.selectTop();
 
@@ -60,7 +62,7 @@ public class GoogleListController {
 
 		gcService.hit(vo);
 
-		return "redirect:/main/";
+		return "redirect:/gtrand/" + ret;
 	}
 
 }
