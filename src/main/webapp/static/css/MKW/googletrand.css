@@ -8,7 +8,7 @@
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	width: 100%;
-	height: 120%;
+	height: auto;
 }
 
 #headline {
@@ -59,8 +59,12 @@
 	padding: 8px;
 }
 
-#hot_guys tr{
+#hot_guys tr {
 	background-color: white;
+}
+
+#hot_guys tr:hover {
+	background-color: #ddd;
 }
 
 #hot_guys th {

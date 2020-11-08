@@ -4,7 +4,7 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
 <link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/googletrand.css?ver=30" />
+	href="${rootPath}/static/css/MKW/googletrand.css?ver=32" />
 
 <section id="trand-bg">
 	<div id="headline">
@@ -50,46 +50,61 @@
 
 		<div id="bord_list">
 
-			<a href="${rootPath}/gclist/">
-				<table id="hot_guys">
-					<caption>현재 TOP10</caption>
-					<thead>
+			<table id="hot_guys">
+				<caption>현재 TOP10</caption>
+				<thead>
+					<tr>
+						<th>작성자</th>
+						<th>4자성어</th>
+						<th>4자성어 설명</th>
+						<th>점수</th>
+						<th>작성일</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<c:if test="${empty GC_LIST}">
 						<tr>
-							<th>작성자</th>
-							<th>4자성어</th>
-							<th>4자성어 설명</th>
-							<th>점수</th>
-							<th>작성일</th>
+							<td colspan="5">게시글이 없지롱</td>
 						</tr>
-					</thead>
+					</c:if>
 
-					<tbody>
-						<c:if test="${empty GC_LIST}">
-							<tr>
-								<td colspan="5">게시글이 없지롱</td>
-							</tr>
-						</c:if>
+					<c:forEach items="${GC_LIST}" var="gc" end="9">
+						<tr class="gc_item" data-id="${gc.seq}">
+							<td>${gc.writer}</td>
+							<td>${gc.title}</td>
+							<td>${gc.cont}</td>
+							<td>${gc.likes}</td>
+							<td>${gc.dates}</td>
+						</tr>
+					</c:forEach>
 
-						<c:forEach items="${GC_LIST}" var="gc" end="9">
-							<tr>
-								<td>${gc.writer}</td>
-								<td>${gc.title}</td>
-								<td>${gc.cont}</td>
-								<td>${gc.views}</td>
-								<td>${gc.dates}</td>
-							</tr>
-						</c:forEach>
+				</tbody>
 
-					</tbody>
-
-				</table>
-			</a>
+			</table>
 
 		</div>
 	</div>
 </section>
 
 <script>
+	document.addEventListener("DOMContentLoaded", function() {
+
+		let all_item = document.querySelectorAll(".gc_item");
+		all_item.forEach(function(item_data) {
+			item_data.addEventListener("click", function() {
+				if (confirm("이 사자성어를 추천하시겠습니까?")) {
+					let seq = item_data.getAttribute("data-id");
+					document.location.href = `${rootPath}/gtrand/thumbsup?id=`
+							+ seq;
+				} else {
+					alert("흥 칫 뿡!");
+				}
+			})
+		})
+
+	});
+
 	$("#throwit").click(function() {
 
 		if (confirm("작성을 그만둘까요? ><")) {
@@ -108,7 +123,14 @@
 						let jujerriy = document.getElementById("explain");
 
 						if (title.value == "pinkpink") {
+							alert("★요★정★출★현★")
 							document.location.href = "https://www.youtube.com/watch?v=htEVWnYSWS4";
+						} else if (title.value == "심영") {
+							alert("대한민국에서 가장 밈적인 존재를 소환합니다 ><")
+							document.location.href = "https://www.youtube.com/watch?v=D3s1bXK16f0";
+						} else if (title.value == "JtoJ") {
+							alert("이 사이트 제작자의 정신나간 블로그를 소개합니다 ><")
+							document.location.href = "https://blog.naver.com/moonlf2000";
 						}
 
 						function adding() {

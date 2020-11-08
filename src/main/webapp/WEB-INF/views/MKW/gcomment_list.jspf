@@ -164,7 +164,7 @@
 					document.location.href = `${rootPath}/gclist/thumbsup?id=`
 							+ seq;
 				} else {
-					alert("흥 칫 뿡!")
+					alert("흥 칫 뿡!");
 				}
 			});
 		});

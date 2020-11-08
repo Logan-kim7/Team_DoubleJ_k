@@ -53,6 +53,13 @@
 				</tr>
 			</thead>
 			<tbody>
+
+				<c:if test="${empty GITEM}">
+					<tr>
+						<td colspan="6">작성된 게시글이 없지롱</td>
+					</tr>
+				</c:if>
+
 				<c:forEach items="${GITEM}" var="google" end="4" varStatus="i">
 					<tr>
 						<td>${i.count}위</td>
@@ -79,6 +86,13 @@
 				</tr>
 			</thead>
 			<tbody>
+
+				<c:if test="${empty NITEM}">
+					<tr>
+						<td colspan="6">작성된 게시글이 없지롱</td>
+					</tr>
+				</c:if>
+
 				<c:forEach items="${NITEM}" var="news" end="4" varStatus="i">
 					<tr>
 						<td>${i.count}+1</td>

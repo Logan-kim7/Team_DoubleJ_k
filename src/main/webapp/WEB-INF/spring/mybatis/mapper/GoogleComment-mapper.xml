@@ -12,7 +12,7 @@
 
 	<select id="selectTop" resultType="GoogleCommentVO">
 		SELECT * FROM tbl_googleComent
-		ORDER BY views DESC
+		ORDER BY likes DESC
 	</select>
 
 	<select id="findById" resultType="GoogleCommentVO">
