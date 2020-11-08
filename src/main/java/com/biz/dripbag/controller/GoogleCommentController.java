@@ -26,11 +26,9 @@ public class GoogleCommentController {
 	public String gComentList(Model model) {
 
 		List<GoogleCommentVO> gcList = gcService.selectAll();
-		List<GoogleCommentVO> gctList = gcService.selectTop();
 
 		model.addAttribute("BODY", "GC_LIST");
 		model.addAttribute("GC_LIST", gcList);
-		model.addAttribute("GCT_LIST", gctList);
 
 		return "home";
 	}
