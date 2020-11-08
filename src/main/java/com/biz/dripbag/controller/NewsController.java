@@ -26,61 +26,69 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "/news")
 @Controller
 public class NewsController {
-    
+
 	@Autowired
 	@Qualifier("searchServiceV1")
 	private SearchService searchService;
-	
-    @Autowired
-    private CrwalingData nServ;
-            
-    @Autowired
-    private NewsCommentService newsComentService;
-    
+
+	@Autowired
+	private CrwalingData nServ;
+
+	@Autowired
+	private NewsCommentService newsComentService;
+
 	@Autowired
 	@Qualifier("pageV1")
 	private PageService pageService;
-    
-    private int ret;
-    
-    @RequestMapping(value = "/{n_index}/", method =  RequestMethod.GET)
-    public String news(Model model, @PathVariable("n_index") String n_index) throws IOException {
-        
-        ret =  Integer.valueOf(n_index);
-        long longRet = nServ.getNewsList().get(ret).getSeq();
-        
+
+	private int ret;
+
+	@RequestMapping(value = "/{n_index}/", method = RequestMethod.GET)
+	public String news(Model model, @PathVariable("n_index") String n_index) throws IOException {
+
+		ret = Integer.valueOf(n_index);
+		long longRet = nServ.getNewsList().get(ret).getSeq();
+
 		List<?> list = pageService.getPage();
-		if(list == null)
-			list = searchService.getSearch() != null ? searchService.getSearch() : newsComentService.findBySelect(longRet);
-	
-        model.addAttribute("BODY","NEWS_HOME");
-        model.addAttribute("NEWS", "NEWSMAIN");
-        model.addAttribute("NEWSLIST", list);
-        model.addAttribute("NEWSDATA",nServ.getNewsList().get(ret));
-    	model.addAttribute("CURPAGE", pageService.curPage());
+		if (list == null)
+			list = searchService.getSearch() != null ? searchService.getSearch()
+					: newsComentService.findBySelect(longRet);
+
+		model.addAttribute("BODY", "NEWS_HOME");
+		model.addAttribute("NEWS", "NEWSMAIN");
+		model.addAttribute("NEWSLIST", list);
+		model.addAttribute("NEWSDATA", nServ.getNewsList().get(ret));
+		model.addAttribute("CURPAGE", pageService.curPage());
 		model.addAttribute("TOTALPAGE", pageService.allSize("tbl_NewsComment", longRet));
 
-        return "home";
-    }
-    
-    @RequestMapping(value = {"/write", "/write/"}, method =  RequestMethod.POST)
-    public String write(NewsCommentVO vo)  
-    {
-    	searchService.clear();
-    	newsComentService.insert(vo);
-        return "redirect:/news/" + ret + "/";
-    }
-    
-  
-	@ResponseBody
-	@RequestMapping(value= {"/{any}/page", "/{any}/page/"}, method = RequestMethod.GET)
-	public boolean page(Model model, @RequestParam Map<String, String> map)
-	{			
-
-		if(pageService.testj("tbl_NewsComment", map.get("seq"), map.get("max"), map.get("flag"), map.get("nextpage")) != null);		
-			return true;		
+		return "home";
 	}
-    
-    
+
+	@RequestMapping(value = { "/write", "/write/" }, method = RequestMethod.POST)
+	public String write(NewsCommentVO vo) {
+		searchService.clear();
+		newsComentService.insert(vo);
+		return "redirect:/news/" + ret + "/";
+	}
+
+	@ResponseBody
+	@RequestMapping(value = { "/{any}/page", "/{any}/page/" }, method = RequestMethod.GET)
+	public boolean page(Model model, @RequestParam Map<String, String> map) {
+
+		if (pageService.testj("tbl_NewsComment", map.get("seq"), map.get("max"), map.get("flag"),
+				map.get("nextpage")) != null)
+			;
+		return true;
+	}
+
+	@RequestMapping(value = "/thumbsup")
+	public String thumbsUp(@RequestParam("id") Long seq) {
+
+		NewsCommentVO vo = newsComentService.findById(seq);
+
+		newsComentService.hit(vo);
+
+		return "redirect:/news/" + ret + "/";
+	}
 
 }

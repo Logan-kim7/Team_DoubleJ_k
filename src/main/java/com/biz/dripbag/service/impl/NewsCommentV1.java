@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.biz.dripbag.mapper.NewsCommentDAO;
+import com.biz.dripbag.model.GoogleCommentVO;
 import com.biz.dripbag.model.NewsCommentVO;
 import com.biz.dripbag.service.NewsCommentService;
 import com.biz.dripbag.service.sub.DateService;
@@ -71,6 +72,11 @@ public class NewsCommentV1 implements NewsCommentService {
 	public List<NewsCommentVO> selectTop() {
 		return newsCommentDAO.selectTop();
 
+	}
+
+	@Override
+	public int hit(NewsCommentVO vo) {
+		return newsCommentDAO.hit(vo);
 	}
 
 }
