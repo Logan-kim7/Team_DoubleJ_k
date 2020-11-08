@@ -21,6 +21,12 @@
 		SELECT * FROM
 		tbl_googleComment
 		WHERE seqj = #{seqj}
+	</select>
+
+	<select id="selectForForm" resultType="GoogleCommentVO">
+		SELECT * FROM
+		tbl_googleComent
+		WHERE seqJ = #{seqJ}
 		ORDER BY seq DESC
 	</select>
 
@@ -38,8 +44,8 @@
 		writer,
 		title,
 		cont,
-		views,
-		likes
+		likes,
+		views
 		) VALUES (
 		SEQ_GC.NEXTVAL,
 		#{seqj},

@@ -9,5 +9,8 @@ public interface GoogleCommentService extends GenericService<GoogleCommentVO, Lo
 
 	public List<GoogleCommentVO> selectTop();
 	public List<NewsCommentVO> findBySelect(long PK);
+	
+	public List<GoogleCommentVO> selectForForm(Long seqJ);
+
 	int hit(GoogleCommentVO gcVO);
 }

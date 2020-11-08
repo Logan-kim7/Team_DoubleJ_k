@@ -13,7 +13,6 @@ import com.biz.dripbag.service.NewsCommentService;
 @RequestMapping(value = "/halloffame")
 @Controller
 public class RankingController {
-	
 	@Autowired
 	@Qualifier("gcServiceV1")
 	GoogleCommentService gService;
@@ -33,5 +32,4 @@ public class RankingController {
 
 	}
 
-	
 }

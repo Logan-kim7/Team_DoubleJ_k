@@ -168,7 +168,6 @@ a {
 }
 
 ol {
-	font-size: 20px;
 	margin: 20px 0px;
 	list-style: none;
 }
@@ -177,6 +176,7 @@ li {
 	margin-bottom: 40px;
 	color: black;
 	font-weight: bolder;
+	font-size: 25px;
 }
 
 li :hover {

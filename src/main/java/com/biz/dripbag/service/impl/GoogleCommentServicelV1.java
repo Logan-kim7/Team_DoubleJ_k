@@ -23,11 +23,16 @@ public class GoogleCommentServicelV1 implements GoogleCommentService {
 		List<GoogleCommentVO> gcList = gcDao.selectAll();
 		return gcList;
 	}
-	
-	public List<NewsCommentVO> findBySelect(long PK)
-	{
+
+	public List<NewsCommentVO> findBySelect(long PK) {
 		System.out.println(gcDao.findBySelect(PK));
 		return gcDao.findBySelect(PK);
+	}
+
+	@Override
+	public List<GoogleCommentVO> selectForForm(Long seqJ) {
+		List<GoogleCommentVO> gcList = gcDao.selectForForm(seqJ);
+		return gcList;
 	}
 
 	@Override
@@ -77,7 +82,7 @@ public class GoogleCommentServicelV1 implements GoogleCommentService {
 		List<GoogleCommentVO> gcList = gcDao.selectTop();
 		return gcList;
 	}
-	
+
 	@Override
 	public int hit(GoogleCommentVO gcVO) {
 		return gcDao.hit(gcVO);

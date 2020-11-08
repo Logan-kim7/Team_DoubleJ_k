@@ -1,0 +1,173 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+<style>
+#gcl_section {
+	height: 100%;
+	text-align: center;
+}
+
+#gcl_section div {
+	display: inline-block;
+	width: 80%;
+	height: auto;
+	text-align: center;
+	width: 80%;
+	height: auto;
+	height: auto;
+	margin-top: 50px;
+}
+
+#gcl_table {
+	border-collapse: collapse;
+	width: 100%;
+	border: 3px solid crimson;
+}
+
+#gcl_table thead {
+	border-bottom: 3px solid crimson;
+}
+
+#gcl_table thead th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: gray;
+}
+
+#gcl_table td {
+	border: 2px dashed #ddd;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#gcl_table tbody tr {
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+#gcl_table tbody tr:hover {
+	background-color: #ddd;
+}
+
+#button_box {
+	text-align: right;
+}
+
+.btn_glist {
+	background-color: black;
+	color: white;
+	border: none;
+	outline: none;
+	padding: 13px;
+	border-radius: 7px;
+	font-size: 15px;
+	font-weight: bolder;
+	transition: all 0.7s;
+}
+
+#to_list:hover {
+	background-color: cornflowerblue;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3)
+}
+
+#pagination {
+	padding-top: 10px;
+	text-align: center;
+}
+
+#pagesec {
+	display: inline-block;
+	width: auto;
+}
+
+#pagination a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+#pagination a.active {
+	background-color: gray;
+	color: white;
+	border-radius: 5px;
+}
+
+#pagination a:hover:not(.active) {
+	background-color: darkgray;
+	border-radius: 5px;
+}
+</style>
+
+<section id="gcl_section">
+	<div>
+		<table id="gcl_table">
+			<thead>
+				<tr>
+					<th>작성자</th>
+					<th>4자성어</th>
+					<th>설명</th>
+					<th>점수</th>
+					<th>작성일</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:if test="${empty GC_LIST}">
+					<tr>
+						<td colspan="6">게시글이 없지롱</td>
+					</tr>
+				</c:if>
+
+				<c:forEach items="${GC_LIST}" var="gc" end="19">
+					<tr class="gc_item" data-id="${gc.seq}">
+						<td>${gc.writer}</td>
+						<td>${gc.title}</td>
+						<td>${gc.cont}</td>
+						<td>${gc.likes}</td>
+						<td>${gc.dates}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+
+	<div id="pagination">
+		<section id="pagesec">
+			<a href="#">&laquo;</a> <a href="#" class="active">1</a> <a href="#">2</a>
+			<a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a>
+			<a href="#">&raquo;</a>
+		</section>
+	</div>
+
+	<div id="button_box">
+		<button class="btn_glist" id="to_list" type="button">홈으로</button>
+	</div>
+
+</section>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+
+		function goHome() {
+			document.location.href = "${rootPath}/main/"
+		}
+
+		let goButton = document.getElementById("to_list");
+		goButton.addEventListener("click", goHome);
+
+		let all_item = document.querySelectorAll(".gc_item");
+		all_item.forEach(function(item_data) {
+			item_data.addEventListener("click", function() {
+				if (confirm("이 사자성어를 추천하시겠습니까?")) {
+					let seq = item_data.getAttribute("data-id");
+					document.location.href = `${rootPath}/gclist/thumbsup?id=`
+							+ seq;
+				} else {
+					alert("흥 칫 뿡!");
+				}
+			});
+		});
+
+	});
+</script>
