@@ -7,40 +7,9 @@
 	text-align: center;
 	height: 100%;
 	background-repeat: no-repeat;
-	background-size: 100% 100%; 
+	background-size: 100% 100%;
 }
 
-#fametable {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-#fametable td, #customers th {
-	border: 1px solid #ddd;
-	padding: 8px;
-}
-
-#fametable tr:nth-child(odd) {
-	background-color: rgba(255,255,255,0.2);
-}
-
-#fametable tr {
-	transition:all 0.7s;
-}
-
-#fametable tr:hover {
-	background-color: #ddd;
-}
-
-#fametable th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: center;
-	background-color: gray;
-	color: white;
-	border: 2px dashed white;
-}
 
 .pagination {
 	display: inline-block;
@@ -69,21 +38,12 @@ input {
 	width: 100%;
 }
 
-.famelist {
+#famelist {
 	display: inline-block;
 	text-align: center;
 	width: 70%;
 	height: 100% auto;
 	padding: 3% 0 10% 0;
-}
-
-.famelist h2 {
-	font-size: 30px;
-	padding: 20px 0px;
-}
-
-.famelist tr {
-	height: 40px;
 }
 
 #serch {

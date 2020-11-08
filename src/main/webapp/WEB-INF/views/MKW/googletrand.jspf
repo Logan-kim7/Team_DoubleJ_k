@@ -4,7 +4,7 @@
 <c:set var="rootPath" value='${pageContext.request.contextPath}' />
 
 <link rel="stylesheet"
-	href="${rootPath}/static/css/MKW/googletrand.css?ver=18" />
+	href="${rootPath}/static/css/MKW/googletrand.css?ver=30" />
 
 <section id="trand-bg">
 	<div id="headline">
@@ -17,13 +17,21 @@
 	<form id="gtinputbox" method="POST" action="${rootPath}/gtrand/save">
 		<div id="user_write">
 			<fieldset id="writeset">
-				<legend id="writelegend">내가 작성하기</legend>
+				<legend id="writelegend">작성하기</legend>
 
-				<label>작성자</label> 
-				<input type="hidden" name="seqj" value="${TITLE.seq}"> 
-				<input type="hidden" id="writer" name="writer" value="${member.email}" placeholder="작성자" /> <label>4자성어를 입력하세요</label> 
-				<input type="text" id="title" name="title" placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" /> <label>4자성어 설명을 입력하세요</label> 
-				<input type="text" id="explain" name="cont" placeholder="12글자까지만 입력가능!!!" />
+				<input type="hidden" name="seqj" value="${TITLE.seq}"> <input
+					type="hidden" id="writer" name="writer" value="${member.email}"
+					placeholder="작성자" />
+
+				<div class="inive">
+					<label>4자성어를 입력하세요</label> <input type="text" id="title"
+						name="title" placeholder="적게도 말고 많게도 말게 4글자만 입력가능!!!" />
+				</div>
+
+				<div class="inive">
+					<label>4자성어 설명을 입력하세요</label> <input type="text" id="explain"
+						name="cont" placeholder="12글자까지만 입력가능!!!" />
+				</div>
 			</fieldset>
 		</div>
 
@@ -40,16 +48,16 @@
 
 	<div id="user_bord">
 
-		<div class="cmlist">
+		<div id="bord_list">
 
 			<a href="${rootPath}/gclist/">
-				<table id="listcustomers">
+				<table id="hot_guys">
 					<caption>현재 TOP10</caption>
 					<thead>
 						<tr>
 							<th>작성자</th>
 							<th>4자성어</th>
-							<th>설명</th>
+							<th>4자성어 설명</th>
 							<th>점수</th>
 							<th>작성일</th>
 						</tr>
@@ -92,37 +100,41 @@
 		}
 	})
 
-	$("#addit").click(function() {
+	$("#addit")
+			.click(
+					function() {
 
-		let title = document.getElementById("gc_title");
-		let jujerriy = document.getElementById("gc_explain");
+						let title = document.getElementById("title");
+						let jujerriy = document.getElementById("explain");
 
-		function adding() {
-			if(title.value == "gay"){
-				document.location.href = "https://www.youtube.com/watch?v=htEVWnYSWS4";
-			}
-			
-			if (confirm("확실합니까? 추가할까요? 잘못 올려도 바꿔줄 생각 없어요")) {
-				alert("서버에 추가됩니... 이게 뭐야!!  ><");
-				let mainform = document.getElementById("gtinputbox");
-				mainform.submit();
-			} else {
-				alert("다행이다...")
-			}
-		}
+						if (title.value == "pinkpink") {
+							document.location.href = "https://www.youtube.com/watch?v=htEVWnYSWS4";
+						}
 
-		function fourdollar() {
-			if (title.value.length != 4) {
-				alert("사☆자☆성☆어 이므로 적게도 말고 많게도 않게 4글자만!!! ><")
-				title.focus();
-			} else if (jujerriy.value.length > 12) {
-				alert("설명은 12자를 넘어가면 안되는데... ><");
-				jujerriy.focus();
-			} else {
-				adding();
-			}
-		}
-		
-		fourdollar();
-	})
+						function adding() {
+
+							if (confirm("확실합니까? 추가할까요? 잘못 올려도 바꿔줄 생각 없어요")) {
+								alert("서버에 추가됩니... 이게 뭐야!!  ><");
+								let mainform = document
+										.getElementById("gtinputbox");
+								mainform.submit();
+							} else {
+								alert("다행이다...")
+							}
+						}
+
+						function fourdollar() {
+							if (title.value.length != 4) {
+								alert("사☆자☆성☆어 이므로 적게도 말고 많게도 않게 4글자만!!! ><")
+								title.focus();
+							} else if (jujerriy.value.length > 12) {
+								alert("설명은 12자를 넘어가면 안되는데... ><");
+								jujerriy.focus();
+							} else {
+								adding();
+							}
+						}
+
+						fourdollar();
+					})
 </script>

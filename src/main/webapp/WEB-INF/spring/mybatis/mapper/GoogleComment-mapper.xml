@@ -28,7 +28,9 @@
 		times,
 		writer,
 		title,
-		cont
+		cont,
+		likes,
+		views
 		) VALUES (
 		SEQ_GC.NEXTVAL,
 		#{seqj},
@@ -36,25 +38,31 @@
 		#{times},
 		#{writer},
 		#{title},
-		#{cont}
+		#{cont},
+		0,
+		0
 		)
 	</insert>
 
 	<update id="update">
-		UPDATE tbl_gcomment SET
-		title = #{title, jdbcType=VARCHAR},
-		cont  = #{cont,  jdbcType=VARCHAR},
-		dates = #{dates, jdbcType=VARCHAR},
+		UPDATE tbl_googleComent SET
+		title = #{title,
+		jdbcType=VARCHAR},
+		cont = #{cont, jdbcType=VARCHAR},
+		dates = #{dates,
+		jdbcType=VARCHAR},
 		times = #{times, jdbcType=VARCHAR}
-		WHERE seq = #{seq, jdbcType=VARCHAR}
+		WHERE seq = #{seq,
+		jdbcType=VARCHAR}
 	</update>
 
 	<delete id="delete">
-		DELETE tbl_gcomment WHERE seq = #{seq}
+		DELETE tbl_googleComent WHERE seq = #{seq}
 	</delete>
 
 	<update id="hit">
-		UPDATE tbl_gcomment SET gc_views = gc_views+1 WHERE seq = #{seq, jdbcType=VARCHAR}
+		UPDATE tbl_googleComent SET likes = likes+1 WHERE seq
+		= #{seq, jdbcType=VARCHAR}
 	</update>
 
 </mapper>

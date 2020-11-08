@@ -124,7 +124,7 @@
 						<td>${gc.writer}</td>
 						<td>${gc.title}</td>
 						<td>${gc.cont}</td>
-						<td>${gc.views}</td>
+						<td>${gc.likes}</td>
 						<td>${gc.dates}</td>
 					</tr>
 				</c:forEach>

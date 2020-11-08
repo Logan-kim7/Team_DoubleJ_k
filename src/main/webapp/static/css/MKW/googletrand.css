@@ -28,7 +28,7 @@
 }
 
 #headlegend {
-	font-size: 20px;
+	font-size: 30px;
 	padding: 0px 30px;
 	color: black;
 }
@@ -40,7 +40,7 @@
 /*여기는
   선정한 주제를
   위한 CSS공간*/
-#listcustomers {
+#hot_guys {
 	text-align: center;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
@@ -49,29 +49,26 @@
 	margin-bottom: 30px;
 }
 
-#listcustomers td, #customers th {
-	border: 1px solid #gray;
+#hot_guys:hover {
+	cursor: pointer;
+}
+
+#hot_guys td {
+	border: 1px solid gray;
+	font-size: 20px;
 	padding: 8px;
 }
 
-#listcustomers tr:nth-child(even) {
+#hot_guys tr{
 	background-color: white;
 }
 
-#listcustomers tr:nth-child(odd) {
-	background-color: #ddd;
-}
-
-#listcustomers tr:hover {
-	background-color: #ddd;
-}
-
-#listcustomers th {
+#hot_guys th {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	text-align: center;
 	background-color: gray;
-	color: white;
+	font-size: 20px;
 }
 
 tbody {
@@ -92,13 +89,18 @@ input {
 	height: auto;
 }
 
-.cmlist {
+#bord_list {
 	display: inline-block;
 	text-align: center;
 	width: 70%;
+	transition: all 0.5s;
 }
 
-.cmlist h2 {
+#bord_list:hover {
+	background-color: rgba(0, 0, 0, 0.2)
+}
+
+#bord_list h2 {
 	font-size: 30px;
 	margin-bottom: 20px;
 }
@@ -119,9 +121,25 @@ input {
 	padding: 30px;
 }
 
+#writeset label {
+	font-size: 25px;
+	background-color: coral;
+	padding: 3px;
+	border-radius: 5px;
+}
+
+#writeset input {
+	padding: 3px;
+	font-size: 20px;
+}
+
+.inive {
+	margin: 30px 0px;
+}
+
 #writelegend {
 	text-align: center;
-	font-size: 20px;
+	font-size: 30px;
 	font-weight: bolder;
 	color: black;
 	padding: 0px 30px;
