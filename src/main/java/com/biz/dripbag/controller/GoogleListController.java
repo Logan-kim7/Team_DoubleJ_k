@@ -37,7 +37,7 @@ public class GoogleListController {
 		model.addAttribute("BODY", "GOOGLE_HOME");
 		model.addAttribute("TITLE", gServ.getGoogleList().get(ret));
 		
-		Long seqJ = Long.valueOf(gServ.getGoogleList().get(0).getSeq());
+		seqJ = Long.valueOf(gServ.getGoogleList().get(ret).getSeq());
 
 		List<GoogleCommentVO> gcList = gcService.selectForForm(seqJ);
 
