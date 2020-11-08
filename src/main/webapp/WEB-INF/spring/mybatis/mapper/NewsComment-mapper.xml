@@ -14,8 +14,11 @@
 		SELECT * FROM tbl_newsComment
 		WHERE seqj = #{seqj} 
 		ORDER BY seq DESC
-		
-		
+	</select>
+	
+	<select id="selectTop" resultType="NewsCommentVO">
+		SELECT * FROM tbl_newsComment
+		ORDER BY likes DESC
 	</select>
 	
 
@@ -58,7 +61,7 @@
 	</delete>
 
 	<update id="hit">
-		UPDATE tbl_newsComment SET views = views+1 WHERE seq = #{seq, jdbcType=VARCHAR}
+		UPDATE tbl_newsComment SET likes = likes+1 WHERE seq = #{seq, jdbcType=VARCHAR}
 	</update>
 
 </mapper>

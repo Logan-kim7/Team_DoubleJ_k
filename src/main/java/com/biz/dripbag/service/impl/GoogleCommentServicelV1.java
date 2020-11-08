@@ -68,7 +68,6 @@ public class GoogleCommentServicelV1 implements GoogleCommentService {
 
 	@Override
 	public int delete(Long id) {
-
 		int ret = gcDao.delete(id);
 		return ret;
 	}

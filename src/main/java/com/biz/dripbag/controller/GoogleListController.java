@@ -77,7 +77,7 @@ public class GoogleListController {
 
 		gcService.hit(vo);
 
-		return "redirect:/gtrand/" + ret;
+		return "redirect:/gtrand/" + ret + "/";
 	}
 
 }
