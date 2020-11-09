@@ -36,10 +36,7 @@ public class GoogleCommentController {
 	@RequestMapping(value = "/thumbsup", method = RequestMethod.GET)
 	public String thumbsUp(@RequestParam("id") Long seq) {
 
-		long sequence = Long.valueOf(seq);
-		System.out.println("\n\n\n" + sequence + "\n\n\n");
-
-		GoogleCommentVO vo = gcService.findById(sequence);
+		GoogleCommentVO vo = gcService.findById(seq);
 
 		gcService.hit(vo);
 
