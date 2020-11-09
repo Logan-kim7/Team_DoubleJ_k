@@ -105,7 +105,7 @@ public class CrwalingData
 				newslist.add(vo);
 			}			
 		}
-		catch (IOException e)  { System.out.println("사랑방 뉴스 접속 실패"); }
+		catch (IOException e)  { System.out.println("\n\n\n사랑방 뉴스 접속 실패\n\n\n"); }
 		return newslist;
 	}
 	
